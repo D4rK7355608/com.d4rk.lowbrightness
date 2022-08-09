@@ -1,0 +1,36 @@
+<androidx.preference.PreferenceScreen
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.preference.PreferenceCategory
+        app:title="@string/normal"
+        app:iconSpaceReserved="false">
+        <androidx.preference.Preference
+            app:title="@string/internet"
+            app:summary="@string/internet_sum"
+            app:useSimpleSummaryProvider="true"
+            app:iconSpaceReserved="false"/>
+    </androidx.preference.PreferenceCategory>
+    <PreferenceCategory
+        app:title="Runtime!"
+        app:iconSpaceReserved="false">
+        <androidx.preference.Preference
+            app:title="Schedule exact alarm."
+            app:summary="Used to show app notification."
+            app:useSimpleSummaryProvider="true"
+            app:iconSpaceReserved="false"/>
+        <androidx.preference.Preference
+            app:title="Foreground service."
+            app:summary="Used to make app run in background and monitoring brightness."
+            app:useSimpleSummaryProvider="true"
+            app:iconSpaceReserved="false"/>
+        <androidx.preference.Preference
+            app:title="Write settings."
+            app:summary="Used to have access for changing brightness."
+            app:useSimpleSummaryProvider="true"
+            app:iconSpaceReserved="false"/>
+        <androidx.preference.Preference
+            app:title="Receive boot completed."
+            app:summary="Used to make app boot ."
+            app:useSimpleSummaryProvider="true"
+            app:iconSpaceReserved="false"/>
+    </PreferenceCategory>
+</androidx.preference.PreferenceScreen>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <com.google.android.material.textview.MaterialTextView
+        style="@style/SchedulerCaption"
+        android:text="@string/scheduler_description"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bSchedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="@string/disable_scheduler"
+        app:iconGravity="start"
+        app:icon="@drawable/ic_schedule"/>
+    <com.google.android.material.textview.MaterialTextView
+        style="@style/TextAppearance.AppCompat.Caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="@string/enabled_only_during_this_interval"/>
+    <LinearLayout
+        android:id="@+id/llWrapHourPickers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="20:00"
+            tools:ignore="HardcodedText" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="06:00"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTimeRemaining"
+        style="@style/Base.TextAppearance.AppCompat.Body2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Time remaining to darkening: 60:00"
+        tools:ignore="HardcodedText" />
+</LinearLayout>

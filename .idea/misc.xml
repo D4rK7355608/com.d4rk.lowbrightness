@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/drawable-anydpi/ic_github.xml" value="0.116" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/drawable-anydpi/overflow_background.xml" value="0.1745" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/drawable-anydpi/switch_thumb.xml" value="0.1745" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/drawable-anydpi/switch_track.xml" value="0.1745" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/layout-v31/activity_home.xml" value="0.24717948717948718" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/layout-v31/activity_main.xml" value="0.24717948717948718" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/layout-v31/app_bar_home.xml" value="0.20337552742616033" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/layout-v31/app_bar_main.xml" value="0.24717948717948718" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/layout-v31/content_home.xml" value="0.20337552742616033" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/layout-v31/content_main.xml" value="0.1" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/layout-v31/fragment_about.xml" value="0.25" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/layout-v31/fragment_home.xml" value="0.18" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/layout-v31/nav_header_main.xml" value="0.25104166666666666" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/layout/activity_home.xml" value="0.10364583333333334" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/layout/activity_main.xml" value="0.25104166666666666" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/layout/app_bar_main.xml" value="0.25104166666666666" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/layout/content_main.xml" value="0.25104166666666666" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/layout/dialog_success.xml" value="0.16" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/layout/fragment_about.xml" value="0.25104166666666666" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/layout/fragment_slideshow.xml" value="0.25104166666666666" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/layout/nav_header_main.xml" value="0.25104166666666666" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/layout/widget_big_off.xml" value="0.1046875" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/menu/activity_main_drawer.xml" value="0.25104166666666666" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/menu/drawer.xml" value="0.1046875" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/menu/main.xml" value="0.25104166666666666" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/mipmap-anydpi/ic_launcher.xml" value="0.1625" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/xml/about.xml" value="0.2" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/background_brightness.xml" value="0.208" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/card.xml" value="0.179" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_changelog.xml" value="0.2075" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_d4rk.xml" value="0.208" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_done.xml" value="0.208" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_eye.xml" value="0.208" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_feedback_card.xml" value="0.2075" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_launcher_foreground.xml" value="0.67" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_schedule.xml" value="0.208" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_shop.xml" value="0.208" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_splash_screen_d4rk.xml" value="0.179" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_toolbar_background.xml" value="0.179" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/side_nav_bar.xml" value="0.179" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-night-anydpi/background_brightness.xml" value="0.208" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable/side_nav_bar.xml" value="0.208" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout-v31/activity_about.xml" value="0.21" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout-v31/activity_feedback.xml" value="0.21" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout-v31/activity_language.xml" value="0.13974358974358975" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout-v31/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout-v31/app_bar_main.xml" value="0.13974358974358975" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout-v31/fragment_about.xml" value="0.28270042194092826" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout-v31/fragment_dialog.xml" value="0.13974358974358975" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout-v31/fragment_home.xml" value="0.2863247863247863" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout-v31/nav_header_main.xml" value="0.2863247863247863" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout-v31/permissions_activity.xml" value="0.13974358974358975" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout-v31/settings_activity.xml" value="0.13974358974358975" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout/activity_clipboard.xml" value="0.16880341880341881" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout/activity_feedback.xml" value="0.13974358974358975" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout/activity_language.xml" value="0.13974358974358975" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout/activity_main.xml" value="0.28270042194092826" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout/app_bar_main.xml" value="0.25" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout/content_main.xml" value="0.22" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout/content_main2.xml" value="0.2858974358974359" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout/fragment_about.xml" value="0.22" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout/fragment_blank.xml" value="0.21" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout/fragment_dialog.xml" value="0.2863247863247863" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout/fragment_scheduler_disabled.xml" value="0.33" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout/fragment_scheduler_enabled.xml" value="0.33" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout/fragment_screen_filter.xml" value="0.16111111111111112" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout/nav_header_main.xml" value="0.13974358974358975" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout/permissions_activity.xml" value="0.13974358974358975" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/layout/settings_activity.xml" value="0.13974358974358975" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/menu/activity_main_drawer.xml" value="0.25" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/menu/main.xml" value="0.13974358974358975" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/menu/menu_feedback.xml" value="0.22" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/mipmap-anydpi/ic_launcher.xml" value="0.179" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/mipmap-anydpi/ic_launcher_round.xml" value="0.179" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/xml/permissions_preferences.xml" value="0.28270042194092826" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/xml/settings.xml" value="0.28270042194092826" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/xml/settings_preferences.xml" value="0.28270042194092826" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
