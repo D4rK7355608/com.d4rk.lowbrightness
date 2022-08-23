@@ -49,6 +49,7 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
                     val musicSleepTimerString: MaterialTextView = view.findViewById(R.id.musicSleepTimerString)
                     val englishWithLidiaString: MaterialTextView = view.findViewById(R.id.englishWithLidiaString)
                     val qrCodeScannerString: MaterialTextView = view.findViewById(R.id.qrCodeScannerString)
+                    val androidStudioTutorialsString: MaterialTextView = view.findViewById(R.id.androidStudioTutorialsString)
                     alertDialog.setView(view)
                     alertDialog.create()
                     view.findViewById<View?>(R.id.musicSleepTimer)?.setOnClickListener {
@@ -75,6 +76,14 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
                         val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.qrcodescanner.plus"))
                         startActivity(intent)
                     }
+                    view.findViewById<View?>(R.id.androidStudioTutorials)?.setOnClickListener {
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.androidtutorials"))
+                        startActivity(intent)
+                    }
+                    androidStudioTutorialsString.setOnClickListener {
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.androidtutorials"))
+                        startActivity(intent)
+                    }
                     alertDialog.setNegativeButton(R.string.cool, null)
                     alertDialog.show()
                     true
@@ -88,6 +97,17 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
                     alertDialog.setMessage(R.string.changes)
                     alertDialog.setNegativeButton(R.string.cool, null)
                     alertDialog.show()
+                    true
+                }
+            }
+            val share: Preference? = findPreference("share")
+            if (share != null) {
+                share.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+                    val sharingIntent = Intent(Intent.ACTION_SEND)
+                    sharingIntent.type = "text/plain"
+                    sharingIntent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=com.d4rk.lowbrightness")
+                    sharingIntent.putExtra(Intent.EXTRA_SUBJECT, R.string.share_subject)
+                    startActivity(Intent.createChooser(sharingIntent, getString(R.string.share_using)))
                     true
                 }
             }

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.d4rk.lowbrightness">
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
@@ -15,7 +16,7 @@
         </intent>
     </queries>
     <application
-        android:name=".base.Application"
+        android:name=".ads.Ads"
         android:appCategory="productivity"
         android:banner="@drawable/ic_toolbar_background"
         android:icon="@mipmap/ic_launcher"
@@ -85,5 +86,8 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version"/>
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-5294151573817700~8302025955"/>
     </application>
 </manifest>
