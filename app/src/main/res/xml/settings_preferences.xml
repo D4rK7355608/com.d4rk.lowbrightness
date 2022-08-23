@@ -53,7 +53,7 @@
             android:icon="@drawable/ic_update"
             app:title="@string/check_for_updates">
             <intent android:action="android.intent.action.VIEW"
-                android:data="https://play.google.com/store/apps/details?id=com.d4rk.androidtutorials"/>
+                android:data="https://play.google.com/store/apps/details?id=com.d4rk.lowbrightness"/>
         </androidx.preference.Preference>
         <androidx.preference.Preference
             android:icon="@drawable/ic_feedback"
@@ -61,6 +61,17 @@
             <intent
                 android:targetPackage="com.d4rk.lowbrightness"
                 android:targetClass="com.d4rk.lowbrightness.ui.feedback.FeedbackActivity"/>
+        </androidx.preference.Preference>
+        <androidx.preference.Preference
+            app:key="share"
+            android:icon="@drawable/ic_share"
+            app:title="@string/share"/>
+        <androidx.preference.Preference
+            android:icon="@drawable/ic_support"
+            app:title="@string/support_me"
+            android:summary="@string/support_me_sum">
+            <intent android:action="android.intent.action.VIEW"
+                android:data="https://bit.ly/3p8bpjj"/>
         </androidx.preference.Preference>
         <androidx.preference.Preference
             app:key="changelog"
