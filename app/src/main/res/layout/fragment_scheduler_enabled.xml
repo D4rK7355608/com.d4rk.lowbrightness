@@ -52,5 +52,5 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Time remaining to darkening: 60:00"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText"/>
 </LinearLayout>
