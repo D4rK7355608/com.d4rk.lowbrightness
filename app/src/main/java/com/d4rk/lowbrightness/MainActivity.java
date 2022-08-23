@@ -20,7 +20,7 @@ import com.d4rk.lowbrightness.notifications.SchedulerEnabledFragment;
 import com.d4rk.lowbrightness.services.OverlayService;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
-public class MainActivity extends AppCompatActivity implements IShowHideScheduler{
+public class MainActivity extends AppCompatActivity implements IShowHideScheduler {
     private AppBarConfiguration mAppBarConfiguration;
     private RequestDrawOverAppsPermission permissionRequester;
     private SharedPreferences sp;
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements IShowHideSchedule
         super.onCreate(savedInstanceState);
         @SuppressWarnings("unused")
         SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
-        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
+        com.d4rk.lowbrightness.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         sp = Prefs.get(getBaseContext());
         setSupportActionBar(binding.appBarMain.toolbar);
@@ -80,9 +80,5 @@ public class MainActivity extends AppCompatActivity implements IShowHideSchedule
         } else {
             getSupportFragmentManager().beginTransaction().replace(R.id.llSchedulerContainer, new SchedulerDisabledFragment()).commit();
         }
-    }
-    @Override
-    public void onBackPressed() {
-        moveTaskToBack(true);
     }
 }

@@ -24,7 +24,6 @@
     <string name="music_sleep_timer">Music Sleep Timer.</string>
     <string name="qr_code_scanner">QR &amp; Bar Code Scanner.</string>
     <string name="english_with_lidia">English with Lidia.</string>
-    <string name="android_studio_tutorials">Android Studio Tutorials</string>
     <string name="terms_of_service">Terms of Service.</string>
     <string name="code_of_conduct">Code of Conduct.</string>
     <string name="more_apps">More apps.</string>
@@ -57,12 +56,7 @@
     <string name="privacy_policy">Privacy Policy.</string>
     <string name="menu_home">Home!</string>
     <string name="menu_about">About!</string>
-    <string name="share">Share</string>
-    <string name="share_subject">Try it now!!!</string>
-    <string name="share_using">Share using..</string>
     <string name="notifications">Notifications!</string>
-    <string name="support_me">Support me.</string>
-    <string name="support_me_sum">Click here if you want to support me without paying money. Just some time for viewing an add.</string>
     <string name="notifications_description">After you activate this app you will have a notification witch you can change the brightness intensity without open the app itself.</string>
     <string name="open_source_libraries">Open source libraries.</string>
     <string name="license">License.</string>
@@ -70,13 +64,8 @@
     <string name="about_changelog">Changelog!</string>
     <string name="about_play_store">Google Play Store</string>
     <string name="about_developer">Developer:</string>
-    <string name="changes"><b>Version 1.1_r1:\n</b>
-        • Added share preference;\n
-        • Added ads;\n
-        • Added Support preference;\n
-        • Minor bug fixes;\n
-        • Minor tweaks;\n
-        • Under the hood improvements.
+    <string name="changes"><b>Version 1.0_r1:\n</b>
+        • Initial stable version.
         <br> </br>
     </string>
 </resources>
