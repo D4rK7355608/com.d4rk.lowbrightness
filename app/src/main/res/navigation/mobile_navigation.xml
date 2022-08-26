@@ -17,6 +17,6 @@
     <activity
         android:id="@+id/nav_settings"
         android:name="com.d4rk.lowbrightness.ui.settings.SettingsActivity"
-        android:label="@string/menu_settings"
+        android:label="@string/settings"
         tools:layout="@layout/settings_activity"/>
 </navigation>

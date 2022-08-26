@@ -13,6 +13,5 @@
         <item name="actionOverflowMenuStyle">@style/OverflowMenuTheme</item>
         <item name="alertDialogTheme">@style/DialogTheme</item>
         <item name="discreteSeekBarStyle">@style/DiscreteSeekBar</item>
-        <item name="switchStyle">@style/SwitchTheme</item>
     </style>
 </resources>

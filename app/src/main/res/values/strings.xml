@@ -1,6 +1,20 @@
 <resources>
-    <string name="app_name">Low Brightness</string>
-    <string name="app_version">Version %1s</string>
+    <string name="app_name" translatable="false">Low Brightness</string>
+    <string name="app_version" translatable="false">Version %1s</string>
+    <string name="theme_def_value" translatable="false">MODE_NIGHT_FOLLOW_SYSTEM</string>
+    <string name="license_sum" translatable="false">General Public License-3.0.</string>
+    <string name="language_en" translatable="false">English (International)</string>
+    <string name="language_ro" translatable="false">Romana (Romania)</string>
+    <string name="github" translatable="false">GitHub</string>
+    <string name="xda" translatable="false">XDA</string>
+    <string name="twitter" translatable="false">Twitter</string>
+    <string name="license_hint" translatable="false">General Public License-3.0.</string>
+    <string name="youtube" translatable="false">YouTube</string>
+    <string name="cool" translatable="false">Cool!</string>
+    <string name="music_sleep_timer" translatable="false">Music Sleep Timer.</string>
+    <string name="qr_code_scanner" translatable="false">QR &amp; Bar Code Scanner.</string>
+    <string name="english_with_lidia" translatable="false">English with Lidia.</string>
+    <string name="android_studio_tutorials" translatable="false">Android Studio Tutorials</string>
     <string name="enable_scheduler">Enable scheduler</string>
     <string name="disable_scheduler">Disable scheduler</string>
     <string name="enabled_only_during_this_interval">Enabled only during this interval:</string>
@@ -9,51 +23,34 @@
     <string name="schedule">Schedule</string>
     <string name="time_remaining_to_darken_label">Screen brightness will be reduced in</string>
     <string name="time_remaining_to_lighten_label">Original brightness will be restored in</string>
-    <string name="action_settings">Settings</string>
     <string name="customize_overlay_color">Filter overlay color</string>
     <string name="intensity">Brightness optimization level</string>
     <string name="scheduler_description">Schedule the period when the screen should automatically darken, to reduce eye strain and make it more comfortable to read in dark environments.</string>
     <string name="service">Service!</string>
-    <string name="twitter">Twitter</string>
     <string name="dev_feedback">Mail to dev.</string>
     <string name="feedback">Feedback.</string>
     <string name="feedback_tooltip">Send us your review on Google Play Store.</string>
     <string name="feedback_toast">Thanks for rating us!</string>
     <string name="rate_us">Rate our app!</string>
     <string name="fragment_more_tittle">More!</string>
-    <string name="music_sleep_timer">Music Sleep Timer.</string>
-    <string name="qr_code_scanner">QR &amp; Bar Code Scanner.</string>
-    <string name="english_with_lidia">English with Lidia.</string>
-    <string name="android_studio_tutorials">Android Studio Tutorials</string>
     <string name="terms_of_service">Terms of Service.</string>
     <string name="code_of_conduct">Code of Conduct.</string>
     <string name="more_apps">More apps.</string>
-    <string name="license_hint">General Public License-3.0.</string>
     <string name="language">Language.</string>
     <string name="language_default">Default Language.</string>
-    <string name="language_en">English (International)</string>
-    <string name="language_ro">Romana (Romania)</string>
-    <string name="youtube">YouTube</string>
     <string name="changelog">Changelog.</string>
-    <string name="cool">Cool!</string>
-    <string name="menu_settings">Settings!</string>
     <string name="normal">Normal!</string>
     <string name="internet">Internet.</string>
-    <string name="settings">Settings</string>
+    <string name="settings">Settings!</string>
     <string name="permissions">Permissions.</string>
-    <string name="license_sum">General Public License-3.0.</string>
     <string name="language_sum">Set application language.</string>
     <string name="check_for_updates">Check for updates…</string>
     <string name="more">More</string>
     <string name="internet_sum">Used to send error reports.</string>
     <string name="theme">Theme.</string>
-    <string name="theme_def_value">MODE_NIGHT_FOLLOW_SYSTEM</string>
-    <string name="github">GitHub</string>
-    <string name="xda">XDA</string>
     <string name="google_dev">Google Dev</string>
     <string name="libraries">Third Party Libraries</string>
     <string name="open_me">Open me :)</string>
-    <string name="service_description">Enable this service to make app have full permission to give you best experience.</string>
     <string name="privacy_policy">Privacy Policy.</string>
     <string name="menu_home">Home!</string>
     <string name="menu_about">About!</string>
@@ -64,16 +61,11 @@
     <string name="support_me">Support me.</string>
     <string name="support_me_sum">Click here if you want to support me without paying money. Just some time for viewing an add.</string>
     <string name="notifications_description">After you activate this app you will have a notification witch you can change the brightness intensity without open the app itself.</string>
-    <string name="open_source_libraries">Open source libraries.</string>
     <string name="license">License.</string>
-    <string name="app_d4rk">D4rK.</string>
-    <string name="about_changelog">Changelog!</string>
-    <string name="about_play_store">Google Play Store</string>
-    <string name="about_developer">Developer:</string>
-    <string name="changes"><b>Version 1.1_r1:\n</b>
-        • Added share preference;\n
-        • Added ads;\n
-        • Added Support preference;\n
+    <string name="changes" translatable="false"><b>Version 1.2_r1:\n</b>
+        • Added Romanian language;\n
+        • Added monochrome icon;\n
+        • Removed unused resources;\n
         • Minor bug fixes;\n
         • Minor tweaks;\n
         • Under the hood improvements.

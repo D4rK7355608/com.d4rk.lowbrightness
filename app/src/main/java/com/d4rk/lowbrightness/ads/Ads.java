@@ -18,6 +18,7 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.appopen.AppOpenAd;
 import com.google.android.gms.ads.appopen.AppOpenAd.AppOpenAdLoadCallback;
 import java.util.Date;
+@SuppressWarnings("ALL")
 public class Ads extends Application implements ActivityLifecycleCallbacks, LifecycleObserver {
     private AppOpenAdManager appOpenAdManager;
     private Activity currentActivity;

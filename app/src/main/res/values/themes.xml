@@ -15,7 +15,6 @@
         <item name="alertDialogTheme">@style/DialogTheme</item>
         <item name="discreteSeekBarStyle">@style/DiscreteSeekBar</item>
         <item name="actionOverflowMenuStyle">@style/OverflowMenuTheme</item>
-        <item name="switchStyle">@style/SwitchTheme</item>
     </style>
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/colorBackground</item>
@@ -39,10 +38,6 @@
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
         <item name="postSplashScreenTheme">@style/AppThemeActionBar</item>
         <item name="android:windowLightStatusBar">true</item>
-    </style>
-    <style name="SwitchTheme" parent="Widget.Material3.CompoundButton.Switch">
-        <item name="track">@drawable/switch_track</item>
-        <item name="android:thumb">@drawable/switch_thumb</item>
     </style>
     <style name="Theme.App.Starting.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
     <style name="Theme.App.Starting.PopupOverlay" parent="ThemeOverlay.Material3.DynamicColors.DayNight"/>

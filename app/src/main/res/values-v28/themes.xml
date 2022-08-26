@@ -13,7 +13,6 @@
         <item name="alertDialogTheme">@style/DialogTheme</item>
         <item name="discreteSeekBarStyle">@style/DiscreteSeekBar</item>
         <item name="actionOverflowMenuStyle">@style/OverflowMenuTheme</item>
-        <item name="switchStyle">@style/SwitchTheme</item>
     </style>
     <style name="DialogTheme" parent="Theme.Material3.DayNight.Dialog.Alert">
         <item name="colorAccent">@color/colorAccent</item>
