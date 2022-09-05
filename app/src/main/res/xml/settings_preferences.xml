@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <androidx.preference.PreferenceCategory
-        app:title="@string/settings"
+        app:title="@string/appearance"
         android:icon="@drawable/ic_settings_tinted">
         <androidx.preference.ListPreference
             app:defaultValue="@string/theme_def_value"
@@ -12,14 +12,6 @@
             app:key="@string/theme"
             app:title="@string/theme"
             app:useSimpleSummaryProvider="true"/>
-        <androidx.preference.Preference
-            app:title="@string/language"
-            android:icon="@drawable/ic_language"
-            android:summary="@string/language_sum">
-            <intent
-                android:targetPackage="com.d4rk.lowbrightness"
-                android:targetClass="com.d4rk.lowbrightness.ui.language.LanguageActivity"/>
-        </androidx.preference.Preference>
     </androidx.preference.PreferenceCategory>
     <androidx.preference.PreferenceCategory
         app:title="@string/more"

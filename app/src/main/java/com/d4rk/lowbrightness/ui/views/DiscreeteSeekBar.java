@@ -10,12 +10,12 @@ import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
 public class DiscreeteSeekBar extends DiscreteSeekBar {
     private void attachListener() {
         this.setOnProgressChangeListener(new DiscreteSeekBar.OnProgressChangeListener() {
-            final SharedPreferences sp = Prefs.get(getContext());
+            final SharedPreferences sharedPreferences = Prefs.get(getContext());
             final Context context = getContext();
             int currentProgress = 0;
             final Handler h = new Handler();
             final Runnable r = () -> {
-                SharedPreferences.Editor editor = sp.edit();
+                SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putInt(Constants.PREF_DIM_LEVEL, currentProgress);
                 editor.putBoolean(Constants.PREF_LOW_BRIGHTNESS_ENABLED, currentProgress > 0);
                 editor.apply();

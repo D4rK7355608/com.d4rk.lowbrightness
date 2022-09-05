@@ -1,3 +1,13 @@
+# Version 1.3_r1:
+- Added language preferences (Android 13+);
+- Fixed Firebase crashes;
+- Fixed splash screen;
+- Removed language section from settings;
+- Removed unused resources;
+- Bug fixes;
+- Tweaks;
+- Under the hood improvements.
+
 # Version 1.2_r1:
 - Added Romanian language;
 - Added monochrome icon;

@@ -29,7 +29,7 @@ public class OverlayService extends Service {
     }
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        final SharedPreferences sp = Prefs.get(getBaseContext());
+        final SharedPreferences sharedPreferences = Prefs.get(getBaseContext());
         if (!OverlayService.isEnabled(getBaseContext())) {
             stopSelf();
             return START_NOT_STICKY;
@@ -38,8 +38,8 @@ public class OverlayService extends Service {
             stopSelf();
             return START_NOT_STICKY;
         }
-        int opacityPercent = sp.getInt(Constants.PREF_DIM_LEVEL, 20);
-        int color = sp.getInt(Constants.PREF_OVERLAY_COLOR, Color.BLACK);
+        int opacityPercent = sharedPreferences.getInt(Constants.PREF_DIM_LEVEL, 20);
+        int color = sharedPreferences.getInt(Constants.PREF_OVERLAY_COLOR, Color.BLACK);
         if (mView == null) {
             mView = new OverlayView(this);
             mView.setOpacityPercent(opacityPercent);

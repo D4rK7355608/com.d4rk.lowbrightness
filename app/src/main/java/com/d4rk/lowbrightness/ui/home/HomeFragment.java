@@ -6,7 +6,8 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.view.LayoutInflater;import android.view.View;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
@@ -27,9 +28,9 @@ import com.d4rk.lowbrightness.helpers.RequestDrawOverAppsPermission;
 import com.d4rk.lowbrightness.services.SchedulerService;
 import com.d4rk.lowbrightness.ui.views.SquareImageView;
 import com.thebluealliance.spectrum.SpectrumDialog;
-import me.zhanghai.android.fastscroll.FastScrollerBuilder;
 import java.util.ArrayList;
 import java.util.List;
+import me.zhanghai.android.fastscroll.FastScrollerBuilder;
 public class HomeFragment extends Fragment {
     private FragmentHomeBinding binding;
     @Nullable
@@ -44,7 +45,6 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View root, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(root, savedInstanceState);
         final RequestDrawOverAppsPermission permissionRequester = new RequestDrawOverAppsPermission(getActivity());
-        final Context ctx = (getContext());
         if (!permissionRequester.canDrawOverlays()) {
             AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
             builder.setTitle("App needs permission!");
@@ -73,8 +73,8 @@ public class HomeFragment extends Fragment {
                     .setSelectedColor(preselectColor)
                     .setOnColorSelectedListener((positiveResult, color) -> {
                         if (!positiveResult) return;
-                        SharedPreferences sp = Prefs.get(requireContext());
-                        sp.edit().putInt(Constants.PREF_OVERLAY_COLOR, color).apply();
+                        SharedPreferences sharedPreferences = Prefs.get(requireContext());
+                        sharedPreferences.edit().putInt(Constants.PREF_OVERLAY_COLOR, color).apply();
                         Application.refreshServices(getContext());
                         refreshUI();
                     }).build();
@@ -83,9 +83,9 @@ public class HomeFragment extends Fragment {
         refreshUI();
         final ColorsAdapter adapter = new ColorsAdapter(getContext());
         binding.gridColors.setAdapter(adapter);
-        SharedPreferences sp = Prefs.get(requireContext());
-        int opacityPercent = sp.getInt(Constants.PREF_DIM_LEVEL, 20);
-        final int currentColor = sp.getInt("overlay_color", Color.BLACK);
+        SharedPreferences sharedPreferences = Prefs.get(requireContext());
+        int opacityPercent = sharedPreferences.getInt(Constants.PREF_DIM_LEVEL, 20);
+        final int currentColor = sharedPreferences.getInt("overlay_color", Color.BLACK);
         binding.sbDarkenIntensity.setProgress(opacityPercent);
         int totalColors = adapter.getCount();
         for (int i = 0; totalColors > i; i += 1) {
@@ -98,15 +98,15 @@ public class HomeFragment extends Fragment {
         binding.gridColors.setOnItemClickListener((parent, v, position, id) -> {
             adapter.setSelectedPosition(position);
             OverlayColor selectedItem = adapter.getItem(position);
-            SharedPreferences sp1 = Prefs.get(v.getContext());
-            sp1.edit().putInt("overlay_color", selectedItem.color).apply();
+            SharedPreferences secondSharedPreferences = Prefs.get(v.getContext());
+            secondSharedPreferences.edit().putInt("overlay_color", selectedItem.color).apply();
             Application.refreshServices(v.getContext());
         });
         ((MainActivity) getActivity()).showOrHideSchedulerUI(SchedulerService.isEnabled(getContext()));
     }
     private void refreshUI() {
-        SharedPreferences sp = Prefs.get(requireContext());
-        final int currentColor = sp.getInt("overlay_color", Color.BLACK);
+        SharedPreferences sharedPreferences = Prefs.get(requireContext());
+        final int currentColor = sharedPreferences.getInt("overlay_color", Color.BLACK);
         binding.bColorPicker.setBackgroundColor(currentColor);
     }
     static private class OverlayColor {

@@ -151,6 +151,6 @@
         android:layout_height="192dp"
         android:layout_gravity="bottom"
         app:lottie_autoPlay="true"
-        app:lottie_rawRes="@raw/anim_brightness"
+        app:lottie_rawRes="@raw/anim_about"
         app:lottie_loop="true"/>
 </FrameLayout>

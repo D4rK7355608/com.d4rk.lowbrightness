@@ -38,8 +38,8 @@ public class SchedulerService extends Service {
         }
     }
     private void startOrStopScreenDim() {
-        final SharedPreferences sp = Prefs.get(getBaseContext());
-        if (sp.getBoolean(Constants.PREF_LOW_BRIGHTNESS_ENABLED, false)) {
+        final SharedPreferences sharedPreferences = Prefs.get(getBaseContext());
+        if (sharedPreferences.getBoolean(Constants.PREF_LOW_BRIGHTNESS_ENABLED, false)) {
             final Calendar cBegin = _getCalendarForStart(getBaseContext());
             final Calendar cEnd = _getCalendarForEnd(getBaseContext());
             Calendar calendar = Calendar.getInstance();
@@ -58,9 +58,9 @@ public class SchedulerService extends Service {
         super.onDestroy();
     }
     public static Calendar _getCalendarForStart(Context context) {
-        final SharedPreferences sp = Prefs.get(context);
-        final int scheduleFromHour = sp.getInt("scheduleFromHour", 20);
-        final int scheduleFromMinute = sp.getInt("scheduleFromMinute", 0);
+        final SharedPreferences sharedPreferences = Prefs.get(context);
+        final int scheduleFromHour = sharedPreferences.getInt("scheduleFromHour", 20);
+        final int scheduleFromMinute = sharedPreferences.getInt("scheduleFromMinute", 0);
         final Calendar c = Calendar.getInstance();
         c.set(Calendar.HOUR_OF_DAY, scheduleFromHour);
         c.set(Calendar.MINUTE, scheduleFromMinute);
@@ -68,9 +68,9 @@ public class SchedulerService extends Service {
         return c;
     }
     public static Calendar _getCalendarForEnd(Context context) {
-        final SharedPreferences sp = Prefs.get(context);
-        final int hour = sp.getInt("scheduleToHour", 6);
-        final int minute = sp.getInt("scheduleToMinute", 0);
+        final SharedPreferences sharedPreferences = Prefs.get(context);
+        final int hour = sharedPreferences.getInt("scheduleToHour", 6);
+        final int minute = sharedPreferences.getInt("scheduleToMinute", 0);
         final Calendar c = Calendar.getInstance();
         c.set(Calendar.HOUR_OF_DAY, hour);
         c.set(Calendar.MINUTE, minute);

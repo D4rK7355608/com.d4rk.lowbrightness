@@ -18,21 +18,30 @@ import com.d4rk.lowbrightness.helpers.RequestDrawOverAppsPermission;
 import com.d4rk.lowbrightness.notifications.SchedulerDisabledFragment;
 import com.d4rk.lowbrightness.notifications.SchedulerEnabledFragment;
 import com.d4rk.lowbrightness.services.OverlayService;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.FirebaseApp;
 public class MainActivity extends AppCompatActivity implements IShowHideScheduler{
     private AppBarConfiguration mAppBarConfiguration;
     private RequestDrawOverAppsPermission permissionRequester;
-    private SharedPreferences sp;
+    private SharedPreferences sharedPreferences;
+    private AdView adView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        @SuppressWarnings("unused")
-        SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
+        SplashScreen.installSplashScreen(this);
+        MobileAds.initialize(this);
+        FirebaseApp.initializeApp(this);
         ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        sp = Prefs.get(getBaseContext());
         setSupportActionBar(binding.appBarMain.toolbar);
+        sharedPreferences = Prefs.get(getBaseContext());
+        adView = findViewById(R.id.ad_view);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_about, R.id.nav_settings).setOpenableLayout(drawer).build();
@@ -44,12 +53,15 @@ public class MainActivity extends AppCompatActivity implements IShowHideSchedule
     protected void onResume() {
         super.onResume();
         permissionRequester = new RequestDrawOverAppsPermission(this);
+        if (adView != null) {
+            adView.resume();
+        }
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (permissionRequester.requestCodeMatches(requestCode)) {
             if (permissionRequester.canDrawOverlays()) {
-                sp.edit().putBoolean(Constants.PREF_LOW_BRIGHTNESS_ENABLED, true).apply();
+                sharedPreferences.edit().putBoolean(Constants.PREF_LOW_BRIGHTNESS_ENABLED, true).apply();
                 getBaseContext().startService(new Intent(getBaseContext(), OverlayService.class));
                 Snackbar.make(findViewById(android.R.id.content), "Done! It was that easy.", Snackbar.LENGTH_LONG).show();
                 recreate();
@@ -61,11 +73,17 @@ public class MainActivity extends AppCompatActivity implements IShowHideSchedule
     }
     @Override
     protected void onPause() {
-        super.onPause();
         Application.refreshServices(getBaseContext());
+        if (adView != null) {
+            adView.pause();
+        }
+        super.onPause();
     }
     @Override
     protected void onDestroy() {
+        if (adView != null) {
+            adView.destroy();
+        }
         super.onDestroy();
     }
     @Override

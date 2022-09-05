@@ -25,7 +25,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:resizeableActivity="true"
-        android:theme="@style/AppThemeActionBar">
+        android:theme="@style/AppThemeActionBar"
+        android:localeConfig="@xml/locales_config"
+        tools:targetApi="33">
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -65,14 +67,6 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="ui.permissions.PermissionsActivity"/>
-        </activity>
-        <activity
-            android:name=".ui.language.LanguageActivity"
-            android:exported="true"
-            android:label="@string/language">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.language.LanguageActivity"/>
         </activity>
         <activity
             android:name=".ui.settings.SettingsActivity"

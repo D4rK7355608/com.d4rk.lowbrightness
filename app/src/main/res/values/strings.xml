@@ -1,19 +1,16 @@
 <resources>
     <string name="app_name" translatable="false">Low Brightness</string>
-    <string name="app_version" translatable="false">Version %1s</string>
+    <string name="app_version">Version %1s</string>
     <string name="theme_def_value" translatable="false">MODE_NIGHT_FOLLOW_SYSTEM</string>
-    <string name="license_sum" translatable="false">General Public License-3.0.</string>
-    <string name="language_en" translatable="false">English (International)</string>
-    <string name="language_ro" translatable="false">Romana (Romania)</string>
+    <string name="license_sum" translatable="false">General Public License-3.0</string>
     <string name="github" translatable="false">GitHub</string>
     <string name="xda" translatable="false">XDA</string>
     <string name="twitter" translatable="false">Twitter</string>
-    <string name="license_hint" translatable="false">General Public License-3.0.</string>
     <string name="youtube" translatable="false">YouTube</string>
     <string name="cool" translatable="false">Cool!</string>
-    <string name="music_sleep_timer" translatable="false">Music Sleep Timer.</string>
-    <string name="qr_code_scanner" translatable="false">QR &amp; Bar Code Scanner.</string>
-    <string name="english_with_lidia" translatable="false">English with Lidia.</string>
+    <string name="music_sleep_timer" translatable="false">Music Sleep Timer</string>
+    <string name="qr_code_scanner" translatable="false">QR &amp; Bar Code Scanner</string>
+    <string name="english_with_lidia" translatable="false">English with Lidia</string>
     <string name="android_studio_tutorials" translatable="false">Android Studio Tutorials</string>
     <string name="enable_scheduler">Enable scheduler</string>
     <string name="disable_scheduler">Disable scheduler</string>
@@ -26,48 +23,56 @@
     <string name="customize_overlay_color">Filter overlay color</string>
     <string name="intensity">Brightness optimization level</string>
     <string name="scheduler_description">Schedule the period when the screen should automatically darken, to reduce eye strain and make it more comfortable to read in dark environments.</string>
-    <string name="service">Service!</string>
-    <string name="dev_feedback">Mail to dev.</string>
-    <string name="feedback">Feedback.</string>
+    <string name="dev_feedback">Mail to dev</string>
+    <string name="feedback">Feedback</string>
     <string name="feedback_tooltip">Send us your review on Google Play Store.</string>
     <string name="feedback_toast">Thanks for rating us!</string>
     <string name="rate_us">Rate our app!</string>
-    <string name="fragment_more_tittle">More!</string>
-    <string name="terms_of_service">Terms of Service.</string>
-    <string name="code_of_conduct">Code of Conduct.</string>
-    <string name="more_apps">More apps.</string>
-    <string name="language">Language.</string>
-    <string name="language_default">Default Language.</string>
-    <string name="changelog">Changelog.</string>
-    <string name="normal">Normal!</string>
-    <string name="internet">Internet.</string>
-    <string name="settings">Settings!</string>
-    <string name="permissions">Permissions.</string>
-    <string name="language_sum">Set application language.</string>
+    <string name="ad">Ads</string>
+    <string name="terms_of_service">Terms of Service</string>
+    <string name="code_of_conduct">Code of Conduct</string>
+    <string name="more_apps">More apps…</string>
+    <string name="changelog">Changelog</string>
+    <string name="normal">Normal</string>
+    <string name="internet">Internet [INTERNET]</string>
+    <string name="settings">Settings</string>
+    <string name="permissions">Permissions</string>
     <string name="check_for_updates">Check for updates…</string>
     <string name="more">More</string>
     <string name="internet_sum">Used to send error reports.</string>
-    <string name="theme">Theme.</string>
+    <string name="theme">Theme</string>
     <string name="google_dev">Google Dev</string>
     <string name="libraries">Third Party Libraries</string>
     <string name="open_me">Open me :)</string>
-    <string name="privacy_policy">Privacy Policy.</string>
-    <string name="menu_home">Home!</string>
-    <string name="menu_about">About!</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_about">About</string>
     <string name="share">Share</string>
     <string name="share_subject">Try it now!!!</string>
-    <string name="share_using">Share using..</string>
+    <string name="share_using">Share using…</string>
     <string name="notifications">Notifications!</string>
-    <string name="support_me">Support me.</string>
-    <string name="support_me_sum">Click here if you want to support me without paying money. Just some time for viewing an add.</string>
+    <string name="support_me">Support me</string>
+    <string name="support_me_sum">Click here if you want to support me without paying money. Just some time for viewing an ad.</string>
     <string name="notifications_description">After you activate this app you will have a notification witch you can change the brightness intensity without open the app itself.</string>
-    <string name="license">License.</string>
-    <string name="changes" translatable="false"><b>Version 1.2_r1:\n</b>
-        • Added Romanian language;\n
-        • Added monochrome icon;\n
+    <string name="license">License</string>
+    <string name="runtime">Runtime</string>
+    <string name="schedule_exact_alarm">Schedule exact alarm [SCHEDULE_EXACT_ALARM]</string>
+    <string name="schedule_exact_alarm_sum">Used to show app notification.</string>
+    <string name="foreground_service">Foreground service [FOREGROUND_SERVICE]</string>
+    <string name="foreground_service_sum">Used to make app run in background and monitoring brightness.</string>
+    <string name="write_settings">Write settings [WRITE_SETTINGS]</string>
+    <string name="write_settings_sum">Used to have access for changing brightness.</string>
+    <string name="receive_boot_completed">Receive boot completed [RECEIVE_BOOT_COMPLETED]</string>
+    <string name="receive_boot_completed_sum">Used to make app boot.</string>
+    <string name="appearance">Appearance</string>
+    <string name="changes" translatable="false"><b>Version 1.3_r1:\n</b>
+        • Added language preferences (Android 13+);\n
+        • Fixed Firebase crashes;\n
+        • Fixed splash screen;\n
+        • Removed language section from settings;\n
         • Removed unused resources;\n
-        • Minor bug fixes;\n
-        • Minor tweaks;\n
+        • Bug fixes;\n
+        • Tweaks;\n
         • Under the hood improvements.
         <br> </br>
     </string>

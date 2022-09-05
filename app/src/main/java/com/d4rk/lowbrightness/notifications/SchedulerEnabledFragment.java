@@ -44,13 +44,12 @@ public class SchedulerEnabledFragment extends Fragment {
         });
         reloadButtonUIs();
         binding.bFrom.setOnClickListener(v -> {
-            final SharedPreferences sp = Prefs.get(requireContext());
-            final int scheduleFromHour = sp.getInt("scheduleFromHour", 20);
-            final int scheduleFromMinute = sp.getInt("scheduleFromMinute", 0);
+            final SharedPreferences sharedPreferences = Prefs.get(requireContext());
+            final int scheduleFromHour = sharedPreferences.getInt("scheduleFromHour", 20);
+            final int scheduleFromMinute = sharedPreferences.getInt("scheduleFromMinute", 0);
             TimePickerDialog dpd = TimePickerDialog.newInstance(
                     (view12, hourOfDay, minute, seconds) -> {
-                        Context ctx = view12.getContext();
-                        final SharedPreferences sp12 = Prefs.get(ctx);
+                        final SharedPreferences sp12 = Prefs.get(requireContext());
                         sp12.edit().putInt("scheduleFromHour", hourOfDay).putInt("scheduleFromMinute", minute).apply();
                         reloadButtonUIs();
                     },
@@ -61,13 +60,12 @@ public class SchedulerEnabledFragment extends Fragment {
             dpd.show(getFragmentManager(), "timepicker_dialog");
         });
         binding.bTo.setOnClickListener(v -> {
-            final SharedPreferences sp = Prefs.get(requireContext());
-            final int scheduleToHour = sp.getInt("scheduleToHour", 6);
-            final int scheduleToMinute = sp.getInt("scheduleToMinute", 0);
+            final SharedPreferences sharedPreferences = Prefs.get(requireContext());
+            final int scheduleToHour = sharedPreferences.getInt("scheduleToHour", 6);
+            final int scheduleToMinute = sharedPreferences.getInt("scheduleToMinute", 0);
             TimePickerDialog dpd = TimePickerDialog.newInstance(
                     (view1, hourOfDay, minute, seconds) -> {
-                        Context ctx = view1.getContext();
-                        final SharedPreferences sp1 = Prefs.get(ctx);
+                        final SharedPreferences sp1 = Prefs.get(requireContext());
                         sp1.edit().putInt("scheduleToHour", hourOfDay).putInt("scheduleToMinute", minute).apply();
                         reloadButtonUIs();
                     },
@@ -88,11 +86,11 @@ public class SchedulerEnabledFragment extends Fragment {
     }
     private void reloadButtonUIs() {
         if (getView() == null) return;
-        final SharedPreferences sp = Prefs.get(requireContext());
-        final int scheduleFromHour = sp.getInt("scheduleFromHour", 20);
-        final int scheduleFromMinute = sp.getInt("scheduleFromMinute", 0);
-        final int scheduleToHour = sp.getInt("scheduleToHour", 6);
-        final int scheduleToMinute = sp.getInt("scheduleToMinute", 0);
+        final SharedPreferences sharedPreferences = Prefs.get(requireContext());
+        final int scheduleFromHour = sharedPreferences.getInt("scheduleFromHour", 20);
+        final int scheduleFromMinute = sharedPreferences.getInt("scheduleFromMinute", 0);
+        final int scheduleToHour = sharedPreferences.getInt("scheduleToHour", 6);
+        final int scheduleToMinute = sharedPreferences.getInt("scheduleToMinute", 0);
         Calendar cNow = Calendar.getInstance();
         Calendar cStart = SchedulerService._getCalendarForStart(getContext());
         final Calendar cEnd = SchedulerService._getCalendarForEnd(getContext());
