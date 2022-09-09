@@ -8,6 +8,11 @@
             app:summary="@string/internet_sum"
             app:useSimpleSummaryProvider="true"
             app:iconSpaceReserved="false"/>
+        <androidx.preference.Preference
+            app:title="@string/ad_id"
+            app:summary="@string/ad_id_sum"
+            app:useSimpleSummaryProvider="true"
+            app:iconSpaceReserved="false"/>
     </androidx.preference.PreferenceCategory>
     <PreferenceCategory
         app:title="@string/runtime"
@@ -30,6 +35,11 @@
         <androidx.preference.Preference
             app:title="@string/receive_boot_completed"
             app:summary="@string/receive_boot_completed_sum"
+            app:useSimpleSummaryProvider="true"
+            app:iconSpaceReserved="false"/>
+        <androidx.preference.Preference
+            app:title="@string/system_alert_window"
+            app:summary="@string/system_alert_window_sum"
             app:useSimpleSummaryProvider="true"
             app:iconSpaceReserved="false"/>
     </PreferenceCategory>

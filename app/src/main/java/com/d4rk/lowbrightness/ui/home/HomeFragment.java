@@ -47,10 +47,10 @@ public class HomeFragment extends Fragment {
         final RequestDrawOverAppsPermission permissionRequester = new RequestDrawOverAppsPermission(getActivity());
         if (!permissionRequester.canDrawOverlays()) {
             AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
-            builder.setTitle("App needs permission!");
-            builder.setMessage("Applying a blue light filter to overlay the screen, requires a special permission called \"Display over other apps\". \n\nPlease, allow this permission on the next screen so that the blue light filter can be applied");
+            builder.setTitle(R.string.app_needs_permission_title);
+            builder.setMessage(R.string.app_needs_permission_message);
             builder.setCancelable(false);
-            builder.setPositiveButton("Allow permission", (dialog, id) -> {
+            builder.setPositiveButton(R.string.allow_permission, (dialog, id) -> {
                 dialog.cancel();
                 permissionRequester.requestPermissionDrawOverOtherApps();
             });

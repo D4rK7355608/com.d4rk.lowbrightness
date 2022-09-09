@@ -1,3 +1,13 @@
+# Version 1.4_r1:
+- Added Russian language support;
+- Added Indonesian language support;
+- Added missing permissions;
+- Fixed back button on permissions activity;
+- Fixed title on permissions activity;
+- Fixed GitHub about link;
+- Fixed Open source licenses not showing licenses;
+- Other minor tweaks.
+
 # Version 1.3_r1:
 - Added language preferences (Android 13+);
 - Fixed Firebase crashes;

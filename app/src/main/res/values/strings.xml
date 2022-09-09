@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name" translatable="false">Low Brightness</string>
     <string name="app_version">Version %1s</string>
+    <string name="app_description">Decrease or increase your screen brightness by using our app! 🔆</string>
     <string name="theme_def_value" translatable="false">MODE_NIGHT_FOLLOW_SYSTEM</string>
     <string name="license_sum" translatable="false">General Public License-3.0</string>
     <string name="github" translatable="false">GitHub</string>
     <string name="xda" translatable="false">XDA</string>
     <string name="twitter" translatable="false">Twitter</string>
     <string name="youtube" translatable="false">YouTube</string>
-    <string name="cool" translatable="false">Cool!</string>
     <string name="music_sleep_timer" translatable="false">Music Sleep Timer</string>
     <string name="qr_code_scanner" translatable="false">QR &amp; Bar Code Scanner</string>
     <string name="english_with_lidia" translatable="false">English with Lidia</string>
@@ -42,7 +42,6 @@
     <string name="internet_sum">Used to send error reports.</string>
     <string name="theme">Theme</string>
     <string name="google_dev">Google Dev</string>
-    <string name="libraries">Third Party Libraries</string>
     <string name="open_me">Open me :)</string>
     <string name="privacy_policy">Privacy Policy</string>
     <string name="menu_home">Home</string>
@@ -50,7 +49,6 @@
     <string name="share">Share</string>
     <string name="share_subject">Try it now!!!</string>
     <string name="share_using">Share using…</string>
-    <string name="notifications">Notifications!</string>
     <string name="support_me">Support me</string>
     <string name="support_me_sum">Click here if you want to support me without paying money. Just some time for viewing an ad.</string>
     <string name="notifications_description">After you activate this app you will have a notification witch you can change the brightness intensity without open the app itself.</string>
@@ -65,15 +63,25 @@
     <string name="receive_boot_completed">Receive boot completed [RECEIVE_BOOT_COMPLETED]</string>
     <string name="receive_boot_completed_sum">Used to make app boot.</string>
     <string name="appearance">Appearance</string>
-    <string name="changes" translatable="false"><b>Version 1.3_r1:\n</b>
-        • Added language preferences (Android 13+);\n
-        • Fixed Firebase crashes;\n
-        • Fixed splash screen;\n
-        • Removed language section from settings;\n
-        • Removed unused resources;\n
-        • Bug fixes;\n
-        • Tweaks;\n
-        • Under the hood improvements.
+    <string name="app_needs_permission_title">App needs permission</string>
+    <string name="app_needs_permission_message">Applying a color light filter to overlay the screen, requires a special permission called "Display over other apps" [SYSTEM_ALERT_WINDOW]. \n\nPlease, allow this permission on the next screen so that the blue light filter can be applied.</string>
+    <string name="allow_permission">Allow permission</string>
+    <string name="notification_title">Color light filter active</string>
+    <string name="notification_context">Tap to edit settings or disable</string>
+    <string name="ad_id">Ad id [AD_ID]</string>
+    <string name="ad_id_sum">Used to allow ads to be shown in Android 13+ devices.</string>
+    <string name="system_alert_window">System alert window [SYSTEM_ALERT_WINDOW]</string>
+    <string name="system_alert_window_sum">Used to allow app draw over other apps.</string>
+    <string name="changes" translatable="false"><b>Version 1.4_r1:\n</b>
+        • Added Russian language support;\n
+        • Added Indonesian language support;\n
+        • Added missing permissions;\n
+        • Added missing translations;\n
+        • Fixed back button on permissions activity;\n
+        • Fixed title on permissions activity;\n
+        • Fixed GitHub about link;\n
+        • Fixed Open source licenses not showing licenses;\n
+        • Other minor tweaks.
         <br> </br>
     </string>
 </resources>

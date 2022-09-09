@@ -84,7 +84,7 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
                         val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4rk.androidtutorials"))
                         startActivity(intent)
                     }
-                    alertDialog.setNegativeButton(R.string.cool, null)
+                    alertDialog.setNegativeButton(android.R.string.cancel, null)
                     alertDialog.show()
                     true
                 }
@@ -95,7 +95,7 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
                     val alertDialog: AlertDialog.Builder = AlertDialog.Builder(requireContext())
                     alertDialog.setTitle(R.string.changelog)
                     alertDialog.setMessage(R.string.changes)
-                    alertDialog.setNegativeButton(R.string.cool, null)
+                    alertDialog.setNegativeButton(android.R.string.cancel, null)
                     alertDialog.show()
                     true
                 }

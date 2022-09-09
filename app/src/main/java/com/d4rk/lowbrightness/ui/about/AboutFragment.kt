@@ -37,7 +37,7 @@ class AboutFragment : Fragment(R.layout.fragment_about) {
             startActivity(intent)
         }
         binding.itemSettingsMoreAboutGithub.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/D4rK7355608/com.d4rk.englishwithlidia.plus"))
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/D4rK7355608/com.d4rk.lowbrightness"))
             startActivity(intent)
         }
         binding.itemSettingsMoreAboutTwitter.setOnClickListener {
@@ -48,8 +48,7 @@ class AboutFragment : Fragment(R.layout.fragment_about) {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://forum.xda-developers.com/m/d4rk7355608.10095012"))
             startActivity(intent)
         }
-        binding.itemSettingsMoreAboutLibraries.setOnClickListener {
-            OssLicensesMenuActivity.setActivityTitle(getString(R.string.libraries))
+        binding.itemSettingsMoreAboutLicenses.setOnClickListener {
             val intent = Intent(activity, OssLicensesMenuActivity::class.java)
             startActivity(intent)
         }

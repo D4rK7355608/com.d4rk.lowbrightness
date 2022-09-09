@@ -69,7 +69,7 @@ public class OverlayService extends Service {
     }
     private void showNotification() {
         this.createNotificationChannel();
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID).setSmallIcon(R.drawable.ic_eye).setContentTitle("Blue light filter active").setContentText("Tap to edit settings or disable");
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID).setSmallIcon(R.drawable.ic_eye).setContentTitle(getResources().getString(R.string.notification_title)).setContentText(getResources().getString(R.string.notification_context));
         mBuilder.setOngoing(true);
         Intent resultIntent = new Intent(this, MainActivity.class);
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);

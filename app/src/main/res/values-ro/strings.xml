@@ -1,5 +1,6 @@
 <resources>
     <string name="app_version">Versiunea %1s</string>
+    <string name="app_description">Reduceți sau creșteți luminozitatea ecranului folosind aplicația noastră! 🔆</string>
     <string name="enable_scheduler">Activați programatorul</string>
     <string name="disable_scheduler">Dezactivați programatorul</string>
     <string name="enabled_only_during_this_interval">Activat numai în acest interval:</string>
@@ -30,7 +31,6 @@
     <string name="internet_sum">Folosit pentru a trimite rapoarte de eroare.</string>
     <string name="theme">Teme</string>
     <string name="google_dev">Google Dev</string>
-    <string name="libraries">Librării cu surse deschise.</string>
     <string name="open_me">Deschide-mă :)</string>
     <string name="privacy_policy">Politica de confidențialitate</string>
     <string name="menu_home">Acasă</string>
@@ -38,7 +38,6 @@
     <string name="share">Împărtășește</string>
     <string name="share_subject">Încercați acum!!!</string>
     <string name="share_using">Împărtășește folosind..</string>
-    <string name="notifications">Notificări!</string>
     <string name="support_me">Susține-mă</string>
     <string name="support_me_sum">Faceți clic aici dacă doriți să mă susțineți fără să plătiți bani. Doar ceva timp pentru vizualizarea unei reclame.</string>
     <string name="notifications_description">După ce activați această aplicație, veți avea o vrăjitoare de notificare, puteți schimba intensitatea luminozității fără a deschide aplicația în sine.</string>
@@ -53,4 +52,13 @@
     <string name="receive_boot_completed">Primire încărcare finalizată [RECEIVE_BOOT_COMPLETED]</string>
     <string name="receive_boot_completed_sum">Folosit pentru a porni aplicația odată cu telefonul.</string>
     <string name="appearance">Aparențe</string>
+    <string name="app_needs_permission_title">Aplicația necesită permisiunea</string>
+    <string name="app_needs_permission_message">Aplicarea unui filtru de lumină colorată pentru a suprapune ecranul necesită o permisiune specială numită „Afișare peste alte aplicații” [SYSTEM_ALERT_WINDOW]. \n\nVă rugăm să permiteți această permisiune pe ecranul următor, astfel încât filtrul de lumină albastră să poată fi aplicat.</string>
+    <string name="allow_permission">Permiteți permisiunea</string>
+    <string name="notification_title">Filtru de lumină color activ</string>
+    <string name="notification_context">Atingeți pentru a edita setările sau pentru a dezactiva</string>
+    <string name="ad_id">ID anunțuri [AD_ID]</string>
+    <string name="ad_id_sum">Folosit pentru a permite afișarea anunțurilor pe dispozitivele Android 13+.</string>
+    <string name="system_alert_window">Fereastra de alertă de sistem [SYSTEM_ALERT_WINDOW]</string>
+    <string name="system_alert_window_sum">Folosit pentru a permite atragerea aplicației peste alte aplicații.</string>
 </resources>
