@@ -1,3 +1,16 @@
+# Version 1.5_r1:
+- Added new predictive back gesture (Android 13+);
+- Added French language support;
+- Added Japanese language support;
+- Added Hindi language support;
+- Fixed feedback activity on split mode;
+- Fixed about activity on split mode;
+- Fixed notifications in Android 13+ devices;
+- Changed dialogs;
+- App size should be smaller;
+- Other UI tweaks;
+- Under the hood improvements.
+
 # Version 1.4_r1:
 - Added Russian language support;
 - Added Indonesian language support;

@@ -61,4 +61,6 @@
     <string name="ad_id_sum">Folosit pentru a permite afișarea anunțurilor pe dispozitivele Android 13+.</string>
     <string name="system_alert_window">Fereastra de alertă de sistem [SYSTEM_ALERT_WINDOW]</string>
     <string name="system_alert_window_sum">Folosit pentru a permite atragerea aplicației peste alte aplicații.</string>
+    <string name="post_notifications">Postarea notificărior [POST_NOTIFICATIONS]</string>
+    <string name="post_notifications_sum">Folosit pentru a permite notificări de afișare a aplicațiilor pe dispozitivele Android 13+.</string>
 </resources>

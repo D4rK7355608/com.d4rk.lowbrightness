@@ -12,14 +12,24 @@ import com.d4rk.lowbrightness.R
 import com.d4rk.lowbrightness.databinding.FragmentAboutBinding
 import com.d4rk.lowbrightness.ui.viewmodel.ViewModel
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
+import me.zhanghai.android.fastscroll.FastScrollerBuilder
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
 class AboutFragment : Fragment(R.layout.fragment_about) {
     private lateinit var _binding: FragmentAboutBinding
     private val binding get() = _binding
+    private val calendar: Calendar = Calendar.getInstance()
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         ViewModelProvider(this)[ViewModel::class.java]
         _binding = FragmentAboutBinding.inflate(inflater, container, false)
+        FastScrollerBuilder(binding.scrollView).useMd2Style().build()
         val content = requireContext().getString(R.string.app_version, BuildConfig.VERSION_NAME)
         binding.itemSettingsMoreAboutVersion.text = content
+        val simpleDateFormat = SimpleDateFormat("yyyy", Locale.getDefault())
+        val dateText = simpleDateFormat.format(calendar.time)
+        val copyright = requireContext().getString(R.string.copyright, dateText)
+        binding.copyright.text = copyright
         binding.itemSettingsMoreAboutIcon.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://sites.google.com/view/d4rk7355608"))
             startActivity(intent)

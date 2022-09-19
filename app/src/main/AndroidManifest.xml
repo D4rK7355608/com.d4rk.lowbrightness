@@ -4,6 +4,7 @@
     package="com.d4rk.lowbrightness">
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
@@ -24,6 +25,7 @@
         android:logo="@drawable/ic_launcher_foreground"
         android:banner="@drawable/ic_toolbar_background"
         android:supportsRtl="true"
+        android:enableOnBackInvokedCallback="true"
         android:resizeableActivity="true"
         android:appCategory="productivity"
         android:theme="@style/AppThemeActionBar"
@@ -86,5 +88,8 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-5294151573817700~8302025955"/>
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true"/>
     </application>
 </manifest>

@@ -31,6 +31,7 @@
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/menu/main.xml" value="0.25104166666666666" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/mipmap-anydpi/ic_launcher.xml" value="0.1625" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/LowBrightness/app/src/main/res/xml/about.xml" value="0.2" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/about_illustration.xml" value="0.16" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/background_brightness.xml" value="0.208" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/card.xml" value="0.179" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_changelog.xml" value="0.2075" />
@@ -47,6 +48,7 @@
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_feedback_card.xml" value="0.2075" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_gamejolt.xml" value="0.219" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_github.xml" value="0.219" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_gmail.xml" value="0.1625" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_language.xml" value="0.219" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_launcher_foreground.xml" value="0.22" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_launcher_foreground_android_studio_tutorials.xml" value="0.219" />
@@ -60,7 +62,7 @@
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_menu_share.xml" value="0.208" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_menu_slideshow.xml" value="0.219" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_more.xml" value="0.219" />
-        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_notification.xml" value="0.219" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_notification.xml" value="0.15" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_patreon.xml" value="0.219" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_permissions.xml" value="0.219" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_play_store.xml" value="0.219" />
@@ -75,6 +77,7 @@
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_terms_of_service.xml" value="0.219" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_theme.xml" value="0.219" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_toolbar_background.xml" value="0.179" />
+        <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_twitter.xml" value="0.116" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_verified.xml" value="0.219" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_xda.xml" value="0.219" />
         <entry key="..\:/Users/d4rk7/AndroidStudioProjects/com.d4rk.lowbrightness/app/src/main/res/drawable-anydpi/ic_youtube.xml" value="0.219" />

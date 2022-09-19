@@ -61,4 +61,6 @@
     <string name="ad_id_sum">Digunakan untuk mengizinkan iklan ditampilkan di perangkat Android 13+.</string>
     <string name="system_alert_window">Jendela peringatan sistem [SYSTEM_ALERT_WINDOW]</string>
     <string name="system_alert_window_sum">Digunakan untuk mengizinkan aplikasi menggambar di atas aplikasi lain.</string>
+    <string name="post_notifications">Posting pemberitahuan [POST_NOTIFICATIONS]</string>
+    <string name="post_notifications_sum">Digunakan untuk mengizinkan pemberitahuan acara aplikasi di perangkat Android 13+.</string>
 </resources>

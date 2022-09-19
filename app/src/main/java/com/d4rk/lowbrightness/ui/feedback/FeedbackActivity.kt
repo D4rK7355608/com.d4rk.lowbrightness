@@ -9,6 +9,7 @@ import com.d4rk.lowbrightness.R
 import com.d4rk.lowbrightness.databinding.ActivityFeedbackBinding
 import com.google.android.play.core.review.ReviewManager
 import com.google.android.play.core.review.ReviewManagerFactory
+import me.zhanghai.android.fastscroll.FastScrollerBuilder
 class FeedbackActivity : AppCompatActivity() {
     private lateinit var reviewManager: ReviewManager
     private lateinit var binding: ActivityFeedbackBinding
@@ -16,6 +17,7 @@ class FeedbackActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityFeedbackBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        FastScrollerBuilder(binding.scrollView).useMd2Style().build()
         init()
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

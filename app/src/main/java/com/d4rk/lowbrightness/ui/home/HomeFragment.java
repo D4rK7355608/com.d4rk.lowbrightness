@@ -48,6 +48,7 @@ public class HomeFragment extends Fragment {
         if (!permissionRequester.canDrawOverlays()) {
             AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
             builder.setTitle(R.string.app_needs_permission_title);
+            builder.setIcon(R.drawable.ic_eye);
             builder.setMessage(R.string.app_needs_permission_message);
             builder.setCancelable(false);
             builder.setPositiveButton(R.string.allow_permission, (dialog, id) -> {

@@ -61,4 +61,6 @@
     <string name="ad_id_sum">Используется для разрешения показа рекламы на устройствах Android 13+..</string>
     <string name="system_alert_window">Окно системного оповещения [SYSTEM_ALERT_WINDOW]</string>
     <string name="system_alert_window_sum">Используется, чтобы позволить приложению рисовать поверх других приложений.</string>
+    <string name="post_notifications">Post notifications [POST_NOTIFICATIONS]</string>
+    <string name="post_notifications_sum">Used to allow app show notifications on Android 13+ devices.</string>
 </resources>

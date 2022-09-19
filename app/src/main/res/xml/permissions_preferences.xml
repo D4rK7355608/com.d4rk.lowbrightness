@@ -13,6 +13,11 @@
             app:summary="@string/ad_id_sum"
             app:useSimpleSummaryProvider="true"
             app:iconSpaceReserved="false"/>
+        <androidx.preference.Preference
+            app:title="@string/post_notifications"
+            app:summary="@string/post_notifications_sum"
+            app:useSimpleSummaryProvider="true"
+            app:iconSpaceReserved="false"/>
     </androidx.preference.PreferenceCategory>
     <PreferenceCategory
         app:title="@string/runtime"

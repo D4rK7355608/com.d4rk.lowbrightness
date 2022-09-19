@@ -2,6 +2,7 @@
     <string name="app_name" translatable="false">Low Brightness</string>
     <string name="app_version">Version %1s</string>
     <string name="app_description">Decrease or increase your screen brightness by using our app! 🔆</string>
+    <string name="copyright" translatable="false">© Copyright %1s made by D4rK!</string>
     <string name="theme_def_value" translatable="false">MODE_NIGHT_FOLLOW_SYSTEM</string>
     <string name="license_sum" translatable="false">General Public License-3.0</string>
     <string name="github" translatable="false">GitHub</string>
@@ -72,16 +73,20 @@
     <string name="ad_id_sum">Used to allow ads to be shown in Android 13+ devices.</string>
     <string name="system_alert_window">System alert window [SYSTEM_ALERT_WINDOW]</string>
     <string name="system_alert_window_sum">Used to allow app draw over other apps.</string>
-    <string name="changes" translatable="false"><b>Version 1.4_r1:\n</b>
-        • Added Russian language support;\n
-        • Added Indonesian language support;\n
-        • Added missing permissions;\n
-        • Added missing translations;\n
-        • Fixed back button on permissions activity;\n
-        • Fixed title on permissions activity;\n
-        • Fixed GitHub about link;\n
-        • Fixed Open source licenses not showing licenses;\n
-        • Other minor tweaks.
-        <br> </br>
+    <string name="post_notifications">Post notifications [POST_NOTIFICATIONS]</string>
+    <string name="post_notifications_sum">Used to allow app show notifications on Android 13+ devices.</string>
+    <string name="changelog_title" translatable="false">Changelog - Version %1s</string>
+    <string name="changes" translatable="false">\n
+        • Added new predictive back gesture (Android 13+);\n
+        • Added French language support;\n
+        • Added Japanese language support;\n
+        • Added Hindi language support;\n
+        • Fixed feedback activity on split mode;\n
+        • Fixed about activity on split mode;\n
+        • Fixed notifications in Android 13+ devices;\n
+        • Changed dialogs;\n
+        • App size should be smaller;\n
+        • Other UI tweaks;\n
+        • Under the hood improvements.
     </string>
 </resources>

@@ -21,11 +21,6 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="postSplashScreenTheme">@style/AppTheme</item>
     </style>
-    <style name="DialogTheme" parent="Theme.Material3.DayNight.Dialog.Alert">
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="colorPrimary">@color/colorAccent</item>
-        <item name="android:colorBackground">@color/colorDialogBackground</item>
-    </style>
     <style name="ActionBarTheme" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="background">@android:color/transparent</item>
     </style>
@@ -47,15 +42,11 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
     <style name="DiscreteSeekBar" parent="Widget.DiscreteSeekBar">
         <item name="dsb_progressColor">@color/colorAccent</item>
         <item name="dsb_trackColor">@color/colorAccent</item>
         <item name="dsb_indicatorColor">@color/colorAccent</item>
-    </style>
-    <style name="SchedulerCaption" parent="Base.TextAppearance.AppCompat.Subhead">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
     </style>
     <style name="Divider">
         <item name="android:layout_width">match_parent</item>

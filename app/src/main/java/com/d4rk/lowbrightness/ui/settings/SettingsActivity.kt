@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceManager
+import com.d4rk.lowbrightness.BuildConfig
 import com.d4rk.lowbrightness.R
 import com.d4rk.lowbrightness.databinding.SettingsActivityBinding
 import com.google.android.material.textview.MaterialTextView
@@ -45,6 +46,7 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
                 moreApps.onPreferenceClickListener = Preference.OnPreferenceClickListener {
                     val alertDialog: AlertDialog.Builder = AlertDialog.Builder(requireContext())
                     alertDialog.setTitle(R.string.more_apps)
+                    alertDialog.setIcon(R.drawable.ic_shop)
                     val view: View = layoutInflater.inflate(R.layout.fragment_dialog, null)
                     val musicSleepTimerString: MaterialTextView = view.findViewById(R.id.musicSleepTimerString)
                     val englishWithLidiaString: MaterialTextView = view.findViewById(R.id.englishWithLidiaString)
@@ -93,7 +95,9 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
             if (changelog != null) {
                 changelog.onPreferenceClickListener = Preference.OnPreferenceClickListener {
                     val alertDialog: AlertDialog.Builder = AlertDialog.Builder(requireContext())
-                    alertDialog.setTitle(R.string.changelog)
+                    val content = requireContext().getString(R.string.changelog_title, BuildConfig.VERSION_NAME)
+                    alertDialog.setIcon(R.drawable.ic_changelog)
+                    alertDialog.setTitle(content)
                     alertDialog.setMessage(R.string.changes)
                     alertDialog.setNegativeButton(android.R.string.cancel, null)
                     alertDialog.show()

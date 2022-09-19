@@ -13,10 +13,7 @@
         <item name="discreteSeekBarStyle">@style/DiscreteSeekBar</item>
         <item name="actionOverflowMenuStyle">@style/OverflowMenuTheme</item>
     </style>
-    <style name="DialogTheme" parent="Theme.Material3.DayNight.Dialog.Alert">
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="colorPrimary">@color/colorAccent</item>
-        <item name="android:colorBackground">@color/colorDialogBackground</item>
+    <style name="DialogTheme" parent="ThemeOverlay.Material3.MaterialAlertDialog.Centered">
         <item name="android:dialogCornerRadius">24dp</item>
     </style>
 </resources>

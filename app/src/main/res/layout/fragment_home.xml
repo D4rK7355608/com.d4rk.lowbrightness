@@ -148,6 +148,7 @@
                     android:id="@+id/llSchedulerContainer"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:animateLayoutChanges="true"
                     android:padding="16dp"
                     android:orientation="vertical"/>
                 </LinearLayout>
