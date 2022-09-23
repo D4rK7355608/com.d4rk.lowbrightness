@@ -27,6 +27,8 @@ import com.d4rk.lowbrightness.databinding.FragmentHomeBinding;
 import com.d4rk.lowbrightness.helpers.RequestDrawOverAppsPermission;
 import com.d4rk.lowbrightness.services.SchedulerService;
 import com.d4rk.lowbrightness.ui.views.SquareImageView;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.MobileAds;
 import com.thebluealliance.spectrum.SpectrumDialog;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +46,9 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View root, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(root, savedInstanceState);
+        MobileAds.initialize(requireContext());
+        AdRequest adRequest = new AdRequest.Builder().build();
+        binding.adView.loadAd(adRequest);
         final RequestDrawOverAppsPermission permissionRequester = new RequestDrawOverAppsPermission(getActivity());
         if (!permissionRequester.canDrawOverlays()) {
             AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
@@ -176,5 +181,21 @@ public class HomeFragment extends Fragment {
             this.selectedPosition = selectedPosition;
             notifyDataSetChanged();
         }
+
+    }
+    @Override
+    public void onPause() {
+        binding.adView.pause();
+        super.onPause();
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        binding.adView.resume();
+    }
+    @Override
+    public void onDestroy() {
+        binding.adView.destroy();
+        super.onDestroy();
     }
 }

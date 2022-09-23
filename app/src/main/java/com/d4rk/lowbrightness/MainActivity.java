@@ -18,9 +18,6 @@ import com.d4rk.lowbrightness.helpers.RequestDrawOverAppsPermission;
 import com.d4rk.lowbrightness.notifications.SchedulerDisabledFragment;
 import com.d4rk.lowbrightness.notifications.SchedulerEnabledFragment;
 import com.d4rk.lowbrightness.services.OverlayService;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.FirebaseApp;
@@ -28,20 +25,15 @@ public class MainActivity extends AppCompatActivity implements IShowHideSchedule
     private AppBarConfiguration mAppBarConfiguration;
     private RequestDrawOverAppsPermission permissionRequester;
     private SharedPreferences sharedPreferences;
-    private AdView adView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SplashScreen.installSplashScreen(this);
-        MobileAds.initialize(this);
         FirebaseApp.initializeApp(this);
         ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setSupportActionBar(binding.appBarMain.toolbar);
         sharedPreferences = Prefs.get(getBaseContext());
-        adView = findViewById(R.id.ad_view);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_about, R.id.nav_settings).setOpenableLayout(drawer).build();
@@ -53,9 +45,6 @@ public class MainActivity extends AppCompatActivity implements IShowHideSchedule
     protected void onResume() {
         super.onResume();
         permissionRequester = new RequestDrawOverAppsPermission(this);
-        if (adView != null) {
-            adView.resume();
-        }
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -74,16 +63,10 @@ public class MainActivity extends AppCompatActivity implements IShowHideSchedule
     @Override
     protected void onPause() {
         Application.refreshServices(getBaseContext());
-        if (adView != null) {
-            adView.pause();
-        }
         super.onPause();
     }
     @Override
     protected void onDestroy() {
-        if (adView != null) {
-            adView.destroy();
-        }
         super.onDestroy();
     }
     @Override

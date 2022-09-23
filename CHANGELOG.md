@@ -1,3 +1,8 @@
+# Version 1.5.1_r1-debug:
+- Minor code cleanup;
+- Minor tweaks;
+- Under the hood improvements.
+
 # Version 1.5_r1:
 - Added new predictive back gesture (Android 13+);
 - Added French language support;

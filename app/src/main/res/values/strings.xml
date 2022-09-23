@@ -77,16 +77,8 @@
     <string name="post_notifications_sum">Used to allow app show notifications on Android 13+ devices.</string>
     <string name="changelog_title" translatable="false">Changelog - Version %1s</string>
     <string name="changes" translatable="false">\n
-        • Added new predictive back gesture (Android 13+);\n
-        • Added French language support;\n
-        • Added Japanese language support;\n
-        • Added Hindi language support;\n
-        • Fixed feedback activity on split mode;\n
-        • Fixed about activity on split mode;\n
-        • Fixed notifications in Android 13+ devices;\n
-        • Changed dialogs;\n
-        • App size should be smaller;\n
-        • Other UI tweaks;\n
+        • Minor code cleanup;\n
+        • Minor tweaks;\n
         • Under the hood improvements.
     </string>
 </resources>

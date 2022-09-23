@@ -7,12 +7,12 @@ plugins {
 }
 android {
     compileSdk 33
-    def tagName = '1.5_r1'
+    def tagName = '1.5.1_r1'
     defaultConfig {
         applicationId "com.d4rk.lowbrightness"
         minSdk 26
         targetSdk 33
-        versionCode 16
+        versionCode 18
         versionName tagName
         buildConfigField "String", "VERSION_NAME", "\"${tagName}\""
         archivesBaseName = "com.d4rk.lowbrightness-v${tagName}"
@@ -43,6 +43,11 @@ android {
     buildFeatures {
         viewBinding true
         buildConfig true
+    }
+    bundle {
+        storeArchive {
+            enable = false
+        }
     }
 }
 dependencies {
