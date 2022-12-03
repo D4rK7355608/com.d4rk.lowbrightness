@@ -27,7 +27,7 @@ class FeedbackActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.dev_mail -> {
             val email = Intent(Intent.ACTION_SEND)
-            email.type = "text/email"
+            email.type = "email"
             email.putExtra(Intent.EXTRA_EMAIL, arrayOf("d4rk7355608@gmail.com"))
             email.putExtra(Intent.EXTRA_SUBJECT, "Feedback for Android Studio Tutorials")
             email.putExtra(Intent.EXTRA_TEXT, "Dear developer, ")
@@ -39,9 +39,9 @@ class FeedbackActivity : AppCompatActivity() {
     }
     private fun init() {
         reviewManager = ReviewManagerFactory.create(this)
-        binding.btnRateNow.setOnClickListener {
+        binding.buttonRateNow.setOnClickListener {
             showRateDialog()
-            Toast.makeText(this@FeedbackActivity, R.string.feedback_toast, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.feedback_toast, Toast.LENGTH_SHORT).show()
         }
     }
     @Suppress("NAME_SHADOWING")
@@ -52,14 +52,7 @@ class FeedbackActivity : AppCompatActivity() {
                 val reviewInfo = request.result
                 val flow = reviewManager.launchReviewFlow(this, reviewInfo)
                 flow.addOnCompleteListener {
-                    // The flow has finished. The API does not indicate whether the user
-                    // reviewed or not, or even whether the review dialog was shown. Thus, no
-                    // matter the result, we continue our app flow.
                 }
-            } else {
-                // There was some problem, continue regardless of the result.
-                // you can show your own rate dialog alert and redirect user to your app page
-                // on play store.
             }
         }
     }

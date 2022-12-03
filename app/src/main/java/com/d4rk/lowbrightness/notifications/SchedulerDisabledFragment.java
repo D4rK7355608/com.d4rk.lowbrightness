@@ -16,7 +16,7 @@ public class SchedulerDisabledFragment extends Fragment {
     @Override
     public View onCreateView (@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         com.d4rk.lowbrightness.databinding.FragmentSchedulerDisabledBinding binding = FragmentSchedulerDisabledBinding.inflate(inflater, container, false);
-        binding.bSchedule.setOnClickListener(v -> {
+        binding.buttonSchedule.setOnClickListener(v -> {
             SchedulerService.enable(getContext());
             bridge.showOrHideSchedulerUI(true);
         });

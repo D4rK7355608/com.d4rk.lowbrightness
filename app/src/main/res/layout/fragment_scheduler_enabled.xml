@@ -10,7 +10,8 @@
         android:layout_height="wrap_content"
         android:text="@string/scheduler_description"/>
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/bSchedule"
+        style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+        android:id="@+id/button_schedule"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -26,20 +27,22 @@
         android:gravity="center"
         android:text="@string/enabled_only_during_this_interval"/>
     <LinearLayout
-        android:id="@+id/llWrapHourPickers"
+        android:id="@+id/linear_layout_hours_picker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="2">
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/bFrom"
+            style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+            android:id="@+id/button_hour_from"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="20:00"
             tools:ignore="HardcodedText"/>
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/bTo"
+            style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+            android:id="@+id/button_hour_to"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -47,8 +50,8 @@
             tools:ignore="HardcodedText"/>
     </LinearLayout>
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvTimeRemaining"
-        style="@style/Base.TextAppearance.AppCompat.Body2"
+        android:id="@+id/text_view_time_remaining"
+        style="@style/FontTheme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"

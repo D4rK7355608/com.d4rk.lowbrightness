@@ -38,14 +38,26 @@ GitHub: https://github.com/D4rK7355608/lowbrightness
 🛑 Disclaimer!
 • This app it have a background service. Background service runs for keeping brightness at selected level.
 
-👨‍💻 More about me:
-● Google Developers - https://developers.google.com/profile/u/D4rK7355608
-● XDA - https://forum.xda-developers.com/m/d4rk7355608.10095012/
-● YouTube - https://www.youtube.com/c/D4rK7355608
-● DeviantArt - https://www.deviantart.com/d4rk7355608
-● GameJolt - https://gamejolt.com/@D4rK_S-A-D
-● Twitter - https://twitter.com/D4rK7355608/
-● GitHub - https://github.com/D4rK7355608
+👨‍💻 More about me!
+● Music:
+⇨ YouTube Music: https://music.youtube.com/channel/UCb2zXzO03OM7U9xeIsqqEQw
+⇨ Spotify: https://open.spotify.com/artist/5Q58DBSe2tpBb3qqq9WVfo
+⇨ Deezer: https://www.deezer.com/us/artist/408659
+⇨ SoundCloud: https://soundcloud.com/d4rk7355608
+⇨ BandLab: https://www.bandlab.com/d4rk7355608
+
+● Graphics:
+⇨ DeviantArt: www.deviantart.com/d4rk7355608
+
+● Social:
+⇨ Twitter - https://twitter.com/D4rK7355608
+⇨ YouTube - https://www.youtube.com/c/D4rK7355608
+⇨ GameJolt - https://gamejolt.com/@D4rK_S-A-D
+
+● Dev:
+⇨ Google Developers - https://developers.google.com/profile/u/D4rK7355608
+⇨ XDA - https://forum.xda-developers.com/m/d4rk7355608.10095012
+⇨ GitHub - https://github.com/D4rK7355608
 
 💬 Feedback!
 If you have any suggested features or improvement, please leave a comment. In case something is not working correctly please let me know. When posting low rating please describe what is wrong to give the possibility to fix that issue.

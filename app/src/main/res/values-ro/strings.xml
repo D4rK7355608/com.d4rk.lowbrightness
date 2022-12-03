@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_version">Versiunea %1s</string>
+    <string name="app_version">Versiunea %1$s (%2$d)</string>
     <string name="app_description">Reduceți sau creșteți luminozitatea ecranului folosind aplicația noastră! 🔆</string>
     <string name="enable_scheduler">Activați programatorul</string>
     <string name="disable_scheduler">Dezactivați programatorul</string>
@@ -40,7 +40,6 @@
     <string name="share_using">Împărtășește folosind..</string>
     <string name="support_me">Susține-mă</string>
     <string name="support_me_sum">Faceți clic aici dacă doriți să mă susțineți fără să plătiți bani. Doar ceva timp pentru vizualizarea unei reclame.</string>
-    <string name="notifications_description">După ce activați această aplicație, veți avea o vrăjitoare de notificare, puteți schimba intensitatea luminozității fără a deschide aplicația în sine.</string>
     <string name="license">Licență</string>
     <string name="runtime">Timp de rulare</string>
     <string name="schedule_exact_alarm">Programați alarma exactă [SCHEDULE_EXACT_ALARM]</string>
@@ -63,4 +62,19 @@
     <string name="system_alert_window_sum">Folosit pentru a permite atragerea aplicației peste alte aplicații.</string>
     <string name="post_notifications">Postarea notificărior [POST_NOTIFICATIONS]</string>
     <string name="post_notifications_sum">Folosit pentru a permite notificări de afișare a aplicațiilor pe dispozitivele Android 13+.</string>
+    <string name="made_in">Făcut cu ❤ în Romania!</string>
+    <string name="copyright">© Copyright %1s, realizat de D4rK!</string>
+    <string name="app_updates">Actualizări ale aplicației</string>
+    <string name="subscribe_to_beta">Abonați-vă la actualizările beta</string>
+    <string name="agree">De acord</string>
+    <string name="browse_terms_of_service_and_privacy_policy">Răsfoiți <i><u>Termenii și condițiile</u></i> și <i><u>Politica de confidențialitate</u></i></string>
+    <string name="browse_terms_of_service_and_privacy_policy_sum">Pentru a continua, citiți și acceptați Termenii și condițiile și Politica de confidențialitate.</string>
+    <string name="welcome">Bine ati venit</string>
+    <string name="copied_to_clipboard">Copiat în clipboard!</string>
+    <string name="privacy_and_security">Confidențialitate și securitate</string>
+    <string name="language">Limbi</string>
+    <string name="system_default">Implicit in sistem</string>
+    <string name="current_language">Limba curentă a aplicației este %1$s!</string>
+    <string name="recommended">Recomandat</string>
+    <string name="all_languages">Toate limbile</string>
 </resources>

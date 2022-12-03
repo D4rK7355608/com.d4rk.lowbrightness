@@ -17,5 +17,6 @@
         <item name="alertDialogTheme">@style/DialogTheme</item>
         <item name="discreteSeekBarStyle">@style/DiscreteSeekBar</item>
         <item name="actionOverflowMenuStyle">@style/OverflowMenuTheme</item>
+        <item name="android:fontFamily">@font/font_poppins</item>
     </style>
 </resources>

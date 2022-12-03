@@ -19,7 +19,7 @@ import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.TimeZone;
-@SuppressWarnings("deprecation")
+@SuppressWarnings({"deprecation", "ConstantConditions"})
 public class SchedulerEnabledFragment extends Fragment {
     private FragmentSchedulerEnabledBinding binding;
     private IShowHideScheduler bridge;
@@ -38,16 +38,16 @@ public class SchedulerEnabledFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        binding.bSchedule.setOnClickListener(v -> {
+        binding.buttonSchedule.setOnClickListener(v -> {
             SchedulerService.disable(getContext());
             bridge.showOrHideSchedulerUI(false);
         });
         reloadButtonUIs();
-        binding.bFrom.setOnClickListener(v -> {
+        binding.buttonHourFrom.setOnClickListener(v -> {
             final SharedPreferences sharedPreferences = Prefs.get(requireContext());
             final int scheduleFromHour = sharedPreferences.getInt("scheduleFromHour", 20);
             final int scheduleFromMinute = sharedPreferences.getInt("scheduleFromMinute", 0);
-            TimePickerDialog dpd = TimePickerDialog.newInstance(
+            TimePickerDialog dialogTimePicker = TimePickerDialog.newInstance(
                     (view12, hourOfDay, minute, seconds) -> {
                         final SharedPreferences sp12 = Prefs.get(requireContext());
                         sp12.edit().putInt("scheduleFromHour", hourOfDay).putInt("scheduleFromMinute", minute).apply();
@@ -57,13 +57,13 @@ public class SchedulerEnabledFragment extends Fragment {
                     scheduleFromMinute,
                     true
             );
-            dpd.show(getFragmentManager(), "timepicker_dialog");
+            dialogTimePicker.show(getFragmentManager(), "timepicker_dialog");
         });
-        binding.bTo.setOnClickListener(v -> {
+        binding.buttonHourTo.setOnClickListener(v -> {
             final SharedPreferences sharedPreferences = Prefs.get(requireContext());
             final int scheduleToHour = sharedPreferences.getInt("scheduleToHour", 6);
             final int scheduleToMinute = sharedPreferences.getInt("scheduleToMinute", 0);
-            TimePickerDialog dpd = TimePickerDialog.newInstance(
+            TimePickerDialog dialogTimePicker = TimePickerDialog.newInstance(
                     (view1, hourOfDay, minute, seconds) -> {
                         final SharedPreferences sp1 = Prefs.get(requireContext());
                         sp1.edit().putInt("scheduleToHour", hourOfDay).putInt("scheduleToMinute", minute).apply();
@@ -73,7 +73,7 @@ public class SchedulerEnabledFragment extends Fragment {
                     scheduleToMinute,
                     true
             );
-            dpd.show(getFragmentManager(), "timepicker_dialog");
+            dialogTimePicker.show(getFragmentManager(), "timepicker_dialog");
         });
     }
     @Override
@@ -99,13 +99,13 @@ public class SchedulerEnabledFragment extends Fragment {
         }
         final String time_remaining_to_darken_label = getResources().getString(R.string.time_remaining_to_darken_label);
         final String time_remaining_to_lighten_label = getResources().getString(R.string.time_remaining_to_lighten_label);
-        binding.tvTimeRemaining.setVisibility(View.VISIBLE);
+        binding.textViewTimeRemaining.setVisibility(View.VISIBLE);
         if (cNow.getTimeInMillis() > cStart.getTimeInMillis() && cNow.getTimeInMillis() < cEnd.getTimeInMillis()) {
             long remainingMillisToLighten = cEnd.getTimeInMillis() - cNow.getTimeInMillis();
             timer = new CountDownTimer(remainingMillisToLighten, 1000) {
                 public void onTick(long millisUntilFinished) {
                     String t = time_remaining_to_lighten_label + ": " + String.format(Locale.getDefault(), "%tT", (millisUntilFinished - TimeZone.getDefault().getRawOffset()));
-                    binding.tvTimeRemaining.setText(t);
+                    binding.textViewTimeRemaining.setText(t);
                 }
                 public void onFinish() {
                     reloadButtonUIs();
@@ -116,17 +116,17 @@ public class SchedulerEnabledFragment extends Fragment {
             timer = new CountDownTimer(remainingMillisToDarken, 1000) {
                 public void onTick(long millisUntilFinished) {
                     String t = time_remaining_to_darken_label + ": " + String.format(Locale.getDefault(), "%tT", (millisUntilFinished - TimeZone.getDefault().getRawOffset()));
-                    binding.tvTimeRemaining.setText(t);
+                    binding.textViewTimeRemaining.setText(t);
                 }
                 public void onFinish() {
                     reloadButtonUIs();
                 }
             }.start();
         } else {
-            binding.tvTimeRemaining.setVisibility(View.GONE);
+            binding.textViewTimeRemaining.setVisibility(View.GONE);
         }
-        binding.bFrom.setText(String.format(Locale.getDefault(), "%02d:%02d", scheduleFromHour, scheduleFromMinute));
-        binding.bTo.setText(String.format(Locale.getDefault(), "%02d:%02d", scheduleToHour, scheduleToMinute));
+        binding.buttonHourFrom.setText(String.format(Locale.getDefault(), "%02d:%02d", scheduleFromHour, scheduleFromMinute));
+        binding.buttonHourTo.setText(String.format(Locale.getDefault(), "%02d:%02d", scheduleToHour, scheduleToMinute));
         if (getContext() != null) {
             Application.refreshServices(getContext());
         }

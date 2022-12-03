@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_version">संस्करण% 1s</string>
+    <string name="app_version">संस्करण %1$s (%2$d)</string>
     <string name="app_description">हमारे ऐप का उपयोग करके अपनी स्क्रीन की चमक कम करें या बढ़ाएं! मैं</string>
     <string name="enable_scheduler">अनुसूचक सक्षम करें</string>
     <string name="disable_scheduler">अनुसूचक अक्षम करें</string>
@@ -40,7 +40,6 @@
     <string name="share_using">का उपयोग करके साझा करें…</string>
     <string name="support_me">मुझे समर्थन करो</string>
     <string name="support_me_sum">अगर आप बिना पैसे दिए मुझे सपोर्ट करना चाहते हैं तो यहां क्लिक करें। विज्ञापन देखने के लिए बस कुछ समय है।</string>
-    <string name="notifications_description">इस ऐप को सक्रिय करने के बाद आपके पास एक अधिसूचना चुड़ैल होगी, आप ऐप को खोले बिना ही चमक की तीव्रता को बदल सकते हैं।</string>
     <string name="license">लाइसेंस</string>
     <string name="runtime">क्रम</string>
     <string name="schedule_exact_alarm">सटीक अलार्म शेड्यूल करें [SCHEDULE_EXACT_ALARM]</string>
@@ -63,4 +62,19 @@
     <string name="system_alert_window_sum">ऐप को अन्य ऐप्स पर आकर्षित करने की अनुमति देने के लिए प्रयुक्त होता है।</string>
     <string name="post_notifications">सूचनाएं पोस्ट करें [POST_NOTIFICATIONS]</string>
     <string name="post_notifications_sum">Android 13+ डिवाइस पर ऐप शो नोटिफिकेशन की अनुमति देने के लिए उपयोग किया जाता है।</string>
+    <string name="made_in">रोमानिया में ❤ के साथ बनाया गया!</string>
+    <string name="copyright">© कॉपीराइट% 1s, D4rK द्वारा बनाया गया!</string>
+    <string name="app_updates">ऐप अपडेट</string>
+    <string name="subscribe_to_beta">बीटा अपडेट की सदस्यता लें</string>
+    <string name="agree">इस बात से सहमत</string>
+    <string name="browse_terms_of_service_and_privacy_policy"><i><u>सेवा की शर्तें</u></i> और <i><u>गोपनीयता नीति</u></i> ब्राउज़ करें</string>
+    <string name="browse_terms_of_service_and_privacy_policy_sum">जारी रखने के लिए हमारी सेवा की शर्तें और गोपनीयता नीति पढ़ें और सहमत हों।</string>
+    <string name="welcome">स्वागत</string>
+    <string name="copied_to_clipboard">क्लिपबोर्ड पर नकल!</string>
+    <string name="privacy_and_security">गोपनीयता और सुरक्षा</string>
+    <string name="recommended">अनुशंसित</string>
+    <string name="language">भाषा</string>
+    <string name="system_default">प्रणालीगत चूक</string>
+    <string name="current_language">वर्तमान इन-ऐप भाषा है %1$s!</string>
+    <string name="all_languages">सारी भाषाएँ</string>
 </resources>

@@ -19,7 +19,6 @@ import com.d4rk.lowbrightness.base.Application;
 import com.d4rk.lowbrightness.base.Constants;
 import com.d4rk.lowbrightness.base.Prefs;
 import com.d4rk.lowbrightness.ui.views.OverlayView;
-@SuppressWarnings("unused")
 public class OverlayService extends Service {
     private OverlayView mView;
     private static final String NOTIFICATION_CHANNEL_ID = "overlay_service";
@@ -44,7 +43,7 @@ public class OverlayService extends Service {
             mView = new OverlayView(this);
             mView.setOpacityPercent(opacityPercent);
             mView.setColor(color);
-            WindowManager.LayoutParams params = new WindowManager.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS | WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN, PixelFormat.TRANSLUCENT);
+            WindowManager.LayoutParams params = new WindowManager.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS | WindowManager.LayoutParams.FLAG_FULLSCREEN | WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS | WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN, PixelFormat.TRANSLUCENT);
             params.gravity = Gravity.TOP | Gravity.CENTER_HORIZONTAL;
             params.horizontalMargin = 0;
             params.verticalMargin = 0;
@@ -60,15 +59,13 @@ public class OverlayService extends Service {
     }
     private void createNotificationChannel() {
         CharSequence name = "Allow putting screen overlay";
-        String description = "";
         int importance = NotificationManager.IMPORTANCE_DEFAULT;
         NotificationChannel channel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, name, importance);
-        channel.setDescription(description);
         NotificationManager notificationManager = getSystemService(NotificationManager.class);
         notificationManager.createNotificationChannel(channel);
     }
     private void showNotification() {
-        this.createNotificationChannel();
+        createNotificationChannel();
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID).setSmallIcon(R.drawable.ic_eye).setContentTitle(getResources().getString(R.string.notification_title)).setContentText(getResources().getString(R.string.notification_context));
         mBuilder.setOngoing(true);
         Intent resultIntent = new Intent(this, MainActivity.class);
@@ -91,27 +88,5 @@ public class OverlayService extends Service {
     static public boolean isEnabled(Context context) {
         SharedPreferences prefs = Prefs.get(context);
         return prefs.getBoolean(Constants.PREF_LOW_BRIGHTNESS_ENABLED, false);
-    }
-    static public boolean enable(Context context) {
-        SharedPreferences prefs = Prefs.get(context);
-        boolean wasEnabledNow = true;
-        if (prefs.getBoolean(Constants.PREF_LOW_BRIGHTNESS_ENABLED, false)) {
-            wasEnabledNow = false;
-        } else {
-            prefs.edit().putBoolean(Constants.PREF_LOW_BRIGHTNESS_ENABLED, true).apply();
-        }
-        Application.refreshServices(context);
-        return wasEnabledNow;
-    }
-    static public boolean disable(Context context) {
-        SharedPreferences prefs = Prefs.get(context);
-        boolean wasDisabledNow = true;
-        if (!prefs.getBoolean(Constants.PREF_LOW_BRIGHTNESS_ENABLED, false)) {
-            wasDisabledNow = false;
-        } else {
-            prefs.edit().putBoolean(Constants.PREF_LOW_BRIGHTNESS_ENABLED, false).apply();
-        }
-        Application.refreshServices(context);
-        return wasDisabledNow;
     }
 }

@@ -1,4 +1,17 @@
-# Version 1.5.1_r1-debug:
+# Version 1.6_r1:
+- Added a new startup screen for new users;
+- Added settings launcher shortcut;
+- Added new settings preferences;
+- Added new animations;
+- Added "Subscribe to beta" preference;
+- Fixed some activities on split screen mode;
+- Rearranged settings preferences;
+- Reworked & refreshed UI;
+- Remastered drawer background;
+- Code cleanup;
+- Under the hood improvements.
+
+# Version 1.5.1_r1:
 - Minor code cleanup;
 - Minor tweaks;
 - Under the hood improvements.

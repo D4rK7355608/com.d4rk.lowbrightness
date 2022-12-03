@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_version">バージョン %1s</string>
+    <string name="app_version">バージョン %1$s (%2$d)</string>
     <string name="app_description">私たちのアプリを使用して、画面の明るさを増減してください! 🔆</string>
     <string name="enable_scheduler">スケジューラを有効にする</string>
     <string name="disable_scheduler">スケジューラを無効にする</string>
@@ -40,7 +40,6 @@
     <string name="share_using">次を使用して共有…</string>
     <string name="support_me">サポートしてください</string>
     <string name="support_me_sum">お金を払わずに私をサポートしたい場合は、ここをクリックしてください。広告を見るためのほんの少しの時間。</string>
-    <string name="notifications_description">このアプリを有効にすると、通知が表示され、アプリ自体を開かずに輝度を変更できます。</string>
     <string name="license">ライセンス</string>
     <string name="runtime">ランタイム</string>
     <string name="schedule_exact_alarm">正確なアラームのスケジュール [SCHEDULE_EXACT_ALARM]</string>
@@ -63,4 +62,19 @@
     <string name="system_alert_window_sum">アプリが他のアプリの上に描画できるようにするために使用されます。</string>
     <string name="post_notifications">投稿通知 [POST_NOTIFICATIONS]</string>
     <string name="post_notifications_sum">Android 13 以降のデバイスでアプリ表示通知を許可するために使用されます。</string>
+    <string name="made_in">ルーマニアで❤で作られました！</string>
+    <string name="copyright">© Copyright %1s, made by D4rK!</string>
+    <string name="app_updates">アプリのアップデート</string>
+    <string name="subscribe_to_beta">ベータ版の更新を購読する</string>
+    <string name="agree">同意</string>
+    <string name="browse_terms_of_service_and_privacy_policy"><i><u>サービス利用規約</u></i>と<i><u>プライバシーポリシー</u></i>を参照してください</string>
+    <string name="browse_terms_of_service_and_privacy_policy_sum">続行するには、利用規約とプライバシー ポリシーを読み、同意してください。</string>
+    <string name="welcome">いらっしゃいませ</string>
+    <string name="copied_to_clipboard">クリップボードにコピーしました！</string>
+    <string name="privacy_and_security">プライバシーとセキュリティ</string>
+    <string name="recommended">おすすめされた</string>
+    <string name="language">言語</string>
+    <string name="system_default">システムのデフォルト</string>
+    <string name="current_language">現在のアプリ内言語は %1$s</string>
+    <string name="all_languages">すべての言語</string>
 </resources>

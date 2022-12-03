@@ -6,10 +6,6 @@ import androidx.multidex.MultiDexApplication;
 import com.d4rk.lowbrightness.services.OverlayService;
 import com.d4rk.lowbrightness.services.SchedulerService;
 public class Application extends MultiDexApplication {
-    @Override
-    public void onCreate() {
-        super.onCreate();
-    }
     static public boolean canDrawOverlay(Context context) {
         return Settings.canDrawOverlays(context);
     }

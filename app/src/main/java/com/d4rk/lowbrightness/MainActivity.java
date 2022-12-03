@@ -3,7 +3,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.splashscreen.SplashScreen;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -20,7 +19,6 @@ import com.d4rk.lowbrightness.notifications.SchedulerEnabledFragment;
 import com.d4rk.lowbrightness.services.OverlayService;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.FirebaseApp;
 public class MainActivity extends AppCompatActivity implements IShowHideScheduler{
     private AppBarConfiguration mAppBarConfiguration;
     private RequestDrawOverAppsPermission permissionRequester;
@@ -28,16 +26,14 @@ public class MainActivity extends AppCompatActivity implements IShowHideSchedule
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SplashScreen.installSplashScreen(this);
-        FirebaseApp.initializeApp(this);
         ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setSupportActionBar(binding.appBarMain.toolbar);
         sharedPreferences = Prefs.get(getBaseContext());
-        DrawerLayout drawer = binding.drawerLayout;
-        NavigationView navigationView = binding.navView;
+        DrawerLayout drawer = binding.layoutDrawer;
+        NavigationView navigationView = binding.navigationView;
         mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_about, R.id.nav_settings).setOpenableLayout(drawer).build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        NavController navController = Navigation.findNavController(this, R.id.navigation_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
     }
@@ -71,15 +67,15 @@ public class MainActivity extends AppCompatActivity implements IShowHideSchedule
     }
     @Override
     public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        NavController navController = Navigation.findNavController(this, R.id.navigation_content_main);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration) || super.onSupportNavigateUp();
     }
     @Override
     public void showOrHideSchedulerUI(boolean show) {
         if (show) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.llSchedulerContainer, new SchedulerEnabledFragment()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.linear_layout_scheduler, new SchedulerEnabledFragment()).commit();
         } else {
-            getSupportFragmentManager().beginTransaction().replace(R.id.llSchedulerContainer, new SchedulerDisabledFragment()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.linear_layout_scheduler, new SchedulerDisabledFragment()).commit();
         }
     }
     @Override

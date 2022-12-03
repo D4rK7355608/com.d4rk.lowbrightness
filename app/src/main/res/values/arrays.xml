@@ -1,24 +1,25 @@
 <resources>
     <array name="filter_colors">
         <item>#000000</item>
-        <item name="red_500" type="color">#DB4437</item>
-        <item name="pink_500" type="color">#e91e63</item>
-        <item name="purple_500" type="color">#9c27b0</item>
-        <item name="deep_purple_500" type="color">#673ab7</item>
-        <item name="indigo_500" type="color">#3f51b5</item>
-        <item name="blue_500" type="color">#4285F4</item>
-        <item name="light_blue_500" type="color">#03a9f4</item>
-        <item name="cyan_500" type="color">#00bcd4</item>
-        <item name="teal_500" type="color">#009688</item>
-        <item name="green_500" type="color">#0F9D58</item>
-        <item name="light_green_500" type="color">#8bc34a</item>
-        <item name="lime_500" type="color">#cddc39</item>
-        <item name="yellow_500" type="color">#F4B400</item>
-        <item name="orange_500" type="color">#ff9800</item>
-        <item name="deep_orange_500" type="color">#ff5722</item>
-        <item name="brown_500" type="color">#795548</item>
-        <item name="grey_500" type="color">#9e9e9e</item>
-        <item name="blue_grey_500" type="color">#607d8b</item>
+        <item>#4285F4</item>
+        <item>#DB4437</item>
+        <item>#0F9D58</item>
+        <item>#F4B400</item>
+        <item>#C51162</item>
+        <item>#AA00FF</item>
+        <item>#304FFE</item>
+        <item>#2962FF</item>
+        <item>#0091EA</item>
+        <item>#00B8D4</item>
+        <item>#3DDC84</item>
+        <item>#00C853</item>
+        <item>#64DD17</item>
+        <item>#CDDC39</item>
+        <item>#FFAB00</item>
+        <item>#FF9800</item>
+        <item>#795548</item>
+        <item>#9E9E9E</item>
+        <item>#607D8B</item>
     </array>
     <string-array name="dark_mode_entries">
         <item>Follow System Mode</item>

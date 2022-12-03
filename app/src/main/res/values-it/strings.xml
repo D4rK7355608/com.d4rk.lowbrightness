@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_version">Versione %1s</string>
+    <string name="app_version">Versione %1$s (%2$d)</string>
     <string name="app_description">Riduci o aumenta la luminosità dello schermo utilizzando la nostra app! 🔆</string>
     <string name="enable_scheduler">Abilita pianificazione</string>
     <string name="disable_scheduler">Disabilita l\'agenda</string>
@@ -40,7 +40,6 @@
     <string name="share_using">Condividi usando…</string>
     <string name="support_me">Supportami</string>
     <string name="support_me_sum">Clicca qui se vuoi supportarmi senza pagare soldi. Solo un po\' di tempo per visualizzare un annuncio.</string>
-    <string name="notifications_description">Dopo aver attivato questa app, avrai una notifica che ti consentirà di modificare l\'intensità della luminosità senza aprire l\'app stessa.</string>
     <string name="license">Licenza</string>
     <string name="runtime">Tempo di esecuzione</string>
     <string name="schedule_exact_alarm">Pianifica l\'allarme esatto [SCHEDULE_EXACT_ALARM]</string>
@@ -63,4 +62,19 @@
     <string name="system_alert_window_sum">Utilizzato per consentire il disegno dell\'app su altre app.</string>
     <string name="post_notifications">Pubblica notifiche [POST_NOTIFICATIONS]</string>
     <string name="post_notifications_sum">Utilizzato per consentire le notifiche di visualizzazione delle app su dispositivi Android 13+.</string>
+    <string name="made_in">Fatto con ❤ in Romania!</string>
+    <string name="copyright">© Copyright %1s, realizzato da D4rK!</string>
+    <string name="app_updates">Aggiornamenti dell\'app</string>
+    <string name="subscribe_to_beta">Iscriviti agli aggiornamenti beta</string>
+    <string name="agree">Concordare</string>
+    <string name="browse_terms_of_service_and_privacy_policy">Sfoglia i <i><u>Termini di servizio</u></i> e la <i><u>Informativa sulla privacy</u></i></string>
+    <string name="browse_terms_of_service_and_privacy_policy_sum">Leggi e accetta i nostri Termini di servizio e Informativa sulla privacy per continuare.</string>
+    <string name="welcome">Benarrivato</string>
+    <string name="copied_to_clipboard">Copiato negli appunti!</string>
+    <string name="privacy_and_security">Privacy e sicurezza</string>
+    <string name="recommended">Consigliato</string>
+    <string name="language">Lingua</string>
+    <string name="system_default">Default del sistema</string>
+    <string name="current_language">La lingua corrente nell\'app è %1$s!</string>
+    <string name="all_languages">Tutte le lingue</string>
 </resources>

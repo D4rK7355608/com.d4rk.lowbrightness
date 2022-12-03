@@ -39,10 +39,9 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
-        new FastScrollerBuilder(binding.homeScrollView).useMd2Style().build();
+        new FastScrollerBuilder(binding.scrollView).useMd2Style().build();
         return binding.getRoot();
     }
-    @SuppressWarnings("deprecation")
     @Override
     public void onViewCreated(@NonNull View root, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(root, savedInstanceState);
@@ -51,26 +50,26 @@ public class HomeFragment extends Fragment {
         binding.adView.loadAd(adRequest);
         final RequestDrawOverAppsPermission permissionRequester = new RequestDrawOverAppsPermission(getActivity());
         if (!permissionRequester.canDrawOverlays()) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
-            builder.setTitle(R.string.app_needs_permission_title);
-            builder.setIcon(R.drawable.ic_eye);
-            builder.setMessage(R.string.app_needs_permission_message);
-            builder.setCancelable(false);
-            builder.setPositiveButton(R.string.allow_permission, (dialog, id) -> {
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(requireContext());
+            alertDialog.setTitle(R.string.app_needs_permission_title);
+            alertDialog.setIcon(R.drawable.ic_eye);
+            alertDialog.setMessage(R.string.app_needs_permission_message);
+            alertDialog.setCancelable(false);
+            alertDialog.setPositiveButton(R.string.allow_permission, (dialog, id) -> {
                 dialog.cancel();
                 permissionRequester.requestPermissionDrawOverOtherApps();
             });
-            AlertDialog alert = builder.create();
-            alert.show();
+            AlertDialog dialog = alertDialog.create();
+            dialog.show();
         }
-        binding.bColorPicker.setOnClickListener(view -> {
-            TypedArray ta = getResources().obtainTypedArray(R.array.filter_colors);
-            int[] colors = new int[ta.length()];
-            for (int i = 0; i < ta.length(); i++) {
-                String hex = ta.getString(i);
+        binding.buttonColorPicker.setOnClickListener(view -> {
+            TypedArray array = getResources().obtainTypedArray(R.array.filter_colors);
+            int[] colors = new int[array.length()];
+            for (int i = 0; i < array.length(); i++) {
+                String hex = array.getString(i);
                 colors[i] = Color.parseColor(hex);
             }
-            ta.recycle();
+            array.recycle();
             SharedPreferences prefs = Prefs.get(view.getContext());
             int preselectColor = prefs.getInt(Constants.PREF_OVERLAY_COLOR, colors[0]);
             DialogFragment colorPickerDialog = new SpectrumDialog.Builder(getContext())
@@ -88,11 +87,11 @@ public class HomeFragment extends Fragment {
         });
         refreshUI();
         final ColorsAdapter adapter = new ColorsAdapter(getContext());
-        binding.gridColors.setAdapter(adapter);
+        binding.gridViewColors.setAdapter(adapter);
         SharedPreferences sharedPreferences = Prefs.get(requireContext());
         int opacityPercent = sharedPreferences.getInt(Constants.PREF_DIM_LEVEL, 20);
         final int currentColor = sharedPreferences.getInt("overlay_color", Color.BLACK);
-        binding.sbDarkenIntensity.setProgress(opacityPercent);
+        binding.discreteSeekBar.setProgress(opacityPercent);
         int totalColors = adapter.getCount();
         for (int i = 0; totalColors > i; i += 1) {
             OverlayColor c = adapter.getItem(i);
@@ -101,19 +100,19 @@ public class HomeFragment extends Fragment {
                 break;
             }
         }
-        binding.gridColors.setOnItemClickListener((parent, v, position, id) -> {
+        binding.gridViewColors.setOnItemClickListener((parent, v, position, id) -> {
             adapter.setSelectedPosition(position);
             OverlayColor selectedItem = adapter.getItem(position);
             SharedPreferences secondSharedPreferences = Prefs.get(v.getContext());
             secondSharedPreferences.edit().putInt("overlay_color", selectedItem.color).apply();
             Application.refreshServices(v.getContext());
         });
-        ((MainActivity) getActivity()).showOrHideSchedulerUI(SchedulerService.isEnabled(getContext()));
+        ((MainActivity) requireActivity()).showOrHideSchedulerUI(SchedulerService.isEnabled(getContext()));
     }
     private void refreshUI() {
         SharedPreferences sharedPreferences = Prefs.get(requireContext());
         final int currentColor = sharedPreferences.getInt("overlay_color", Color.BLACK);
-        binding.bColorPicker.setBackgroundColor(currentColor);
+        binding.buttonColorPicker.setBackgroundColor(currentColor);
     }
     static private class OverlayColor {
         public String label;

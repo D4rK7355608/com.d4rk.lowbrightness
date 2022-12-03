@@ -9,7 +9,8 @@
         android:layout_height="wrap_content"
         android:text="@string/scheduler_description"/>
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/bSchedule"
+        style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+        android:id="@+id/button_schedule"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

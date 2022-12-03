@@ -7,7 +7,7 @@ import com.d4rk.lowbrightness.base.Application;
 import com.d4rk.lowbrightness.base.Constants;
 import com.d4rk.lowbrightness.base.Prefs;
 import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
-public class DiscreeteSeekBar extends DiscreteSeekBar {
+public class DiscreteSeekBarView extends DiscreteSeekBar {
     private void attachListener() {
         this.setOnProgressChangeListener(new DiscreteSeekBar.OnProgressChangeListener() {
             final SharedPreferences sharedPreferences = Prefs.get(getContext());
@@ -36,15 +36,15 @@ public class DiscreeteSeekBar extends DiscreteSeekBar {
             }
         });
     }
-    public DiscreeteSeekBar(Context context, AttributeSet attrs) {
+    public DiscreteSeekBarView(Context context, AttributeSet attrs) {
         super(context, attrs);
         attachListener();
     }
-    public DiscreeteSeekBar(Context context, AttributeSet attrs, int defStyleAttr) {
+    public DiscreteSeekBarView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         attachListener();
     }
-    public DiscreeteSeekBar(Context context) {
+    public DiscreteSeekBarView(Context context) {
         super(context);
         attachListener();
     }

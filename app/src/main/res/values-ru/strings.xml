@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_version">Версия %1s</string>
+    <string name="app_version">Версия %1$s (%2$d)</string>
     <string name="app_description">Уменьшите или увеличьте яркость экрана с помощью нашего приложения! 🔆</string>
     <string name="enable_scheduler">Включить планировщик</string>
     <string name="disable_scheduler">Отключить планировщик</string>
@@ -40,7 +40,6 @@
     <string name="share_using">Поделиться с помощью…</string>
     <string name="support_me">Поддержите меня</string>
     <string name="support_me_sum">Нажмите здесь, если вы хотите поддержать меня, не платя денег. Просто немного времени для просмотра рекламы.</string>
-    <string name="notifications_description">После того, как вы активируете это приложение, вы получите уведомление о том, что вы можете изменить интенсивность яркости, не открывая само приложение.</string>
     <string name="license">Лицензия</string>
     <string name="runtime">Время выполнения</string>
     <string name="schedule_exact_alarm">Расписание точного будильника [SCHEDULE_EXACT_ALARM]</string>
@@ -63,4 +62,19 @@
     <string name="system_alert_window_sum">Используется, чтобы позволить приложению рисовать поверх других приложений.</string>
     <string name="post_notifications">Post notifications [POST_NOTIFICATIONS]</string>
     <string name="post_notifications_sum">Used to allow app show notifications on Android 13+ devices.</string>
+    <string name="made_in">Сделано с ❤ в Румынии!</string>
+    <string name="copyright">© Copyright %1s, сделано D4rK!</string>
+    <string name="app_updates">Обновления приложений</string>
+    <string name="subscribe_to_beta">Подпишитесь на бета-обновления</string>
+    <string name="agree">Соглашаться</string>
+    <string name="browse_terms_of_service_and_privacy_policy">Ознакомьтесь с <i><u>Условиями использования</u></i> и <i><u>Политикой конфиденциальности</u></i>.</string>
+    <string name="browse_terms_of_service_and_privacy_policy_sum">Прочтите и согласитесь с нашими Условиями обслуживания и Политикой конфиденциальности, чтобы продолжить.</string>
+    <string name="welcome">Добро пожаловать</string>
+    <string name="copied_to_clipboard">Скопировано в буфер обмена!</string>
+    <string name="privacy_and_security">Конфиденциальность и безопасность</string>
+    <string name="recommended">рекомендуемые</string>
+    <string name="language">Язык</string>
+    <string name="system_default">Системные установки по умолчанию</string>
+    <string name="current_language">Текущий язык в приложении: %1$s!</string>
+    <string name="all_languages">Все языки</string>
 </resources>

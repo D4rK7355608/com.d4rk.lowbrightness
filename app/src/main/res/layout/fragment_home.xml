@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <me.zhanghai.android.fastscroll.FastScrollScrollView
-        android:id="@+id/homeScrollView"
+        android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,7 +14,7 @@
             android:paddingBottom="12dp">
             <com.google.android.material.card.MaterialCardView
                 style="@style/Widget.Material3.CardView.Elevated"
-                android:id="@+id/cardBrightness"
+                android:id="@+id/card_view_brightness"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
@@ -27,7 +27,7 @@
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/colorAccent"
+                        android:background="?attr/colorPrimary"
                         android:gravity="center_horizontal"
                         android:padding="12dp"
                         android:text="@string/intensity"
@@ -38,20 +38,20 @@
                         android:padding="16dp"
                         android:layout_height="wrap_content"
                         android:text="@string/brightness_sum"/>
-                    <com.d4rk.lowbrightness.ui.views.DiscreeteSeekBar
-                        android:id="@+id/sbDarkenIntensity"
+                    <com.d4rk.lowbrightness.ui.views.DiscreteSeekBarView
+                        android:id="@+id/discrete_seek_bar"
                         android:layout_width="match_parent"
                         android:padding="16dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="0dp"
-                        app:dsb_max="80"
+                        app:dsb_max="100"
                         app:dsb_min="0"/>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
             <com.google.android.material.card.MaterialCardView
-                app:layout_constraintTop_toBottomOf="@id/cardBrightness"
+                app:layout_constraintTop_toBottomOf="@id/card_view_brightness"
                 style="@style/Widget.Material3.CardView.Elevated"
-                android:id="@+id/cardFilterOverlayColor"
+                android:id="@+id/card_view_filter_color_overlay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
@@ -63,7 +63,7 @@
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/colorAccent"
+                        android:background="?attr/colorPrimary"
                         android:gravity="center_horizontal"
                         android:padding="12dp"
                         android:paddingBottom="8dp"
@@ -75,7 +75,7 @@
                         android:layout_height="wrap_content"
                         android:padding="16dp">
                         <com.google.android.material.button.MaterialButton
-                            android:id="@+id/bColorPicker"
+                            android:id="@+id/button_color_picker"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_alignParentEnd="true"
@@ -86,7 +86,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
                             android:layout_centerVertical="true"
-                            android:layout_toStartOf="@id/bColorPicker"
+                            android:layout_toStartOf="@id/button_color_picker"
                             android:orientation="vertical">
                             <com.google.android.material.textview.MaterialTextView
                                 android:layout_width="match_parent"
@@ -109,7 +109,7 @@
                             android:gravity="end"
                             android:text="@string/customize_overlay_color"/>
                         <GridView
-                            android:id="@+id/gridColors"
+                            android:id="@+id/grid_view_colors"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -123,8 +123,8 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/schedulerCard"
-                app:layout_constraintTop_toBottomOf="@id/cardFilterOverlayColor"
+                android:id="@+id/card_view_scheduler"
+                app:layout_constraintTop_toBottomOf="@id/card_view_filter_color_overlay"
                 style="@style/Widget.Material3.CardView.Elevated"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -137,14 +137,14 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorAccent"
+                    android:background="?attr/colorPrimary"
                     android:gravity="center_horizontal"
                     android:padding="12dp"
                     android:text="@string/schedule"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
                     android:textColor="@android:color/white"/>
                 <LinearLayout
-                    android:id="@+id/llSchedulerContainer"
+                    android:id="@+id/linear_layout_scheduler"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:animateLayoutChanges="true"
@@ -153,8 +153,8 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/adCard"
-                app:layout_constraintTop_toBottomOf="@id/schedulerCard"
+                android:id="@+id/ad_view_card"
+                app:layout_constraintTop_toBottomOf="@id/card_view_scheduler"
                 style="@style/Widget.Material3.CardView.Elevated"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -167,7 +167,7 @@
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/colorAccent"
+                        android:background="?attr/colorPrimary"
                         android:gravity="center_horizontal"
                         android:padding="12dp"
                         android:text="@string/ad"
@@ -183,7 +183,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/backgroundCard"
                 android:layout_width="match_parent"
                 android:layout_height="192dp"
                 android:layout_margin="16dp"
@@ -191,7 +190,7 @@
                 style="@style/Widget.Material3.CardView.Elevated"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/adCard">
+                app:layout_constraintTop_toBottomOf="@id/ad_view_card">
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

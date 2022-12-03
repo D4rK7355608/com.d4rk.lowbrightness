@@ -10,7 +10,6 @@ import com.d4rk.lowbrightness.base.Application;
 import com.d4rk.lowbrightness.base.Constants;
 import com.d4rk.lowbrightness.base.Prefs;
 import java.util.Calendar;
-@SuppressWarnings("UnusedReturnValue")
 public class SchedulerService extends Service {
     public SchedulerService() {
     }
@@ -61,55 +60,51 @@ public class SchedulerService extends Service {
         final SharedPreferences sharedPreferences = Prefs.get(context);
         final int scheduleFromHour = sharedPreferences.getInt("scheduleFromHour", 20);
         final int scheduleFromMinute = sharedPreferences.getInt("scheduleFromMinute", 0);
-        final Calendar c = Calendar.getInstance();
-        c.set(Calendar.HOUR_OF_DAY, scheduleFromHour);
-        c.set(Calendar.MINUTE, scheduleFromMinute);
-        c.clear(Calendar.SECOND);
-        return c;
+        final Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, scheduleFromHour);
+        calendar.set(Calendar.MINUTE, scheduleFromMinute);
+        calendar.clear(Calendar.SECOND);
+        return calendar;
     }
     public static Calendar _getCalendarForEnd(Context context) {
         final SharedPreferences sharedPreferences = Prefs.get(context);
         final int hour = sharedPreferences.getInt("scheduleToHour", 6);
         final int minute = sharedPreferences.getInt("scheduleToMinute", 0);
-        final Calendar c = Calendar.getInstance();
-        c.set(Calendar.HOUR_OF_DAY, hour);
-        c.set(Calendar.MINUTE, minute);
-        c.clear(Calendar.SECOND);
-        if (c.getTimeInMillis() < _getCalendarForStart(context).getTimeInMillis()) {
-            c.add(Calendar.DATE, 1);
+        final Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, hour);
+        calendar.set(Calendar.MINUTE, minute);
+        calendar.clear(Calendar.SECOND);
+        if (calendar.getTimeInMillis() < _getCalendarForStart(context).getTimeInMillis()) {
+            calendar.add(Calendar.DATE, 1);
         }
-        return c;
+        return calendar;
     }
     private void cancelAlarms() {
-        final AlarmManager am = (AlarmManager) getBaseContext().getSystemService(Context.ALARM_SERVICE);
+        final AlarmManager alarmManager = (AlarmManager) getBaseContext().getSystemService(Context.ALARM_SERVICE);
         Intent iBegin = new Intent(getBaseContext(), SchedulerService.class);
         PendingIntent piBegin = PendingIntent.getService(getBaseContext(), 0, iBegin, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-        am.cancel(piBegin);
+        alarmManager.cancel(piBegin);
     }
     static public boolean isEnabled(Context context) {
         SharedPreferences prefs = Prefs.get(context);
         return prefs.getBoolean(Constants.PREF_SCHEDULER_ENABLED, false);
     }
-    static public boolean enable(Context context) {
+    static public void enable(Context context) {
         SharedPreferences prefs = Prefs.get(context);
-        boolean wasEnabledNow = true;
         if (prefs.getBoolean(Constants.PREF_SCHEDULER_ENABLED, false)) {
-            wasEnabledNow = false;
+            prefs.edit().putBoolean(Constants.PREF_SCHEDULER_ENABLED, false).apply();
         } else {
             prefs.edit().putBoolean(Constants.PREF_SCHEDULER_ENABLED, true).apply();
         }
         Application.refreshServices(context);
-        return wasEnabledNow;
     }
-    static public boolean disable(Context context) {
+    static public void disable(Context context) {
         SharedPreferences prefs = Prefs.get(context);
-        boolean wasDisabledNow = true;
         if (!prefs.getBoolean(Constants.PREF_SCHEDULER_ENABLED, false)) {
-            wasDisabledNow = false;
+            prefs.edit().putBoolean(Constants.PREF_SCHEDULER_ENABLED, true).apply();
         } else {
             prefs.edit().putBoolean(Constants.PREF_SCHEDULER_ENABLED, false).apply();
         }
         Application.refreshServices(context);
-        return wasDisabledNow;
     }
 }
