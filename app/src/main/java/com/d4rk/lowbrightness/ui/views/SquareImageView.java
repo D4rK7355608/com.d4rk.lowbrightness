@@ -1,7 +1,8 @@
 package com.d4rk.lowbrightness.ui.views;
 import android.content.Context;
 import android.util.AttributeSet;
-public class SquareImageView extends androidx.appcompat.widget.AppCompatImageView {
+import androidx.appcompat.widget.AppCompatImageView;
+public class SquareImageView extends AppCompatImageView {
 	public SquareImageView(Context context) {
 		super(context);
 	}
@@ -12,7 +13,7 @@ public class SquareImageView extends androidx.appcompat.widget.AppCompatImageVie
 		super(context, attrs, defStyleAttr);
 	}
 	@Override
-	public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 		int size = Math.max(getMeasuredWidth(), getMeasuredHeight());
 		setMeasuredDimension(size, size);

@@ -24,7 +24,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="128dp"
                     android:layout_margin="24dp"
-                    android:src="@drawable/ic_feedback_card"
+                    android:src="@drawable/il_feedback_card"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintBottom_toTopOf="@id/button_rate_now"
@@ -36,7 +36,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/rate_us"
                     android:layout_margin="24dp"
-                    android:tooltipText="@string/feedback_tooltip"
+                    android:tooltipText="@string/tooltip_feedback"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +49,8 @@
                     android:layout_margin="24dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/button_rate_now"/>
+                    app:layout_constraintTop_toBottomOf="@+id/button_rate_now"
+                    tools:ignore="SpeakableTextPresentCheck"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
         <com.airbnb.lottie.LottieAnimationView

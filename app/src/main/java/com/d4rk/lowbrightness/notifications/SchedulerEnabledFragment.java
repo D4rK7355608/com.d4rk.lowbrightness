@@ -19,7 +19,6 @@ import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.TimeZone;
-@SuppressWarnings({"deprecation", "ConstantConditions"})
 public class SchedulerEnabledFragment extends Fragment {
     private FragmentSchedulerEnabledBinding binding;
     private IShowHideScheduler bridge;
@@ -57,7 +56,7 @@ public class SchedulerEnabledFragment extends Fragment {
                     scheduleFromMinute,
                     true
             );
-            dialogTimePicker.show(getFragmentManager(), "timepicker_dialog");
+            dialogTimePicker.show(getChildFragmentManager(), "timepicker_dialog");
         });
         binding.buttonHourTo.setOnClickListener(v -> {
             final SharedPreferences sharedPreferences = Prefs.get(requireContext());
@@ -73,7 +72,7 @@ public class SchedulerEnabledFragment extends Fragment {
                     scheduleToMinute,
                     true
             );
-            dialogTimePicker.show(getFragmentManager(), "timepicker_dialog");
+            dialogTimePicker.show(getChildFragmentManager(), "timepicker_dialog");
         });
     }
     @Override

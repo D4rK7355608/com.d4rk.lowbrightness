@@ -15,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import com.d4rk.lowbrightness.MainActivity;
@@ -29,6 +28,7 @@ import com.d4rk.lowbrightness.services.SchedulerService;
 import com.d4rk.lowbrightness.ui.views.SquareImageView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.thebluealliance.spectrum.SpectrumDialog;
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +50,7 @@ public class HomeFragment extends Fragment {
         binding.adView.loadAd(adRequest);
         final RequestDrawOverAppsPermission permissionRequester = new RequestDrawOverAppsPermission(getActivity());
         if (!permissionRequester.canDrawOverlays()) {
-            AlertDialog.Builder alertDialog = new AlertDialog.Builder(requireContext());
+            MaterialAlertDialogBuilder alertDialog = new MaterialAlertDialogBuilder(requireContext());
             alertDialog.setTitle(R.string.app_needs_permission_title);
             alertDialog.setIcon(R.drawable.ic_eye);
             alertDialog.setMessage(R.string.app_needs_permission_message);
@@ -59,8 +59,7 @@ public class HomeFragment extends Fragment {
                 dialog.cancel();
                 permissionRequester.requestPermissionDrawOverOtherApps();
             });
-            AlertDialog dialog = alertDialog.create();
-            dialog.show();
+            alertDialog.show();
         }
         binding.buttonColorPicker.setOnClickListener(view -> {
             TypedArray array = getResources().obtainTypedArray(R.array.filter_colors);
@@ -73,7 +72,7 @@ public class HomeFragment extends Fragment {
             SharedPreferences prefs = Prefs.get(view.getContext());
             int preselectColor = prefs.getInt(Constants.PREF_OVERLAY_COLOR, colors[0]);
             DialogFragment colorPickerDialog = new SpectrumDialog.Builder(getContext())
-                    .setTitle("Select a color")
+                    .setTitle(getString(R.string.select_a_color))
                     .setColors(colors)
                     .setSelectedColor(preselectColor)
                     .setOnColorSelectedListener((positiveResult, color) -> {
@@ -83,7 +82,7 @@ public class HomeFragment extends Fragment {
                         Application.refreshServices(getContext());
                         refreshUI();
                     }).build();
-            colorPickerDialog.show(getFragmentManager(), "color_picker");
+            colorPickerDialog.show(getParentFragmentManager(), "color_picker");
         });
         refreshUI();
         final ColorsAdapter adapter = new ColorsAdapter(getContext());

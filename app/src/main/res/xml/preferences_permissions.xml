@@ -4,13 +4,23 @@
         app:title="@string/normal"
         app:iconSpaceReserved="false">
         <androidx.preference.Preference
-            app:title="@string/internet"
-            app:summary="@string/internet_sum"
+            app:title="@string/access_network_state"
+            app:summary="@string/summary_preference_permissions_internet"
             app:useSimpleSummaryProvider="true"
             app:iconSpaceReserved="false"/>
         <androidx.preference.Preference
             app:title="@string/ad_id"
             app:summary="@string/ad_id_sum"
+            app:useSimpleSummaryProvider="true"
+            app:iconSpaceReserved="false"/>
+        <androidx.preference.Preference
+            app:title="@string/check_license"
+            app:summary="@string/summary_preference_permissions_check_license"
+            app:useSimpleSummaryProvider="true"
+            app:iconSpaceReserved="false"/>
+        <androidx.preference.Preference
+            app:title="@string/internet"
+            app:summary="@string/summary_preference_permissions_internet"
             app:useSimpleSummaryProvider="true"
             app:iconSpaceReserved="false"/>
         <androidx.preference.Preference
@@ -23,8 +33,8 @@
         app:title="@string/runtime"
         app:iconSpaceReserved="false">
         <androidx.preference.Preference
-            app:title="@string/schedule_exact_alarm"
-            app:summary="@string/schedule_exact_alarm_sum"
+            app:title="@string/access_notification_policy"
+            app:summary="@string/summary_preference_permissions_access_notification_policy"
             app:useSimpleSummaryProvider="true"
             app:iconSpaceReserved="false"/>
         <androidx.preference.Preference
@@ -33,18 +43,23 @@
             app:useSimpleSummaryProvider="true"
             app:iconSpaceReserved="false"/>
         <androidx.preference.Preference
-            app:title="@string/write_settings"
-            app:summary="@string/write_settings_sum"
-            app:useSimpleSummaryProvider="true"
-            app:iconSpaceReserved="false"/>
-        <androidx.preference.Preference
             app:title="@string/receive_boot_completed"
             app:summary="@string/receive_boot_completed_sum"
             app:useSimpleSummaryProvider="true"
             app:iconSpaceReserved="false"/>
         <androidx.preference.Preference
+            app:title="@string/schedule_exact_alarm"
+            app:summary="@string/schedule_exact_alarm_sum"
+            app:useSimpleSummaryProvider="true"
+            app:iconSpaceReserved="false"/>
+        <androidx.preference.Preference
             app:title="@string/system_alert_window"
             app:summary="@string/system_alert_window_sum"
+            app:useSimpleSummaryProvider="true"
+            app:iconSpaceReserved="false"/>
+        <androidx.preference.Preference
+            app:title="@string/write_settings"
+            app:summary="@string/write_settings_sum"
             app:useSimpleSummaryProvider="true"
             app:iconSpaceReserved="false"/>
     </PreferenceCategory>

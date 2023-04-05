@@ -6,12 +6,14 @@ import androidx.multidex.MultiDexApplication;
 import com.d4rk.lowbrightness.services.OverlayService;
 import com.d4rk.lowbrightness.services.SchedulerService;
 public class Application extends MultiDexApplication {
-    static public boolean canDrawOverlay(Context context) {
+    public static boolean canDrawOverlay(Context context) {
         return Settings.canDrawOverlays(context);
     }
-    static public void refreshServices(Context context) {
-        if (OverlayService.isEnabled(context)) {
-            if (SchedulerService.isEnabled(context)) {
+    public static void refreshServices(Context context) {
+        boolean overlayEnabled = OverlayService.isEnabled(context);
+        boolean schedulerEnabled = SchedulerService.isEnabled(context);
+        if (overlayEnabled) {
+            if (schedulerEnabled) {
                 context.stopService(new Intent(context, OverlayService.class));
                 context.startService(new Intent(context, SchedulerService.class));
             } else {

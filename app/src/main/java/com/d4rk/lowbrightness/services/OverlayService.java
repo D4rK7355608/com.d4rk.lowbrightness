@@ -37,11 +37,11 @@ public class OverlayService extends Service {
             stopSelf();
             return START_NOT_STICKY;
         }
-        int opacityPercent = sharedPreferences.getInt(Constants.PREF_DIM_LEVEL, 20);
+        int opacityPercentage = sharedPreferences.getInt(Constants.PREF_DIM_LEVEL, 20);
         int color = sharedPreferences.getInt(Constants.PREF_OVERLAY_COLOR, Color.BLACK);
         if (mView == null) {
             mView = new OverlayView(this);
-            mView.setOpacityPercent(opacityPercent);
+            mView.setOpacityPercentage(opacityPercentage);
             mView.setColor(color);
             WindowManager.LayoutParams params = new WindowManager.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS | WindowManager.LayoutParams.FLAG_FULLSCREEN | WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS | WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN, PixelFormat.TRANSLUCENT);
             params.gravity = Gravity.TOP | Gravity.CENTER_HORIZONTAL;
@@ -50,7 +50,7 @@ public class OverlayService extends Service {
             WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);
             wm.addView(mView, params);
         } else {
-            mView.setOpacityPercent(opacityPercent);
+            mView.setOpacityPercentage(opacityPercentage);
             mView.setColor(color);
             mView.redraw();
         }
@@ -58,9 +58,8 @@ public class OverlayService extends Service {
         return START_STICKY;
     }
     private void createNotificationChannel() {
-        CharSequence name = "Allow putting screen overlay";
         int importance = NotificationManager.IMPORTANCE_DEFAULT;
-        NotificationChannel channel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, name, importance);
+        NotificationChannel channel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, getString(R.string.screen_overlay_notifications), importance);
         NotificationManager notificationManager = getSystemService(NotificationManager.class);
         notificationManager.createNotificationChannel(channel);
     }

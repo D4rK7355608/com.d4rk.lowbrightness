@@ -11,20 +11,19 @@
 
 ## 🔆 Low Brightness 🔆
 
-- ╔╦╦╦═╦╗╔═╦═╦══╦═╗
-- ║║║║╩╣╚╣═╣║║║║║╩╣
-- ╚══╩═╩═╩═╩═╩╩╩╩═╝
+╔╦╦╦═╦╗╔═╦═╦══╦═╗ \
+║║║║╩╣╚╣═╣║║║║║╩╣ \
+╚══╩═╩═╩═╩═╩╩╩╩═╝
 
 ## Decrease or increase your screen brightness by using our app!
 
-Set screen brightness however you want! 🔅
+Low Brightness is the ultimate solution for anyone looking to fine-tune the screen brightness of their Android device. Whether you're trying to reduce strain on your eyes in low light environments, save power by lowering the light emitted from your screen, or simply want to adjust the brightness to your personal preference, Low Brightness has you covered.
 
-Have you ever set the screen brightness to the lowest but it still so bright? If you feel the screen is so bright and you want to reduce it now is possible.
-Low Brightness application helps you reduce brightness to any level. You can set brightness level from 0% to 100% by just opening the application and choose brightness level you want.
+This open-source app is incredibly easy to use, with a simple interface that allows you to quickly and easily set the brightness level to any value between 0% and 100%. Whether you want to dim your screen to the lowest possible level or crank it up to maximum brightness, Low Brightness gives you the flexibility to do so with just a few taps.
 
-Or app is ready to change your brightness! 🔆
+In addition to its core functionality, Low Brightness also offers a number of advanced features that make it even more useful. For example, you can set the app to automatically adjust the brightness level based on the time of day or your current location. This can be especially helpful if you find yourself frequently switching between bright and low light environments.
 
-Low Brightness can save power because of reducing screen light.
+Low Brightness is also lightweight and fast, ensuring that it won't slow down your device or drain its battery. And best of all, it's completely free to use! So if you're looking for a reliable, easy-to-use app that gives you complete control over the screen brightness of your Android device, give Low Brightness a try and see how it can enhance your phone usage experience.
 
 ## ⚠ Opening Issues ⚠
 
@@ -38,14 +37,12 @@ Bugs can be reported [here](https://github.com/D4rK7355608/com.d4rk.lowbrightnes
 __🖤 Low Brightness is 100% Free, Open Source and helps you lower your screen brightness! 🖤__
 
 ## 🛠️ Features!
-- ⭐️ Reduce screen brightness below the system minimum brightness.
-- ⭐️ No internet required.
-- ⭐️ Adaptive themes + Material-You.
-- ⭐️ Simple and easy to use.
-- ⭐️ Fast and lightweight.
-- ⭐️ Free Open source & secure.
-
-__❗Note❗__ Some features are still in progress or needs more improvements and investigations.
+⭐️ Reduce screen brightness below the system minimum brightness. \
+⭐️ No internet required. \
+⭐️ Adaptive themes + Material-You. \
+⭐️ Simple and easy to use. \
+⭐️ Fast and lightweight. \
+⭐️ Free Open source & secure.
 
 ## 📝 Changelog [here](https://raw.githubusercontent.com/D4rK7355608/com.d4rk.lowbrightness/master/CHANGELOG.md)!
 

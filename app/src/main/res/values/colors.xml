@@ -1,6 +1,4 @@
 <resources>
-    <color name="colorOverflowBackground">#EBF1F8</color>
-    <color name="colorBackground">#F0F0F3</color>
     <color name="colorLauncherBackground">#FFFFFF</color>
     <color name="colorIconShortcutBackground">#C1E8FF</color>
     <color name="colorIconShortcutForeground">#454749</color>

@@ -8,5 +8,5 @@
         android:layout_width="wrap_content"
         android:layout_height="202dp"
         android:adjustViewBounds="true"
-        android:src="@drawable/background_drawer"/>
+        android:src="@drawable/il_drawer"/>
 </LinearLayout>

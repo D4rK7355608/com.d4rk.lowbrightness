@@ -2,6 +2,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <me.zhanghai.android.fastscroll.FastScrollScrollView
@@ -76,11 +77,12 @@
                         android:padding="16dp">
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/button_color_picker"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
                             android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
-                            android:layout_marginStart="15dp"/>
+                            android:layout_marginStart="15dp"
+                            tools:ignore="SpeakableTextPresentCheck"/>
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -195,7 +197,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/background_brightness"/>
+                    android:src="@drawable/il_brightness"
+                    tools:ignore="ImageContrastCheck"/>
             </com.google.android.material.card.MaterialCardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </me.zhanghai.android.fastscroll.FastScrollScrollView>
