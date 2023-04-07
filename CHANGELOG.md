@@ -1,4 +1,7 @@
 # Version 2.0_r1:
+- Made some under-the-hood improvements for a better overall app experience.
+
+# Version 2.0_r1:
 - Added the ability to disable Firebase Analytics and Crashlytics from the app settings.
 - Added an FAQ section to the app.
 - Added update notifications to inform users of new content and features.

@@ -27,19 +27,16 @@ class FeedbackActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.dev_mail -> {
-                sendFeedbackEmail()
+                val emailIntent = Intent(Intent.ACTION_SEND)
+                emailIntent.type = "text/email"
+                emailIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf("d4rk7355608@gmail.com"))
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Feedback for " + getString(R.string.app_name))
+                emailIntent.putExtra(Intent.EXTRA_TEXT, "Dear developer, ")
+                startActivity(Intent.createChooser(emailIntent, "Send mail to Developer:"))
                 true
             }
             else -> super.onOptionsItemSelected(item)
         }
-    }
-    private fun sendFeedbackEmail() {
-        val emailIntent = Intent(Intent.ACTION_SEND)
-        emailIntent.type = "text/email"
-        emailIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf("d4rk7355608@gmail.com"))
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Feedback for Android Studio Tutorials")
-        emailIntent.putExtra(Intent.EXTRA_TEXT, "Dear developer, ")
-        startActivity(Intent.createChooser(emailIntent, "Send mail to Developer:"))
     }
     private fun init() {
         reviewManager = ReviewManagerFactory.create(this)

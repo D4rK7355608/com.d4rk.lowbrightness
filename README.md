@@ -4,7 +4,7 @@
 
 ![Works with Android](https://img.shields.io/badge/Made%20for-Android-lime?style=for-the-badge&logo=android)
 ![GitHub Downloads](https://img.shields.io/github/downloads/D4rK7355608/com.d4rk.lowbrightness/total?color=green&style=for-the-badge&logo=github)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/D4rK7355608/com.d4rk.lowbrightness/Android%20CI/master?style=for-the-badge&logo=github)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/D4rK7355608/com.d4rk.lowbrightness/android.yml?style=for-the-badge)
 ![GitHub Issues](https://img.shields.io/github/issues/D4rK7355608/com.d4rk.lowbrightness?style=for-the-badge&logo=github)
 ![GitHub Pull Requests](https://img.shields.io/github/issues-pr/D4rK7355608/com.d4rk.lowbrightness?style=for-the-badge&logo=github)
 ![GitHub License](https://img.shields.io/github/license/D4rK7355608/com.d4rk.lowbrightness?style=for-the-badge&logo=github)
@@ -15,7 +15,7 @@
 ║║║║╩╣╚╣═╣║║║║║╩╣ \
 ╚══╩═╩═╩═╩═╩╩╩╩═╝
 
-## Decrease or increase your screen brightness by using our app!
+## Decrease or increase your screen brightness by using our app! 🔆
 
 Low Brightness is the ultimate solution for anyone looking to fine-tune the screen brightness of their Android device. Whether you're trying to reduce strain on your eyes in low light environments, save power by lowering the light emitted from your screen, or simply want to adjust the brightness to your personal preference, Low Brightness has you covered.
 
@@ -25,16 +25,10 @@ In addition to its core functionality, Low Brightness also offers a number of ad
 
 Low Brightness is also lightweight and fast, ensuring that it won't slow down your device or drain its battery. And best of all, it's completely free to use! So if you're looking for a reliable, easy-to-use app that gives you complete control over the screen brightness of your Android device, give Low Brightness a try and see how it can enhance your phone usage experience.
 
-## ⚠ Opening Issues ⚠
-
+## ⚠ Opening Issues!
 Bugs can be reported [here](https://github.com/D4rK7355608/com.d4rk.lowbrightness/issues).
 
-> Only use the GitHub Issues section if you discovered issues with the code itself. Do not mistake the Issues page as a help desk.
-> For support, informations and requests, please contact <d4rk7355608@gmail.com>.
-
 - Create an brightness/service/general bug. 🐞
-
-__🖤 Low Brightness is 100% Free, Open Source and helps you lower your screen brightness! 🖤__
 
 ## 🛠️ Features!
 ⭐️ Reduce screen brightness below the system minimum brightness. \
@@ -48,10 +42,11 @@ __🖤 Low Brightness is 100% Free, Open Source and helps you lower your screen 
 
 ## 🖼️ App preview:
 
-<img src="/app/src/main/play/listings/en-US/graphics/phone-screenshots/1-screenshot_main.png"  width="400">
+<img src="/app/src/main/play/listings/en-US/graphics/phone-screenshots/3-screenshot_main_slider.png"  width="400">
 
 ## 🛑 Disclaimer!
 - This app it have a background service. Background service runs for keeping brightness at selected level.
+- Only use the GitHub Issues section if you discover issues with the code itself. Do not mistake the Issues page as a help desk. For support, information and requests, please contact d4rk7355608@gmail.com.
 
 ## 💬 Feedback!
 If you have any suggested features or improvement, please leave a comment. In case something is not working correctly please let me know. When posting low rating please describe what is wrong to give the possibility to fix that issue.
