@@ -72,12 +72,8 @@
     <string name="welcome">Herzlich willkommen</string>
     <string name="copied_to_clipboard">In die Zwischenablage kopiert!</string>
     <string name="privacy_and_security">Privatsphäre und Sicherheit</string>
-    <string name="recommended">Empfohlen</string>
-    <string name="language">Sprache</string>
-    <string name="system_default">Systemfehler</string>
-    <string name="current_language">Die aktuelle In-App-Sprache ist %1$s!</string>
-    <string name="all_languages">Alle Sprachen</string>
     <string name="music">Musik</string>
+    <string name="language">Sprache</string>
     <string name="info">Info</string>
     <string name="device_info">Geräteinformationen</string>
     <string name="app_build">App-Build: Veröffentlichung\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>

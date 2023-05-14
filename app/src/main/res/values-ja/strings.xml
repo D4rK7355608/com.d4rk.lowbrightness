@@ -72,11 +72,7 @@
     <string name="welcome">いらっしゃいませ</string>
     <string name="copied_to_clipboard">クリップボードにコピーしました！</string>
     <string name="privacy_and_security">プライバシーとセキュリティ</string>
-    <string name="recommended">おすすめされた</string>
     <string name="language">言語</string>
-    <string name="system_default">システムのデフォルト</string>
-    <string name="current_language">現在のアプリ内言語は %1$s</string>
-    <string name="all_languages">すべての言語</string>
     <string name="music">音楽</string>
     <string name="info">情報</string>
     <string name="device_info">デバイス情報</string>

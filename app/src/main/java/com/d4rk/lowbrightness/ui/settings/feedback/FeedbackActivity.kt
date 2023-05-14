@@ -51,7 +51,6 @@ class FeedbackActivity : AppCompatActivity() {
             .addOnCompleteListener {
                 it.result?.let { reviewInfo ->
                     reviewManager.launchReviewFlow(this, reviewInfo).also {
-                        // Add any additional code here, if needed
                     }
                 }
             }

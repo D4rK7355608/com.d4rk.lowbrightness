@@ -72,12 +72,8 @@
     <string name="welcome">Bienvenidos</string>
     <string name="copied_to_clipboard">Copiado al portapapeles!</string>
     <string name="privacy_and_security">Privacidad y seguridad</string>
-    <string name="recommended">Recomendado</string>
-    <string name="language">Idioma</string>
-    <string name="system_default">Sistema por defecto</string>
-    <string name="current_language">El idioma actual en la aplicación es %1$s!</string>
-    <string name="all_languages">Todos los idiomas</string>
     <string name="music">Música</string>
+    <string name="language">Idioma</string>
     <string name="info">Información</string>
     <string name="device_info">Información del dispositivo</string>
     <string name="app_build">Versión de la aplicación: Release\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>

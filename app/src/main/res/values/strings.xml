@@ -10,14 +10,22 @@
     <string name="xda" translatable="false">XDA</string>
     <string name="twitter" translatable="false">Twitter</string>
     <string name="youtube" translatable="false">YouTube</string>
-    <string name="android_studio_tutorials_java" translatable="false">Android Studio Tutorials: Java Edition</string>
-    <string name="android_studio_tutorials_kotlin" translatable="false">Android Studio Tutorials: Kotlin Edition</string>
-    <string name="music_sleep_timer" translatable="false">Music Sleep Timer Plus</string>
-    <string name="english_with_lidia" translatable="false">English with Lidia Plus</string>
-    <string name="qr_code_scanner" translatable="false">QR &amp; Bar Code Scanner Plus</string>
-    <string name="cleaner_plus" translatable="false">Cleaner Plus</string>
-    <string name="cart_calculator" translatable="false">Cart Calculator</string>
     <string name="arch" translatable="false">Arch:</string>
+    <string name="bulgarian" translatable="false">Български</string>
+    <string name="english" translatable="false">English</string>
+    <string name="french" translatable="false">Français</string>
+    <string name="hungarian" translatable="false">Magyar</string>
+    <string name="german" translatable="false">Deutsch</string>
+    <string name="hindi" translatable="false">हिन्दी</string>
+    <string name="indonesian" translatable="false">Bahasa Indonesia</string>
+    <string name="italian" translatable="false">Italiano</string>
+    <string name="japanese" translatable="false">日本語</string>
+    <string name="polish" translatable="false">Polski</string>
+    <string name="romanian" translatable="false">Română</string>
+    <string name="russian" translatable="false">Русский</string>
+    <string name="spanish" translatable="false">Español</string>
+    <string name="turkish" translatable="false">Türkçe</string>
+    <string name="ukrainian" translatable="false">Українська</string>
     <string name="enable_scheduler">Enable scheduler</string>
     <string name="disable_scheduler">Disable scheduler</string>
     <string name="enabled_only_during_this_interval">Enabled only during this interval:</string>
@@ -80,12 +88,8 @@
     <string name="browse_terms_of_service_and_privacy_policy">Browse the <i><u>Terms of Service</u></i> and <i><u>Privacy Policy</u></i></string>
     <string name="welcome">Welcome</string>
     <string name="copied_to_clipboard">Copied to clipboard!</string>
-    <string name="recommended">Recommended</string>
-    <string name="language">Language</string>
-    <string name="system_default">System default</string>
-    <string name="current_language">Current in-app language is %1$s!</string>
-    <string name="all_languages">All languages</string>
     <string name="music">Music</string>
+    <string name="language">Language</string>
     <string name="info">Info</string>
     <string name="device_info">Device Info</string>
     <string name="app_build">App Build: Release\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
@@ -145,6 +149,9 @@
     <string name="tooltip_feedback">Send us your review on Google Play Store.</string>
     <string name="changelog_title" translatable="false">Changelog - Version %1s</string>
     <string name="changes" translatable="false">\n
-        • Made some under-the-hood improvements for a better overall app experience.
+        • Added language support for Hungarian.\n\n
+        • Reworked language system, making it more accurate and user-friendly.\n\n
+        • Fixed various bugs and improved readability, consistency, app performance, and responsiveness by optimizing and styling the outdated code.\n\n
+        • Made various under-the-hood improvements for a better overall app experience.
     </string>
 </resources>

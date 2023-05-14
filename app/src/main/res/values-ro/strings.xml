@@ -73,10 +73,6 @@
     <string name="copied_to_clipboard">Copiat în clipboard!</string>
     <string name="privacy_and_security">Confidențialitate și securitate</string>
     <string name="language">Limbi</string>
-    <string name="system_default">Implicit in sistem</string>
-    <string name="current_language">Limba curentă a aplicației este %1$s!</string>
-    <string name="recommended">Recomandat</string>
-    <string name="all_languages">Toate limbile</string>
     <string name="music">Muzică</string>
     <string name="info">Informații</string>
     <string name="device_info">Informații despre dispozitiv</string>

@@ -4,7 +4,7 @@
         <item name="android:windowLightStatusBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    <style name="AppTheme.Startup" parent="@style/AppThemeActionBar">
+    <style name="AppThemeStartup" parent="@style/AppThemeActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
@@ -17,7 +17,6 @@
         <item name="actionBarStyle">@style/actionBarStyle</item>
         <item name="dialogCornerRadius">24dp</item>
         <item name="discreteSeekBarStyle">@style/discreteSeekBarStyle</item>
-        <item name="actionOverflowMenuStyle">@style/OverflowMenuTheme</item>
         <item name="switchPreferenceCompatStyle">@style/switchPreferenceCompatStyle</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.Material3.MaterialAlertDialog.Centered</item>
         <item name="alertDialogTheme">@style/ThemeOverlay.Material3.MaterialAlertDialog.Centered</item>
@@ -26,9 +25,6 @@
     </style>
     <style name="actionBarStyle" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="background">@android:color/transparent</item>
-    </style>
-    <style name="OverflowMenuTheme" parent="@style/Widget.Material3.PopupMenu.Overflow">
-        <item name="android:popupBackground">@drawable/bg_overflow</item>
     </style>
     <style name="SplashScreenTheme" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">?attr/colorSurface</item>

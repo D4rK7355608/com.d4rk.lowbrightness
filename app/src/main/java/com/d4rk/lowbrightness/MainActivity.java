@@ -9,7 +9,9 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.NotificationCompat;
+import androidx.core.os.LocaleListCompat;
 import androidx.core.splashscreen.SplashScreen;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentTransaction;
@@ -61,6 +63,8 @@ public class MainActivity extends AppCompatActivity implements IShowHideSchedule
         navController = Navigation.findNavController(this, R.id.navigation_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+        String languageCode = sharedPreferences.getString(getString(R.string.key_language), getString(R.string.default_value_language));
+        AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags(languageCode));
         SharedPreferences prefs = getSharedPreferences("app_usage", MODE_PRIVATE);
         long lastUsedTimestamp = prefs.getLong("last_used", 0);
         long currentTimestamp = System.currentTimeMillis();

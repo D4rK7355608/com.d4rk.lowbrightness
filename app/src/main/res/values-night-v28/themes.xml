@@ -9,7 +9,6 @@
         <item name="actionBarStyle">@style/actionBarStyle</item>
         <item name="android:dialogCornerRadius">24dp</item>
         <item name="dialogCornerRadius">24dp</item>
-        <item name="actionOverflowMenuStyle">@style/OverflowMenuTheme</item>
         <item name="discreteSeekBarStyle">@style/discreteSeekBarStyle</item>
         <item name="switchPreferenceCompatStyle">@style/switchPreferenceCompatStyle</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.Material3.MaterialAlertDialog.Centered</item>

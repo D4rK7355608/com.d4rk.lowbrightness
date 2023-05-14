@@ -114,9 +114,9 @@ public class HomeFragment extends Fragment {
         binding.buttonColorPicker.setBackgroundColor(currentColor);
     }
     static private class OverlayColor {
-        public String label;
-        public String hex;
-        public int color;
+        public final String label;
+        public final String hex;
+        public final int color;
         public OverlayColor(String label, String hex) {
             this.label = label;
             this.hex = hex;

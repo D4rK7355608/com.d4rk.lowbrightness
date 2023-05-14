@@ -72,12 +72,8 @@
     <string name="welcome">Selamat datang</string>
     <string name="copied_to_clipboard">Disalin ke papan klip!</string>
     <string name="privacy_and_security">Privasi dan keamanan</string>
-    <string name="recommended">Direkomendasikan</string>
-    <string name="language">Bahasa</string>
-    <string name="system_default">Default sistem</string>
-    <string name="current_language">Bahasa dalam aplikasi saat ini adalah %1$s!</string>
-    <string name="all_languages">Semua bahasa</string>
     <string name="notifications">Notifikasi</string>
+    <string name="language">Bahasa</string>
     <string name="notification_settings">Pengaturan notifikasi</string>
     <string name="app_usage_notifications">Notifikasi Penggunaan Aplikasi</string>
     <string name="update_notifications">Notifikasi Pembaruan</string>

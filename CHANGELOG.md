@@ -1,3 +1,12 @@
+# Version 3.0_r1:
+- Added language support for Hungarian.
+- Reworked language system, making it more accurate and user-friendly.
+- Fixed various bugs and improved readability, consistency, app performance, and responsiveness by optimizing and styling the outdated code.
+- Made various under-the-hood improvements for a better overall app experience.
+
+# Version 2.1_r1:
+- Made various under-the-hood improvements for a better overall app experience.
+
 # Version 2.0_r1:
 - Made some under-the-hood improvements for a better overall app experience.
 

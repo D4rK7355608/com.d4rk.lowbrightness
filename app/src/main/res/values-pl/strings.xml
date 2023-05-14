@@ -66,12 +66,8 @@
     <string name="browse_terms_of_service_and_privacy_policy">Przeglądaj<i>  <u>Terms of Service</u></i> I<i>  <u>Privacy Policy</u></i>  </string>
     <string name="welcome">Powitanie</string>
     <string name="copied_to_clipboard">Skopiowane do schowka!</string>
-    <string name="recommended">Zalecana</string>
     <string name="language">Język</string>
     <string name="screen_overlay_notifications">Powiadomienia o nakładaniu ekranu</string>
-    <string name="system_default">Domyślne ustawienie systemowe</string>
-    <string name="current_language">Bieżący język aplikacji to %1$s!</string>
-    <string name="all_languages">Wszystkie języki</string>
     <string name="music">Muzyka</string>
     <string name="info">Informacje</string>
     <string name="device_info">Informacje o urządzeniu</string>

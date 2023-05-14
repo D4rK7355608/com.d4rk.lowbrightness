@@ -1,4 +1,5 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:installLocation="auto">
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -61,7 +62,7 @@
         </receiver>
         <activity
             android:name=".ui.startup.StartupActivity"
-            android:theme="@style/AppTheme.Startup"/>
+            android:theme="@style/AppThemeStartup"/>
         <activity
             android:name=".ui.settings.SettingsActivity"
             android:exported="false"
@@ -81,11 +82,6 @@
             android:exported="false"
             android:label="@string/faq"
             android:parentActivityName=".ui.settings.faq.FaqActivity"/>
-        <activity
-            android:name=".ui.settings.language.LanguageActivity"
-            android:exported="false"
-            android:label="@string/language"
-            android:parentActivityName=".ui.settings.language.LanguageActivity"/>
         <activity
             android:name=".ui.settings.feedback.FeedbackActivity"
             android:exported="true"

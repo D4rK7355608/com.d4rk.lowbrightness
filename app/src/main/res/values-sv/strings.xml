@@ -39,7 +39,7 @@
     <string name="subscribe_to_beta">Prenumerera på betauppdateringar</string>
     <string name="share">Dela med sig</string>
     <string name="share_subject">Prova det nu!!!</string>
-    <string name="share_using">Dela med...</string>
+    <string name="share_using">Dela med…</string>
     <string name="support_me">Stöd mig</string>
     <string name="license">Licens</string>
     <string name="runtime">Körning</string>
@@ -67,11 +67,7 @@
     <string name="welcome">Välkommen</string>
     <string name="screen_overlay_notifications">Skärmöverläggningsmeddelanden</string>
     <string name="copied_to_clipboard">Kopierat till urklipp!</string>
-    <string name="recommended">Rekommenderad</string>
     <string name="language">Språk</string>
-    <string name="system_default">Systemfel</string>
-    <string name="current_language">Det aktuella språket i appen är %1$s!</string>
-    <string name="all_languages">Alla språk</string>
     <string name="music">musik</string>
     <string name="info">Info</string>
     <string name="device_info">Enhetsinformation</string>

@@ -78,11 +78,7 @@
     <string name="welcome">Hoş geldin</string>
     <string name="copied_to_clipboard">Panoya kopyalandı!</string>
     <string name="privacy_and_security">Gizlilik ve güvenlik</string>
-    <string name="recommended">Önerilen</string>
     <string name="language">Dil</string>
-    <string name="system_default">Sistem varsayılanı</string>
-    <string name="current_language">Mevcut uygulama içi dil %1$s!</string>
-    <string name="all_languages">Bütün diller</string>
     <string name="music">Müzik</string>
     <string name="info">Bilgi</string>
     <string name="device_info">Cihaz Bilgisi</string>

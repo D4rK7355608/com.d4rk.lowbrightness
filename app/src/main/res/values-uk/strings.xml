@@ -66,12 +66,8 @@
     <string name="browse_terms_of_service_and_privacy_policy">Перегляньте<i>  <u>Terms of Service</u></i> і<i>  <u>Privacy Policy</u></i>  </string>
     <string name="welcome">Ласкаво просимо</string>
     <string name="copied_to_clipboard">Скопійовано в буфер обміну!</string>
-    <string name="recommended">Рекомендовано</string>
-    <string name="language">Мова</string>
-    <string name="system_default">Система за замовчуванням</string>
-    <string name="current_language">Поточна мова програми – %1$s!</string>
-    <string name="all_languages">Всі мови</string>
     <string name="music">музика</string>
+    <string name="language">Мова</string>
     <string name="info">Інформація</string>
     <string name="screen_overlay_notifications">Сповіщення про нашарування екрану</string>
     <string name="device_info">Інформація про пристрій</string>

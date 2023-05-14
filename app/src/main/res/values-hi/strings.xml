@@ -72,12 +72,8 @@
     <string name="welcome">स्वागत</string>
     <string name="copied_to_clipboard">क्लिपबोर्ड पर नकल!</string>
     <string name="privacy_and_security">गोपनीयता और सुरक्षा</string>
-    <string name="recommended">अनुशंसित</string>
-    <string name="language">भाषा</string>
-    <string name="system_default">प्रणालीगत चूक</string>
-    <string name="current_language">वर्तमान इन-ऐप भाषा है %1$s!</string>
-    <string name="all_languages">सारी भाषाएँ</string>
     <string name="notifications">सूचनाएं</string>
+    <string name="language">भाषा</string>
     <string name="notification_settings">सूचना सेटिंग्स</string>
     <string name="app_usage_notifications">ऐप उपयोग सूचनाएं</string>
     <string name="update_notifications">अद्यतन सूचनाएं</string>

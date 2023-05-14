@@ -39,7 +39,7 @@
     <string name="subscribe_to_beta">Абонирайте се за бета актуализации</string>
     <string name="share">Дял</string>
     <string name="share_subject">Опитай сега!!!</string>
-    <string name="share_using">Споделяне чрез...</string>
+    <string name="share_using">Споделяне чрез…</string>
     <string name="support_me">Подкрепи ме</string>
     <string name="license">Разрешително</string>
     <string name="runtime">Време за изпълнение</string>
@@ -66,11 +66,7 @@
     <string name="browse_terms_of_service_and_privacy_policy">Разгледайте<i>  <u>Terms of Service</u></i> и<i>  <u>Privacy Policy</u></i>  </string>
     <string name="welcome">Добре дошли</string>
     <string name="copied_to_clipboard">Копирано в клипборда!</string>
-    <string name="recommended">Препоръчва се</string>
     <string name="language">език</string>
-    <string name="system_default">Система по подразбиране</string>
-    <string name="current_language">Текущият език в приложението е %1$s!</string>
-    <string name="all_languages">Всички езици</string>
     <string name="music">Музика</string>
     <string name="screen_overlay_notifications">Известия за наслагване на екрана</string>
     <string name="info">Информация</string>

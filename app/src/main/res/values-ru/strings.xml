@@ -72,11 +72,7 @@
     <string name="welcome">Добро пожаловать</string>
     <string name="copied_to_clipboard">Скопировано в буфер обмена!</string>
     <string name="privacy_and_security">Конфиденциальность и безопасность</string>
-    <string name="recommended">рекомендуемые</string>
     <string name="language">Язык</string>
-    <string name="system_default">Системные установки по умолчанию</string>
-    <string name="current_language">Текущий язык в приложении: %1$s!</string>
-    <string name="all_languages">Все языки</string>
     <string name="music">Музыка</string>
     <string name="notifications">Уведомления</string>
     <string name="notification_settings">Настройки уведомлений</string>
