@@ -74,7 +74,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-process:2.6.1'
     implementation 'androidx.lifecycle:lifecycle-common-java8:2.6.1'
     implementation 'androidx.preference:preference:1.2.0'
-    implementation 'com.airbnb.android:lottie:6.0.0'
+    implementation 'com.airbnb.android:lottie:6.0.1'
     implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
     implementation 'com.thebluealliance:spectrum:0.7.1'
     implementation 'me.zhanghai.android.fastscroll:library:1.2.0'
