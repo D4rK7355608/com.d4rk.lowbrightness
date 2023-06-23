@@ -1,3 +1,14 @@
+# Version 4.0_r1:
+- Added a new GDPR message to comply with Google Play policy.
+- Added a new help center, with more comprehensive documentation and support options.
+- Added snack bars instead of toasts for all notifications.
+- Added tooltips to help users understand what is happening in the app.
+- Fixed various bugs and improved readability, consistency, app performance, and responsiveness by optimizing and styling the outdated code.
+- Made minor improvements to user interface.
+- Made various improvements to colors and languages.
+- Made various project structure enhancements for better readability and maintainability.
+- Made various under-the-hood improvements for a better overall app experience.
+
 # Version 3.0_r1:
 - Added language support for Hungarian.
 - Reworked language system, making it more accurate and user-friendly.

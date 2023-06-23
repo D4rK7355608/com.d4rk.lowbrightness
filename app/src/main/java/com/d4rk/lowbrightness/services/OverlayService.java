@@ -66,7 +66,7 @@ public class OverlayService extends Service {
     }
     private void showNotification() {
         createNotificationChannel();
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID).setSmallIcon(R.drawable.ic_eye).setContentTitle(getResources().getString(R.string.notification_title)).setContentText(getResources().getString(R.string.notification_context));
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID).setSmallIcon(R.drawable.ic_eye).setContentTitle(getResources().getString(R.string.notification_color_light_filter_active_title)).setContentText(getResources().getString(R.string.notification_context));
         mBuilder.setOngoing(true);
         Intent resultIntent = new Intent(this, MainActivity.class);
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);

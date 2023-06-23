@@ -51,9 +51,9 @@ public class HomeFragment extends Fragment {
         final RequestDrawOverAppsPermission permissionRequester = new RequestDrawOverAppsPermission(getActivity());
         if (!permissionRequester.canDrawOverlays()) {
             MaterialAlertDialogBuilder alertDialog = new MaterialAlertDialogBuilder(requireContext());
-            alertDialog.setTitle(R.string.app_needs_permission_title);
+            alertDialog.setTitle(R.string.notification_app_needs_permission_title);
             alertDialog.setIcon(R.drawable.ic_eye);
-            alertDialog.setMessage(R.string.app_needs_permission_message);
+            alertDialog.setMessage(R.string.summary_app_needs_permission);
             alertDialog.setCancelable(false);
             alertDialog.setPositiveButton(R.string.allow_permission, (dialog, id) -> {
                 dialog.cancel();

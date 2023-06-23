@@ -92,13 +92,6 @@
             app:title="@string/oss_license_title"
             app:icon="@drawable/ic_libraries"/>
         <androidx.preference.Preference
-            android:icon="@drawable/ic_faq"
-            app:title="@string/faq">
-            <intent
-                android:targetPackage="com.d4rk.lowbrightness"
-                android:targetClass="com.d4rk.lowbrightness.ui.settings.faq.FaqActivity"/>
-        </androidx.preference.Preference>
-        <androidx.preference.Preference
             android:icon="@drawable/ic_license"
             app:title="@string/license"
             android:summary="@string/license_sum">
@@ -109,13 +102,6 @@
     <androidx.preference.PreferenceCategory
         app:title="@string/more"
         android:icon="@drawable/ic_more">
-        <androidx.preference.Preference
-            android:icon="@drawable/ic_feedback"
-            app:title="@string/feedback">
-            <intent
-                android:targetPackage="com.d4rk.lowbrightness"
-                android:targetClass="com.d4rk.lowbrightness.ui.settings.feedback.FeedbackActivity"/>
-        </androidx.preference.Preference>
         <androidx.preference.Preference
             app:key="@string/key_share"
             android:icon="@drawable/ic_share"

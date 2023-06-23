@@ -7,6 +7,7 @@
     <string name="key_changelog" translatable="false">changelog</string>
     <string name="key_device_info" translatable="false">device_info</string>
     <string name="key_open_source_licenses" translatable="false">open_source_licenses</string>
+    <string name="key_feedback" translatable="false">feedback</string>
     <string name="default_value_theme" translatable="false">MODE_NIGHT_FOLLOW_SYSTEM</string>
     <string name="default_value_language" translatable="false">en</string>
 </resources>

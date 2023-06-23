@@ -8,7 +8,7 @@
     <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/scheduler_description"/>
+        android:text="@string/summary_scheduler"/>
     <com.google.android.material.button.MaterialButton
         style="@style/Widget.Material3.Button.ElevatedButton.Icon"
         android:id="@+id/button_schedule"
@@ -17,6 +17,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:text="@string/disable_scheduler"
+        android:tooltipText="@string/disable_scheduler"
         app:iconGravity="start"
         app:icon="@drawable/ic_schedule"/>
     <com.google.android.material.textview.MaterialTextView
@@ -39,6 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="20:00"
+            android:tooltipText="@string/tooltip_button_hour_from"
             tools:ignore="HardcodedText"/>
         <com.google.android.material.button.MaterialButton
             style="@style/Widget.Material3.Button.ElevatedButton.Icon"
@@ -47,6 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="06:00"
+            android:tooltipText="@string/tooltip_button_hour_to"
             tools:ignore="HardcodedText"/>
     </LinearLayout>
     <com.google.android.material.textview.MaterialTextView

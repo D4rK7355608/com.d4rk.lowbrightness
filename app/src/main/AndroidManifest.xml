@@ -20,7 +20,7 @@
         </intent>
     </queries>
     <application
-        android:name=".ads.Ads"
+        android:name=".ads.managers.AppOpenAd"
         android:appCategory="productivity"
         android:description="@string/app_description"
         android:icon="@mipmap/ic_launcher"
@@ -78,15 +78,10 @@
             android:label="@string/permissions"
             android:parentActivityName=".ui.settings.permissions.PermissionsActivity"/>
         <activity
-            android:name=".ui.settings.faq.FaqActivity"
+            android:name=".ui.help.HelpActivity"
             android:exported="false"
-            android:label="@string/faq"
-            android:parentActivityName=".ui.settings.faq.FaqActivity"/>
-        <activity
-            android:name=".ui.settings.feedback.FeedbackActivity"
-            android:exported="true"
-            android:label="@string/feedback"
-            android:parentActivityName=".ui.settings.feedback.FeedbackActivity"/>
+            android:label="@string/help"
+            android:parentActivityName=".ui.help.HelpActivity"/>
         <service
             android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
             android:enabled="false"

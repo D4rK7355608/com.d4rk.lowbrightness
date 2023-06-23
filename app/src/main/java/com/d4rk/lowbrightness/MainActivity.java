@@ -1,16 +1,12 @@
 package com.d4rk.lowbrightness;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
+
 import android.content.Intent;
 import android.content.IntentSender;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.core.app.NotificationCompat;
 import androidx.core.os.LocaleListCompat;
 import androidx.core.splashscreen.SplashScreen;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -20,21 +16,22 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.preference.PreferenceManager;
+
 import com.d4rk.lowbrightness.base.Application;
 import com.d4rk.lowbrightness.base.Constants;
 import com.d4rk.lowbrightness.base.Prefs;
 import com.d4rk.lowbrightness.databinding.ActivityMainBinding;
+import com.d4rk.lowbrightness.helpers.AppUpdateNotificationsManager;
+import com.d4rk.lowbrightness.helpers.AppUsageNotificationsManager;
 import com.d4rk.lowbrightness.helpers.IShowHideScheduler;
 import com.d4rk.lowbrightness.helpers.RequestDrawOverAppsPermission;
 import com.d4rk.lowbrightness.notifications.SchedulerDisabledFragment;
 import com.d4rk.lowbrightness.notifications.SchedulerEnabledFragment;
 import com.d4rk.lowbrightness.services.OverlayService;
 import com.d4rk.lowbrightness.ui.startup.StartupActivity;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.android.play.core.appupdate.AppUpdateInfo;
 import com.google.android.play.core.appupdate.AppUpdateManager;
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
 import com.google.android.play.core.install.model.AppUpdateType;
@@ -54,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements IShowHideSchedule
         SplashScreen.installSplashScreen(this);
         ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        appSettings();
         setSupportActionBar(binding.appBarMain.toolbar);
         appUpdateManager = AppUpdateManagerFactory.create(this);
         sharedPreferences = Prefs.get(this);
@@ -63,40 +61,13 @@ public class MainActivity extends AppCompatActivity implements IShowHideSchedule
         navController = Navigation.findNavController(this, R.id.navigation_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+        AppUpdateNotificationsManager appUpdateNotificationsManager = new AppUpdateNotificationsManager(this);
+        appUpdateNotificationsManager.checkAndSendUpdateNotification();
+    }
+    public void appSettings() {
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         String languageCode = sharedPreferences.getString(getString(R.string.key_language), getString(R.string.default_value_language));
         AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags(languageCode));
-        SharedPreferences prefs = getSharedPreferences("app_usage", MODE_PRIVATE);
-        long lastUsedTimestamp = prefs.getLong("last_used", 0);
-        long currentTimestamp = System.currentTimeMillis();
-        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        if (currentTimestamp - lastUsedTimestamp > 3 * 24 * 60 * 60 * 1000) {
-            String channelId = "app_usage_channel";
-            NotificationChannel channel = new NotificationChannel(channelId, getString(R.string.app_usage_notifications), NotificationManager.IMPORTANCE_HIGH);
-            notificationManager.createNotificationChannel(channel);
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channelId)
-                    .setSmallIcon(R.drawable.ic_notification)
-                    .setContentTitle(getString(R.string.notification_last_time_used_title))
-                    .setContentText(getString(R.string.summary_notification_last_time_used))
-                    .setAutoCancel(true);
-            notificationManager.notify(0, builder.build());
-        }
-        prefs.edit().putLong("last_used", currentTimestamp).apply();
-        AppUpdateManager appUpdateManager = AppUpdateManagerFactory.create(this);
-        Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager.getAppUpdateInfo();
-        appUpdateInfoTask.addOnSuccessListener(appUpdateInfo -> {
-            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.FLEXIBLE)) {
-                String updateChannelId = "update_channel";
-                NotificationChannel updateChannel = new NotificationChannel(updateChannelId, getString(R.string.update_notifications), NotificationManager.IMPORTANCE_HIGH);
-                notificationManager.createNotificationChannel(updateChannel);
-                NotificationCompat.Builder updateBuilder = new NotificationCompat.Builder(this, updateChannelId)
-                        .setSmallIcon(R.drawable.ic_notification_update)
-                        .setContentTitle(getString(R.string.notification_update_title))
-                        .setContentText(getString(R.string.summary_notification_update))
-                        .setAutoCancel(true)
-                        .setContentIntent(PendingIntent.getActivity(this, 0, new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getPackageName())), PendingIntent.FLAG_IMMUTABLE));
-                notificationManager.notify(0, updateBuilder.build());
-            }
-        });
     }
     @Override
     public void onBackPressed() {
@@ -110,16 +81,12 @@ public class MainActivity extends AppCompatActivity implements IShowHideSchedule
         builder.setNegativeButton(android.R.string.no, null);
         builder.show();
     }
+    @SuppressWarnings("deprecation")
     @Override
     public void onResume() {
         super.onResume();
-        SharedPreferences preferences = getSharedPreferences("prefs", MODE_PRIVATE);
-        if (preferences.getBoolean("value", true)) {
-            SharedPreferences.Editor editor = preferences.edit();
-            editor.putBoolean("value", false);
-            editor.apply();
-            startActivity(new Intent(this, StartupActivity.class));
-        }
+        AppUsageNotificationsManager appUsageNotificationsManager = new AppUsageNotificationsManager(this);
+        appUsageNotificationsManager.checkAndSendAppUsageNotification();
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         boolean preferenceFirebase = sharedPreferences.getBoolean(getString(R.string.key_firebase), true);
         FirebaseAnalytics.getInstance(this).setAnalyticsCollectionEnabled(preferenceFirebase);
@@ -134,7 +101,16 @@ public class MainActivity extends AppCompatActivity implements IShowHideSchedule
                 }
             }
         });
+        startupScreen();
     }
+    private void startupScreen() {
+        SharedPreferences startupPreference = getSharedPreferences("startup", MODE_PRIVATE);
+        if (startupPreference.getBoolean("value", true)) {
+            startupPreference.edit().putBoolean("value", false).apply();
+            startActivity(new Intent(this, StartupActivity.class));
+        }
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (permissionRequester.requestCodeMatches(requestCode)) {

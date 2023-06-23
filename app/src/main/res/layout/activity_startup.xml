@@ -65,6 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
         android:text="@string/agree"
+        android:tooltipText="@string/tooltip_agree"
         app:icon="@drawable/ic_check_circle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>

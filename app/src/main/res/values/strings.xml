@@ -1,95 +1,51 @@
 <resources>
-    <string name="app_name" translatable="false">Low Brightness</string>
-    <string name="app_version">Version %1$s (%2$d)</string>
     <string name="app_description">Decrease or increase your screen brightness by using our app! 🔆</string>
-    <string name="made_in">Made with ❤ in Romania!</string>
-    <string name="privacy_and_security">Privacy and security</string>
-    <string name="copyright">© Copyright %1s, made by D4rK!</string>
-    <string name="license_sum" translatable="false">General Public License-3.0</string>
-    <string name="github" translatable="false">GitHub</string>
-    <string name="xda" translatable="false">XDA</string>
-    <string name="twitter" translatable="false">Twitter</string>
-    <string name="youtube" translatable="false">YouTube</string>
-    <string name="arch" translatable="false">Arch:</string>
-    <string name="bulgarian" translatable="false">Български</string>
-    <string name="english" translatable="false">English</string>
-    <string name="french" translatable="false">Français</string>
-    <string name="hungarian" translatable="false">Magyar</string>
-    <string name="german" translatable="false">Deutsch</string>
-    <string name="hindi" translatable="false">हिन्दी</string>
-    <string name="indonesian" translatable="false">Bahasa Indonesia</string>
-    <string name="italian" translatable="false">Italiano</string>
-    <string name="japanese" translatable="false">日本語</string>
-    <string name="polish" translatable="false">Polski</string>
-    <string name="romanian" translatable="false">Română</string>
-    <string name="russian" translatable="false">Русский</string>
-    <string name="spanish" translatable="false">Español</string>
-    <string name="turkish" translatable="false">Türkçe</string>
-    <string name="ukrainian" translatable="false">Українська</string>
+    <string name="welcome">Welcome</string>
+    <string name="browse_terms_of_service_and_privacy_policy">Browse the <i><u>Terms of Service</u></i> and <i><u>Privacy Policy</u></i></string>
+    <string name="agree">Agree</string>
+    <string name="menu_home">Home</string>
+    <string name="allow_permission">Allow permission</string>
+    <string name="intensity">Brightness optimization level</string>
+    <string name="customize_overlay_color">Filter overlay color</string>
+    <string name="select_a_color">Select a color</string>
+    <string name="schedule">Schedule</string>
     <string name="enable_scheduler">Enable scheduler</string>
     <string name="disable_scheduler">Disable scheduler</string>
     <string name="enabled_only_during_this_interval">Enabled only during this interval:</string>
-    <string name="brightness_sum">Define how strong the overlay filter should be. Higher levels are recommended for night time reading.</string>
-    <string name="filter_sum">Select the color that you think is least distracting to your eyes and has enough contrast with the apps, typically visible on the screen.</string>
-    <string name="schedule">Schedule</string>
     <string name="time_remaining_to_darken_label">Screen brightness will be reduced in</string>
     <string name="time_remaining_to_lighten_label">Original brightness will be restored in</string>
-    <string name="customize_overlay_color">Filter overlay color</string>
-    <string name="intensity">Brightness optimization level</string>
-    <string name="scheduler_description">Schedule the period when the screen should automatically darken, to reduce eye strain and make it more comfortable to read in dark environments.</string>
-    <string name="dev_feedback">Mail to dev</string>
-    <string name="feedback">Feedback</string>
-    <string name="rate_us">Rate our app!</string>
     <string name="ad">Ads</string>
+    <string name="close">Close?</string>
+    <string name="settings">Settings</string>
+    <string name="appearance">Appearance</string>
+    <string name="theme">Theme</string>
+    <string name="follow_system">Follow System Mode</string>
+    <string name="light_mode">Light Mode</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="auto_battery_mode">Auto Battery Dark Mode</string>
+    <string name="language">Language</string>
+    <string name="notifications">Notifications</string>
+    <string name="notification_settings">Notification settings</string>
+    <string name="advanced">Advanced</string>
+    <string name="firebase">Firebase</string>
+    <string name="app_updates">App updates</string>
+    <string name="check_for_updates">Check for updates…</string>
+    <string name="subscribe_to_beta">Subscribe to beta updates</string>
+    <string name="changelog">Changelog</string>
+    <string name="privacy_and_security">Privacy and security</string>
+    <string name="privacy_policy">Privacy Policy</string>
     <string name="terms_of_service">Terms of Service</string>
     <string name="code_of_conduct">Code of Conduct</string>
-    <string name="more_apps">More apps…</string>
-    <string name="changelog">Changelog</string>
-    <string name="normal">Normal</string>
-    <string name="internet">Internet [INTERNET]</string>
-    <string name="settings">Settings</string>
     <string name="permissions">Permissions</string>
-    <string name="check_for_updates">Check for updates…</string>
-    <string name="more">More</string>
-    <string name="theme">Theme</string>
-    <string name="google_dev">Google Dev</string>
-    <string name="open_me">Open me :)</string>
-    <string name="privacy_policy">Privacy Policy</string>
-    <string name="menu_home">Home</string>
-    <string name="menu_about">About</string>
-    <string name="app_updates">App updates</string>
-    <string name="subscribe_to_beta">Subscribe to beta updates</string>
-    <string name="share">Share</string>
-    <string name="share_subject">Try it now!!!</string>
-    <string name="share_using">Share using…</string>
-    <string name="support_me">Support me</string>
-    <string name="license">License</string>
+    <string name="normal">Normal</string>
     <string name="runtime">Runtime</string>
-    <string name="schedule_exact_alarm">Schedule exact alarm [SCHEDULE_EXACT_ALARM]</string>
-    <string name="schedule_exact_alarm_sum">Used to show app notification.</string>
-    <string name="foreground_service_sum">Used to make app run in background and monitoring brightness.</string>
-    <string name="write_settings">Write settings [WRITE_SETTINGS]</string>
-    <string name="write_settings_sum">Used to have access for changing brightness.</string>
-    <string name="receive_boot_completed">Receive boot completed [RECEIVE_BOOT_COMPLETED]</string>
-    <string name="receive_boot_completed_sum">Used to make app boot.</string>
-    <string name="appearance">Appearance</string>
-    <string name="app_needs_permission_title">App needs permission</string>
-    <string name="app_needs_permission_message">Applying a color light filter to overlay the screen, requires a special permission called "Display over other apps" [SYSTEM_ALERT_WINDOW]. \n\nPlease, allow this permission on the next screen so that the blue light filter can be applied.</string>
-    <string name="allow_permission">Allow permission</string>
-    <string name="notification_title">Color light filter active</string>
-    <string name="notification_context">Tap to edit settings or disable</string>
-    <string name="ad_id">Ad id [AD_ID]</string>
-    <string name="ad_id_sum">Used to allow ads to be shown in Android 13+ devices.</string>
-    <string name="system_alert_window">System alert window [SYSTEM_ALERT_WINDOW]</string>
-    <string name="system_alert_window_sum">Used to allow app draw over other apps.</string>
-    <string name="post_notifications">Post notifications [POST_NOTIFICATIONS]</string>
-    <string name="post_notifications_sum">Used to allow app show notifications on Android 13+ devices.</string>
-    <string name="agree">Agree</string>
-    <string name="browse_terms_of_service_and_privacy_policy">Browse the <i><u>Terms of Service</u></i> and <i><u>Privacy Policy</u></i></string>
-    <string name="welcome">Welcome</string>
-    <string name="copied_to_clipboard">Copied to clipboard!</string>
-    <string name="music">Music</string>
-    <string name="language">Language</string>
+    <string name="license">License</string>
+    <string name="more">More</string>
+    <string name="share">Share</string>
+    <string name="share_using">Share using…</string>
+    <string name="share_subject">Try it now!!!</string>
+    <string name="more_apps">More apps…</string>
+    <string name="support_me">Support me</string>
     <string name="info">Info</string>
     <string name="device_info">Device Info</string>
     <string name="app_build">App Build: Release\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
@@ -97,24 +53,36 @@
     <string name="device_model">Device Model:</string>
     <string name="android_version">Android Version:</string>
     <string name="api_level">API Level:</string>
-    <string name="follow_system">Follow System Mode</string>
-    <string name="light_mode">Light Mode</string>
-    <string name="dark_mode">Dark Mode</string>
-    <string name="auto_battery_mode">Auto Battery Dark Mode</string>
+    <string name="help_and_feedback">Help &amp; feedback</string>
+    <string name="help">Help</string>
+    <string name="mail_to_dev">Email developer 📧</string>
     <string name="faq">FAQ</string>
-    <string name="select_a_color">Select a color</string>
-    <string name="notifications">Notifications</string>
-    <string name="notification_settings">Notification settings</string>
+    <string name="send_feedback">Send feedback</string>
+    <string name="menu_about">About</string>
+    <string name="app_version">Version %1$s (%2$d)</string>
+    <string name="google_dev">Google Dev</string>
+    <string name="music">Music</string>
+    <string name="made_in">Made with ❤ in Romania!</string>
+    <string name="copyright">© Copyright %1s, made by D4rK!</string>
+    <string name="notification_app_needs_permission_title">App needs permission</string>
+    <string name="notification_last_time_used_title">It\'s been a while!</string>
+    <string name="notification_update_title">A new update available!</string>
+    <string name="notification_color_light_filter_active_title">Color light filter active</string>
+    <string name="notification_context">Tap to edit settings or disable</string>
     <string name="app_usage_notifications">App Usage Notifications</string>
     <string name="update_notifications">Update Notifications</string>
-    <string name="firebase">Firebase</string>
-    <string name="advanced">Advanced</string>
     <string name="screen_overlay_notifications">Screen Overlay Notifications</string>
-    <string name="close">Close?</string>
+    <string name="ad_id">Ad id [AD_ID]</string>
+    <string name="internet">Internet [INTERNET]</string>
+    <string name="post_notifications">Post notifications [POST_NOTIFICATIONS]</string>
+    <string name="access_network_state">Access network state [ACCESS_NETWORK_STATE]</string>
+    <string name="access_notification_policy">Access notification policy [ACCESS_NOTIFICATION_POLICY]</string>
     <string name="check_license">Check license [CHECK_LICENSE]</string>
     <string name="foreground_service">Foreground service [FOREGROUND_SERVICE]</string>
-    <string name="access_notification_policy">Access notification policy [ACCESS_NOTIFICATION_POLICY]</string>
-    <string name="access_network_state">Access network state [ACCESS_NETWORK_STATE]</string>
+    <string name="receive_boot_completed">Receive boot completed [RECEIVE_BOOT_COMPLETED]</string>
+    <string name="schedule_exact_alarm">Schedule exact alarm [SCHEDULE_EXACT_ALARM]</string>
+    <string name="system_alert_window">System alert window [SYSTEM_ALERT_WINDOW]</string>
+    <string name="write_settings">Write settings [WRITE_SETTINGS]</string>
     <string name="question_1">What is Low Brightness?</string>
     <string name="question_2">Is Low Brightness free to use?</string>
     <string name="question_3">How do I install Low Brightness on my Android device?</string>
@@ -124,9 +92,6 @@
     <string name="question_7">Is Low Brightness safe to use?</string>
     <string name="question_8">Can I contribute to the Low Brightness project?</string>
     <string name="question_9">Where can I get more help or support for Low Brightness?</string>
-    <string name="notification_last_time_used_title">It\'s been a while!</string>
-    <string name="notification_update_title">A new update available!</string>
-    <string name="summary_close">Are you sure you want to exit?</string>
     <string name="summary_preference_faq_1">Low Brightness is an open-source Android app that allows users to set the screen brightness of their device to a lower level than the default setting, potentially saving battery life and reducing strain on the eyes.</string>
     <string name="summary_preference_faq_2">Yes, Low Brightness is free to download and use. It is an open-source project, so the source code is also available for anyone to view or contribute to.</string>
     <string name="summary_preference_faq_3">Low Brightness can be downloaded from the Google Play Store or from the Low Brightness website. Simply search for "Low Brightness" in the Play Store app or visit the website and follow the instructions to download and install the app.</string>
@@ -136,22 +101,35 @@
     <string name="summary_preference_faq_7">Low Brightness is a safe and secure app. It has been thoroughly tested and does not contain any malware or other harmful code. However, as with any app, it is always a good idea to exercise caution when downloading and installing software from the internet.</string>
     <string name="summary_preference_faq_8">Yes! Low Brightness is an open-source project, which means that anyone is welcome to contribute to the development of the app. If you have programming skills and are interested in contributing, you can find the source code for Low Brightness on GitHub.</string>
     <string name="summary_preference_faq_9">If you have any questions or need help with Low Brightness, you can visit the Low Brightness website or contact the developer through the "Contact" page. You can also try searching online for answers or posting in a forum or discussion group related to Android development.</string>
-    <string name="summary_preference_settings_firebase">This let us collect information about app performance and crash logs.</string>
     <string name="summary_preference_settings_language">Set application language.</string>
+    <string name="summary_preference_settings_firebase">This let us collect information about app performance and crash logs.</string>
     <string name="summary_preference_settings_support_me">Click here if you want to support me without paying money. Just some time for viewing an ad.</string>
-    <string name="summary_preference_permissions_check_license">Used to verify that the app is being used in accordance with the terms of the license agreement, and to enforce licensing terms and protect intellectual property.</string>
-    <string name="summary_preference_permissions_access_notification_policy">Used to access and modify the notification policy of the device, controlling how and when notifications are shown to the user and providing custom notification management features.</string>
-    <string name="summary_preference_permissions_internet">Used to send error reports.</string>
+    <string name="summary_preference_permissions_ad_id">Allows the app to retrieve and use the advertising identifier associated with the user\'s device, providing personalized ads, measuring ad effectiveness, and showing ads on Android 13 or later devices.</string>
+    <string name="summary_preference_permissions_internet">Allows the app to establish an internet connection to send error reports or check for updates.</string>
+    <string name="summary_preference_permissions_post_notifications">Allows the app to display notifications on the devices with Android 13 or later.</string>
+    <string name="summary_preference_permissions_access_network_state">Allows the app to check network connectivity and retrieve information about Wi-Fi, including enabled status and connected Wi-Fi device names.</string>
+    <string name="summary_preference_permissions_access_notification_policy">Allows the app to access and modify the device\'s notification policy, controlling how and when notifications are displayed to the user and providing custom notification management features.</string>
+    <string name="summary_preference_permissions_check_license">Allows the app to verify its compliance with the license agreement and enforce licensing terms to protect intellectual property.</string>
+    <string name="summary_preference_permissions_foreground_service">Allows the app to create and use services that run in the foreground, giving them priority over other background processes and improving performance and reliability, such as monitoring brightness and ensuring smooth operation even when running in the background.</string>
+    <string name="summary_preference_permissions_receive_boot_completed">Allows the app to automatically start when the device finishes booting.</string>
+    <string name="summary_preference_permissions_schedule_exact_alarm">Allows the app to schedule precise alarms and display notifications to the user.</string>
+    <string name="summary_preference_permissions_system_alert_window">Allows the app to draw overlays on top of other apps, providing the ability to customize and enhance the user interface.</string>
+    <string name="summary_preference_permissions_write_settings">Allows the app to modify system settings related to screen brightness for better user experience.</string>
     <string name="summary_browse_terms_of_service_and_privacy_policy">Read and agree to our Terms of Service and Privacy Policy to continue.</string>
     <string name="summary_notification_last_time_used">Don\'t let your eyes burn. Low screen brightness and feel comfy while using your device.</string>
     <string name="summary_notification_update">A new version of the app is available. Click to update!</string>
-    <string name="toast_feedback">Thanks for rating us!</string>
-    <string name="tooltip_feedback">Send us your review on Google Play Store.</string>
-    <string name="changelog_title" translatable="false">Changelog - Version %1s</string>
-    <string name="changes" translatable="false">\n
-        • Added language support for Hungarian.\n\n
-        • Reworked language system, making it more accurate and user-friendly.\n\n
-        • Fixed various bugs and improved readability, consistency, app performance, and responsiveness by optimizing and styling the outdated code.\n\n
-        • Made various under-the-hood improvements for a better overall app experience.
-    </string>
+    <string name="summary_close">Are you sure you want to exit?</string>
+    <string name="summary_brightness">Define how strong the overlay filter should be. Higher levels are recommended for night time reading.</string>
+    <string name="summary_scheduler">Schedule the period when the screen should automatically darken, to reduce eye strain and make it more comfortable to read in dark environments.</string>
+    <string name="summary_filter">Select the color that you think is least distracting to your eyes and has enough contrast with the apps, typically visible on the screen.</string>
+    <string name="summary_app_needs_permission">Applying a color light filter to overlay the screen, requires a special permission called "Display over other apps" [SYSTEM_ALERT_WINDOW]. \n\nPlease, allow this permission on the next screen so that the blue light filter can be applied.</string>
+    <string name="snack_unable_to_open_google_play_store">Unable to open Google Play Store.</string>
+    <string name="snack_feedback">Thanks for rating us!</string>
+    <string name="snack_copied_to_clipboard">Copied to clipboard!</string>
+    <string name="tooltip_agree">Accept the terms and conditions.</string>
+    <string name="tooltip_button_hour_from">Time when your screen brightness will be adjusted to the level you set.</string>
+    <string name="tooltip_button_hour_to">Time when your screen brightness will return to its normal level.</string>
+    <string name="tooltip_open_me">Open me 🌐</string>
+    <string name="tooltip_open_the_color_picker">Open the color picker.</string>
+    <string name="tooltip_enable_scheduler">Enable the scheduler to automatically adjust your screen brightness.</string>
 </resources>

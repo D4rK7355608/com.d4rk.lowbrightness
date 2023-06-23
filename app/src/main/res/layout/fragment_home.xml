@@ -38,7 +38,7 @@
                         android:layout_width="wrap_content"
                         android:padding="16dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/brightness_sum"/>
+                        android:text="@string/summary_brightness"/>
                     <com.d4rk.lowbrightness.ui.views.DiscreteSeekBarView
                         android:id="@+id/discrete_seek_bar"
                         android:layout_width="match_parent"
@@ -82,6 +82,7 @@
                             android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
                             android:layout_marginStart="15dp"
+                            android:tooltipText="@string/tooltip_open_the_color_picker"
                             tools:ignore="SpeakableTextPresentCheck"/>
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -93,7 +94,7 @@
                             <com.google.android.material.textview.MaterialTextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/filter_sum"/>
+                                android:text="@string/summary_filter"/>
                         </LinearLayout>
                     </RelativeLayout>
                     <LinearLayout
@@ -155,13 +156,13 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/ad_view_card"
-                app:layout_constraintTop_toBottomOf="@id/card_view_scheduler"
                 style="@style/Widget.Material3.CardView.Elevated"
+                android:id="@+id/ad_view_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                app:cardCornerRadius="24dp">
+                app:cardCornerRadius="24dp"
+                app:layout_constraintTop_toBottomOf="@id/card_view_scheduler">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -177,10 +178,10 @@
                         android:textColor="@android:color/white"/>
                     <com.google.android.gms.ads.AdView
                         android:id="@+id/ad_view"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        ads:adSize="BANNER"
+                        ads:adSize="MEDIUM_RECTANGLE"
                         ads:adUnitId="ca-app-pub-5294151573817700/8570145928"/>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>

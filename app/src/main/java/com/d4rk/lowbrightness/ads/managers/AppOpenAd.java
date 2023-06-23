@@ -1,4 +1,4 @@
-package com.d4rk.lowbrightness.ads;
+package com.d4rk.lowbrightness.ads.managers;
 import android.app.Activity;
 import android.app.Application;
 import android.app.Application.ActivityLifecycleCallbacks;
@@ -15,11 +15,10 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.appopen.AppOpenAd;
 import com.google.android.gms.ads.appopen.AppOpenAd.AppOpenAdLoadCallback;
 import java.util.Date;
 @SuppressWarnings("ALL")
-public class Ads extends Application implements ActivityLifecycleCallbacks, LifecycleObserver {
+public class AppOpenAd extends Application implements ActivityLifecycleCallbacks, LifecycleObserver {
     private AppOpenAdManager appOpenAdManager;
     private Activity currentActivity;
     @Override
@@ -60,7 +59,7 @@ public class Ads extends Application implements ActivityLifecycleCallbacks, Life
     }
     private static class AppOpenAdManager {
         private static final String AD_UNIT_ID = "ca-app-pub-5294151573817700/5249073936";
-        private AppOpenAd appOpenAd = null;
+        private com.google.android.gms.ads.appopen.AppOpenAd appOpenAd = null;
         private boolean isLoadingAd = false;
         private boolean isShowingAd = false;
         private long loadTime = 0;
@@ -71,9 +70,9 @@ public class Ads extends Application implements ActivityLifecycleCallbacks, Life
             }
             isLoadingAd = true;
             AdRequest request = new AdRequest.Builder().build();
-            AppOpenAd.load(context, AD_UNIT_ID, request, AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT, new AppOpenAdLoadCallback() {
+            com.google.android.gms.ads.appopen.AppOpenAd.load(context, AD_UNIT_ID, request, com.google.android.gms.ads.appopen.AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT, new AppOpenAdLoadCallback() {
                 @Override
-                public void onAdLoaded(@NonNull AppOpenAd ad) {
+                public void onAdLoaded(@NonNull com.google.android.gms.ads.appopen.AppOpenAd ad) {
                     appOpenAd = ad;
                     isLoadingAd = false;
                     loadTime = (new Date()).getTime();
