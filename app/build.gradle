@@ -6,7 +6,7 @@ plugins {
     id 'com.google.android.gms.oss-licenses-plugin'
 }
 android {
-    compileSdk 34
+    compileSdk 35
     namespace 'com.d4rk.lowbrightness'
     defaultConfig {
         applicationId 'com.d4rk.lowbrightness'
@@ -52,12 +52,12 @@ android {
     }
 }
 dependencies {
-    implementation 'com.google.firebase:firebase-crashlytics:19.0.3'
-    implementation 'com.google.firebase:firebase-analytics:22.1.0'
-    implementation 'com.google.firebase:firebase-perf:21.0.1'
+    implementation 'com.google.firebase:firebase-crashlytics:19.2.1'
+    implementation 'com.google.firebase:firebase-analytics:22.1.2'
+    implementation 'com.google.firebase:firebase-perf:21.0.2'
     implementation 'com.google.android.gms:play-services-oss-licenses:17.1.0'
     implementation 'com.google.android.gms:play-services-ads:23.3.0'
-    implementation 'com.google.android.play:review-ktx:2.0.1'
+    implementation 'com.google.android.play:review-ktx:2.0.2'
     implementation 'com.google.android.play:app-update-ktx:2.1.0'
     implementation 'com.google.android.material:material:1.12.0'
     implementation 'androidx.appcompat:appcompat:1.7.0'
@@ -66,13 +66,13 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
     implementation 'androidx.multidex:multidex:2.0.1'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.7.7'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.7.7'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.8.4'
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.8.4'
-    implementation 'androidx.lifecycle:lifecycle-process:2.8.4'
-    implementation 'androidx.lifecycle:lifecycle-common-java8:2.8.4'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.8.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.8.3'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.6'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.8.6'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.8.6'
+    implementation 'androidx.lifecycle:lifecycle-process:2.8.6'
+    implementation 'androidx.lifecycle:lifecycle-common-java8:2.8.6'
     implementation 'androidx.preference:preference-ktx:1.2.1'
     implementation 'com.airbnb.android:lottie:6.5.1'
     implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
