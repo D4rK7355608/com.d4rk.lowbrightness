@@ -1,26 +1,31 @@
-package com.d4rk.lowbrightness.helpers;
-import android.app.Activity;
-import android.content.Intent;
-import android.net.Uri;
-import android.provider.Settings;
-import com.d4rk.lowbrightness.base.Application;
-public class RequestDrawOverAppsPermission {
-    private static final int REQUEST_CODE = 5463;
-    private final Activity activity;
-    public RequestDrawOverAppsPermission(Activity activity) {
-        this.activity = activity;
+package com.d4rk.lowbrightness.helpers
+
+import android.app.Activity
+import android.content.Intent
+import android.net.Uri
+import android.provider.Settings
+import com.d4rk.lowbrightness.base.Application.canDrawOverlay
+
+class RequestDrawOverAppsPermission(private val activity : Activity) {
+    fun requestCodeMatches(requestCode : Int) : Boolean {
+        return REQUEST_CODE == requestCode
     }
-    public boolean requestCodeMatches(int requestCode) {
-        return REQUEST_CODE == requestCode;
+
+    fun canDrawOverlays() : Boolean {
+        return canDrawOverlay(activity)
     }
-    public boolean canDrawOverlays() {
-        return Application.canDrawOverlay(activity);
-    }
-    public void requestPermissionDrawOverOtherApps() {
-        if (!Settings.canDrawOverlays(activity)) {
-            Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-                    Uri.parse("package:" + activity.getPackageName()));
-            activity.startActivityForResult(intent, REQUEST_CODE);
+
+    fun requestPermissionDrawOverOtherApps() {
+        if (! Settings.canDrawOverlays(activity)) {
+            val intent = Intent(
+                Settings.ACTION_MANAGE_OVERLAY_PERMISSION ,
+                Uri.parse("package:" + activity.packageName)
+            )
+            activity.startActivityForResult(intent , REQUEST_CODE)
         }
+    }
+
+    companion object {
+        private const val REQUEST_CODE = 5463
     }
 }

@@ -1,4 +1,5 @@
-package com.d4rk.lowbrightness.helpers;
-public interface IShowHideScheduler {
-    void showOrHideSchedulerUI(boolean show);
+package com.d4rk.lowbrightness.helpers
+
+interface IShowHideScheduler {
+    fun showOrHideSchedulerUI(show : Boolean)
 }

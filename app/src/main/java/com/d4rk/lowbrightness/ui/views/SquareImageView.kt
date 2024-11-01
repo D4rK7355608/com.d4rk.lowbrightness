@@ -1,21 +1,20 @@
-package com.d4rk.lowbrightness.ui.views;
-import android.content.Context;
-import android.util.AttributeSet;
-import androidx.appcompat.widget.AppCompatImageView;
-public class SquareImageView extends AppCompatImageView {
-	public SquareImageView(Context context) {
-		super(context);
-	}
-	public SquareImageView(Context context, AttributeSet attrs) {
-		super(context, attrs);
-	}
-	public SquareImageView(Context context, AttributeSet attrs, int defStyleAttr) {
-		super(context, attrs, defStyleAttr);
-	}
-	@Override
-	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-		int size = Math.max(getMeasuredWidth(), getMeasuredHeight());
-		setMeasuredDimension(size, size);
-	}
+package com.d4rk.lowbrightness.ui.views
+
+import android.content.Context
+import android.util.AttributeSet
+import androidx.appcompat.widget.AppCompatImageView
+import kotlin.math.max
+
+class SquareImageView : AppCompatImageView {
+    constructor(context : Context) : super(context)
+    constructor(context : Context , attrs : AttributeSet?) : super(context , attrs)
+    constructor(context : Context , attrs : AttributeSet? , defStyleAttr : Int) : super(
+        context , attrs , defStyleAttr
+    )
+
+    override fun onMeasure(widthMeasureSpec : Int , heightMeasureSpec : Int) {
+        super.onMeasure(widthMeasureSpec , heightMeasureSpec)
+        val size = max(measuredWidth.toDouble() , measuredHeight.toDouble()).toInt()
+        setMeasuredDimension(size , size)
+    }
 }

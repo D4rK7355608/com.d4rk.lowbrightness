@@ -1,199 +1,222 @@
-package com.d4rk.lowbrightness.ui.home;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.res.TypedArray;
-import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
-import com.d4rk.lowbrightness.MainActivity;
-import com.d4rk.lowbrightness.R;
-import com.d4rk.lowbrightness.base.Application;
-import com.d4rk.lowbrightness.base.Constants;
-import com.d4rk.lowbrightness.base.Prefs;
-import com.d4rk.lowbrightness.databinding.FragmentHomeBinding;
-import com.d4rk.lowbrightness.helpers.RequestDrawOverAppsPermission;
-import com.d4rk.lowbrightness.services.SchedulerService;
-import com.d4rk.lowbrightness.ui.views.SquareImageView;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.thebluealliance.spectrum.SpectrumDialog;
-import java.util.ArrayList;
-import java.util.List;
-import me.zhanghai.android.fastscroll.FastScrollerBuilder;
-public class HomeFragment extends Fragment {
-    private FragmentHomeBinding binding;
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
-        new FastScrollerBuilder(binding.scrollView).useMd2Style().build();
-        return binding.getRoot();
-    }
-    @Override
-    public void onViewCreated(@NonNull View root, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(root, savedInstanceState);
-        MobileAds.initialize(requireContext());
-        AdRequest adRequest = new AdRequest.Builder().build();
-        binding.adView.loadAd(adRequest);
-        final RequestDrawOverAppsPermission permissionRequester = new RequestDrawOverAppsPermission(getActivity());
-        if (!permissionRequester.canDrawOverlays()) {
-            MaterialAlertDialogBuilder alertDialog = new MaterialAlertDialogBuilder(requireContext());
-            alertDialog.setTitle(R.string.notification_app_needs_permission_title);
-            alertDialog.setIcon(R.drawable.ic_eye);
-            alertDialog.setMessage(R.string.summary_app_needs_permission);
-            alertDialog.setCancelable(false);
-            alertDialog.setPositiveButton(R.string.allow_permission, (dialog, id) -> {
-                dialog.cancel();
-                permissionRequester.requestPermissionDrawOverOtherApps();
-            });
-            alertDialog.show();
+package com.d4rk.lowbrightness.ui.home
+
+import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.Color
+import android.graphics.drawable.BitmapDrawable
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.view.WindowManager
+import android.widget.AdapterView
+import android.widget.BaseAdapter
+import android.widget.ImageView
+import android.widget.LinearLayout
+import androidx.fragment.app.Fragment
+import com.d4rk.lowbrightness.MainActivity
+import com.d4rk.lowbrightness.R
+import com.d4rk.lowbrightness.base.Application
+import com.d4rk.lowbrightness.base.Constants
+import com.d4rk.lowbrightness.base.Prefs
+import com.d4rk.lowbrightness.databinding.FragmentHomeBinding
+import com.d4rk.lowbrightness.helpers.RequestDrawOverAppsPermission
+import com.d4rk.lowbrightness.services.SchedulerService
+import com.d4rk.lowbrightness.ui.views.SquareImageView
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.thebluealliance.spectrum.SpectrumDialog
+import me.zhanghai.android.fastscroll.FastScrollerBuilder
+
+class HomeFragment : Fragment() {
+    private var binding: FragmentHomeBinding? = null
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        binding?.scrollView?.let {
+            FastScrollerBuilder(it).useMd2Style().build()
         }
-        binding.buttonColorPicker.setOnClickListener(view -> {
-            TypedArray array = getResources().obtainTypedArray(R.array.filter_colors);
-            int[] colors = new int[array.length()];
-            for (int i = 0; i < array.length(); i++) {
-                String hex = array.getString(i);
-                colors[i] = Color.parseColor(hex);
+        return binding?.root ?: throw IllegalStateException("Binding is null")
+    }
+
+    override fun onViewCreated(root: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(root, savedInstanceState)
+        MobileAds.initialize(requireContext())
+
+        val adRequest = AdRequest.Builder().build()
+        binding?.adView?.loadAd(adRequest)
+
+        val permissionRequester = RequestDrawOverAppsPermission(requireActivity())
+        if (!permissionRequester.canDrawOverlays()) {
+            showPermissionDialog(permissionRequester)
+        }
+
+        setupColorPicker()
+        refreshUI()
+        setupGridView()
+        (requireActivity() as MainActivity).showOrHideSchedulerUI(SchedulerService.isEnabled(requireContext()))
+    }
+
+    private fun showPermissionDialog(permissionRequester: RequestDrawOverAppsPermission) {
+        MaterialAlertDialogBuilder(requireContext())
+                .setTitle(R.string.notification_app_needs_permission_title)
+                .setIcon(R.drawable.ic_eye)
+                .setMessage(R.string.summary_app_needs_permission)
+                .setCancelable(false)
+                .setPositiveButton(R.string.allow_permission) { dialog, _ ->
+                    dialog.cancel()
+                    permissionRequester.requestPermissionDrawOverOtherApps()
+                }
+                .show()
+    }
+
+    private fun setupColorPicker() {
+        binding?.buttonColorPicker?.setOnClickListener { view ->
+            val colors = resources.obtainTypedArray(R.array.filter_colors).let { array ->
+                IntArray(array.length()).apply {
+                    for (i in indices) {
+                        val hex = array.getString(i)
+                        this[i] = Color.parseColor(hex)
+                    }
+                }.also { array.recycle() }
             }
-            array.recycle();
-            SharedPreferences prefs = Prefs.get(view.getContext());
-            int preselectColor = prefs.getInt(Constants.PREF_OVERLAY_COLOR, colors[0]);
-            DialogFragment colorPickerDialog = new SpectrumDialog.Builder(getContext())
+
+            val prefs = Prefs.get(view.context)
+            val preselectColor = prefs.getInt(Constants.PREF_OVERLAY_COLOR, colors[0])
+
+            val colorPickerDialog = SpectrumDialog.Builder(context)
                     .setTitle(getString(R.string.select_a_color))
                     .setColors(colors)
                     .setSelectedColor(preselectColor)
-                    .setOnColorSelectedListener((positiveResult, color) -> {
-                        if (!positiveResult) return;
-                        SharedPreferences sharedPreferences = Prefs.get(requireContext());
-                        sharedPreferences.edit().putInt(Constants.PREF_OVERLAY_COLOR, color).apply();
-                        Application.refreshServices(getContext());
-                        refreshUI();
-                    }).build();
-            colorPickerDialog.show(getParentFragmentManager(), "color_picker");
-        });
-        refreshUI();
-        final ColorsAdapter adapter = new ColorsAdapter(getContext());
-        binding.gridViewColors.setAdapter(adapter);
-        SharedPreferences sharedPreferences = Prefs.get(requireContext());
-        int opacityPercent = sharedPreferences.getInt(Constants.PREF_DIM_LEVEL, 20);
-        final int currentColor = sharedPreferences.getInt("overlay_color", Color.BLACK);
-        binding.discreteSeekBar.setProgress(opacityPercent);
-        int totalColors = adapter.getCount();
-        for (int i = 0; totalColors > i; i += 1) {
-            OverlayColor c = adapter.getItem(i);
-            if (c.color == currentColor) {
-                adapter.setSelectedPosition(i);
-                break;
-            }
-        }
-        binding.gridViewColors.setOnItemClickListener((parent, v, position, id) -> {
-            adapter.setSelectedPosition(position);
-            OverlayColor selectedItem = adapter.getItem(position);
-            SharedPreferences secondSharedPreferences = Prefs.get(v.getContext());
-            secondSharedPreferences.edit().putInt("overlay_color", selectedItem.color).apply();
-            Application.refreshServices(v.getContext());
-        });
-        ((MainActivity) requireActivity()).showOrHideSchedulerUI(SchedulerService.isEnabled(getContext()));
-    }
-    private void refreshUI() {
-        SharedPreferences sharedPreferences = Prefs.get(requireContext());
-        final int currentColor = sharedPreferences.getInt("overlay_color", Color.BLACK);
-        binding.buttonColorPicker.setBackgroundColor(currentColor);
-    }
-    static private class OverlayColor {
-        public final String label;
-        public final String hex;
-        public final int color;
-        public OverlayColor(String label, String hex) {
-            this.label = label;
-            this.hex = hex;
-            this.color = Color.parseColor(hex);
+                    .setOnColorSelectedListener { positiveResult, color ->
+                        if (positiveResult) {
+                            prefs.edit().putInt(Constants.PREF_OVERLAY_COLOR, color).apply()
+                            Application.refreshServices(view.context)
+                            refreshUI()
+                        }
+                    }
+                    .build()
+
+            colorPickerDialog.show(parentFragmentManager, "color_picker")
         }
     }
-    static private class ColorsAdapter extends BaseAdapter {
-        private final Context mContext;
-        private int selectedPosition = 0;
-        private final List<OverlayColor> overlayColors = new ArrayList<>();
-        public ColorsAdapter(Context context) {
-            mContext = context;
-            overlayColors.add(new OverlayColor("Black", "#000000"));
-            overlayColors.add(new OverlayColor("Brown", "#3E2723"));
-            overlayColors.add(new OverlayColor("Indigo", "#3949AB"));
-            overlayColors.add(new OverlayColor("Blue", "#0D47A1"));
-            overlayColors.add(new OverlayColor("Red", "#B71C1C"));
-            overlayColors.add(new OverlayColor("Teal", "#004D40"));
-        }
-        @Override
-        public int getCount() {
-            return overlayColors.size();
-        }
-        @Override
-        public OverlayColor getItem(int position) {
-            return overlayColors.get(position);
-        }
-        @Override
-        public long getItemId(int position) {
-            return 0;
-        }
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            SquareImageView imageView;
-            if (convertView == null) {
-                imageView = new SquareImageView(mContext);
-                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(GridView.LayoutParams.MATCH_PARENT, GridView.LayoutParams.MATCH_PARENT);
-                lp.setMargins(100, 100, 100, 100);
-                imageView.setLayoutParams(lp);
-                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                imageView.setPadding(8, 8, 8, 8);
-            } else {
-                imageView = (SquareImageView) convertView;
-            }
-            final OverlayColor overlayColor = getItem(position);
-            final int color = android.graphics.Color.parseColor(overlayColor.hex);
-            if (position == selectedPosition) {
-                imageView.setAlpha(1f);
-            } else {
-                imageView.setAlpha(0.7f);
-            }
-            imageView.setImageResource(R.drawable.ic_done);
-            final Bitmap bmp = Bitmap.createBitmap(85, 85, Bitmap.Config.ARGB_8888);
-            bmp.eraseColor(color);
-            final BitmapDrawable ob = new BitmapDrawable(mContext.getResources(), bmp);
-            imageView.setBackground(ob);
-            return imageView;
-        }
-        public void setSelectedPosition(int selectedPosition) {
-            this.selectedPosition = selectedPosition;
-            notifyDataSetChanged();
+
+    private fun setupGridView() {
+        val adapter = ColorsAdapter(requireContext())
+        binding?.gridViewColors?.adapter = adapter
+
+        val sharedPreferences = Prefs.get(requireContext())
+        val opacityPercent = sharedPreferences.getInt(Constants.PREF_DIM_LEVEL, 20)
+        val currentColor = sharedPreferences.getInt(Constants.PREF_OVERLAY_COLOR, Color.BLACK)
+
+        binding?.materialSlider?.value = opacityPercent.toFloat() / 100f
+
+        // Set the listener for the slider
+        binding?.materialSlider?.addOnChangeListener { slider, value, fromUser ->
+            val newOpacity = value.toInt()
+            // Update the dim level in shared preferences
+            sharedPreferences.edit().putInt(Constants.PREF_DIM_LEVEL, newOpacity).apply()
+            adjustScreenDim(newOpacity)
         }
 
+        // Get the index of the current color from the adapter's colors
+        val selectedIndex = adapter.overlayColors.indexOfFirst { it.color == currentColor }
+        adapter.setSelectedPosition(selectedIndex.takeIf { it >= 0 } ?: 0)
+
+        binding?.gridViewColors?.onItemClickListener =
+                AdapterView.OnItemClickListener { _, _, position, _ ->
+                    adapter.setSelectedPosition(position)
+                    val selectedItem = adapter.getItem(position)
+                    sharedPreferences.edit()
+                            .putInt(Constants.PREF_OVERLAY_COLOR, selectedItem.color)
+                            .apply()
+                    Application.refreshServices(requireContext())
+                }
     }
-    @Override
-    public void onPause() {
-        binding.adView.pause();
-        super.onPause();
+
+
+
+    private fun refreshUI() {
+        val currentColor = Prefs.get(requireContext()).getInt(Constants.PREF_OVERLAY_COLOR, Color.BLACK)
+        binding?.buttonColorPicker?.setBackgroundColor(currentColor)
     }
-    @Override
-    public void onResume() {
-        super.onResume();
-        binding.adView.resume();
+
+    private class OverlayColor(val label: String, hex: String) {
+        val color: Int = Color.parseColor(hex)
     }
-    @Override
-    public void onDestroy() {
-        binding.adView.destroy();
-        super.onDestroy();
+
+    private class ColorsAdapter(private val context: Context) : BaseAdapter() {
+        private var selectedPosition = 0
+        val overlayColors = listOf(
+            OverlayColor("Black", "#000000"),
+            OverlayColor("Brown", "#3E2723"),
+            OverlayColor("Indigo", "#3949AB"),
+            OverlayColor("Blue", "#0D47A1"),
+            OverlayColor("Red", "#B71C1C"),
+            OverlayColor("Teal", "#004D40")
+        )
+
+        override fun getCount(): Int = overlayColors.size
+
+        override fun getItem(position: Int): OverlayColor = overlayColors[position]
+
+        override fun getItemId(position: Int): Long = position.toLong()
+
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+            val imageView: SquareImageView = convertView as? SquareImageView ?: SquareImageView(context).apply {
+                layoutParams = LinearLayout.LayoutParams(
+                    WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT
+                ).apply {
+                    setMargins(100, 100, 100, 100)
+                }
+                scaleType = ImageView.ScaleType.CENTER_CROP
+                setPadding(8, 8, 8, 8)
+            }
+
+            val overlayColor = getItem(position)
+            imageView.alpha = if (position == selectedPosition) 1f else 0.7f
+            imageView.setImageResource(R.drawable.ic_done)
+
+            val bmp = Bitmap.createBitmap(85, 85, Bitmap.Config.ARGB_8888).apply {
+                eraseColor(overlayColor.color)
+            }
+            imageView.background = BitmapDrawable(context.resources, bmp)
+            return imageView
+        }
+
+        fun setSelectedPosition(position: Int) {
+            selectedPosition = position
+            notifyDataSetChanged()
+        }
+    }
+
+    private fun adjustScreenDim(opacity: Int) {
+        // Assuming you have a dimming overlay or effect you want to apply.
+        val window = requireActivity().window
+        val layoutParams = window.attributes
+        layoutParams.alpha = 1 - (opacity / 100f) // Set the alpha based on the slider value
+        window.attributes = layoutParams
+    }
+
+
+    override fun onPause() {
+        binding?.adView?.pause()
+        super.onPause()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        binding?.adView?.resume()
+    }
+
+    override fun onDestroy() {
+        binding?.adView?.destroy()
+        binding = null
+        super.onDestroy()
     }
 }
