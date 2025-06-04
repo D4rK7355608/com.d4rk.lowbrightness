@@ -47,10 +47,10 @@ class SchedulerService : Service() {
     private fun startOrStopScreenDim() {
         val sharedPreferences = Prefs.get(baseContext)
         if (sharedPreferences.getBoolean(Constants.PREF_LOW_BRIGHTNESS_ENABLED , false)) {
-            val cBegin = _getCalendarForStart(
-                baseContext
-            )
-            val cEnd = _getCalendarForEnd(baseContext)
+        val cBegin = getCalendarForStart(
+            baseContext
+        )
+        val cEnd = getCalendarForEnd(baseContext)
             val calendar = Calendar.getInstance()
             if (calendar.timeInMillis > cBegin.timeInMillis && calendar.timeInMillis < cEnd.timeInMillis) {
                 startService(Intent(baseContext , OverlayService::class.java))
@@ -83,7 +83,7 @@ class SchedulerService : Service() {
 
     companion object {
         @JvmStatic
-        fun _getCalendarForStart(context : Context) : Calendar { // FIXME: Function name '_getCalendarForStart' should start with a lowercase letter
+        fun getCalendarForStart(context: Context): Calendar {
             val sharedPreferences = Prefs.get(context)
             val scheduleFromHour = sharedPreferences.getInt("scheduleFromHour" , 20)
             val scheduleFromMinute = sharedPreferences.getInt("scheduleFromMinute" , 0)
@@ -95,7 +95,7 @@ class SchedulerService : Service() {
         }
 
         @JvmStatic
-        fun _getCalendarForEnd(context : Context) : Calendar { // FIXME: Function name '_getCalendarForEnd' should start with a lowercase letter
+        fun getCalendarForEnd(context: Context): Calendar {
             val sharedPreferences = Prefs.get(context)
             val hour = sharedPreferences.getInt("scheduleToHour" , 6)
             val minute = sharedPreferences.getInt("scheduleToMinute" , 0)
@@ -103,7 +103,7 @@ class SchedulerService : Service() {
             calendar[Calendar.HOUR_OF_DAY] = hour
             calendar[Calendar.MINUTE] = minute
             calendar.clear(Calendar.SECOND)
-            if (calendar.timeInMillis < _getCalendarForStart(context).timeInMillis) {
+            if (calendar.timeInMillis < getCalendarForStart(context).timeInMillis) {
                 calendar.add(Calendar.DATE , 1)
             }
             return calendar

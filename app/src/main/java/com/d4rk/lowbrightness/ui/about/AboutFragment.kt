@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.d4rk.lowbrightness.BuildConfig
 import com.d4rk.lowbrightness.R
 import com.d4rk.lowbrightness.databinding.FragmentAboutBinding
-import com.d4rk.lowbrightness.ui.viewmodel.ViewModel
+import com.d4rk.lowbrightness.ui.viewmodel.AboutViewModel
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
 import com.google.android.material.snackbar.Snackbar
@@ -28,7 +28,7 @@ class AboutFragment : Fragment() {
     private val calendar: Calendar = Calendar.getInstance()
     private var originalNavBarColor: Int? = null
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        ViewModelProvider(this)[ViewModel::class.java]
+        ViewModelProvider(this)[AboutViewModel::class.java]
         _binding = FragmentAboutBinding.inflate(inflater, container, false)
         originalNavBarColor = activity?.window?.navigationBarColor
         setOriginalNavigationBarColor()

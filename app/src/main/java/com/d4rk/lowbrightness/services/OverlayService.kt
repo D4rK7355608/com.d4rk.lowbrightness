@@ -21,7 +21,7 @@ import com.d4rk.lowbrightness.base.Prefs
 import com.d4rk.lowbrightness.ui.views.OverlayView
 
 class OverlayService : Service() {
-    private var mView : OverlayView? = null
+    private var overlayView: OverlayView? = null
 
     override fun onBind(intent : Intent) : IBinder? = null
 
@@ -36,18 +36,23 @@ class OverlayService : Service() {
         val opacityPercentage = sharedPreferences.getInt(Constants.PREF_DIM_LEVEL , 20)
         val color = sharedPreferences.getInt(Constants.PREF_OVERLAY_COLOR , Color.BLACK)
 
-        if (mView == null) {
-            mView = OverlayView(this).apply {
-                setOpacityPercentage(opacityPercentage)
-                setColor(color)
+        if (overlayView == null) {
+            overlayView = OverlayView(this).apply {
+                this.opacityPercentage = opacityPercentage
+                this.color = color
             }
 
             val params = WindowManager.LayoutParams(
-                WindowManager.LayoutParams.MATCH_PARENT ,
-                WindowManager.LayoutParams.MATCH_PARENT ,
-                WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY ,
-                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE or WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS or WindowManager.LayoutParams.FLAG_FULLSCREEN or
-                        WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN or WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS ,
+                WindowManager.LayoutParams.MATCH_PARENT,
+                WindowManager.LayoutParams.MATCH_PARENT,
+                WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
+                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE or
+                        WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
+                        WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS or
+                        WindowManager.LayoutParams.FLAG_FULLSCREEN or
+                        WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN or
+                        WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS or
+                        WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED,
                 PixelFormat.TRANSLUCENT
             ).apply {
                 gravity = Gravity.TOP or Gravity.CENTER_HORIZONTAL
@@ -56,13 +61,11 @@ class OverlayService : Service() {
             }
 
             val wm = getSystemService(WINDOW_SERVICE) as WindowManager
-            wm.addView(mView , params)
-        }
-        else {
-            mView?.apply {
-                setOpacityPercentage(opacityPercentage)
-                setColor(color)
-                redraw()
+            wm.addView(overlayView, params)
+        } else {
+            overlayView?.apply {
+                this.opacityPercentage = opacityPercentage
+                this.color = color
             }
         }
 
@@ -103,9 +106,9 @@ class OverlayService : Service() {
 
     override fun onDestroy() {
         super.onDestroy()
-        mView?.let {
+        overlayView?.let {
             (getSystemService(WINDOW_SERVICE) as WindowManager).removeView(it)
-            mView = null
+            overlayView = null
         }
         stopForeground(true)
     }
