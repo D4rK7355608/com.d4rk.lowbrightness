@@ -3,6 +3,7 @@ package com.d4rk.lowbrightness.base
 import android.content.Context
 import android.content.Intent
 import android.provider.Settings
+import androidx.core.content.ContextCompat
 import androidx.multidex.MultiDexApplication
 import com.d4rk.lowbrightness.services.OverlayService
 import com.d4rk.lowbrightness.services.SchedulerService
@@ -19,23 +20,33 @@ object Application : MultiDexApplication() {
         val overlayEnabled = OverlayService.isEnabled(context)
         val schedulerEnabled = SchedulerService.isEnabled(context)
         val accessibilityEnabled = AccessibilityOverlayService.isEnabled(context)
+        val canDraw = canDrawOverlay(context)
+
         if (overlayEnabled) {
-            if (schedulerEnabled) {
-                context.stopService(Intent(context , OverlayService::class.java))
-                context.startService(Intent(context , SchedulerService::class.java))
+            if (!canDraw && accessibilityEnabled) {
+                context.stopService(Intent(context, OverlayService::class.java))
+                context.stopService(Intent(context, SchedulerService::class.java))
+                ContextCompat.startForegroundService(
+                    context,
+                    Intent(context, AccessibilityOverlayService::class.java)
+                )
+            } else {
+                context.stopService(Intent(context, AccessibilityOverlayService::class.java))
+                if (schedulerEnabled) {
+                    context.stopService(Intent(context, OverlayService::class.java))
+                    context.startService(Intent(context, SchedulerService::class.java))
+                } else {
+                    context.stopService(Intent(context, SchedulerService::class.java))
+                    ContextCompat.startForegroundService(
+                        context,
+                        Intent(context, OverlayService::class.java)
+                    )
+                }
             }
-            else {
-                context.stopService(Intent(context , SchedulerService::class.java))
-                context.startService(Intent(context , OverlayService::class.java))
-            }
-            if (accessibilityEnabled) {
-                context.startService(Intent(context , AccessibilityOverlayService::class.java))
-            }
-        }
-        else {
-            context.stopService(Intent(context , SchedulerService::class.java))
-            context.stopService(Intent(context , OverlayService::class.java))
-            context.stopService(Intent(context , AccessibilityOverlayService::class.java))
+        } else {
+            context.stopService(Intent(context, SchedulerService::class.java))
+            context.stopService(Intent(context, OverlayService::class.java))
+            context.stopService(Intent(context, AccessibilityOverlayService::class.java))
         }
     }
 }

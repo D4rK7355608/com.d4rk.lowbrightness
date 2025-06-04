@@ -6,6 +6,7 @@ import android.app.Service
 import android.content.Context
 import android.content.Intent
 import android.os.IBinder
+import androidx.core.content.ContextCompat
 import com.d4rk.lowbrightness.base.Application
 import com.d4rk.lowbrightness.base.Constants
 import com.d4rk.lowbrightness.base.Prefs
@@ -15,17 +16,7 @@ import java.util.Calendar
 class SchedulerService : Service() {
     override fun onCreate() {
         super.onCreate()
-        val am = baseContext.getSystemService(ALARM_SERVICE) as AlarmManager
-        val iEnd = Intent(baseContext , SchedulerService::class.java)
-        val piEnd = PendingIntent.getService(
-            baseContext ,
-            0 ,
-            iEnd ,
-            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
-        )
-        am.setRepeating(
-            AlarmManager.RTC , System.currentTimeMillis() , AlarmManager.INTERVAL_HALF_HOUR , piEnd
-        )
+        scheduleNextEvent()
     }
 
     override fun onBind(intent : Intent) : IBinder? {
@@ -37,9 +28,9 @@ class SchedulerService : Service() {
             cancelAlarms()
             stopSelf()
             return START_NOT_STICKY
-        }
-        else {
+        } else {
             startOrStopScreenDim()
+            scheduleNextEvent()
             return START_STICKY
         }
     }
@@ -53,14 +44,39 @@ class SchedulerService : Service() {
         val cEnd = getCalendarForEnd(baseContext)
             val calendar = Calendar.getInstance()
             if (calendar.timeInMillis > cBegin.timeInMillis && calendar.timeInMillis < cEnd.timeInMillis) {
-                startService(Intent(baseContext , OverlayService::class.java))
-            }
-            else {
+                ContextCompat.startForegroundService(this , Intent(this , OverlayService::class.java))
+            } else {
                 stopService(Intent(baseContext , OverlayService::class.java))
             }
         }
         else {
             stopService(Intent(baseContext , OverlayService::class.java))
+        }
+    }
+
+    private fun scheduleNextEvent() {
+        val am = getSystemService(ALARM_SERVICE) as AlarmManager
+        val pi = PendingIntent.getService(
+            this,
+            0,
+            Intent(this, SchedulerService::class.java),
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+        )
+        val next = getNextEventTime(this)
+        am.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, next, pi)
+    }
+
+    private fun getNextEventTime(context: Context): Long {
+        val now = Calendar.getInstance()
+        val start = getCalendarForStart(context)
+        val end = getCalendarForEnd(context)
+        return when {
+            now.timeInMillis < start.timeInMillis -> start.timeInMillis
+            now.timeInMillis < end.timeInMillis -> end.timeInMillis
+            else -> {
+                start.add(Calendar.DATE, 1)
+                start.timeInMillis
+            }
         }
     }
 
