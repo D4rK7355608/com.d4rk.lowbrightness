@@ -19,23 +19,27 @@ object Application : MultiDexApplication() {
         val overlayEnabled = OverlayService.isEnabled(context)
         val schedulerEnabled = SchedulerService.isEnabled(context)
         val accessibilityEnabled = AccessibilityOverlayService.isEnabled(context)
+
+        val overlayIntent = Intent(context, OverlayService::class.java)
+        val schedulerIntent = Intent(context, SchedulerService::class.java)
+        val accessibilityIntent = Intent(context, AccessibilityOverlayService::class.java)
+
         if (overlayEnabled) {
             if (schedulerEnabled) {
-                context.stopService(Intent(context , OverlayService::class.java)) // FIXME: This argument is a new instance so `stopService` will not remove anything
-                context.startService(Intent(context , SchedulerService::class.java)) // FIXME: This argument is a new instance so `stopService` will not remove anything
+                context.stopService(overlayIntent)
+                context.startService(schedulerIntent)
+            } else {
+                context.stopService(schedulerIntent)
+                context.startService(overlayIntent)
             }
-            else {
-                context.stopService(Intent(context , SchedulerService::class.java))
-                context.startService(Intent(context , OverlayService::class.java))
-            }
+
             if (accessibilityEnabled) {
-                context.startService(Intent(context , AccessibilityOverlayService::class.java))
+                context.startService(accessibilityIntent)
             }
-        }
-        else {
-            context.stopService(Intent(context , SchedulerService::class.java)) // FIXME: This argument is a new instance so `stopService` will not remove anything
-            context.stopService(Intent(context , OverlayService::class.java)) // FIXME: This argument is a new instance so `stopService` will not remove anything
-            context.stopService(Intent(context , AccessibilityOverlayService::class.java)) // FIXME: This argument is a new instance so `stopService` will not remove anything
+        } else {
+            context.stopService(schedulerIntent)
+            context.stopService(overlayIntent)
+            context.stopService(accessibilityIntent)
         }
     }
 }

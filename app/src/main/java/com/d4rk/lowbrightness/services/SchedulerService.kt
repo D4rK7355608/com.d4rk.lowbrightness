@@ -46,21 +46,21 @@ class SchedulerService : Service() {
 
     private fun startOrStopScreenDim() {
         val sharedPreferences = Prefs.get(baseContext)
-        if (sharedPreferences.getBoolean(Constants.PREF_LOW_BRIGHTNESS_ENABLED , false)) {
-        val cBegin = getCalendarForStart(
-            baseContext
-        )
-        val cEnd = getCalendarForEnd(baseContext)
+        if (sharedPreferences.getBoolean(Constants.PREF_LOW_BRIGHTNESS_ENABLED, false)) {
+            val cBegin = getCalendarForStart(baseContext)
+            val cEnd = getCalendarForEnd(baseContext)
             val calendar = Calendar.getInstance()
+
+            val overlayIntent = Intent(baseContext, OverlayService::class.java)
+
             if (calendar.timeInMillis > cBegin.timeInMillis && calendar.timeInMillis < cEnd.timeInMillis) {
-                startService(Intent(baseContext , OverlayService::class.java))
+                startService(overlayIntent)
+            } else {
+                stopService(overlayIntent)
             }
-            else {
-                stopService(Intent(baseContext , OverlayService::class.java)) // FIXME: This argument is a new instance so `stopService` will not remove anything
-            }
-        }
-        else {
-            stopService(Intent(baseContext , OverlayService::class.java)) // FIXME: This argument is a new instance so `stopService` will not remove anything
+        } else {
+            val overlayIntent = Intent(baseContext, OverlayService::class.java)
+            stopService(overlayIntent)
         }
     }
 

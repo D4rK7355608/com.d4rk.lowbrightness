@@ -122,7 +122,7 @@ class MainActivity : AppCompatActivity(), IShowHideScheduler {
             if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE &&
                 appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.FLEXIBLE)
             ) {
-                try {
+                runCatching {
                     val updateOptions =
                         AppUpdateOptions
                             .newBuilder(AppUpdateType.FLEXIBLE)
@@ -133,9 +133,7 @@ class MainActivity : AppCompatActivity(), IShowHideScheduler {
                         updateOptions,
                         requestUpdateCode
                     )
-                } catch (e: IntentSender.SendIntentException) {
-                    e.printStackTrace()
-                }
+                }.onFailure { it.printStackTrace() }
             }
         }
         startupScreen()

@@ -104,7 +104,7 @@ class HomeFragment : Fragment() {
                 IntArray(array.length()).apply {
                     for (i in indices) {
                         val hex = array.getString(i)
-                        this[i] = hex.toColorInt() // FIXME: Only safe (?.) or non-null asserted (!!.) calls are allowed on a nullable receiver of type 'kotlin.String?'.
+                        this[i] = hex?.toColorInt() ?: Color.BLACK
                     }
                 }.also { array.recycle() }
             }
