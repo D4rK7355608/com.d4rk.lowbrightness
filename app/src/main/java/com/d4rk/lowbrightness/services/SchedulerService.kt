@@ -9,7 +9,7 @@ import android.os.IBinder
 import androidx.core.content.ContextCompat
 import androidx.core.content.edit
 import android.util.Log
-import com.d4rk.lowbrightness.base.Application
+import com.d4rk.lowbrightness.base.ServiceController
 import com.d4rk.lowbrightness.base.Constants
 import com.d4rk.lowbrightness.base.Prefs
 import java.util.Calendar
@@ -132,27 +132,21 @@ class SchedulerService : Service() {
         }
 
         @JvmStatic
-        fun enable(context : Context) {
+        fun enable(context: Context) {
             val prefs = Prefs.get(context)
-            if (prefs.getBoolean(Constants.PREF_SCHEDULER_ENABLED , false)) {
-                prefs.edit { putBoolean(Constants.PREF_SCHEDULER_ENABLED, false) }
+            if (!prefs.getBoolean(Constants.PREF_SCHEDULER_ENABLED, false)) {
+                prefs.edit { putBoolean(Constants.PREF_SCHEDULER_ENABLED, true) }
+                ServiceController.refreshServices(context)
             }
-            else {
-                prefs.edit { putBoolean(Constants.PREF_SCHEDULER_ENABLED , true)}
-            }
-            Application.refreshServices(context)
         }
 
         @JvmStatic
-        fun disable(context : Context) {
+        fun disable(context: Context) {
             val prefs = Prefs.get(context)
-            if (! prefs.getBoolean(Constants.PREF_SCHEDULER_ENABLED , false)) {
-                prefs.edit { putBoolean(Constants.PREF_SCHEDULER_ENABLED, true) }
-            }
-            else {
+            if (prefs.getBoolean(Constants.PREF_SCHEDULER_ENABLED, false)) {
                 prefs.edit { putBoolean(Constants.PREF_SCHEDULER_ENABLED, false) }
+                ServiceController.refreshServices(context)
             }
-            Application.refreshServices(context)
         }
     }
 }
