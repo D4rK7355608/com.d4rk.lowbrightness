@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import com.d4rk.lowbrightness.R
-import com.d4rk.lowbrightness.base.Application
+import com.d4rk.lowbrightness.base.ServiceController
 import com.d4rk.lowbrightness.base.Prefs
 import com.d4rk.lowbrightness.databinding.FragmentSchedulerEnabledBinding
 import com.d4rk.lowbrightness.helpers.IShowHideScheduler
@@ -144,7 +144,7 @@ class SchedulerEnabledFragment : Fragment() {
         binding.buttonHourFrom.text = String.format(Locale.getDefault(), "%02d:%02d", scheduleFromHour, scheduleFromMinute)
         binding.buttonHourTo.text = String.format(Locale.getDefault(), "%02d:%02d", scheduleToHour, scheduleToMinute)
 
-        Application.refreshServices(requireContext())
+        ServiceController.refreshServices(requireContext())
     }
 
     override fun onDestroyView() {

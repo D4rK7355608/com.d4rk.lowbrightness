@@ -16,7 +16,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.TaskStackBuilder
 import com.d4rk.lowbrightness.MainActivity
 import com.d4rk.lowbrightness.R
-import com.d4rk.lowbrightness.base.Application
+import com.d4rk.lowbrightness.base.ServiceController
 import com.d4rk.lowbrightness.base.Constants
 import com.d4rk.lowbrightness.base.Prefs
 import com.d4rk.lowbrightness.ui.views.OverlayView
@@ -31,7 +31,7 @@ class OverlayService : Service() {
         Log.d(tag, "onStartCommand")
         val sharedPreferences = Prefs.get(baseContext)
 
-        if (! isEnabled(baseContext) || ! Application.canDrawOverlay(baseContext)) {
+        if (!isEnabled(baseContext) || !ServiceController.canDrawOverlay(baseContext)) {
             stopSelf()
             return START_NOT_STICKY
         }

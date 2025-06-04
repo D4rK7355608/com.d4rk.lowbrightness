@@ -5,7 +5,7 @@ import android.content.Intent
 import android.provider.Settings
 import androidx.activity.result.ActivityResultLauncher
 import androidx.core.net.toUri
-import com.d4rk.lowbrightness.base.Application.canDrawOverlay
+import com.d4rk.lowbrightness.base.ServiceController.canDrawOverlay
 
 class RequestDrawOverAppsPermission(private val activity : Activity) {
 

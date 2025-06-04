@@ -18,7 +18,7 @@ import androidx.core.graphics.toColorInt
 import androidx.fragment.app.Fragment
 import com.d4rk.lowbrightness.MainActivity
 import com.d4rk.lowbrightness.R
-import com.d4rk.lowbrightness.base.Application
+import com.d4rk.lowbrightness.base.ServiceController
 import com.d4rk.lowbrightness.base.Constants
 import com.d4rk.lowbrightness.base.Prefs
 import com.d4rk.lowbrightness.databinding.FragmentHomeBinding
@@ -119,7 +119,7 @@ class HomeFragment : Fragment() {
                     .setOnColorSelectedListener { positiveResult, color ->
                         if (positiveResult) {
                             prefs.edit { putInt(Constants.PREF_OVERLAY_COLOR, color) }
-                            Application.refreshServices(view.context)
+                            ServiceController.refreshServices(view.context)
                             refreshUI()
                         }
                     }
@@ -142,8 +142,8 @@ class HomeFragment : Fragment() {
         // Set the listener for the slider
         binding?.materialSlider?.addOnChangeListener { _, value, _ ->
             val newOpacity = value.toInt()
-            sharedPreferences.edit { putInt(Constants.PREF_DIM_LEVEL, newOpacity)}
-            Application.refreshServices(requireContext())
+            sharedPreferences.edit { putInt(Constants.PREF_DIM_LEVEL, newOpacity) }
+            ServiceController.refreshServices(requireContext())
         }
 
         // Get the index of the current color from the adapter's colors
@@ -157,7 +157,7 @@ class HomeFragment : Fragment() {
                     sharedPreferences.edit {
                         putInt(Constants.PREF_OVERLAY_COLOR, selectedItem.color)
                     }
-                    Application.refreshServices(requireContext())
+                    ServiceController.refreshServices(requireContext())
                 }
     }
 
@@ -227,7 +227,7 @@ class HomeFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         binding?.adView?.resume()
-        Application.refreshServices(requireContext())
+        ServiceController.refreshServices(requireContext())
     }
 
     override fun onDestroy() {

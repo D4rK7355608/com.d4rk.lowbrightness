@@ -19,7 +19,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.preference.PreferenceManager
-import com.d4rk.lowbrightness.base.Application
+import com.d4rk.lowbrightness.base.ServiceController
 import com.d4rk.lowbrightness.base.Constants
 import com.d4rk.lowbrightness.base.Prefs
 import com.d4rk.lowbrightness.databinding.ActivityMainBinding
@@ -153,7 +153,7 @@ class MainActivity : AppCompatActivity(), IShowHideScheduler {
 
 
     override fun onPause() {
-        Application.refreshServices(this)
+        ServiceController.refreshServices(this)
         super.onPause()
     }
 
