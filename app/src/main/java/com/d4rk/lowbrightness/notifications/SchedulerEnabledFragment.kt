@@ -82,7 +82,7 @@ class SchedulerEnabledFragment : Fragment() {
     }
 
     private fun reloadButtonUIs() {
-        if (view == null) return
+        view ?: return
 
         val sharedPreferences = Prefs.get(requireContext())
         val scheduleFromHour = sharedPreferences.getInt("scheduleFromHour", 20)

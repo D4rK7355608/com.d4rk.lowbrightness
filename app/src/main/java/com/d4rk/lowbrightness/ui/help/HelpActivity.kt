@@ -42,11 +42,14 @@ class HelpActivity : AppCompatActivity() {
                     val uri = Uri.parse("https://play.google.com/store/apps/details?id=${requireContext().packageName}&showAllReviews=true")
                     val intent = Intent(Intent.ACTION_VIEW, uri)
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    try {
-                        startActivity(intent)
-                    } catch (e: ActivityNotFoundException) {
-                        Snackbar.make(requireView(), R.string.snack_unable_to_open_google_play_store, Snackbar.LENGTH_SHORT).show()
-                    }
+                    runCatching { startActivity(intent) }
+                        .onFailure {
+                            Snackbar.make(
+                                requireView(),
+                                R.string.snack_unable_to_open_google_play_store,
+                                Snackbar.LENGTH_SHORT
+                            ).show()
+                        }
                 }
                 .also {
                     Snackbar.make(requireView(), R.string.snack_feedback, Snackbar.LENGTH_SHORT).show()
