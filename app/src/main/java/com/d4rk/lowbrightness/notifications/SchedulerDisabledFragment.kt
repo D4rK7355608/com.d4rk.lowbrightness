@@ -1,6 +1,10 @@
 package com.d4rk.lowbrightness.notifications
 
+import android.app.AlarmManager
 import android.content.Context
+import android.content.Intent
+import android.os.Build
+import android.provider.Settings
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -20,6 +24,15 @@ class SchedulerDisabledFragment : Fragment() {
     ): View {
         val binding = FragmentSchedulerDisabledBinding.inflate(inflater, container, false)
         binding.buttonSchedule.setOnClickListener {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                val alarmManager = context?.getSystemService(Context.ALARM_SERVICE) as? AlarmManager
+                if (alarmManager != null && !alarmManager.canScheduleExactAlarms()) {
+                    val intent = Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    startActivity(intent)
+                    return@setOnClickListener
+                }
+            }
             context?.let { SchedulerService.enable(it) }
             bridge.showOrHideSchedulerUI(true)
         }
