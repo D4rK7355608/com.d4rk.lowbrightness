@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.edit
 import androidx.core.os.LocaleListCompat
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.FragmentTransaction
@@ -33,6 +35,7 @@ import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
+import com.google.android.play.core.appupdate.AppUpdateOptions
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.UpdateAvailability
 import com.google.firebase.analytics.FirebaseAnalytics
@@ -44,10 +47,28 @@ class MainActivity : AppCompatActivity(), IShowHideScheduler {
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var navController: NavController
     private lateinit var appUpdateManager: AppUpdateManager
+    lateinit var overlayPermissionLauncher: ActivityResultLauncher<Intent>
     private val requestUpdateCode = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        overlayPermissionLauncher =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+                if (permissionRequester.canDrawOverlays()) {
+                    sharedPreferences.edit {
+                        putBoolean(Constants.PREF_LOW_BRIGHTNESS_ENABLED, true)
+                    }
+                    startService(Intent(this, OverlayService::class.java))
+                    Snackbar.make(
+                        findViewById(android.R.id.content),
+                        "Done! It was that easy.",
+                        Snackbar.LENGTH_LONG
+                    ).show()
+                    invalidateOptionsMenu()
+                } else {
+                    permissionRequester.requestPermissionDrawOverOtherApps(overlayPermissionLauncher)
+                }
+            }
         installSplashScreen()
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -88,7 +109,6 @@ class MainActivity : AppCompatActivity(), IShowHideScheduler {
         builder.show()
     }
 
-    @Suppress("DEPRECATION")
     override fun onResume() {
         super.onResume()
         val appUsageNotificationsManager = AppUsageNotificationsManager(this)
@@ -103,10 +123,14 @@ class MainActivity : AppCompatActivity(), IShowHideScheduler {
                 appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.FLEXIBLE)
             ) {
                 try {
+                    val updateOptions =
+                        AppUpdateOptions
+                            .newBuilder(AppUpdateType.FLEXIBLE)
+                            .build()
                     appUpdateManager.startUpdateFlowForResult(
                         appUpdateInfo,
-                        AppUpdateType.FLEXIBLE,
                         this,
+                        updateOptions,
                         requestUpdateCode
                     )
                 } catch (e: IntentSender.SendIntentException) {
@@ -125,19 +149,6 @@ class MainActivity : AppCompatActivity(), IShowHideScheduler {
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (permissionRequester.requestCodeMatches(requestCode)) {
-            if (permissionRequester.canDrawOverlays()) {
-                sharedPreferences.edit { putBoolean(Constants.PREF_LOW_BRIGHTNESS_ENABLED, true) }
-                startService(Intent(this, OverlayService::class.java))
-                Snackbar.make(findViewById(android.R.id.content), "Done! It was that easy.", Snackbar.LENGTH_LONG).show()
-                invalidateOptionsMenu()
-            } else {
-                permissionRequester.requestPermissionDrawOverOtherApps()
-            }
-        }
-        super.onActivityResult(requestCode, resultCode, data)
-    }
 
     override fun onPause() {
         Application.refreshServices(this)

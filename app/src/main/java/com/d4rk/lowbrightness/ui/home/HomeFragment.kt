@@ -70,15 +70,16 @@ class HomeFragment : Fragment() {
 
     private fun showPermissionDialog(permissionRequester: RequestDrawOverAppsPermission) {
         MaterialAlertDialogBuilder(requireContext())
-                .setTitle(R.string.notification_app_needs_permission_title)
-                .setIcon(R.drawable.ic_eye)
-                .setMessage(R.string.summary_app_needs_permission)
-                .setCancelable(false)
-                .setPositiveButton(R.string.allow_permission) { dialog, _ ->
-                    dialog.cancel()
-                    permissionRequester.requestPermissionDrawOverOtherApps()
-                }
-                .show()
+            .setTitle(R.string.notification_app_needs_permission_title)
+            .setIcon(R.drawable.ic_eye)
+            .setMessage(R.string.summary_app_needs_permission)
+            .setCancelable(false)
+            .setPositiveButton(R.string.allow_permission) { dialog, _ ->
+                dialog.cancel()
+                val launcher = (requireActivity() as MainActivity).overlayPermissionLauncher
+                permissionRequester.requestPermissionDrawOverOtherApps(launcher)
+            }
+            .show()
     }
 
     private fun showAccessibilityPermissionDialog(permissionRequester: RequestAccessibilityPermission) {
