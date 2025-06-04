@@ -1,7 +1,6 @@
 package com.d4rk.lowbrightness.ui.help
 import android.content.ActivityNotFoundException
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -13,6 +12,7 @@ import com.d4rk.lowbrightness.databinding.ActivityHelpBinding
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.play.core.review.ReviewManager
 import com.google.android.play.core.review.ReviewManagerFactory
+import com.d4rk.lowbrightness.helpers.openUrl
 class HelpActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHelpBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,9 +39,12 @@ class HelpActivity : AppCompatActivity() {
                     reviewManager.launchReviewFlow(requireActivity(), reviewInfo)
                 }
                 .addOnFailureListener {
-                    val uri = Uri.parse("https://play.google.com/store/apps/details?id=${requireContext().packageName}&showAllReviews=true")
-                    val intent = Intent(Intent.ACTION_VIEW, uri)
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    val uri = Uri.parse(
+                        "https://play.google.com/store/apps/details?id=${requireContext().packageName}&showAllReviews=true"
+                    )
+                    val intent = Intent(Intent.ACTION_VIEW, uri).apply {
+                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    }
                     runCatching { startActivity(intent) }
                         .onFailure {
                             Snackbar.make(

@@ -1,9 +1,7 @@
 package com.d4rk.lowbrightness.ui.settings
 import android.content.Context
-import android.content.ClipData
 import android.content.SharedPreferences
 import android.content.Intent
-import android.content.ClipboardManager
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
@@ -19,6 +17,7 @@ import com.d4rk.lowbrightness.databinding.ActivitySettingsBinding
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
+import com.d4rk.lowbrightness.helpers.copyToClipboard
 
 class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
     private lateinit var binding: ActivitySettingsBinding
@@ -91,9 +90,7 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
             )
             deviceInfoPreference?.summary = version
             deviceInfoPreference?.setOnPreferenceClickListener {
-                val clipboard = requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-                val clip = ClipData.newPlainText("text", version)
-                clipboard.setPrimaryClip(clip)
+                requireContext().copyToClipboard(version)
                 if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2) {
                     Snackbar.make(requireView(), R.string.snack_copied_to_clipboard, Snackbar.LENGTH_SHORT).show()
                 }
