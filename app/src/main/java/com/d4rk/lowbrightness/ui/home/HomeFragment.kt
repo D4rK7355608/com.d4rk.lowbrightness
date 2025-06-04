@@ -21,6 +21,7 @@ import com.d4rk.lowbrightness.base.Constants
 import com.d4rk.lowbrightness.base.Prefs
 import com.d4rk.lowbrightness.databinding.FragmentHomeBinding
 import com.d4rk.lowbrightness.helpers.RequestDrawOverAppsPermission
+import com.d4rk.lowbrightness.helpers.RequestAccessibilityPermission
 import com.d4rk.lowbrightness.services.SchedulerService
 import com.d4rk.lowbrightness.ui.views.SquareImageView
 import com.google.android.gms.ads.AdRequest
@@ -56,6 +57,11 @@ class HomeFragment : Fragment() {
             showPermissionDialog(permissionRequester)
         }
 
+        val accessibilityRequester = RequestAccessibilityPermission(requireActivity())
+        if (!accessibilityRequester.isAccessibilityEnabled()) {
+            showAccessibilityPermissionDialog(accessibilityRequester)
+        }
+
         setupColorPicker()
         refreshUI()
         setupGridView()
@@ -71,6 +77,19 @@ class HomeFragment : Fragment() {
                 .setPositiveButton(R.string.allow_permission) { dialog, _ ->
                     dialog.cancel()
                     permissionRequester.requestPermissionDrawOverOtherApps()
+                }
+                .show()
+    }
+
+    private fun showAccessibilityPermissionDialog(permissionRequester: RequestAccessibilityPermission) {
+        MaterialAlertDialogBuilder(requireContext())
+                .setTitle(R.string.accessibility_permission_title)
+                .setIcon(R.drawable.ic_eye)
+                .setMessage(R.string.summary_accessibility_permission)
+                .setCancelable(false)
+                .setPositiveButton(R.string.allow_permission) { dialog, _ ->
+                    dialog.cancel()
+                    permissionRequester.requestAccessibilityPermission()
                 }
                 .show()
     }
@@ -212,6 +231,7 @@ class HomeFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         binding?.adView?.resume()
+        Application.refreshServices(requireContext())
     }
 
     override fun onDestroy() {
