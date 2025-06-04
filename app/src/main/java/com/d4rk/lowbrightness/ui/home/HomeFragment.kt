@@ -84,15 +84,16 @@ class HomeFragment : Fragment() {
 
     private fun showAccessibilityPermissionDialog(permissionRequester: RequestAccessibilityPermission) {
         MaterialAlertDialogBuilder(requireContext())
-                .setTitle(R.string.accessibility_permission_title)
-                .setIcon(R.drawable.ic_eye)
-                .setMessage(R.string.summary_accessibility_permission)
-                .setCancelable(false)
-                .setPositiveButton(R.string.allow_permission) { dialog, _ ->
-                    dialog.cancel()
-                    permissionRequester.requestAccessibilityPermission()
-                }
-                .show()
+            .setTitle(R.string.accessibility_permission_title)
+            .setIcon(R.drawable.ic_eye)
+            .setMessage(R.string.summary_accessibility_permission)
+            .setCancelable(true)
+            .setPositiveButton(R.string.allow_permission) { dialog, _ ->
+                dialog.cancel()
+                permissionRequester.requestAccessibilityPermission()
+            }
+            .setNegativeButton(android.R.string.cancel, null)
+            .show()
     }
 
     private fun setupColorPicker() {
@@ -134,14 +135,13 @@ class HomeFragment : Fragment() {
         val opacityPercent = sharedPreferences.getInt(Constants.PREF_DIM_LEVEL, 20)
         val currentColor = sharedPreferences.getInt(Constants.PREF_OVERLAY_COLOR, Color.BLACK)
 
-        binding?.materialSlider?.value = opacityPercent.toFloat() / 100f
+        binding?.materialSlider?.value = opacityPercent.toFloat()
 
         // Set the listener for the slider
-        binding?.materialSlider?.addOnChangeListener { slider, value, fromUser ->
+        binding?.materialSlider?.addOnChangeListener { _, value, _ ->
             val newOpacity = value.toInt()
-            // Update the dim level in shared preferences
             sharedPreferences.edit().putInt(Constants.PREF_DIM_LEVEL, newOpacity).apply()
-            adjustScreenDim(newOpacity)
+            Application.refreshServices(requireContext())
         }
 
         // Get the index of the current color from the adapter's colors
@@ -215,13 +215,6 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun adjustScreenDim(opacity: Int) {
-        // Assuming you have a dimming overlay or effect you want to apply.
-        val window = requireActivity().window
-        val layoutParams = window.attributes
-        layoutParams.alpha = 1 - (opacity / 100f) // Set the alpha based on the slider value
-        window.attributes = layoutParams
-    }
 
 
     override fun onPause() {

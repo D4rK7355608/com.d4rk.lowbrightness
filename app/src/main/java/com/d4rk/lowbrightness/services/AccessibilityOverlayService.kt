@@ -20,8 +20,8 @@ class AccessibilityOverlayService : AccessibilityService() {
         val color = prefs.getInt(Constants.PREF_OVERLAY_COLOR, Color.BLACK)
 
         overlayView = OverlayView(this).apply {
-           // setOpacityPercentage(opacity) // FIXME: Unresolved reference 'setOpacityPercentage'.
-        //    setColor(color) // FIXME: Unresolved reference 'setColor'.
+            this.opacityPercentage = opacity
+            this.color = color
         }
 
         val params = WindowManager.LayoutParams(
