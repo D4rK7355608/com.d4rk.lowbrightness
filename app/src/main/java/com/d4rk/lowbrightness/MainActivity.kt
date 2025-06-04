@@ -6,12 +6,13 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.edit
 import androidx.core.os.LocaleListCompat
-import androidx.core.splashscreen.SplashScreen
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.preference.PreferenceManager
@@ -47,7 +48,7 @@ class MainActivity : AppCompatActivity(), IShowHideScheduler {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        SplashScreen.installSplashScreen(this)
+        installSplashScreen()
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         appSettings()
@@ -59,7 +60,7 @@ class MainActivity : AppCompatActivity(), IShowHideScheduler {
         mAppBarConfiguration = AppBarConfiguration.Builder(
             R.id.nav_home, R.id.nav_about, R.id.nav_settings
         ).setOpenableLayout(drawer).build()
-        navController = Navigation.findNavController(this, R.id.navigation_content_main)
+        navController = this.findNavController(R.id.navigation_content_main)
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration)
         NavigationUI.setupWithNavController(navigationView, navController)
         val appUpdateNotificationsManager = AppUpdateNotificationsManager(this)
@@ -95,7 +96,7 @@ class MainActivity : AppCompatActivity(), IShowHideScheduler {
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         val preferenceFirebase = sharedPreferences.getBoolean(getString(R.string.key_firebase), true)
         FirebaseAnalytics.getInstance(this).setAnalyticsCollectionEnabled(preferenceFirebase)
-        FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(preferenceFirebase)
+        FirebaseCrashlytics.getInstance().isCrashlyticsCollectionEnabled = preferenceFirebase
         permissionRequester = RequestDrawOverAppsPermission(this)
         appUpdateManager.appUpdateInfo.addOnSuccessListener { appUpdateInfo ->
             if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE &&
@@ -119,7 +120,7 @@ class MainActivity : AppCompatActivity(), IShowHideScheduler {
     private fun startupScreen() {
         val startupPreference = getSharedPreferences("startup", MODE_PRIVATE)
         if (startupPreference.getBoolean("value", true)) {
-            startupPreference.edit().putBoolean("value", false).apply()
+            startupPreference.edit { putBoolean("value", false) }
             startActivity(Intent(this, StartupActivity::class.java))
         }
     }
@@ -127,7 +128,7 @@ class MainActivity : AppCompatActivity(), IShowHideScheduler {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (permissionRequester.requestCodeMatches(requestCode)) {
             if (permissionRequester.canDrawOverlays()) {
-                sharedPreferences.edit().putBoolean(Constants.PREF_LOW_BRIGHTNESS_ENABLED, true).apply()
+                sharedPreferences.edit { putBoolean(Constants.PREF_LOW_BRIGHTNESS_ENABLED, true) }
                 startService(Intent(this, OverlayService::class.java))
                 Snackbar.make(findViewById(android.R.id.content), "Done! It was that easy.", Snackbar.LENGTH_LONG).show()
                 invalidateOptionsMenu()

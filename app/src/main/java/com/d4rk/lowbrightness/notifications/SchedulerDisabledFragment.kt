@@ -20,7 +20,7 @@ class SchedulerDisabledFragment : Fragment() {
     ): View {
         val binding = FragmentSchedulerDisabledBinding.inflate(inflater, container, false)
         binding.buttonSchedule.setOnClickListener {
-            SchedulerService.enable(context)
+            context?.let { SchedulerService.enable(it) }
             bridge.showOrHideSchedulerUI(true)
         }
         return binding.root

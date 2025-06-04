@@ -5,15 +5,15 @@ import android.app.Application
 import android.app.Application.ActivityLifecycleCallbacks
 import android.content.Context
 import android.os.Bundle
-import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.ProcessLifecycleOwner
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.appopen.AppOpenAd
+import java.util.Date
 
 class AppOpenAd : Application(), ActivityLifecycleCallbacks, LifecycleObserver {
     private lateinit var appOpenAdManager: AppOpenAdManager
@@ -25,11 +25,6 @@ class AppOpenAd : Application(), ActivityLifecycleCallbacks, LifecycleObserver {
         MobileAds.initialize(this) {}
         ProcessLifecycleOwner.get().lifecycle.addObserver(this)
         appOpenAdManager = AppOpenAdManager()
-    }
-
-    @OnLifecycleEvent(Lifecycle.Event.ON_START)
-    protected fun onMoveToForeground() {
-        currentActivity?.let { appOpenAdManager.showAdIfAvailable(it) }
     }
 
     override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {}
@@ -53,36 +48,33 @@ class AppOpenAd : Application(), ActivityLifecycleCallbacks, LifecycleObserver {
         fun onShowAdComplete()
     }
 
+
     private class AppOpenAdManager {
         private val adUnitId = "ca-app-pub-5294151573817700/5249073936"
-        private var appOpenAd: com.google.android.gms.ads.appopen.AppOpenAd? = null
+        private var appOpenAd: AppOpenAd? = null
         var isLoadingAd = false
         var isShowingAd = false
         private var loadTime: Long = 0
 
-        private fun loadAd(context: Context) {
+        fun loadAd(context : Context) {
             if (isLoadingAd || isAdAvailable()) {
                 return
             }
             isLoadingAd = true
             val request = AdRequest.Builder().build()
-            com.google.android.gms.ads.appopen.AppOpenAd.load(
-                context,
-                adUnitId,
-                request,
-                com.google.android.gms.ads.appopen.AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT,
-                object : com.google.android.gms.ads.appopen.AppOpenAd.AppOpenAdLoadCallback() {
-                    override fun onAdLoaded(ad: com.google.android.gms.ads.appopen.AppOpenAd) {
+
+            AppOpenAd.load(
+                context , adUnitId , request , object : AppOpenAd.AppOpenAdLoadCallback() {
+                    override fun onAdLoaded(ad : AppOpenAd) {
                         appOpenAd = ad
                         isLoadingAd = false
-                        loadTime = System.currentTimeMillis()
+                        loadTime = Date().time
                     }
 
-                    override fun onAdFailedToLoad(loadAdError: LoadAdError) {
+                    override fun onAdFailedToLoad(loadAdError : LoadAdError) {
                         isLoadingAd = false
                     }
-                }
-            )
+                })
         }
 
         private fun wasLoadTimeLessThanNHoursAgo(numHours: Long): Boolean {
@@ -93,10 +85,6 @@ class AppOpenAd : Application(), ActivityLifecycleCallbacks, LifecycleObserver {
 
         private fun isAdAvailable(): Boolean {
             return appOpenAd != null && wasLoadTimeLessThanNHoursAgo(4)
-        }
-
-        private fun showAdIfAvailable(activity: Activity) {
-            showAdIfAvailable(activity) {}
         }
 
         fun showAdIfAvailable(activity: Activity, onShowAdCompleteListener: OnShowAdCompleteListener) {
