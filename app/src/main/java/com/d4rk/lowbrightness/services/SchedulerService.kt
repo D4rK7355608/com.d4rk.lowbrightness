@@ -6,10 +6,10 @@ import android.app.Service
 import android.content.Context
 import android.content.Intent
 import android.os.IBinder
+import androidx.core.content.edit
 import com.d4rk.lowbrightness.base.Application
 import com.d4rk.lowbrightness.base.Constants
 import com.d4rk.lowbrightness.base.Prefs
-import com.d4rk.lowbrightness.services.OverlayService
 import java.util.Calendar
 
 class SchedulerService : Service() {
@@ -56,11 +56,11 @@ class SchedulerService : Service() {
                 startService(Intent(baseContext , OverlayService::class.java))
             }
             else {
-                stopService(Intent(baseContext , OverlayService::class.java))
+                stopService(Intent(baseContext , OverlayService::class.java)) // FIXME: This argument is a new instance so `stopService` will not remove anything
             }
         }
         else {
-            stopService(Intent(baseContext , OverlayService::class.java))
+            stopService(Intent(baseContext , OverlayService::class.java)) // FIXME: This argument is a new instance so `stopService` will not remove anything
         }
     }
 
@@ -119,10 +119,10 @@ class SchedulerService : Service() {
         fun enable(context : Context) {
             val prefs = Prefs.get(context)
             if (prefs.getBoolean(Constants.PREF_SCHEDULER_ENABLED , false)) {
-                prefs.edit().putBoolean(Constants.PREF_SCHEDULER_ENABLED , false).apply()
+                prefs.edit { putBoolean(Constants.PREF_SCHEDULER_ENABLED, false) }
             }
             else {
-                prefs.edit().putBoolean(Constants.PREF_SCHEDULER_ENABLED , true).apply()
+                prefs.edit { putBoolean(Constants.PREF_SCHEDULER_ENABLED , true)}
             }
             Application.refreshServices(context)
         }
@@ -131,10 +131,10 @@ class SchedulerService : Service() {
         fun disable(context : Context) {
             val prefs = Prefs.get(context)
             if (! prefs.getBoolean(Constants.PREF_SCHEDULER_ENABLED , false)) {
-                prefs.edit().putBoolean(Constants.PREF_SCHEDULER_ENABLED , true).apply()
+                prefs.edit { putBoolean(Constants.PREF_SCHEDULER_ENABLED, true) }
             }
             else {
-                prefs.edit().putBoolean(Constants.PREF_SCHEDULER_ENABLED , false).apply()
+                prefs.edit { putBoolean(Constants.PREF_SCHEDULER_ENABLED, false) }
             }
             Application.refreshServices(context)
         }

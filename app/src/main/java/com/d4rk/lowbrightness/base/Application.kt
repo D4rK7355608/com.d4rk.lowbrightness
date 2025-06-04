@@ -4,9 +4,9 @@ import android.content.Context
 import android.content.Intent
 import android.provider.Settings
 import androidx.multidex.MultiDexApplication
+import com.d4rk.lowbrightness.services.AccessibilityOverlayService
 import com.d4rk.lowbrightness.services.OverlayService
 import com.d4rk.lowbrightness.services.SchedulerService
-import com.d4rk.lowbrightness.services.AccessibilityOverlayService
 
 object Application : MultiDexApplication() {
     @JvmStatic
@@ -21,8 +21,8 @@ object Application : MultiDexApplication() {
         val accessibilityEnabled = AccessibilityOverlayService.isEnabled(context)
         if (overlayEnabled) {
             if (schedulerEnabled) {
-                context.stopService(Intent(context , OverlayService::class.java))
-                context.startService(Intent(context , SchedulerService::class.java))
+                context.stopService(Intent(context , OverlayService::class.java)) // FIXME: This argument is a new instance so `stopService` will not remove anything
+                context.startService(Intent(context , SchedulerService::class.java)) // FIXME: This argument is a new instance so `stopService` will not remove anything
             }
             else {
                 context.stopService(Intent(context , SchedulerService::class.java))
@@ -33,9 +33,9 @@ object Application : MultiDexApplication() {
             }
         }
         else {
-            context.stopService(Intent(context , SchedulerService::class.java))
-            context.stopService(Intent(context , OverlayService::class.java))
-            context.stopService(Intent(context , AccessibilityOverlayService::class.java))
+            context.stopService(Intent(context , SchedulerService::class.java)) // FIXME: This argument is a new instance so `stopService` will not remove anything
+            context.stopService(Intent(context , OverlayService::class.java)) // FIXME: This argument is a new instance so `stopService` will not remove anything
+            context.stopService(Intent(context , AccessibilityOverlayService::class.java)) // FIXME: This argument is a new instance so `stopService` will not remove anything
         }
     }
 }

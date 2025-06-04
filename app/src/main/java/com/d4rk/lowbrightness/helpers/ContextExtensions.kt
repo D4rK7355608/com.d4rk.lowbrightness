@@ -1,13 +1,13 @@
 package com.d4rk.lowbrightness.helpers
 
+import android.content.ClipData
+import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
-import android.content.ClipboardManager
-import android.content.ClipData
+import androidx.core.net.toUri
 
 fun Context.openUrl(url: String) {
-    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+    startActivity(Intent(Intent.ACTION_VIEW, url.toUri()))
 }
 
 fun Context.copyToClipboard(text: CharSequence) {

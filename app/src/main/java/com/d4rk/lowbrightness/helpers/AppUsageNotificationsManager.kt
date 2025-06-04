@@ -3,7 +3,9 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import androidx.core.app.NotificationCompat
+import androidx.core.content.edit
 import com.d4rk.lowbrightness.R
+
 class AppUsageNotificationsManager(private val context: Context) {
     private val appUsageChannelId = "app_usage_channel"
     private val appUsageNotificationId = 0
@@ -23,6 +25,6 @@ class AppUsageNotificationsManager(private val context: Context) {
                 .setAutoCancel(true)
             notificationManager.notify(appUsageNotificationId, notificationBuilder.build())
         }
-        prefs.edit().putLong("last_used", currentTimestamp).apply()
+        prefs.edit { putLong("last_used", currentTimestamp) }
     }
 }

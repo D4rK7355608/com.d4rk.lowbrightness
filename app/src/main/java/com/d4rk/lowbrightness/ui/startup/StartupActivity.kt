@@ -6,12 +6,13 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.d4rk.lowbrightness.MainActivity
 import com.d4rk.lowbrightness.databinding.ActivityStartupBinding
+import com.d4rk.lowbrightness.helpers.openUrl
 import com.google.android.ump.ConsentForm
 import com.google.android.ump.ConsentInformation
 import com.google.android.ump.ConsentRequestParameters
 import com.google.android.ump.UserMessagingPlatform
 import me.zhanghai.android.fastscroll.FastScrollerBuilder
-import com.d4rk.lowbrightness.helpers.openUrl
+
 class StartupActivity : AppCompatActivity() {
     private lateinit var binding: ActivityStartupBinding
     private lateinit var consentInformation: ConsentInformation

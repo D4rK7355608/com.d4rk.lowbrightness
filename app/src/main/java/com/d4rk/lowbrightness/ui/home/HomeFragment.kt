@@ -1,9 +1,7 @@
 package com.d4rk.lowbrightness.ui.home
 
 import android.content.Context
-import android.graphics.Bitmap
 import android.graphics.Color
-import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +11,10 @@ import android.widget.AdapterView
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.core.content.edit
+import androidx.core.graphics.createBitmap
+import androidx.core.graphics.drawable.toDrawable
+import androidx.core.graphics.toColorInt
 import androidx.fragment.app.Fragment
 import com.d4rk.lowbrightness.MainActivity
 import com.d4rk.lowbrightness.R
@@ -20,8 +22,8 @@ import com.d4rk.lowbrightness.base.Application
 import com.d4rk.lowbrightness.base.Constants
 import com.d4rk.lowbrightness.base.Prefs
 import com.d4rk.lowbrightness.databinding.FragmentHomeBinding
-import com.d4rk.lowbrightness.helpers.RequestDrawOverAppsPermission
 import com.d4rk.lowbrightness.helpers.RequestAccessibilityPermission
+import com.d4rk.lowbrightness.helpers.RequestDrawOverAppsPermission
 import com.d4rk.lowbrightness.services.SchedulerService
 import com.d4rk.lowbrightness.ui.views.SquareImageView
 import com.google.android.gms.ads.AdRequest
@@ -102,7 +104,7 @@ class HomeFragment : Fragment() {
                 IntArray(array.length()).apply {
                     for (i in indices) {
                         val hex = array.getString(i)
-                        this[i] = Color.parseColor(hex)
+                        this[i] = hex.toColorInt() // FIXME: Only safe (?.) or non-null asserted (!!.) calls are allowed on a nullable receiver of type 'kotlin.String?'.
                     }
                 }.also { array.recycle() }
             }
@@ -116,7 +118,7 @@ class HomeFragment : Fragment() {
                     .setSelectedColor(preselectColor)
                     .setOnColorSelectedListener { positiveResult, color ->
                         if (positiveResult) {
-                            prefs.edit().putInt(Constants.PREF_OVERLAY_COLOR, color).apply()
+                            prefs.edit { putInt(Constants.PREF_OVERLAY_COLOR, color) }
                             Application.refreshServices(view.context)
                             refreshUI()
                         }
@@ -140,7 +142,7 @@ class HomeFragment : Fragment() {
         // Set the listener for the slider
         binding?.materialSlider?.addOnChangeListener { _, value, _ ->
             val newOpacity = value.toInt()
-            sharedPreferences.edit().putInt(Constants.PREF_DIM_LEVEL, newOpacity).apply()
+            sharedPreferences.edit { putInt(Constants.PREF_DIM_LEVEL, newOpacity)}
             Application.refreshServices(requireContext())
         }
 
@@ -152,9 +154,9 @@ class HomeFragment : Fragment() {
                 AdapterView.OnItemClickListener { _, _, position, _ ->
                     adapter.setSelectedPosition(position)
                     val selectedItem = adapter.getItem(position)
-                    sharedPreferences.edit()
-                            .putInt(Constants.PREF_OVERLAY_COLOR, selectedItem.color)
-                            .apply()
+                    sharedPreferences.edit {
+                        putInt(Constants.PREF_OVERLAY_COLOR, selectedItem.color)
+                    }
                     Application.refreshServices(requireContext())
                 }
     }
@@ -167,7 +169,7 @@ class HomeFragment : Fragment() {
     }
 
     private class OverlayColor(val label: String, hex: String) {
-        val color: Int = Color.parseColor(hex)
+        val color: Int = hex.toColorInt()
     }
 
     private class ColorsAdapter(private val context: Context) : BaseAdapter() {
@@ -202,10 +204,10 @@ class HomeFragment : Fragment() {
             imageView.alpha = if (position == selectedPosition) 1f else 0.7f
             imageView.setImageResource(R.drawable.ic_done)
 
-            val bmp = Bitmap.createBitmap(85, 85, Bitmap.Config.ARGB_8888).apply {
+            val bmp = createBitmap(85, 85).apply {
                 eraseColor(overlayColor.color)
             }
-            imageView.background = BitmapDrawable(context.resources, bmp)
+            imageView.background = bmp.toDrawable(context.resources)
             return imageView
         }
 

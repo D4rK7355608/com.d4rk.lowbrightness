@@ -1,12 +1,12 @@
 package com.d4rk.lowbrightness.notifications
 
 import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import com.d4rk.lowbrightness.R
 import com.d4rk.lowbrightness.base.Application
@@ -21,7 +21,7 @@ import java.util.TimeZone
 
 class SchedulerEnabledFragment : Fragment() {
     private var _binding: FragmentSchedulerEnabledBinding? = null
-    private val binding get() = _binding!!
+    private val binding get() = _binding!! // OPTIMZIE: Do not use !!
 
     private lateinit var bridge: IShowHideScheduler
     private var timer: CountDownTimer? = null
@@ -52,10 +52,10 @@ class SchedulerEnabledFragment : Fragment() {
             val scheduleFromHour = sharedPreferences.getInt("scheduleFromHour", 20)
             val scheduleFromMinute = sharedPreferences.getInt("scheduleFromMinute", 0)
             val dialogTimePicker = TimePickerDialog.newInstance({ _, hourOfDay, minute, _ ->
-                Prefs.get(requireContext()).edit()
-                    .putInt("scheduleFromHour", hourOfDay)
-                    .putInt("scheduleFromMinute", minute)
-                    .apply()
+                Prefs.get(requireContext()).edit {
+                    putInt("scheduleFromHour", hourOfDay)
+                        .putInt("scheduleFromMinute", minute)
+                }
                 reloadButtonUIs()
             }, scheduleFromHour, scheduleFromMinute, true)
             dialogTimePicker.show(childFragmentManager, "timepicker_dialog")
@@ -65,10 +65,10 @@ class SchedulerEnabledFragment : Fragment() {
             val scheduleToHour = sharedPreferences.getInt("scheduleToHour", 6)
             val scheduleToMinute = sharedPreferences.getInt("scheduleToMinute", 0)
             val dialogTimePicker = TimePickerDialog.newInstance({ _, hourOfDay, minute, _ ->
-                Prefs.get(requireContext()).edit()
-                    .putInt("scheduleToHour", hourOfDay)
-                    .putInt("scheduleToMinute", minute)
-                    .apply()
+                Prefs.get(requireContext()).edit {
+                    putInt("scheduleToHour", hourOfDay)
+                        .putInt("scheduleToMinute", minute)
+                }
                 reloadButtonUIs()
             }, scheduleToHour, scheduleToMinute, true)
             dialogTimePicker.show(childFragmentManager, "timepicker_dialog")
@@ -105,7 +105,7 @@ class SchedulerEnabledFragment : Fragment() {
                 val remainingMillisToLighten = cEnd.timeInMillis - cNow.timeInMillis
                 timer = object : CountDownTimer(remainingMillisToLighten, 1000) {
                     override fun onTick(millisUntilFinished: Long) {
-                        val t = timeRemainingToLightenLabel + ": " + String.format(
+                        val t = "$timeRemainingToLightenLabel: " + String.format(
                             Locale.getDefault(),
                             "%tT",
                             millisUntilFinished - TimeZone.getDefault().rawOffset
@@ -122,7 +122,7 @@ class SchedulerEnabledFragment : Fragment() {
                 val remainingMillisToDarken = cStart.timeInMillis - cNow.timeInMillis
                 timer = object : CountDownTimer(remainingMillisToDarken, 1000) {
                     override fun onTick(millisUntilFinished: Long) {
-                        val t = timeRemainingToDarkenLabel + ": " + String.format(
+                        val t = "$timeRemainingToDarkenLabel: " + String.format(
                             Locale.getDefault(),
                             "%tT",
                             millisUntilFinished - TimeZone.getDefault().rawOffset

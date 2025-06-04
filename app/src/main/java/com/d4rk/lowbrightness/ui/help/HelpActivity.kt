@@ -9,10 +9,11 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.d4rk.lowbrightness.R
 import com.d4rk.lowbrightness.databinding.ActivityHelpBinding
+import com.d4rk.lowbrightness.helpers.openUrl
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.play.core.review.ReviewManager
 import com.google.android.play.core.review.ReviewManagerFactory
-import com.d4rk.lowbrightness.helpers.openUrl
+
 class HelpActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHelpBinding
     override fun onCreate(savedInstanceState: Bundle?) {

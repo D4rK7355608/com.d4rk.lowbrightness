@@ -9,16 +9,17 @@ import androidx.lifecycle.ViewModelProvider
 import com.d4rk.lowbrightness.BuildConfig
 import com.d4rk.lowbrightness.R
 import com.d4rk.lowbrightness.databinding.FragmentAboutBinding
-import com.d4rk.lowbrightness.ui.viewmodel.AboutViewModel
 import com.d4rk.lowbrightness.helpers.copyToClipboard
 import com.d4rk.lowbrightness.helpers.openUrl
+import com.d4rk.lowbrightness.ui.viewmodel.AboutViewModel
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
 import com.google.android.material.snackbar.Snackbar
 import me.zhanghai.android.fastscroll.FastScrollerBuilder
 import java.text.SimpleDateFormat
-import java.util.Locale
 import java.util.Calendar
+import java.util.Locale
+
 class AboutFragment : Fragment() {
     private lateinit var _binding: FragmentAboutBinding
     private val binding get() = _binding
@@ -69,11 +70,11 @@ class AboutFragment : Fragment() {
     }
     override fun onDestroyView() {
         super.onDestroyView()
-        activity?.window?.navigationBarColor = originalNavBarColor!!
+        activity?.window?.navigationBarColor = originalNavBarColor!! // OPTIMZIE: Do not use !! // FIXME:'var navigationBarColor: Int' is deprecated. Deprecated in Java.
         _binding
     }
 
     private fun setOriginalNavigationBarColor() {
-        activity?.window?.navigationBarColor = originalNavBarColor!!
+        activity?.window?.navigationBarColor = originalNavBarColor!! // OPTIMZIE: Do not use !! // FIXME:'var navigationBarColor: Int' is deprecated. Deprecated in Java.
     }
 }

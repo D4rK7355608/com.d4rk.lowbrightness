@@ -4,8 +4,8 @@ import android.accessibilityservice.AccessibilityService
 import android.graphics.Color
 import android.graphics.PixelFormat
 import android.view.Gravity
-import android.view.accessibility.AccessibilityEvent
 import android.view.WindowManager
+import android.view.accessibility.AccessibilityEvent
 import com.d4rk.lowbrightness.base.Constants
 import com.d4rk.lowbrightness.base.Prefs
 import com.d4rk.lowbrightness.ui.views.OverlayView
