@@ -52,6 +52,17 @@
             android:foregroundServiceType="shortService"
             android:enabled="true" />
         <service
+            android:name=".services.AccessibilityOverlayService"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+        <service
             android:name=".services.SchedulerService"
             android:enabled="true"/>
         <receiver

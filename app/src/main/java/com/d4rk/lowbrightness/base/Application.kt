@@ -6,6 +6,7 @@ import android.provider.Settings
 import androidx.multidex.MultiDexApplication
 import com.d4rk.lowbrightness.services.OverlayService
 import com.d4rk.lowbrightness.services.SchedulerService
+import com.d4rk.lowbrightness.services.AccessibilityOverlayService
 
 object Application : MultiDexApplication() {
     @JvmStatic
@@ -17,6 +18,7 @@ object Application : MultiDexApplication() {
     fun refreshServices(context : Context) {
         val overlayEnabled = OverlayService.isEnabled(context)
         val schedulerEnabled = SchedulerService.isEnabled(context)
+        val accessibilityEnabled = AccessibilityOverlayService.isEnabled(context)
         if (overlayEnabled) {
             if (schedulerEnabled) {
                 context.stopService(Intent(context , OverlayService::class.java))
@@ -26,10 +28,14 @@ object Application : MultiDexApplication() {
                 context.stopService(Intent(context , SchedulerService::class.java))
                 context.startService(Intent(context , OverlayService::class.java))
             }
+            if (accessibilityEnabled) {
+                context.startService(Intent(context , AccessibilityOverlayService::class.java))
+            }
         }
         else {
             context.stopService(Intent(context , SchedulerService::class.java))
             context.stopService(Intent(context , OverlayService::class.java))
+            context.stopService(Intent(context , AccessibilityOverlayService::class.java))
         }
     }
 }

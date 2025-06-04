@@ -132,4 +132,7 @@
     <string name="tooltip_open_me">Open me 🌐</string>
     <string name="tooltip_open_the_color_picker">Open the color picker.</string>
     <string name="tooltip_enable_scheduler">Enable the scheduler to automatically adjust your screen brightness.</string>
+    <string name="accessibility_permission_title">Accessibility permission needed</string>
+    <string name="summary_accessibility_permission">Enabling the accessibility service allows the overlay to cover the system bars. Grant it on the next screen.</string>
+    <string name="accessibility_service_description">Provides dimming overlay over system bars</string>
 </resources>
