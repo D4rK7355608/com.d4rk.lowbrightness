@@ -91,8 +91,8 @@ class SchedulerEnabledFragment : Fragment() {
         val scheduleToMinute = sharedPreferences.getInt("scheduleToMinute", 0)
 
         val cNow = Calendar.getInstance()
-        val cStart = SchedulerService._getCalendarForStart(requireContext())
-        val cEnd = SchedulerService._getCalendarForEnd(requireContext())
+        val cStart = SchedulerService.getCalendarForStart(requireContext())
+        val cEnd = SchedulerService.getCalendarForEnd(requireContext())
 
         timer?.cancel()
 
