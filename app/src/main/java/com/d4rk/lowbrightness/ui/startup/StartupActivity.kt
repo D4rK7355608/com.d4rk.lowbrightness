@@ -1,7 +1,6 @@
 package com.d4rk.lowbrightness.ui.startup
 import android.Manifest
 import android.content.Intent
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +11,7 @@ import com.google.android.ump.ConsentInformation
 import com.google.android.ump.ConsentRequestParameters
 import com.google.android.ump.UserMessagingPlatform
 import me.zhanghai.android.fastscroll.FastScrollerBuilder
+import com.d4rk.lowbrightness.helpers.openUrl
 class StartupActivity : AppCompatActivity() {
     private lateinit var binding: ActivityStartupBinding
     private lateinit var consentInformation: ConsentInformation
@@ -33,7 +33,7 @@ class StartupActivity : AppCompatActivity() {
         })
         FastScrollerBuilder(binding.scrollView).useMd2Style().build()
         binding.buttonBrowsePrivacyPolicyAndTermsOfService.setOnClickListener {
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://sites.google.com/view/d4rk7355608/more/apps/privacy-policy")))
+            openUrl("https://sites.google.com/view/d4rk7355608/more/apps/privacy-policy")
         }
         binding.floatingButtonAgree.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
