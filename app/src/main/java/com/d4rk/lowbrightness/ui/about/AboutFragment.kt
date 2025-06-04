@@ -70,11 +70,15 @@ class AboutFragment : Fragment() {
     }
     override fun onDestroyView() {
         super.onDestroyView()
-        activity?.window?.navigationBarColor = originalNavBarColor!! // OPTIMZIE: Do not use !! // FIXME:'var navigationBarColor: Int' is deprecated. Deprecated in Java.
-        _binding
+        originalNavBarColor?.let { color ->
+            activity?.window?.navigationBarColor = color
+        }
+        _binding = null
     }
 
     private fun setOriginalNavigationBarColor() {
-        activity?.window?.navigationBarColor = originalNavBarColor!! // OPTIMZIE: Do not use !! // FIXME:'var navigationBarColor: Int' is deprecated. Deprecated in Java.
+        originalNavBarColor?.let { color ->
+            activity?.window?.navigationBarColor = color
+        }
     }
 }

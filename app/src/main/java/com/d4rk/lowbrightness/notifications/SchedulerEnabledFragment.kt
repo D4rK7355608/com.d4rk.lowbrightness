@@ -21,7 +21,8 @@ import java.util.TimeZone
 
 class SchedulerEnabledFragment : Fragment() {
     private var _binding: FragmentSchedulerEnabledBinding? = null
-    private val binding get() = _binding!! // OPTIMZIE: Do not use !!
+    private val binding: FragmentSchedulerEnabledBinding
+        get() = requireNotNull(_binding)
 
     private lateinit var bridge: IShowHideScheduler
     private var timer: CountDownTimer? = null
