@@ -9,6 +9,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.PixelFormat
 import android.os.IBinder
+import android.util.Log
 import android.view.Gravity
 import android.view.WindowManager
 import androidx.core.app.NotificationCompat
@@ -22,10 +23,12 @@ import com.d4rk.lowbrightness.ui.views.OverlayView
 
 class OverlayService : Service() {
     private var overlayView: OverlayView? = null
+    private val tag = "OverlayService"
 
     override fun onBind(intent : Intent) : IBinder? = null
 
     override fun onStartCommand(intent : Intent , flags : Int , startId : Int) : Int {
+        Log.d(tag, "onStartCommand")
         val sharedPreferences = Prefs.get(baseContext)
 
         if (! isEnabled(baseContext) || ! Application.canDrawOverlay(baseContext)) {
@@ -105,6 +108,7 @@ class OverlayService : Service() {
     }
 
     override fun onDestroy() {
+        Log.d(tag, "onDestroy")
         super.onDestroy()
         overlayView?.let {
             (getSystemService(WINDOW_SERVICE) as WindowManager).removeView(it)

@@ -6,15 +6,19 @@ import android.app.Service
 import android.content.Context
 import android.content.Intent
 import android.os.IBinder
+import androidx.core.content.ContextCompat
 import androidx.core.content.edit
+import android.util.Log
 import com.d4rk.lowbrightness.base.Application
 import com.d4rk.lowbrightness.base.Constants
 import com.d4rk.lowbrightness.base.Prefs
 import java.util.Calendar
 
 class SchedulerService : Service() {
+    private val tag = "SchedulerService"
     override fun onCreate() {
         super.onCreate()
+        Log.d(tag, "onCreate")
         val am = baseContext.getSystemService(ALARM_SERVICE) as AlarmManager
         val iEnd = Intent(baseContext , SchedulerService::class.java)
         val piEnd = PendingIntent.getService(
@@ -23,8 +27,12 @@ class SchedulerService : Service() {
             iEnd ,
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
-        am.setRepeating(
-            AlarmManager.RTC , System.currentTimeMillis() , AlarmManager.INTERVAL_HALF_HOUR , piEnd
+        Log.d(tag, "Scheduling hourly checks")
+        am.setInexactRepeating(
+            AlarmManager.RTC,
+            System.currentTimeMillis(),
+            AlarmManager.INTERVAL_HOUR,
+            piEnd
         )
     }
 
@@ -33,6 +41,7 @@ class SchedulerService : Service() {
     }
 
     override fun onStartCommand(intent : Intent , flags : Int , startId : Int) : Int {
+        Log.d(tag, "onStartCommand")
         if (! Prefs.get(baseContext).getBoolean(Constants.PREF_SCHEDULER_ENABLED , false)) {
             cancelAlarms()
             stopSelf()
@@ -45,6 +54,7 @@ class SchedulerService : Service() {
     }
 
     private fun startOrStopScreenDim() {
+        Log.d(tag, "Evaluating schedule")
         val sharedPreferences = Prefs.get(baseContext)
         if (sharedPreferences.getBoolean(Constants.PREF_LOW_BRIGHTNESS_ENABLED, false)) {
             val cBegin = getCalendarForStart(baseContext)
@@ -54,23 +64,28 @@ class SchedulerService : Service() {
             val overlayIntent = Intent(baseContext, OverlayService::class.java)
 
             if (calendar.timeInMillis > cBegin.timeInMillis && calendar.timeInMillis < cEnd.timeInMillis) {
-                startService(overlayIntent)
+                Log.d(tag, "Enabling overlay")
+                ContextCompat.startForegroundService(baseContext, overlayIntent)
             } else {
+                Log.d(tag, "Disabling overlay")
                 stopService(overlayIntent)
             }
         } else {
             val overlayIntent = Intent(baseContext, OverlayService::class.java)
+            Log.d(tag, "Overlay disabled via prefs")
             stopService(overlayIntent)
         }
     }
 
     override fun onDestroy() {
+        Log.d(tag, "onDestroy")
         cancelAlarms()
         super.onDestroy()
     }
 
     private fun cancelAlarms() {
         val alarmManager = baseContext.getSystemService(ALARM_SERVICE) as AlarmManager
+        Log.d(tag, "Cancelling scheduled alarms")
         val iBegin = Intent(baseContext , SchedulerService::class.java)
         val piBegin = PendingIntent.getService(
             baseContext ,
@@ -79,6 +94,7 @@ class SchedulerService : Service() {
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
         alarmManager.cancel(piBegin)
+        Log.d(tag, "Alarms cancelled")
     }
 
     companion object {
