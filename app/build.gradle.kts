@@ -120,4 +120,8 @@ dependencies {
     implementation("com.wdullaer:materialdatetimepicker:4.2.3")
     implementation("com.thebluealliance:spectrum:0.7.1")
     implementation("me.zhanghai.android.fastscroll:library:1.3.0")
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.kotlinx.coroutines.play.services)
+
+    testImplementation(libs.kotlinx.coroutines.test)
 }

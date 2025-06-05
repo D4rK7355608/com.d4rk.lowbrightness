@@ -38,6 +38,9 @@ import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import com.google.android.play.core.appupdate.AppUpdateOptions
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.UpdateAvailability
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 
@@ -88,7 +91,9 @@ class MainActivity : AppCompatActivity(), IShowHideScheduler {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration)
         NavigationUI.setupWithNavController(navigationView, navController)
         val appUpdateNotificationsManager = AppUpdateNotificationsManager(this)
-        appUpdateNotificationsManager.checkAndSendUpdateNotification()
+        lifecycleScope.launch {
+            appUpdateNotificationsManager.checkAndSendUpdateNotification()
+        }
     }
 
     fun appSettings() {
@@ -121,7 +126,8 @@ class MainActivity : AppCompatActivity(), IShowHideScheduler {
         FirebaseAnalytics.getInstance(this).setAnalyticsCollectionEnabled(preferenceFirebase)
         FirebaseCrashlytics.getInstance().isCrashlyticsCollectionEnabled = preferenceFirebase
         permissionRequester = RequestDrawOverAppsPermission(this)
-        appUpdateManager.appUpdateInfo.addOnSuccessListener { appUpdateInfo ->
+        lifecycleScope.launch {
+            val appUpdateInfo = appUpdateManager.appUpdateInfo.await()
             if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE &&
                 appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.FLEXIBLE)
             ) {
@@ -132,7 +138,7 @@ class MainActivity : AppCompatActivity(), IShowHideScheduler {
                             .build()
                     appUpdateManager.startUpdateFlowForResult(
                         appUpdateInfo,
-                        this,
+                        this@MainActivity,
                         updateOptions,
                         requestUpdateCode
                     )

@@ -12,6 +12,9 @@ import com.d4rk.lowbrightness.helpers.openUrl
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.play.core.review.ReviewManager
 import com.google.android.play.core.review.ReviewManagerFactory
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
 
 class HelpActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHelpBinding
@@ -35,20 +38,19 @@ class HelpActivity : AppCompatActivity() {
             reviewManager = ReviewManagerFactory.create(requireContext())
             val feedbackPreference: Preference? = findPreference(getString(R.string.key_feedback))
             feedbackPreference?.setOnPreferenceClickListener {
-                reviewManager.requestReviewFlow().addOnSuccessListener { reviewInfo ->
-                    reviewManager.launchReviewFlow(requireActivity(), reviewInfo)
-                }
-                .addOnFailureListener {
-                    val uri = "https://play.google.com/store/apps/details?id=${requireContext().packageName}&showAllReviews=true"
+                viewLifecycleOwner.lifecycleScope.launch {
                     runCatching {
-                        requireContext().openUrl(uri)
+                        val reviewInfo = reviewManager.requestReviewFlow().await()
+                        reviewManager.launchReviewFlow(requireActivity(), reviewInfo).await()
                     }.onFailure {
-                        Snackbar.make(requireView(), R.string.snack_unable_to_open_google_play_store, Snackbar.LENGTH_SHORT).show()
+                        val uri = "https://play.google.com/store/apps/details?id=${requireContext().packageName}&showAllReviews=true"
+                        runCatching { requireContext().openUrl(uri) }
+                            .onFailure {
+                                Snackbar.make(requireView(), R.string.snack_unable_to_open_google_play_store, Snackbar.LENGTH_SHORT).show()
+                            }
                     }
                 }
-                .also {
-                    Snackbar.make(requireView(), R.string.snack_feedback, Snackbar.LENGTH_SHORT).show()
-                }
+                Snackbar.make(requireView(), R.string.snack_feedback, Snackbar.LENGTH_SHORT).show()
                 true
             }
         }
