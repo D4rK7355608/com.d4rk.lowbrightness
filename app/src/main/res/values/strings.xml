@@ -127,6 +127,7 @@
     <string name="snack_unable_to_open_google_play_store">Unable to open Google Play Store.</string>
     <string name="snack_feedback">Thanks for rating us!</string>
     <string name="snack_copied_to_clipboard">Copied to clipboard!</string>
+    <string name="snack_update_conditions_not_met">Update postponed due to low battery, storage, or no network connection.</string>
     <string name="tooltip_agree">Accept the terms and conditions.</string>
     <string name="tooltip_button_hour_from">Time when your screen brightness will be adjusted to the level you set.</string>
     <string name="tooltip_button_hour_to">Time when your screen brightness will return to its normal level.</string>
