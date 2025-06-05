@@ -14,7 +14,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.tasks.await
 
-class AppUpdateNotificationsManager(private val context: Context) {
+class AppUpdateNotificationsManager(context: Context) {
+    private val context = context.applicationContext
     private val updateChannelId = "update_channel"
     private val updateNotificationId = 0
     suspend fun checkAndSendUpdateNotification() {

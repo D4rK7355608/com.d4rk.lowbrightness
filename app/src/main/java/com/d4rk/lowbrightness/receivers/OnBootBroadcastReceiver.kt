@@ -14,7 +14,7 @@ class OnBootBroadcastReceiver : BroadcastReceiver() {
             val work = OneTimeWorkRequestBuilder<BootWorker>()
                 .setExpedited(OutOfQuotaPolicy.RUN_AS_NON_EXPEDITED_WORK_REQUEST)
                 .build()
-            WorkManager.getInstance(context).enqueue(work)
+            WorkManager.getInstance(context.applicationContext).enqueue(work)
         }
     }
 

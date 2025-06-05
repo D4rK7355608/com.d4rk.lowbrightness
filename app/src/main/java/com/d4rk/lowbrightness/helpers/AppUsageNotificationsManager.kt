@@ -6,7 +6,8 @@ import androidx.core.app.NotificationCompat
 import androidx.core.content.edit
 import com.d4rk.lowbrightness.R
 
-class AppUsageNotificationsManager(private val context: Context) {
+class AppUsageNotificationsManager(context: Context) {
+    private val context = context.applicationContext
     private val appUsageChannelId = "app_usage_channel"
     private val appUsageNotificationId = 0
     fun checkAndSendAppUsageNotification() {

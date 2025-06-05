@@ -20,35 +20,37 @@ object SchedulerService {
 
     fun evaluateSchedule(context: Context) {
         Log.d(TAG, "Evaluating schedule")
-        val sharedPreferences = Prefs.get(context)
+        val appContext = context.applicationContext
+        val sharedPreferences = Prefs.get(appContext)
         if (sharedPreferences.getBoolean(Constants.PREF_LOW_BRIGHTNESS_ENABLED, false) &&
-            ServiceController.canDrawOverlay(context)
+            ServiceController.canDrawOverlay(appContext)
         ) {
-            val cBegin = getCalendarForStart(context)
-            val cEnd = getCalendarForEnd(context)
+            val cBegin = getCalendarForStart(appContext)
+            val cEnd = getCalendarForEnd(appContext)
             val calendar = Calendar.getInstance()
 
-            val overlayIntent = Intent(context, OverlayService::class.java)
+            val overlayIntent = Intent(appContext, OverlayService::class.java)
 
             if (calendar.timeInMillis > cBegin.timeInMillis && calendar.timeInMillis < cEnd.timeInMillis) {
                 Log.d(TAG, "Enabling overlay")
-                ContextCompat.startForegroundService(context, overlayIntent)
+                ContextCompat.startForegroundService(appContext, overlayIntent)
             } else {
                 Log.d(TAG, "Disabling overlay")
-                context.stopService(overlayIntent)
+                appContext.stopService(overlayIntent)
             }
         } else {
-            val overlayIntent = Intent(context, OverlayService::class.java)
+            val overlayIntent = Intent(appContext, OverlayService::class.java)
             Log.d(TAG, "Overlay disabled via prefs or permission missing")
-            context.stopService(overlayIntent)
+            appContext.stopService(overlayIntent)
         }
     }
 
     private fun scheduleWork(context: Context) {
         Log.d(TAG, "Scheduling hourly checks with WorkManager")
+        val appContext = context.applicationContext
         val request = PeriodicWorkRequestBuilder<SchedulerWorker>(1, TimeUnit.HOURS)
             .build()
-        WorkManager.getInstance(context).enqueueUniquePeriodicWork(
+        WorkManager.getInstance(appContext).enqueueUniquePeriodicWork(
             WORK_NAME,
             ExistingPeriodicWorkPolicy.UPDATE,
             request
@@ -57,12 +59,14 @@ object SchedulerService {
 
     private fun cancelWork(context: Context) {
         Log.d(TAG, "Cancelling WorkManager tasks")
-        WorkManager.getInstance(context).cancelUniqueWork(WORK_NAME)
+        val appContext = context.applicationContext
+        WorkManager.getInstance(appContext).cancelUniqueWork(WORK_NAME)
     }
 
     @JvmStatic
     fun getCalendarForStart(context: Context): Calendar {
-        val sharedPreferences = Prefs.get(context)
+        val appContext = context.applicationContext
+        val sharedPreferences = Prefs.get(appContext)
         val scheduleFromHour = sharedPreferences.getInt("scheduleFromHour", 20)
         val scheduleFromMinute = sharedPreferences.getInt("scheduleFromMinute", 0)
         return Calendar.getInstance().apply {
@@ -74,14 +78,15 @@ object SchedulerService {
 
     @JvmStatic
     fun getCalendarForEnd(context: Context): Calendar {
-        val sharedPreferences = Prefs.get(context)
+        val appContext = context.applicationContext
+        val sharedPreferences = Prefs.get(appContext)
         val hour = sharedPreferences.getInt("scheduleToHour", 6)
         val minute = sharedPreferences.getInt("scheduleToMinute", 0)
         return Calendar.getInstance().apply {
             set(Calendar.HOUR_OF_DAY, hour)
             set(Calendar.MINUTE, minute)
             clear(Calendar.SECOND)
-            if (timeInMillis < getCalendarForStart(context).timeInMillis) {
+            if (timeInMillis < getCalendarForStart(appContext).timeInMillis) {
                 add(Calendar.DATE, 1)
             }
         }
@@ -89,27 +94,29 @@ object SchedulerService {
 
     @JvmStatic
     fun isEnabled(context: Context): Boolean {
-        val prefs = Prefs.get(context)
+        val prefs = Prefs.get(context.applicationContext)
         return prefs.getBoolean(Constants.PREF_SCHEDULER_ENABLED, false)
     }
 
     @JvmStatic
     fun enable(context: Context) {
-        val prefs = Prefs.get(context)
+        val appContext = context.applicationContext
+        val prefs = Prefs.get(appContext)
         if (!prefs.getBoolean(Constants.PREF_SCHEDULER_ENABLED, false)) {
             prefs.edit { putBoolean(Constants.PREF_SCHEDULER_ENABLED, true) }
-            scheduleWork(context)
-            evaluateSchedule(context)
+            scheduleWork(appContext)
+            evaluateSchedule(appContext)
         }
     }
 
     @JvmStatic
     fun disable(context: Context) {
-        val prefs = Prefs.get(context)
+        val appContext = context.applicationContext
+        val prefs = Prefs.get(appContext)
         if (prefs.getBoolean(Constants.PREF_SCHEDULER_ENABLED, false)) {
             prefs.edit { putBoolean(Constants.PREF_SCHEDULER_ENABLED, false) }
-            cancelWork(context)
-            context.stopService(Intent(context, OverlayService::class.java))
+            cancelWork(appContext)
+            appContext.stopService(Intent(appContext, OverlayService::class.java))
         }
     }
 }

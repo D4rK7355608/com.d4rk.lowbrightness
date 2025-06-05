@@ -15,30 +15,31 @@ object ServiceController {
     fun canDrawOverlay(context: Context?): Boolean = Settings.canDrawOverlays(context)
 
     fun refreshServices(context: Context) {
-        val overlayEnabled = OverlayService.isEnabled(context)
-        val schedulerEnabled = SchedulerService.isEnabled(context)
-        val accessibilityEnabled = AccessibilityOverlayService.isEnabled(context)
-        val canDrawOverlay = canDrawOverlay(context)
+        val appContext = context.applicationContext
+        val overlayEnabled = OverlayService.isEnabled(appContext)
+        val schedulerEnabled = SchedulerService.isEnabled(appContext)
+        val accessibilityEnabled = AccessibilityOverlayService.isEnabled(appContext)
+        val canDrawOverlay = canDrawOverlay(appContext)
 
-        val overlayIntent = Intent(context, OverlayService::class.java)
-        val accessibilityIntent = Intent(context, AccessibilityOverlayService::class.java)
+        val overlayIntent = Intent(appContext, OverlayService::class.java)
+        val accessibilityIntent = Intent(appContext, AccessibilityOverlayService::class.java)
 
         if (overlayEnabled && canDrawOverlay) {
             if (schedulerEnabled) {
-                SchedulerService.enable(context) // ensures work scheduled
-                context.stopService(overlayIntent)
+                SchedulerService.enable(appContext) // ensures work scheduled
+                appContext.stopService(overlayIntent)
             } else {
-                SchedulerService.disable(context) // ensures work cancelled
-                ContextCompat.startForegroundService(context, overlayIntent)
+                SchedulerService.disable(appContext) // ensures work cancelled
+                ContextCompat.startForegroundService(appContext, overlayIntent)
             }
 
             if (accessibilityEnabled) {
-                context.startService(accessibilityIntent)
+                appContext.startService(accessibilityIntent)
             }
         } else {
-            SchedulerService.disable(context)
-            context.stopService(overlayIntent)
-            context.stopService(accessibilityIntent)
+            SchedulerService.disable(appContext)
+            appContext.stopService(overlayIntent)
+            appContext.stopService(accessibilityIntent)
         }
     }
 }
