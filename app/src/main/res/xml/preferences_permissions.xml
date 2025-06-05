@@ -44,11 +44,6 @@
             app:useSimpleSummaryProvider="true"
             app:iconSpaceReserved="false"/>
         <androidx.preference.Preference
-            app:title="@string/schedule_exact_alarm"
-            app:summary="@string/summary_preference_permissions_schedule_exact_alarm"
-            app:useSimpleSummaryProvider="true"
-            app:iconSpaceReserved="false"/>
-        <androidx.preference.Preference
             app:title="@string/system_alert_window"
             app:summary="@string/summary_preference_permissions_system_alert_window"
             app:useSimpleSummaryProvider="true"
