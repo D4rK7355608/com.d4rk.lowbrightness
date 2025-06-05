@@ -27,8 +27,13 @@ class OverlayService : Service() {
 
     override fun onBind(intent : Intent) : IBinder? = null
 
-    override fun onStartCommand(intent : Intent , flags : Int , startId : Int) : Int {
+    override fun onStartCommand(intent : Intent?, flags : Int, startId : Int) : Int {
         Log.d(tag, "onStartCommand")
+
+        if (intent == null) {
+            Log.w(tag, "Received null intent in onStartCommand")
+            return START_NOT_STICKY
+        }
         val sharedPreferences = Prefs.get(baseContext)
 
         if (!isEnabled(baseContext) || !ServiceController.canDrawOverlay(baseContext)) {
