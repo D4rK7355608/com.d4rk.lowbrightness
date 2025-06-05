@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import com.d4rk.lowbrightness.R
 import com.d4rk.lowbrightness.base.ServiceController
 import com.d4rk.lowbrightness.base.Prefs
+import com.d4rk.lowbrightness.base.Constants
 import com.d4rk.lowbrightness.databinding.FragmentSchedulerEnabledBinding
 import com.d4rk.lowbrightness.helpers.IShowHideScheduler
 import com.d4rk.lowbrightness.services.SchedulerService
@@ -50,12 +51,12 @@ class SchedulerEnabledFragment : Fragment() {
         reloadButtonUIs()
         binding.buttonHourFrom.setOnClickListener {
             val sharedPreferences = Prefs.get(requireContext())
-            val scheduleFromHour = sharedPreferences.getInt("scheduleFromHour", 20)
-            val scheduleFromMinute = sharedPreferences.getInt("scheduleFromMinute", 0)
+            val scheduleFromHour = sharedPreferences.getInt(Constants.PREF_SCHEDULE_FROM_HOUR, 20)
+            val scheduleFromMinute = sharedPreferences.getInt(Constants.PREF_SCHEDULE_FROM_MINUTE, 0)
             val dialogTimePicker = TimePickerDialog.newInstance({ _, hourOfDay, minute, _ ->
                 Prefs.get(requireContext()).edit {
-                    putInt("scheduleFromHour", hourOfDay)
-                        .putInt("scheduleFromMinute", minute)
+                    putInt(Constants.PREF_SCHEDULE_FROM_HOUR, hourOfDay)
+                        .putInt(Constants.PREF_SCHEDULE_FROM_MINUTE, minute)
                 }
                 reloadButtonUIs()
             }, scheduleFromHour, scheduleFromMinute, true)
@@ -63,12 +64,12 @@ class SchedulerEnabledFragment : Fragment() {
         }
         binding.buttonHourTo.setOnClickListener {
             val sharedPreferences = Prefs.get(requireContext())
-            val scheduleToHour = sharedPreferences.getInt("scheduleToHour", 6)
-            val scheduleToMinute = sharedPreferences.getInt("scheduleToMinute", 0)
+            val scheduleToHour = sharedPreferences.getInt(Constants.PREF_SCHEDULE_TO_HOUR, 6)
+            val scheduleToMinute = sharedPreferences.getInt(Constants.PREF_SCHEDULE_TO_MINUTE, 0)
             val dialogTimePicker = TimePickerDialog.newInstance({ _, hourOfDay, minute, _ ->
                 Prefs.get(requireContext()).edit {
-                    putInt("scheduleToHour", hourOfDay)
-                        .putInt("scheduleToMinute", minute)
+                    putInt(Constants.PREF_SCHEDULE_TO_HOUR, hourOfDay)
+                        .putInt(Constants.PREF_SCHEDULE_TO_MINUTE, minute)
                 }
                 reloadButtonUIs()
             }, scheduleToHour, scheduleToMinute, true)
@@ -86,10 +87,10 @@ class SchedulerEnabledFragment : Fragment() {
         if (view == null) return
 
         val sharedPreferences = Prefs.get(requireContext())
-        val scheduleFromHour = sharedPreferences.getInt("scheduleFromHour", 20)
-        val scheduleFromMinute = sharedPreferences.getInt("scheduleFromMinute", 0)
-        val scheduleToHour = sharedPreferences.getInt("scheduleToHour", 6)
-        val scheduleToMinute = sharedPreferences.getInt("scheduleToMinute", 0)
+        val scheduleFromHour = sharedPreferences.getInt(Constants.PREF_SCHEDULE_FROM_HOUR, 20)
+        val scheduleFromMinute = sharedPreferences.getInt(Constants.PREF_SCHEDULE_FROM_MINUTE, 0)
+        val scheduleToHour = sharedPreferences.getInt(Constants.PREF_SCHEDULE_TO_HOUR, 6)
+        val scheduleToMinute = sharedPreferences.getInt(Constants.PREF_SCHEDULE_TO_MINUTE, 0)
 
         val cNow = Calendar.getInstance()
         val cStart = SchedulerService.getCalendarForStart(requireContext())

@@ -5,14 +5,15 @@ import android.content.Context
 import androidx.core.app.NotificationCompat
 import androidx.core.content.edit
 import com.d4rk.lowbrightness.R
+import com.d4rk.lowbrightness.base.Constants
 
 class AppUsageNotificationsManager(context: Context) {
     private val context = context.applicationContext
     private val appUsageChannelId = "app_usage_channel"
     private val appUsageNotificationId = 0
     fun checkAndSendAppUsageNotification() {
-        val prefs = context.getSharedPreferences("app_usage", Context.MODE_PRIVATE)
-        val lastUsedTimestamp = prefs.getLong("last_used", 0)
+        val prefs = context.getSharedPreferences(Constants.PREF_FILE_APP_USAGE, Context.MODE_PRIVATE)
+        val lastUsedTimestamp = prefs.getLong(Constants.PREF_APP_USAGE_LAST_USED, 0)
         val currentTimestamp = System.currentTimeMillis()
         val notificationThreshold = 3 * 24 * 60 * 60 * 1000
         if (currentTimestamp - lastUsedTimestamp > notificationThreshold) {
@@ -26,6 +27,6 @@ class AppUsageNotificationsManager(context: Context) {
                 .setAutoCancel(true)
             notificationManager.notify(appUsageNotificationId, notificationBuilder.build())
         }
-        prefs.edit { putLong("last_used", currentTimestamp) }
+        prefs.edit { putLong(Constants.PREF_APP_USAGE_LAST_USED, currentTimestamp) }
     }
 }

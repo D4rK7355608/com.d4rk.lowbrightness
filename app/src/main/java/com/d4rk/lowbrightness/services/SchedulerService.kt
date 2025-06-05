@@ -63,34 +63,36 @@ object SchedulerService {
         WorkManager.getInstance(appContext).cancelUniqueWork(WORK_NAME)
     }
 
-    @JvmStatic
-    fun getCalendarForStart(context: Context): Calendar {
-        val appContext = context.applicationContext
-        val sharedPreferences = Prefs.get(appContext)
-        val scheduleFromHour = sharedPreferences.getInt("scheduleFromHour", 20)
-        val scheduleFromMinute = sharedPreferences.getInt("scheduleFromMinute", 0)
-        return Calendar.getInstance().apply {
-            set(Calendar.HOUR_OF_DAY, scheduleFromHour)
-            set(Calendar.MINUTE, scheduleFromMinute)
-            clear(Calendar.SECOND)
-        }
-    }
+@JvmStatic
+fun getCalendarForStart(context: Context): Calendar {
+    val appContext = context.applicationContext
+    val sharedPreferences = Prefs.get(appContext)
+    val scheduleFromHour = sharedPreferences.getInt(Constants.PREF_SCHEDULE_FROM_HOUR, 20)
+    val scheduleFromMinute = sharedPreferences.getInt(Constants.PREF_SCHEDULE_FROM_MINUTE, 0)
 
-    @JvmStatic
-    fun getCalendarForEnd(context: Context): Calendar {
-        val appContext = context.applicationContext
-        val sharedPreferences = Prefs.get(appContext)
-        val hour = sharedPreferences.getInt("scheduleToHour", 6)
-        val minute = sharedPreferences.getInt("scheduleToMinute", 0)
-        return Calendar.getInstance().apply {
-            set(Calendar.HOUR_OF_DAY, hour)
-            set(Calendar.MINUTE, minute)
-            clear(Calendar.SECOND)
-            if (timeInMillis < getCalendarForStart(appContext).timeInMillis) {
-                add(Calendar.DATE, 1)
-            }
+    return Calendar.getInstance().apply {
+        set(Calendar.HOUR_OF_DAY, scheduleFromHour)
+        set(Calendar.MINUTE, scheduleFromMinute)
+        clear(Calendar.SECOND)
+    }
+}
+
+@JvmStatic
+fun getCalendarForEnd(context: Context): Calendar {
+    val appContext = context.applicationContext
+    val sharedPreferences = Prefs.get(appContext)
+    val hour = sharedPreferences.getInt(Constants.PREF_SCHEDULE_TO_HOUR, 6)
+    val minute = sharedPreferences.getInt(Constants.PREF_SCHEDULE_TO_MINUTE, 0)
+
+    return Calendar.getInstance().apply {
+        set(Calendar.HOUR_OF_DAY, hour)
+        set(Calendar.MINUTE, minute)
+        clear(Calendar.SECOND)
+        if (timeInMillis < getCalendarForStart(appContext).timeInMillis) {
+            add(Calendar.DATE, 1)
         }
     }
+}
 
     @JvmStatic
     fun isEnabled(context: Context): Boolean {
