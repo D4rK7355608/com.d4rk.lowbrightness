@@ -149,9 +149,9 @@ class MainActivity : AppCompatActivity(), IShowHideScheduler {
     }
 
     private fun startupScreen() {
-        val startupPreference = getSharedPreferences("startup", MODE_PRIVATE)
-        if (startupPreference.getBoolean("value", true)) {
-            startupPreference.edit { putBoolean("value", false) }
+        val startupPreference = getSharedPreferences(Constants.PREF_FILE_STARTUP, MODE_PRIVATE)
+        if (startupPreference.getBoolean(Constants.PREF_STARTUP_VALUE, true)) {
+            startupPreference.edit { putBoolean(Constants.PREF_STARTUP_VALUE, false) }
             startActivity(Intent(this, StartupActivity::class.java))
         }
     }

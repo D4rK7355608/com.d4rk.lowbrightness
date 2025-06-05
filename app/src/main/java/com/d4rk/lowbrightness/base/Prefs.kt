@@ -5,7 +5,7 @@ import android.content.SharedPreferences
 
 object Prefs {
     @JvmStatic
-	fun get(c : Context) : SharedPreferences {
-        return c.getSharedPreferences("settings" , Context.MODE_PRIVATE)
+        fun get(c: Context): SharedPreferences {
+        return c.getSharedPreferences(Constants.PREF_FILE_SETTINGS, Context.MODE_PRIVATE)
     }
 }
