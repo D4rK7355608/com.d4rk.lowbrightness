@@ -32,7 +32,6 @@ class OverlayService : Service() {
 
         if (intent == null) {
             Log.w(tag, "Received null intent in onStartCommand")
-            return START_NOT_STICKY
         }
         val sharedPreferences = Prefs.get(baseContext)
 
@@ -40,6 +39,9 @@ class OverlayService : Service() {
             stopSelf()
             return START_NOT_STICKY
         }
+
+        // Call startForeground as early as possible to satisfy the system
+        showNotification()
 
         val opacityPercentage = sharedPreferences.getInt(Constants.PREF_DIM_LEVEL , 20)
         val color = sharedPreferences.getInt(Constants.PREF_OVERLAY_COLOR , Color.BLACK)
@@ -77,7 +79,6 @@ class OverlayService : Service() {
             }
         }
 
-        showNotification()
         return START_STICKY
     }
 
