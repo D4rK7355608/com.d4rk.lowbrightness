@@ -251,7 +251,9 @@ private fun ColorCard() {
                         text = stringResource(id = R.string.summary_filter),
                         style = MaterialTheme.typography.bodyMedium
                     )
-                    IconButton(onClick = { showDialog = true }) {
+                    IconButton(
+                        modifier = Modifier.bounceClick(),
+                        onClick = { showDialog = true }) {
                         Box(
                             modifier = Modifier
                                 .size(48.dp)
@@ -259,7 +261,6 @@ private fun ColorCard() {
                                     color = Color(calculatedColor),
                                     shape = RoundedCornerShape(percent = 50)
                                 )
-                                .bounceClick()
                         )
                     }
                 }

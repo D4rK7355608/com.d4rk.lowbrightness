@@ -1,67 +1,29 @@
 {
   "project_info": {
-    "project_number": "289497233341",
-    "project_id": "d4rk-apps",
-    "storage_bucket": "d4rk-apps.appspot.com"
+    "project_number": "508250256613",
+    "project_id": "low-brightness-for-android",
+    "storage_bucket": "low-brightness-for-android.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:289497233341:android:22b03d8c9ef12bd02c84d4",
-        "android_client_info": {
-          "package_name": "com.d4rk.androidtutorials"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "289497233341-33ic66r4d80qg7f793jgve1gvrlanrkk.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB4pDjHrxVmwSpSjuYc6Qi2MOxb6IsCtIQ"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "289497233341-33ic66r4d80qg7f793jgve1gvrlanrkk.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:289497233341:android:4d85e23dca60f0192c84d4",
+        "mobilesdk_app_id": "1:508250256613:android:bc20e2a0bff7ccf93e100c",
         "android_client_info": {
           "package_name": "com.d4rk.lowbrightness"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "289497233341-33ic66r4d80qg7f793jgve1gvrlanrkk.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyB4pDjHrxVmwSpSjuYc6Qi2MOxb6IsCtIQ"
+          "current_key": "AIzaSyC7TNE7LE2AT9NzDGclnWZz2YE0HxkHUcc"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "289497233341-33ic66r4d80qg7f793jgve1gvrlanrkk.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
-      }
+      },
+      "admob_app_id": "ca-app-pub-5294151573817700~8302025955"
     }
   ],
   "configuration_version": "1"

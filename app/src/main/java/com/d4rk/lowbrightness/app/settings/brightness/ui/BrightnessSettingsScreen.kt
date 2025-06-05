@@ -17,7 +17,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
-import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.stringResource
 import com.d4rk.lowbrightness.R
 import com.d4rk.lowbrightness.app.brightness.ui.components.applyScreenBrightness
@@ -49,8 +48,6 @@ fun BrightnessSettingsScreen(paddingValues : PaddingValues) {
             CategorySettingsItem(
                 text = stringResource(id = R.string.settings_screen_color_settings)
             )
-        }
-        item {
             var openColorDialog by remember { mutableStateOf(false) }
             ColorSettingsItem(
                 icon = Icons.Default.ColorLens,
@@ -96,8 +93,6 @@ fun BrightnessSettingsScreen(paddingValues : PaddingValues) {
             CategorySettingsItem(
                 text = stringResource(id = R.string.settings_screen_screen_settings)
             )
-        }
-        item {
             SwitchSettingsItem(
                 icon = Icons.Default.Brightness7,
                 text = stringResource(id = R.string.settings_screen_keep_screen_on),

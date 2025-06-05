@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name" translatable="false">Low Brightness</string>
+    <string name="app_full_name" translatable="false">Low Brightness for Android</string>
 </resources>
