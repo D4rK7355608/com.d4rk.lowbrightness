@@ -40,7 +40,7 @@ class AppOpenAd : Application(), ActivityLifecycleCallbacks, LifecycleObserver {
     override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {}
     override fun onActivityDestroyed(activity: Activity) {}
 
-    fun showAdIfAvailable(activity: Activity, onShowAdCompleteListener: OnShowAdCompleteListener) {
+    fun showAdIfAvailable(activity: Activity, onShowAdCompleteListener: OnShowAdCompleteListener) { // FIXME: Function "showAdIfAvailable" is never used
         appOpenAdManager.showAdIfAvailable(activity, onShowAdCompleteListener)
     }
 
@@ -77,7 +77,7 @@ class AppOpenAd : Application(), ActivityLifecycleCallbacks, LifecycleObserver {
                 })
         }
 
-        private fun wasLoadTimeLessThanNHoursAgo(numHours: Long): Boolean {
+        private fun wasLoadTimeLessThanNHoursAgo(numHours: Long): Boolean { // FIXME: Value of parameter 'numHours' is always '4L'
             val dateDifference = System.currentTimeMillis() - loadTime
             val numMilliSecondsPerHour: Long = 3600000
             return dateDifference < numMilliSecondsPerHour * numHours

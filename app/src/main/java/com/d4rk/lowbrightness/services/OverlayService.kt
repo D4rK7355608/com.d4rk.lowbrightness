@@ -52,10 +52,10 @@ class OverlayService : Service() {
                 WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE or
                         WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
                         WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS or
-                        WindowManager.LayoutParams.FLAG_FULLSCREEN or
+                        WindowManager.LayoutParams.FLAG_FULLSCREEN or // FIXME: 'static field FLAG_FULLSCREEN: Int' is deprecated. Deprecated in Java.
                         WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN or
                         WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS or
-                        WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED,
+                        WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED, // FIXME: 'static field FLAG_SHOW_WHEN_LOCKED: Int' is deprecated. Deprecated in Java.
                 PixelFormat.TRANSLUCENT
             ).apply {
                 gravity = Gravity.TOP or Gravity.CENTER_HORIZONTAL
@@ -114,7 +114,7 @@ class OverlayService : Service() {
             (getSystemService(WINDOW_SERVICE) as WindowManager).removeView(it)
             overlayView = null
         }
-        stopForeground(true)
+        stopForeground(true) // FIXME: 'fun stopForeground(removeNotification: Boolean): Unit' is deprecated. Deprecated in Java.
     }
 
     companion object {

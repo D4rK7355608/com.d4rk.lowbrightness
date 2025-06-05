@@ -168,7 +168,7 @@ class HomeFragment : Fragment() {
         binding?.buttonColorPicker?.setBackgroundColor(currentColor)
     }
 
-    private class OverlayColor(val label: String, hex: String) {
+    private class OverlayColor(val label: String, hex: String) { // FIXME: Property "label" is never used
         val color: Int = hex.toColorInt()
     }
 

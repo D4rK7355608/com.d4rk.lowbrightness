@@ -1,5 +1,4 @@
 package com.d4rk.lowbrightness.ui.help
-import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu

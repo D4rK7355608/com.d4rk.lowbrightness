@@ -28,7 +28,7 @@ class AboutFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         ViewModelProvider(this)[AboutViewModel::class.java]
         _binding = FragmentAboutBinding.inflate(inflater, container, false)
-        originalNavBarColor = activity?.window?.navigationBarColor
+        originalNavBarColor = activity?.window?.navigationBarColor // FIXME: 'var navigationBarColor: Int' is deprecated. Deprecated in Java.
         setOriginalNavigationBarColor()
         FastScrollerBuilder(binding.scrollView).useMd2Style().build()
         MobileAds.initialize(requireContext())
@@ -71,14 +71,14 @@ class AboutFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         originalNavBarColor?.let { color ->
-            activity?.window?.navigationBarColor = color
+            activity?.window?.navigationBarColor = color // FIXME: 'var navigationBarColor: Int' is deprecated. Deprecated in Java.
         }
-        _binding = null
+       // _binding = null // FIXME: Null cannot be a value of a non-null type 'com.d4rk.lowbrightness.databinding.FragmentAboutBinding'.
     }
 
     private fun setOriginalNavigationBarColor() {
         originalNavBarColor?.let { color ->
-            activity?.window?.navigationBarColor = color
+            activity?.window?.navigationBarColor = color // FIXME: 'var navigationBarColor: Int' is deprecated. Deprecated in Java.
         }
     }
 }

@@ -1,15 +1,14 @@
 package com.d4rk.lowbrightness
 
 import android.content.Intent
-import android.content.IntentSender
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.content.edit
 import androidx.core.content.ContextCompat
+import androidx.core.content.edit
 import androidx.core.os.LocaleListCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.drawerlayout.widget.DrawerLayout
@@ -19,9 +18,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.preference.PreferenceManager
-import com.d4rk.lowbrightness.base.ServiceController
 import com.d4rk.lowbrightness.base.Constants
 import com.d4rk.lowbrightness.base.Prefs
+import com.d4rk.lowbrightness.base.ServiceController
 import com.d4rk.lowbrightness.databinding.ActivityMainBinding
 import com.d4rk.lowbrightness.helpers.AppUpdateNotificationsManager
 import com.d4rk.lowbrightness.helpers.AppUsageNotificationsManager
@@ -101,15 +100,15 @@ class MainActivity : AppCompatActivity(), IShowHideScheduler {
         AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags(languageCode))
     }
 
-    override fun onBackPressed() {
+    override fun onBackPressed() { // FIXME: This declaration overrides a deprecated member but is not marked as deprecated itself. Please add the '@Deprecated' annotation or suppress the diagnostic.
         val builder = MaterialAlertDialogBuilder(this)
         builder.setTitle(R.string.close)
         builder.setMessage(R.string.summary_close)
-        builder.setPositiveButton(android.R.string.yes) { _, _ ->
-            super.onBackPressed()
+        builder.setPositiveButton(android.R.string.yes) { _, _ -> // FIXME: 'static field yes: Int' is deprecated. Deprecated in Java.
+            super.onBackPressed() // FIXME: 'fun onBackPressed(): Unit' is deprecated. Deprecated in Java.
             moveTaskToBack(true)
         }
-        builder.setNegativeButton(android.R.string.no, null)
+        builder.setNegativeButton(android.R.string.no, null) // FIXME: 'static field no: Int' is deprecated. Deprecated in Java.
         builder.show()
     }
 
