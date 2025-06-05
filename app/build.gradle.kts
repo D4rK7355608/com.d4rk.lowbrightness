@@ -3,6 +3,8 @@ import java.util.Properties
 plugins {
     alias(notation = libs.plugins.android.application)
     alias(notation = libs.plugins.kotlin.android)
+    id("org.jetbrains.kotlin.kapt")
+    alias(notation = libs.plugins.kotlin.compose)
     alias(notation = libs.plugins.googlePlayServices)
     alias(notation = libs.plugins.googleFirebase)
 }
@@ -83,6 +85,11 @@ android {
     buildFeatures {
         buildConfig = true
         viewBinding = true
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.5"
     }
 
     packaging {
@@ -103,7 +110,7 @@ dependencies {
     implementation(dependencyNotation = libs.app.update.ktx)
     implementation(dependencyNotation = libs.material)
     implementation(dependencyNotation = libs.androidx.appcompat)
-    implementation(dependencyNotation = libs.androidx.core.ktx)
+    implementation(dependencyNotation = libs.androidx.core.ktx.latest)
     implementation(dependencyNotation = libs.androidx.core.splashscreen)
     implementation(dependencyNotation = libs.androidx.constraintlayout)
     implementation(dependencyNotation = libs.androidx.gridlayout)
@@ -112,7 +119,6 @@ dependencies {
     implementation(dependencyNotation = libs.androidx.navigation.ui.ktx)
     implementation(dependencyNotation = libs.androidx.lifecycle.viewmodel.ktx)
     implementation(dependencyNotation = libs.androidx.lifecycle.livedata.ktx)
-    implementation(dependencyNotation = libs.androidx.lifecycle.runtime.ktx)
     implementation(dependencyNotation = libs.lifecycle.process)
     implementation(dependencyNotation = libs.androidx.lifecycle.common.java8)
     implementation(dependencyNotation = libs.preference.ktx)
@@ -123,4 +129,26 @@ dependencies {
     implementation(dependencyNotation = libs.library)
     implementation(dependencyNotation = libs.kotlinx.coroutines.android)
     implementation(dependencyNotation = libs.kotlinx.coroutines.play.services)
+
+    implementation(dependencyNotation = libs.compose.ui)
+    implementation(dependencyNotation = libs.compose.material3)
+    implementation(dependencyNotation = libs.compose.material3.window.size)
+    implementation(dependencyNotation = libs.compose.material.icons.extended)
+    implementation(dependencyNotation = libs.compose.ui.tooling.preview)
+    implementation(dependencyNotation = libs.lifecycle.runtime.compose)
+    implementation(dependencyNotation = libs.lifecycle.runtime.ktx)
+    implementation(dependencyNotation = libs.activity.compose)
+    implementation(dependencyNotation = libs.google.material)
+    implementation(dependencyNotation = libs.xxpermissions)
+    implementation(dependencyNotation = libs.hilt.android)
+    kapt(dependencyNotation = libs.hilt.android.compiler)
+    implementation(dependencyNotation = libs.hilt.navigation.compose)
+    implementation(dependencyNotation = libs.navigation.compose)
+    implementation(dependencyNotation = libs.accompanist.navigation.animation)
+    implementation(dependencyNotation = libs.coil.compose)
+    implementation(dependencyNotation = libs.profileinstaller)
+    implementation(dependencyNotation = libs.compose.color.picker)
+    implementation(dependencyNotation = libs.compose.color.picker.android)
+    debugImplementation(dependencyNotation = libs.compose.ui.tooling)
+    debugImplementation(dependencyNotation = libs.compose.ui.test.manifest)
 }
