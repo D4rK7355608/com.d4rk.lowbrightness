@@ -19,7 +19,7 @@
         </intent>
     </queries>
     <application
-        android:name=".ads.managers.AppOpenAd"
+        android:name=".App"
         android:appCategory="productivity"
         android:description="@string/app_description"
         android:icon="@mipmap/ic_launcher"
@@ -46,12 +46,15 @@
                 android:resource="@xml/shortcuts"/>
         </activity>
         <service
-            android:name=".services.OverlayService"
+            android:name=".ui.service.NightScreenService"
             android:exported="false"
-            android:foregroundServiceType="shortService"
-            android:enabled="true" />
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
         <service
-            android:name=".services.AccessibilityOverlayService"
+            android:name=".ui.service.OverlayAccessibilityService"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
             android:exported="false">
             <intent-filter>
@@ -61,36 +64,6 @@
                 android:name="android.accessibilityservice"
                 android:resource="@xml/accessibility_service_config" />
         </service>
-        <receiver
-            android:name=".receivers.OnBootBroadcastReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
-            </intent-filter>
-        </receiver>
-        <activity
-            android:name=".ui.startup.StartupActivity"
-            android:theme="@style/AppThemeStartup"/>
-        <activity
-            android:name=".ui.settings.SettingsActivity"
-            android:exported="false"
-            android:label="@string/settings"
-            android:parentActivityName=".ui.settings.SettingsActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.APPLICATION_PREFERENCES"/>
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".ui.settings.permissions.PermissionsActivity"
-            android:exported="true"
-            android:label="@string/permissions"
-            android:parentActivityName=".ui.settings.permissions.PermissionsActivity"/>
-        <activity
-            android:name=".ui.help.HelpActivity"
-            android:exported="false"
-            android:label="@string/help"
-            android:parentActivityName=".ui.help.HelpActivity"/>
         <service
             android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
             android:enabled="false"
