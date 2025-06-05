@@ -2,25 +2,28 @@ package com.d4rk.lowbrightness.services
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
-import android.content.Context
 import androidx.core.app.NotificationCompat
-import androidx.core.content.getSystemService
 import androidx.work.CoroutineWorker
 import androidx.work.ForegroundInfo
 import androidx.work.WorkerParameters
+import androidx.core.content.getSystemService
+import android.content.Context
+import com.d4rk.lowbrightness.R
+import com.d4rk.lowbrightness.base.ServiceController
 
-class SchedulerWorker(
+class BootWorker(
     appContext: Context,
     params: WorkerParameters
 ) : CoroutineWorker(appContext, params) {
+
     override suspend fun doWork(): Result {
         setForeground(createForegroundInfo())
-        SchedulerService.evaluateSchedule(applicationContext)
+        ServiceController.refreshServices(applicationContext)
         return Result.success()
     }
 
     private fun createForegroundInfo(): ForegroundInfo {
-        val channelId = "scheduler_worker"
+        val channelId = "boot_worker"
         val channelName = applicationContext.getString(R.string.screen_overlay_notifications)
         val manager = applicationContext.getSystemService<NotificationManager>()
         manager?.createNotificationChannel(
@@ -31,6 +34,6 @@ class SchedulerWorker(
             .setContentTitle(applicationContext.getString(R.string.overlay_starting))
             .setOngoing(true)
             .build()
-        return ForegroundInfo(2002, notification)
+        return ForegroundInfo(2001, notification)
     }
 }
