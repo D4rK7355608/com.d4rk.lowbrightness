@@ -16,7 +16,7 @@ android {
         applicationId = "com.d4rk.lowbrightness"
         minSdk = 26 // TODO: Make 23 when icon is ready
         targetSdk = 36
-        versionCode = 22
+        versionCode = 23
         versionName = "5.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         @Suppress("UnstableApiUsage") androidResources.localeFilters += listOf(
@@ -97,52 +97,23 @@ android {
 }
 
 dependencies {
-    implementation(dependencyNotation = libs.firebase.crashlytics)
-    implementation(dependencyNotation = libs.firebase.analytics)
-    implementation(dependencyNotation = libs.firebase.perf)
-    implementation(dependencyNotation = libs.play.services.oss.licenses)
-    implementation(dependencyNotation = libs.play.services.ads)
-    implementation(dependencyNotation = libs.review.ktx)
-    implementation(dependencyNotation = libs.app.update.ktx)
-    implementation(dependencyNotation = libs.material)
-    implementation(dependencyNotation = libs.androidx.appcompat)
-    implementation(dependencyNotation = libs.androidx.core.ktx)
-    implementation(dependencyNotation = libs.androidx.core.splashscreen)
-    implementation(dependencyNotation = libs.androidx.constraintlayout)
-    implementation(dependencyNotation = libs.androidx.gridlayout)
-    implementation(dependencyNotation = libs.androidx.multidex)
+    // App Core
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.20") {
+        isTransitive = true
+    }
+
     implementation(dependencyNotation = libs.androidx.navigation.fragment.ktx)
     implementation(dependencyNotation = libs.androidx.navigation.ui.ktx)
-    implementation(dependencyNotation = libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(dependencyNotation = libs.androidx.lifecycle.livedata.ktx)
-    implementation(dependencyNotation = libs.lifecycle.process)
-    implementation(dependencyNotation = libs.androidx.lifecycle.common.java8)
     implementation(dependencyNotation = libs.preference.ktx)
     implementation(dependencyNotation = libs.lottie)
     implementation(dependencyNotation = libs.materialdatetimepicker)
     implementation(dependencyNotation = libs.spectrum)
-    implementation(dependencyNotation = libs.androidx.work.runtime.ktx)
     implementation(dependencyNotation = libs.library)
-    implementation(dependencyNotation = libs.kotlinx.coroutines.android)
-    implementation(dependencyNotation = libs.kotlinx.coroutines.play.services)
-
-    implementation(dependencyNotation = libs.compose.ui)
-    implementation(dependencyNotation = libs.compose.material3)
     implementation(dependencyNotation = libs.compose.material3.window.size)
-    implementation(dependencyNotation = libs.compose.material.icons.extended)
-    implementation(dependencyNotation = libs.compose.ui.tooling.preview)
-    implementation(dependencyNotation = libs.lifecycle.runtime.compose)
-    implementation(dependencyNotation = libs.lifecycle.runtime.ktx)
-    implementation(dependencyNotation = libs.activity.compose)
-    implementation(dependencyNotation = libs.koin.android)
-    implementation(dependencyNotation = libs.koin.android.compose)
     implementation(dependencyNotation = libs.xxpermissions)
-    implementation(dependencyNotation = libs.navigation.compose)
     implementation(dependencyNotation = libs.accompanist.navigation.animation)
-    implementation(dependencyNotation = libs.coil.compose)
     implementation(dependencyNotation = libs.profileinstaller)
     implementation(dependencyNotation = libs.compose.color.picker)
     implementation(dependencyNotation = libs.compose.color.picker.android)
-    debugImplementation(dependencyNotation = libs.compose.ui.tooling)
-    debugImplementation(dependencyNotation = libs.compose.ui.test.manifest)
+
 }

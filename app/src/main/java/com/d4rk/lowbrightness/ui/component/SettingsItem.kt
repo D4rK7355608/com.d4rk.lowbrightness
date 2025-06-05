@@ -1,5 +1,6 @@
 package com.d4rk.lowbrightness.ui.component
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.LocalIndication
 import androidx.compose.foundation.background
@@ -232,6 +233,7 @@ fun BaseSettingsItem(
     )
 }
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun BaseSettingsItem(
     modifier: Modifier = Modifier,

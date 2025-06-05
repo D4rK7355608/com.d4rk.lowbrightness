@@ -3,18 +3,14 @@ package com.d4rk.lowbrightness.ui.screen.settings
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Alarm
-import androidx.compose.material.icons.filled.Bedtime
 import androidx.compose.material.icons.filled.Brightness5
 import androidx.compose.material.icons.filled.Brightness7
 import androidx.compose.material.icons.filled.ColorLens
 import androidx.compose.material.icons.filled.Opacity
-import androidx.compose.material.icons.filled.Snooze
-import androidx.compose.material3.IconButton
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
-import androidx.compose.material3.rememberTimePickerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -25,33 +21,28 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
-import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.stringResource
 import com.d4rk.lowbrightness.R
-import com.d4rk.lowbrightness.ui.component.BaseSettingsItem
 import com.d4rk.lowbrightness.ui.component.CategorySettingsItem
 import com.d4rk.lowbrightness.ui.component.ColorSettingsItem
-import com.d4rk.lowbrightness.ui.component.NsTopBar
-import com.d4rk.lowbrightness.ui.component.NsTopBarStyle
+import com.d4rk.lowbrightness.app.brightness.ui.components.NsTopBar
+import com.d4rk.lowbrightness.app.brightness.ui.components.NsTopBarStyle
 import com.d4rk.lowbrightness.ui.component.SwitchSettingsItem
-import com.d4rk.lowbrightness.ui.component.applyScreenBrightness
-import com.d4rk.lowbrightness.ui.component.calculatedColor
-import com.d4rk.lowbrightness.ui.component.dialog.AlphaDialog
-import com.d4rk.lowbrightness.ui.component.dialog.ColorDialog
-import com.d4rk.lowbrightness.ui.component.getLowestScreenBrightness
-import com.d4rk.lowbrightness.ui.component.keepScreenOn
-import com.d4rk.lowbrightness.ui.component.runAsScheduled
-import com.d4rk.lowbrightness.ui.component.screenAlpha
-import com.d4rk.lowbrightness.ui.component.screenColor
-import com.d4rk.lowbrightness.ui.component.setLowestScreenBrightness
-import java.text.SimpleDateFormat
-import java.util.Calendar
-import java.util.Locale
+import com.d4rk.lowbrightness.app.brightness.ui.components.applyScreenBrightness
+import com.d4rk.lowbrightness.app.brightness.ui.components.calculatedColor
+import com.d4rk.lowbrightness.app.brightness.ui.components.dialogs.AlphaDialog
+import com.d4rk.lowbrightness.app.brightness.ui.components.dialogs.ColorDialog
+import com.d4rk.lowbrightness.app.brightness.ui.components.getLowestScreenBrightness
+import com.d4rk.lowbrightness.app.brightness.ui.components.keepScreenOn
+import com.d4rk.lowbrightness.app.brightness.ui.components.runAsScheduled
+import com.d4rk.lowbrightness.app.brightness.ui.components.screenAlpha
+import com.d4rk.lowbrightness.app.brightness.ui.components.screenColor
+import com.d4rk.lowbrightness.app.brightness.ui.components.setLowestScreenBrightness
 
 const val SETTINGS_SCREEN_ROUTE = "settingsScreen"
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SettingsScreen() {
     val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
