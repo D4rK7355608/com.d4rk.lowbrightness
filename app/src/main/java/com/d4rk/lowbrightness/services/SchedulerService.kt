@@ -63,8 +63,8 @@ object SchedulerService {
     @JvmStatic
     fun getCalendarForStart(context: Context): Calendar {
         val sharedPreferences = Prefs.get(context)
-        val scheduleFromHour = sharedPreferences.getInt("scheduleFromHour", 20)
-        val scheduleFromMinute = sharedPreferences.getInt("scheduleFromMinute", 0)
+        val scheduleFromHour = sharedPreferences.getInt(Constants.PREF_SCHEDULE_FROM_HOUR, 20)
+        val scheduleFromMinute = sharedPreferences.getInt(Constants.PREF_SCHEDULE_FROM_MINUTE, 0)
         return Calendar.getInstance().apply {
             set(Calendar.HOUR_OF_DAY, scheduleFromHour)
             set(Calendar.MINUTE, scheduleFromMinute)
@@ -75,8 +75,8 @@ object SchedulerService {
     @JvmStatic
     fun getCalendarForEnd(context: Context): Calendar {
         val sharedPreferences = Prefs.get(context)
-        val hour = sharedPreferences.getInt("scheduleToHour", 6)
-        val minute = sharedPreferences.getInt("scheduleToMinute", 0)
+        val hour = sharedPreferences.getInt(Constants.PREF_SCHEDULE_TO_HOUR, 6)
+        val minute = sharedPreferences.getInt(Constants.PREF_SCHEDULE_TO_MINUTE, 0)
         return Calendar.getInstance().apply {
             set(Calendar.HOUR_OF_DAY, hour)
             set(Calendar.MINUTE, minute)
