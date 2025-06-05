@@ -56,7 +56,8 @@ class SchedulerService : Service() {
     private fun startOrStopScreenDim() {
         Log.d(tag, "Evaluating schedule")
         val sharedPreferences = Prefs.get(baseContext)
-        if (sharedPreferences.getBoolean(Constants.PREF_LOW_BRIGHTNESS_ENABLED, false)) {
+        if (sharedPreferences.getBoolean(Constants.PREF_LOW_BRIGHTNESS_ENABLED, false) &&
+            ServiceController.canDrawOverlay(baseContext)) {
             val cBegin = getCalendarForStart(baseContext)
             val cEnd = getCalendarForEnd(baseContext)
             val calendar = Calendar.getInstance()
@@ -72,7 +73,7 @@ class SchedulerService : Service() {
             }
         } else {
             val overlayIntent = Intent(baseContext, OverlayService::class.java)
-            Log.d(tag, "Overlay disabled via prefs")
+            Log.d(tag, "Overlay disabled via prefs or permission missing")
             stopService(overlayIntent)
         }
     }

@@ -18,12 +18,13 @@ object ServiceController {
         val overlayEnabled = OverlayService.isEnabled(context)
         val schedulerEnabled = SchedulerService.isEnabled(context)
         val accessibilityEnabled = AccessibilityOverlayService.isEnabled(context)
+        val canDrawOverlay = canDrawOverlay(context)
 
         val overlayIntent = Intent(context, OverlayService::class.java)
         val schedulerIntent = Intent(context, SchedulerService::class.java)
         val accessibilityIntent = Intent(context, AccessibilityOverlayService::class.java)
 
-        if (overlayEnabled) {
+        if (overlayEnabled && canDrawOverlay) {
             if (schedulerEnabled) {
                 context.stopService(overlayIntent)
                 ContextCompat.startForegroundService(context, schedulerIntent)
