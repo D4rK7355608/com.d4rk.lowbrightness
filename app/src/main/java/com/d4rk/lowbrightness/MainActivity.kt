@@ -26,6 +26,9 @@ import com.d4rk.lowbrightness.helpers.AppUpdateNotificationsManager
 import com.d4rk.lowbrightness.helpers.AppUsageNotificationsManager
 import com.d4rk.lowbrightness.helpers.IShowHideScheduler
 import com.d4rk.lowbrightness.helpers.RequestDrawOverAppsPermission
+import com.d4rk.lowbrightness.helpers.hasSufficientStorage
+import com.d4rk.lowbrightness.helpers.isBatteryLevelAcceptable
+import com.d4rk.lowbrightness.helpers.isNetworkAvailable
 import com.d4rk.lowbrightness.notifications.SchedulerDisabledFragment
 import com.d4rk.lowbrightness.notifications.SchedulerEnabledFragment
 import com.d4rk.lowbrightness.services.OverlayService
@@ -128,21 +131,33 @@ class MainActivity : AppCompatActivity(), IShowHideScheduler {
         permissionRequester = RequestDrawOverAppsPermission(this)
         lifecycleScope.launch {
             val appUpdateInfo = appUpdateManager.appUpdateInfo.await()
-            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE &&
+            if (
+                appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE &&
                 appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.FLEXIBLE)
             ) {
-                runCatching {
-                    val updateOptions =
-                        AppUpdateOptions
-                            .newBuilder(AppUpdateType.FLEXIBLE)
-                            .build()
-                    appUpdateManager.startUpdateFlowForResult(
-                        appUpdateInfo,
-                        this@MainActivity,
-                        updateOptions,
-                        requestUpdateCode
-                    )
-                }.onFailure { it.printStackTrace() }
+                val hasSpace = hasSufficientStorage(100L * 1024L * 1024L)
+                val batteryOk = isBatteryLevelAcceptable()
+                val networkOk = isNetworkAvailable()
+                if (hasSpace && batteryOk && networkOk) {
+                    runCatching {
+                        val updateOptions =
+                            AppUpdateOptions
+                                .newBuilder(AppUpdateType.FLEXIBLE)
+                                .build()
+                        appUpdateManager.startUpdateFlowForResult(
+                            appUpdateInfo,
+                            this@MainActivity,
+                            updateOptions,
+                            requestUpdateCode
+                        )
+                    }.onFailure { it.printStackTrace() }
+                } else {
+                    Snackbar.make(
+                        findViewById(android.R.id.content),
+                        getString(R.string.snack_update_conditions_not_met),
+                        Snackbar.LENGTH_LONG
+                    ).show()
+                }
             }
         }
         startupScreen()
