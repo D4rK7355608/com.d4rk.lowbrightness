@@ -39,10 +39,8 @@ import com.d4rk.lowbrightness.ui.screen.settings.SETTINGS_SCREEN_ROUTE
 import com.d4rk.lowbrightness.ui.screen.settings.SettingsScreen
 import com.d4rk.lowbrightness.ui.service.isAccessibilityServiceRunning
 import com.d4rk.lowbrightness.ui.theme.NightScreenTheme
-import dagger.hilt.android.AndroidEntryPoint
 
 
-@AndroidEntryPoint
 class MainActivity : BaseComposeActivity() {
     companion object {
         const val REQUEST_PERMISSION_AND_SHOW_ACTION = "requestPermissionsAndShow"

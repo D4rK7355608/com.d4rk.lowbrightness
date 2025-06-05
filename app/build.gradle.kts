@@ -3,7 +3,6 @@ import java.util.Properties
 plugins {
     alias(notation = libs.plugins.android.application)
     alias(notation = libs.plugins.kotlin.android)
-    id("org.jetbrains.kotlin.kapt")
     alias(notation = libs.plugins.kotlin.compose)
     alias(notation = libs.plugins.googlePlayServices)
     alias(notation = libs.plugins.googleFirebase)
@@ -88,9 +87,6 @@ android {
         compose = true
     }
 
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.5"
-    }
 
     packaging {
         resources {
@@ -110,7 +106,7 @@ dependencies {
     implementation(dependencyNotation = libs.app.update.ktx)
     implementation(dependencyNotation = libs.material)
     implementation(dependencyNotation = libs.androidx.appcompat)
-    implementation(dependencyNotation = libs.androidx.core.ktx.latest)
+    implementation(dependencyNotation = libs.androidx.core.ktx)
     implementation(dependencyNotation = libs.androidx.core.splashscreen)
     implementation(dependencyNotation = libs.androidx.constraintlayout)
     implementation(dependencyNotation = libs.androidx.gridlayout)
@@ -138,11 +134,9 @@ dependencies {
     implementation(dependencyNotation = libs.lifecycle.runtime.compose)
     implementation(dependencyNotation = libs.lifecycle.runtime.ktx)
     implementation(dependencyNotation = libs.activity.compose)
-    implementation(dependencyNotation = libs.google.material)
+    implementation(dependencyNotation = libs.koin.android)
+    implementation(dependencyNotation = libs.koin.android.compose)
     implementation(dependencyNotation = libs.xxpermissions)
-    implementation(dependencyNotation = libs.hilt.android)
-    kapt(dependencyNotation = libs.hilt.android.compiler)
-    implementation(dependencyNotation = libs.hilt.navigation.compose)
     implementation(dependencyNotation = libs.navigation.compose)
     implementation(dependencyNotation = libs.accompanist.navigation.animation)
     implementation(dependencyNotation = libs.coil.compose)
