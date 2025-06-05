@@ -3,12 +3,18 @@ package com.d4rk.lowbrightness.receivers
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import com.d4rk.lowbrightness.base.ServiceController.refreshServices
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.OutOfQuotaPolicy
+import androidx.work.WorkManager
+import com.d4rk.lowbrightness.services.BootWorker
 
 class OnBootBroadcastReceiver : BroadcastReceiver() {
-    override fun onReceive(context : Context , intent : Intent) {
+    override fun onReceive(context: Context, intent: Intent) {
         if (BOOT_COMPLETED_ACTION == intent.action) {
-            refreshServices(context)
+            val work = OneTimeWorkRequestBuilder<BootWorker>()
+                .setExpedited(OutOfQuotaPolicy.RUN_AS_NON_EXPEDITED_WORK_REQUEST)
+                .build()
+            WorkManager.getInstance(context).enqueue(work)
         }
     }
 

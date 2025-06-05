@@ -72,6 +72,7 @@
     <string name="app_usage_notifications">App Usage Notifications</string>
     <string name="update_notifications">Update Notifications</string>
     <string name="screen_overlay_notifications">Screen Overlay Notifications</string>
+    <string name="overlay_starting">Starting overlay...</string>
     <string name="ad_id">Ad id [AD_ID]</string>
     <string name="internet">Internet [INTERNET]</string>
     <string name="post_notifications">Post notifications [POST_NOTIFICATIONS]</string>
