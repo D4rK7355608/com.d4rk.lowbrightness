@@ -11,6 +11,9 @@
     <string name="onboarding_personalization_title">Customize Your Viewing Comfort</string>
     <string name="onboarding_personalization_description">Fine-tune the screen filter intensity to your exact preference. Find the perfect balance for reading, browsing, or watching videos in low light conditions.</string>
 
+    <string name="actions">Actions</string>
+    <string name="settings_brightness_title">Brightness</string>
+    <string name="settings_brightness_summary">Adjust screen brightness levels and related features</string>
     <string name="summary_brightness">Define how strong the overlay filter should be. Higher levels are recommended for night time reading.</string>
     <string name="summary_filter">Select the color that you think is least distracting to your eyes and has enough contrast with the apps, typically visible on the screen.</string>
 
