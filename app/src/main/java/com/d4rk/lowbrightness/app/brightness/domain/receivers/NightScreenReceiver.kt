@@ -14,13 +14,13 @@ import android.os.Build
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import com.d4rk.android.libs.apptoolkit.app.settings.general.ui.GeneralSettingsActivity
 import com.d4rk.lowbrightness.R
-import com.d4rk.lowbrightness.appContext
-import com.d4rk.lowbrightness.app.main.ui.MainActivity
 import com.d4rk.lowbrightness.app.brightness.ui.components.closeDialog
 import com.d4rk.lowbrightness.app.brightness.ui.components.closeNightScreen
 import com.d4rk.lowbrightness.app.brightness.ui.components.showDialogAndNightScreen
-import com.d4rk.lowbrightness.ui.screen.settings.SETTINGS_SCREEN_ROUTE
+import com.d4rk.lowbrightness.app.settings.settings.utils.constants.SettingsConstants
+import com.d4rk.lowbrightness.appContext
 
 class NightScreenReceiver : BroadcastReceiver() {
     companion object {
@@ -32,6 +32,8 @@ class NightScreenReceiver : BroadcastReceiver() {
         const val POWER_OFF_ACTION = "com.d4rk.lowbrightness.POWER_OFF"
         const val CHANNEL_ID = "NightScreenNotification"
         const val NOTIFICATION_ID = 1
+        private const val EXTRA_TITLE_GS: String = "extra_title"
+        private const val EXTRA_CONTENT_GS: String = "extra_content"
 
         fun sendBroadcast(
             context: Context = appContext ,
@@ -70,10 +72,14 @@ class NightScreenReceiver : BroadcastReceiver() {
                 val closePendingIntent = PendingIntent.getBroadcast(
                     context , 0 , closeDialogIntent , PendingIntent.FLAG_IMMUTABLE
                 )
-                val settingDialogIntent = Intent(context , MainActivity::class.java).apply {
-                    this.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    this.action = SETTINGS_SCREEN_ROUTE
+                val settingDialogIntent = Intent(context, GeneralSettingsActivity::class.java).apply {
+                    putExtra(EXTRA_TITLE_GS, context.getString(R.string.settings_brightness_title))
+                    putExtra(EXTRA_CONTENT_GS, SettingsConstants.KEY_SETTINGS_BRIGHTNESS)
+                    // The library's start method adds FLAG_ACTIVITY_NEW_TASK.
+                    // This is generally needed if starting an activity from a context that is not an activity (like a BroadcastReceiver).
+                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 }
+
                 val settingPendingIntent = PendingIntent.getActivity(
                     context , 0 , settingDialogIntent , PendingIntent.FLAG_IMMUTABLE
                 )

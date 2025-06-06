@@ -15,9 +15,9 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.NavController
 import com.d4rk.android.libs.apptoolkit.app.startup.ui.StartupActivity
 import com.d4rk.android.libs.apptoolkit.app.theme.style.AppTheme
+import com.d4rk.android.libs.apptoolkit.core.utils.helpers.ConsentFormHelper
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.ConsentManagerHelper
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.IntentsHelper
 import com.d4rk.lowbrightness.R
@@ -30,8 +30,9 @@ import com.d4rk.lowbrightness.app.brightness.domain.services.isAccessibilityServ
 import com.d4rk.lowbrightness.app.main.domain.action.MainEvent
 import com.d4rk.lowbrightness.core.data.datastore.DataStore
 import com.d4rk.lowbrightness.ui.component.showToast
-import com.d4rk.lowbrightness.ui.screen.settings.SETTINGS_SCREEN_ROUTE
 import com.google.android.gms.ads.MobileAds
+import com.google.android.ump.ConsentInformation
+import com.google.android.ump.UserMessagingPlatform
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
@@ -45,7 +46,6 @@ class MainActivity : AppCompatActivity() {
         const val REQUEST_PERMISSION_AND_SHOW_ACTION = "requestPermissionsAndShow"
     }
 
-    private lateinit var navController: NavController
     private var launchTimes: Int = -1
 
     private val dataStore : DataStore by inject()
@@ -64,36 +64,12 @@ class MainActivity : AppCompatActivity() {
             launchTimes = sharedPreferences().getInt("launchTimes" , 0) + 1
             sharedPreferences().editor { putInt("launchTimes" , launchTimes % 20) }
         }
-
-        /*setContent {
-            val navController = rememberNavController()
-            CompositionLocalProvider(LocalNavController provides navController) {
-                this.navController = navController
-                NightScreenTheme {
-                    NavHost(
-                        modifier = Modifier.Companion.fillMaxSize().background(MaterialTheme.colorScheme.background) ,
-                        navController = navController ,
-                        startDestination = HOME_SCREEN_ROUTE ,
-                    ) {
-                        composable(HOME_SCREEN_ROUTE) {
-                            HomeScreen()
-                        }
-                        composable(
-                            route = SETTINGS_SCREEN_ROUTE , deepLinks = listOf(navDeepLink { action = SETTINGS_SCREEN_ROUTE })
-                        ) {
-                            SettingsScreen()
-                        }
-                    }
-                }
-                doIntentAction(intent?.action)
-            }
-        }*/
     }
 
     override fun onResume() {
         super.onResume()
         viewModel.onEvent(event = MainEvent.CheckForUpdates)
-        //checkUserConsent()
+        checkUserConsent()
     }
 
     override fun onNewIntent(intent: Intent) {
@@ -145,11 +121,6 @@ class MainActivity : AppCompatActivity() {
         action ?: return
         if (action == REQUEST_PERMISSION_AND_SHOW_ACTION) {
             requestPermission()
-        } else if (action == SETTINGS_SCREEN_ROUTE) {
-            navController.navigate(SETTINGS_SCREEN_ROUTE) {
-                launchSingleTop = true
-                restoreState = true
-            }
         }
     }
 
@@ -174,5 +145,10 @@ class MainActivity : AppCompatActivity() {
                 startForResult.launch(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
             }
         })
+    }
+
+    private fun checkUserConsent() {
+        val consentInfo: ConsentInformation = UserMessagingPlatform.getConsentInformation(this)
+        ConsentFormHelper.loadAndShow(activity = this , consentInfo = consentInfo)
     }
 }

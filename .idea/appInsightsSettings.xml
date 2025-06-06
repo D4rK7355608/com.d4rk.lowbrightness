@@ -23,9 +23,9 @@
               <option name="connection">
                 <ConnectionSetting>
                   <option name="appId" value="com.d4rk.lowbrightness" />
-                  <option name="mobileSdkAppId" value="1:289497233341:android:4d85e23dca60f0192c84d4" />
-                  <option name="projectId" value="d4rk-apps" />
-                  <option name="projectNumber" value="289497233341" />
+                  <option name="mobileSdkAppId" value="1:508250256613:android:bc20e2a0bff7ccf93e100c" />
+                  <option name="projectId" value="low-brightness-for-android" />
+                  <option name="projectNumber" value="508250256613" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

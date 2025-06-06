@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.view.ContextThemeWrapper
+import com.d4rk.android.libs.apptoolkit.app.settings.general.ui.GeneralSettingsActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.slider.Slider
 import com.hjq.permissions.Permission
@@ -18,8 +19,8 @@ import com.d4rk.lowbrightness.app.main.ui.MainActivity
 import com.d4rk.lowbrightness.app.brightness.ui.components.alphaRange
 import com.d4rk.lowbrightness.app.brightness.ui.components.closeNightScreen
 import com.d4rk.lowbrightness.app.brightness.ui.components.screenAlpha
-import com.d4rk.lowbrightness.ui.screen.settings.SETTINGS_SCREEN_ROUTE
 import com.d4rk.lowbrightness.app.brightness.domain.services.isAccessibilityServiceRunning
+import com.d4rk.lowbrightness.app.settings.settings.utils.constants.SettingsConstants
 import java.lang.Float.max
 import java.lang.Float.min
 
@@ -56,10 +57,11 @@ fun getNightScreenDialog(c: Context? = null): AlertDialog {
     val slider = view.findViewById<Slider>(R.id.slider_night_screen_dialog)
 
     ivSettings.setOnClickListener {
-        context.startActivity(Intent(context, MainActivity::class.java).apply {
-            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-            action = SETTINGS_SCREEN_ROUTE
-        })
+        GeneralSettingsActivity.start(
+            context = context,
+            title = context.getString(R.string.settings_brightness_title),
+            contentKey = SettingsConstants.KEY_SETTINGS_BRIGHTNESS
+        )
         dialog.dismiss()
     }
     ivPowerOff.setOnClickListener {
