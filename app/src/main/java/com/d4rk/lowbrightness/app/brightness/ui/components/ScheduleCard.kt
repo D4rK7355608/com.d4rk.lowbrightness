@@ -1,4 +1,4 @@
-package com.d4rk.lowbrightness.app.brightness.ui
+package com.d4rk.lowbrightness.app.brightness.ui.components
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.background
@@ -15,9 +15,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -27,10 +27,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.fragment.app.FragmentActivity
 import com.d4rk.lowbrightness.R
-import com.d4rk.lowbrightness.app.brightness.domain.services.SchedulerService
 import com.d4rk.lowbrightness.app.brightness.domain.ext.fragmentActivity
+import com.d4rk.lowbrightness.app.brightness.domain.services.SchedulerService
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog
 import kotlinx.coroutines.delay
 import java.util.Calendar
@@ -125,7 +124,7 @@ fun ScheduleCard() {
                         textAlign = TextAlign.Center
                     )
                     Row(modifier = Modifier.fillMaxWidth().padding(top = 10.dp)) {
-                        val activity = context.fragmentActivity as FragmentActivity?
+                        val activity = context.fragmentActivity
                         Button(
                             onClick = {
                                 val dlg = TimePickerDialog.newInstance({ _, h, m, _ ->

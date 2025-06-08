@@ -98,7 +98,7 @@ android {
 
 dependencies {
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.23") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.24") {
         isTransitive = true
     }
 
@@ -115,6 +115,4 @@ dependencies {
     implementation(dependencyNotation = libs.profileinstaller)
     implementation(dependencyNotation = libs.compose.color.picker)
     implementation(dependencyNotation = libs.compose.color.picker.android)
-    implementation(dependencyNotation = libs.androidx.work.runtime.ktx)
-
 }

@@ -22,6 +22,7 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.res.stringResource
 import com.d4rk.android.libs.apptoolkit.core.ui.components.preferences.PreferenceCategoryItem
 import com.d4rk.android.libs.apptoolkit.core.ui.components.preferences.SwitchPreferenceItem
+import com.d4rk.android.libs.apptoolkit.core.ui.components.spacers.ExtraTinyVerticalSpacer
 import com.d4rk.android.libs.apptoolkit.core.ui.components.spacers.SmallVerticalSpacer
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.lowbrightness.R
@@ -114,6 +115,8 @@ fun BrightnessSettingsList(paddingValues : PaddingValues) {
                     keepScreenOnChecked = isChecked
                     keepScreenOn = isChecked
                 }
+
+                ExtraTinyVerticalSpacer()
 
                 SwitchPreferenceItem(
                     title = stringResource(id = R.string.settings_screen_lowest_screen_brightness) ,
