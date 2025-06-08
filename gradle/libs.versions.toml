@@ -14,6 +14,7 @@ accompanist = "0.36.0"
 profileinstaller = "1.4.1"
 colorPicker = "0.7.0"
 xxpermissions = "18.3"
+workRuntimeKtx = "2.10.1"
 
 [libraries]
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationUiKtx" }
@@ -29,6 +30,7 @@ accompanist-navigation-animation = { module = "com.google.accompanist:accompanis
 profileinstaller = { module = "androidx.profileinstaller:profileinstaller", version.ref = "profileinstaller" }
 compose-color-picker = { module = "com.godaddy.android.colorpicker:compose-color-picker", version.ref = "colorPicker" }
 compose-color-picker-android = { module = "com.godaddy.android.colorpicker:compose-color-picker-android", version.ref = "colorPicker" }
+androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "workRuntimeKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

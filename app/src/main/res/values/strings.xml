@@ -44,5 +44,15 @@
     <string name="alert_window_permission">alert window</string>
     <string name="post_notification_permission">post notification</string>
     <string name="night_screen_is_running">Night Screen is activated…</string>
+    <string name="schedule">Schedule</string>
+    <string name="enable_scheduler">Enable scheduler</string>
+    <string name="disable_scheduler">Disable scheduler</string>
+    <string name="enabled_only_during_this_interval">Enabled only during this interval:</string>
+    <string name="time_remaining_to_darken_label">Screen brightness will be reduced in</string>
+    <string name="time_remaining_to_lighten_label">Original brightness will be restored in</string>
+    <string name="summary_scheduler">Schedule the period when the screen should automatically darken, to reduce eye strain and make it more comfortable to read in dark environments.</string>
+    <string name="tooltip_button_hour_from">Time when your screen brightness will be adjusted to the level you set.</string>
+    <string name="tooltip_button_hour_to">Time when your screen brightness will return to its normal level.</string>
+    <string name="tooltip_enable_scheduler">Enable the scheduler to automatically adjust your screen brightness.</string>
     <string name="accessibility_service_description">Use accessibility service to implement the function of reducing screen brightness</string>
 </resources>

@@ -60,6 +60,7 @@ import com.d4rk.lowbrightness.app.brightness.ui.components.dialogs.ColorDialog
 import com.d4rk.lowbrightness.app.brightness.ui.components.dialogs.requestAllPermissionsWithAccessibilityAndShow
 import com.d4rk.lowbrightness.app.brightness.ui.components.screenAlpha
 import com.d4rk.lowbrightness.app.brightness.ui.components.screenColor
+import com.d4rk.lowbrightness.app.brightness.ui.ScheduleCard
 import com.d4rk.lowbrightness.ui.component.showToast
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -95,6 +96,7 @@ fun BrightnessScreen(paddingValues: PaddingValues) {
                 }
             )
         }
+        item { ScheduleCard() }
         item { BottomImage() }
     }
 }
