@@ -115,5 +115,6 @@ dependencies {
     implementation(dependencyNotation = libs.profileinstaller)
     implementation(dependencyNotation = libs.compose.color.picker)
     implementation(dependencyNotation = libs.compose.color.picker.android)
+    implementation(dependencyNotation = libs.androidx.work.runtime.ktx)
 
 }
