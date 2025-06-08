@@ -15,28 +15,12 @@ class PermissionsSettingsProvider : PermissionsProvider {
                     title = context.getString(R.string.normal) ,
                     preferences = listOf(
                         SettingsPreference(
-                            title = context.getString(R.string.ad_id) ,
-                            summary = context.getString(R.string.summary_preference_permissions_ad_id) ,
-                        ) ,
-                        SettingsPreference(
-                            title = context.getString(R.string.internet) ,
-                            summary = context.getString(R.string.summary_preference_permissions_internet) ,
-                        ) ,
-                        SettingsPreference(
-                            title = context.getString(R.string.post_notifications) ,
-                            summary = context.getString(R.string.summary_preference_permissions_post_notifications) ,
-                        ) ,
-                    ) ,
-                ) , SettingsCategory(
-                    title = context.getString(R.string.normal) ,
-                    preferences = listOf(
-                        SettingsPreference(
                             title = context.getString(R.string.access_network_state) ,
                             summary = context.getString(R.string.summary_preference_permissions_access_network_state) ,
                         ) ,
                         SettingsPreference(
-                            title = context.getString(R.string.access_notification_policy) ,
-                            summary = context.getString(R.string.summary_preference_permissions_access_notification_policy) ,
+                            title = context.getString(R.string.ad_id) ,
+                            summary = context.getString(R.string.summary_preference_permissions_ad_id) ,
                         ) ,
                         SettingsPreference(
                             title = context.getString(R.string.billing) ,
@@ -49,6 +33,30 @@ class PermissionsSettingsProvider : PermissionsProvider {
                         SettingsPreference(
                             title = context.getString(R.string.foreground_service) ,
                             summary = context.getString(R.string.summary_preference_permissions_foreground_service) ,
+                        ) ,
+                        SettingsPreference(
+                            title = context.getString(R.string.internet) ,
+                            summary = context.getString(R.string.summary_preference_permissions_internet) ,
+                        ) ,
+                        SettingsPreference(
+                            title = context.getString(R.string.wake_lock) ,
+                            summary = context.getString(R.string.summary_preference_permissions_wake_lock) ,
+                        ) ,
+                    ) ,
+                ) , SettingsCategory(
+                    title = context.getString(R.string.runtime) ,
+                    preferences = listOf(
+                        SettingsPreference(
+                            title = context.getString(R.string.post_notifications) ,
+                            summary = context.getString(R.string.summary_preference_permissions_post_notifications) ,
+                        ) ,
+                    ) ,
+                ) , SettingsCategory(
+                    title = context.getString(R.string.special) ,
+                    preferences = listOf(
+                        SettingsPreference(
+                            title = context.getString(R.string.access_notification_policy) ,
+                            summary = context.getString(R.string.summary_preference_permissions_access_notification_policy) ,
                         ) ,
                     ) ,
                 )
