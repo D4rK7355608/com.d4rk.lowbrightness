@@ -149,6 +149,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun checkUserConsent() {
         val consentInfo: ConsentInformation = UserMessagingPlatform.getConsentInformation(this)
-        ConsentFormHelper.loadAndShow(activity = this , consentInfo = consentInfo)
+        ConsentFormHelper.showConsentFormIfRequired(activity = this , consentInfo = consentInfo)
     }
 }
