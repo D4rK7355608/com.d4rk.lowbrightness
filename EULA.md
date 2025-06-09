@@ -70,6 +70,6 @@ subject to the terms of their respective licenses.
 ## Changes to this EULA
 
 The Developer reserves the right to modify this EULA at any time. Any changes will be effective upon
-posting the revised EULA at https://github.com/D4rK7355608/AppToolkit/EULA.md. Your
+posting the revised EULA at https://github.com/D4rK7355608/com.d4rk.lowbrightness/EULA.md. Your
 continued use of the Software after the effective date of any changes constitutes your acceptance of
 the revised EULA.
