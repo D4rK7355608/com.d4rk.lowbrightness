@@ -1,3 +1,18 @@
+# Version 5.0.0:
+
+- **Major**: Rebuilt the entire app using Jetpack Compose with a modern design.
+- **Major**: Migrated to Material Design 3 with updated icons and styles.
+- **Major**: Converted all source files and build scripts to Kotlin and Kotlin DSL.
+- **Major**: Integrated AppToolkit and merged brightness options into the general settings screen.
+- **New**: Reintroduced the scheduler screen powered by WorkManager.
+- **New**: Added an accessibility overlay service and improved overlay handling.
+- **New**: Added device resource checks before performing in-app updates.
+- **New**: Added an End-User License Agreement (EULA) and centralized consent.
+- **Minor**: Added missing permission descriptions and FAQs.
+- **Patch**: Fixed overlay service crashes and improved foreground service startup.
+- **Minor**: Updated libraries, Gradle, and target SDK to 36.
+- **Minor**: Other bug fixes and under-the-hood improvements for stability.
+
 # Version 4.0_r1:
 - Added a new GDPR message to comply with Google Play policy.
 - Added a new help center, with more comprehensive documentation and support options.
