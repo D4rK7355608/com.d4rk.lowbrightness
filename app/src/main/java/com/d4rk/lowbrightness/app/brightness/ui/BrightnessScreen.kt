@@ -6,12 +6,17 @@ import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import com.d4rk.android.libs.apptoolkit.core.domain.model.ads.AdsConfig
+import com.d4rk.android.libs.apptoolkit.core.ui.components.ads.AdBanner
+import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.lowbrightness.R
 import com.d4rk.lowbrightness.app.brightness.domain.ext.activity
 import com.d4rk.lowbrightness.app.brightness.domain.ext.plus
@@ -24,11 +29,15 @@ import com.d4rk.lowbrightness.app.brightness.ui.components.IntensityCard
 import com.d4rk.lowbrightness.app.brightness.ui.components.ScheduleCard
 import com.d4rk.lowbrightness.app.brightness.ui.components.dialogs.requestAllPermissionsWithAccessibilityAndShow
 import com.d4rk.lowbrightness.ui.component.showToast
+import org.koin.compose.koinInject
+import org.koin.core.qualifier.named
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BrightnessScreen(paddingValues: PaddingValues) {
     val context = LocalContext.current
+    val mediumRectangleAdConfig: AdsConfig = koinInject(qualifier = named(name = "banner_medium_rectangle"))
+    val largeBannerAdConfig: AdsConfig = koinInject(qualifier = named(name = "large_banner"))
 
     val startForResult = rememberLauncherForActivityResult(
         ActivityResultContracts.StartActivityForResult()
@@ -46,6 +55,14 @@ fun BrightnessScreen(paddingValues: PaddingValues) {
     ) {
         item { IntensityCard() }
         item { ColorCard() }
+        item {
+            AdBanner(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = SizeConstants.MediumSize),
+                adsConfig = mediumRectangleAdConfig
+            )
+        }
         item { ScheduleCard() }
         item {
             ActionsCard(
@@ -59,6 +76,23 @@ fun BrightnessScreen(paddingValues: PaddingValues) {
                 }
             )
         }
+
+        item {
+            AdBanner(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = SizeConstants.MediumSize),
+                adsConfig = mediumRectangleAdConfig
+            )
+        }
+
         item { BottomImage() }
+        item {
+            AdBanner(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = SizeConstants.MediumSize), adsConfig = largeBannerAdConfig
+            )
+        }
     }
 }

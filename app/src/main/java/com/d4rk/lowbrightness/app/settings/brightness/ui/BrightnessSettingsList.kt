@@ -39,8 +39,8 @@ import com.d4rk.lowbrightness.ui.component.ColorSettingsItem
 
 @Composable
 fun BrightnessSettingsList(paddingValues : PaddingValues) {
-    var color by remember { mutableIntStateOf(screenColor) }
-    var alphaColor by remember { mutableIntStateOf(calculatedColor) }
+    //var color by remember { mutableIntStateOf(screenColor) }
+    //var alphaColor by remember { mutableIntStateOf(calculatedColor) }
     var lowestScreenChecked by remember { mutableStateOf(getLowestScreenBrightness()) }
     var keepScreenOnChecked by remember { mutableStateOf(keepScreenOn) }
 
@@ -49,7 +49,7 @@ fun BrightnessSettingsList(paddingValues : PaddingValues) {
             .fillMaxSize(),
         contentPadding = paddingValues
     ) {
-        item {
+        /*item {
             PreferenceCategoryItem(title = stringResource(id = R.string.settings_screen_color_settings))
             SmallVerticalSpacer()
 
@@ -98,7 +98,7 @@ fun BrightnessSettingsList(paddingValues : PaddingValues) {
                     )
                 }
             }
-        }
+        }*/
         item {
             PreferenceCategoryItem(title = stringResource(id = R.string.settings_screen_screen_settings))
             SmallVerticalSpacer()
