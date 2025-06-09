@@ -98,7 +98,7 @@ android {
 
 dependencies {
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.24") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.25") {
         isTransitive = true
     }
 

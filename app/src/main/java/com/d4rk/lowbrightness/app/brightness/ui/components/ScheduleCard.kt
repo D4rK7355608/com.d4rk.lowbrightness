@@ -27,6 +27,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.bounceClick
 import com.d4rk.lowbrightness.R
 import com.d4rk.lowbrightness.app.brightness.domain.ext.fragmentActivity
 import com.d4rk.lowbrightness.app.brightness.domain.services.SchedulerService
@@ -110,11 +111,12 @@ fun ScheduleCard() {
                     },
                     modifier = Modifier
                         .padding(top = 10.dp)
-                        .align(Alignment.CenterHorizontally)
+                        .align(Alignment.CenterHorizontally).animateContentSize().bounceClick()
                 ) {
                     Text(
                         text = if (enabled) stringResource(id = R.string.disable_scheduler)
-                        else stringResource(id = R.string.enable_scheduler)
+                        else stringResource(id = R.string.enable_scheduler),
+                        modifier = Modifier.animateContentSize()
                     )
                 }
                 if (enabled) {
@@ -135,7 +137,7 @@ fun ScheduleCard() {
                                 }, startHour, startMinute, true)
                                 activity?.let { dlg.show(it.supportFragmentManager, "from") }
                             },
-                            modifier = Modifier.weight(1f)
+                            modifier = Modifier.weight(1f).bounceClick()
                         ) {
                             Text(String.format(Locale.getDefault(), "%02d:%02d", startHour, startMinute))
                         }
@@ -150,7 +152,7 @@ fun ScheduleCard() {
                                 }, endHour, endMinute, true)
                                 activity?.let { dlg.show(it.supportFragmentManager, "to") }
                             },
-                            modifier = Modifier.weight(1f)
+                            modifier = Modifier.weight(1f).bounceClick()
                         ) {
                             Text(String.format(Locale.getDefault(), "%02d:%02d", endHour, endMinute))
                         }

@@ -4,13 +4,18 @@ import android.content.Intent
 import android.provider.Settings
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
@@ -36,7 +41,8 @@ import org.koin.core.qualifier.named
 @Composable
 fun BrightnessScreen(paddingValues: PaddingValues) {
     val context = LocalContext.current
-    val mediumRectangleAdConfig: AdsConfig = koinInject(qualifier = named(name = "banner_medium_rectangle"))
+    val mediumRectangleAdConfig: AdsConfig =
+        koinInject(qualifier = named(name = "banner_medium_rectangle"))
     val largeBannerAdConfig: AdsConfig = koinInject(qualifier = named(name = "large_banner"))
 
     val startForResult = rememberLauncherForActivityResult(
@@ -48,51 +54,47 @@ fun BrightnessScreen(paddingValues: PaddingValues) {
             context.getString(R.string.no_accessibility_permission).showToast()
         }
     }
-    LazyColumn(
+    Column(
         modifier = Modifier
-            .fillMaxSize(),
-        contentPadding = PaddingValues(horizontal = 20.dp, vertical = 10.dp) + paddingValues
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState())
+            .padding(
+                PaddingValues(
+                    horizontal = 20.dp,
+                  //  vertical = 10.dp
+                ) + paddingValues
+            ) ,
     ) {
-        item { IntensityCard() }
-        item { ColorCard() }
-        item {
-            AdBanner(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = SizeConstants.MediumSize),
-                adsConfig = mediumRectangleAdConfig
-            )
-        }
-        item { ScheduleCard() }
-        item {
-            ActionsCard(
-                onRunNightScreenClick = { requestAllPermissionsWithAccessibilityAndShow(context) },
-                onRequestPermissionsClick = {
-                    if (isAccessibilityServiceRunning(context)) {
-                        context.activity.requestAllPermissions()
-                    } else {
-                        startForResult.launch(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
-                    }
+        IntensityCard()
+        ColorCard()
+        AdBanner(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = SizeConstants.MediumSize),
+            adsConfig = mediumRectangleAdConfig
+        )
+        ScheduleCard()
+        ActionsCard(
+            onRunNightScreenClick = { requestAllPermissionsWithAccessibilityAndShow(context) },
+            onRequestPermissionsClick = {
+                if (isAccessibilityServiceRunning(context)) {
+                    context.activity.requestAllPermissions()
+                } else {
+                    startForResult.launch(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
                 }
-            )
-        }
-
-        item {
-            AdBanner(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = SizeConstants.MediumSize),
-                adsConfig = mediumRectangleAdConfig
-            )
-        }
-
-        item { BottomImage() }
-        item {
-            AdBanner(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = SizeConstants.MediumSize), adsConfig = largeBannerAdConfig
-            )
-        }
+            }
+        )
+        AdBanner(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = SizeConstants.MediumSize),
+            adsConfig = mediumRectangleAdConfig
+        )
+        BottomImage()
+        AdBanner(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = SizeConstants.MediumSize), adsConfig = largeBannerAdConfig
+        )
     }
 }
