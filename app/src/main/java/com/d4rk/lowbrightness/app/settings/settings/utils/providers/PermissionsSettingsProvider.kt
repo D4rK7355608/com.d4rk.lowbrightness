@@ -39,6 +39,10 @@ class PermissionsSettingsProvider : PermissionsProvider {
                             summary = context.getString(R.string.summary_preference_permissions_internet) ,
                         ) ,
                         SettingsPreference(
+                            title = context.getString(com.d4rk.lowbrightness.R.string.receive_boot_completed) ,
+                            summary = context.getString(com.d4rk.lowbrightness.R.string.summary_preference_permissions_receive_boot_completed) ,
+                        ) ,
+                        SettingsPreference(
                             title = context.getString(R.string.wake_lock) ,
                             summary = context.getString(R.string.summary_preference_permissions_wake_lock) ,
                         ) ,
@@ -57,6 +61,14 @@ class PermissionsSettingsProvider : PermissionsProvider {
                         SettingsPreference(
                             title = context.getString(R.string.access_notification_policy) ,
                             summary = context.getString(R.string.summary_preference_permissions_access_notification_policy) ,
+                        ) ,
+                        SettingsPreference(
+                            title = context.getString(com.d4rk.lowbrightness.R.string.system_alert_window) ,
+                            summary = context.getString(com.d4rk.lowbrightness.R.string.summary_preference_permissions_system_alert_window) ,
+                        ) ,
+                        SettingsPreference(
+                            title = context.getString(com.d4rk.lowbrightness.R.string.write_settings) ,
+                            summary = context.getString(com.d4rk.lowbrightness.R.string.summary_preference_permissions_write_settings) ,
                         ) ,
                     ) ,
                 )
