@@ -1,6 +1,9 @@
 package com.d4rk.lowbrightness.app.brightness.ui.components
 
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateContentSize
+import androidx.compose.animation.expandVertically
+import androidx.compose.animation.shrinkVertically
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -119,50 +122,56 @@ fun ScheduleCard() {
                         modifier = Modifier.animateContentSize()
                     )
                 }
-                if (enabled) {
-                    Text(
-                        modifier = Modifier.padding(top = 10.dp),
-                        text = stringResource(id = R.string.enabled_only_during_this_interval),
-                        textAlign = TextAlign.Center
-                    )
-                    Row(modifier = Modifier.fillMaxWidth().padding(top = 10.dp)) {
-                        val activity = context.fragmentActivity
-                        Button(
-                            onClick = {
-                                val dlg = TimePickerDialog.newInstance({ _, h, m, _ ->
-                                    startHour = h
-                                    startMinute = m
-                                    SchedulerService.setFrom(context, h, m)
-                                    SchedulerService.evaluateSchedule(context)
-                                }, startHour, startMinute, true)
-                                activity?.let { dlg.show(it.supportFragmentManager, "from") }
-                            },
-                            modifier = Modifier.weight(1f).bounceClick()
-                        ) {
-                            Text(String.format(Locale.getDefault(), "%02d:%02d", startHour, startMinute))
-                        }
-                        Spacer(modifier = Modifier.width(8.dp))
-                        Button(
-                            onClick = {
-                                val dlg = TimePickerDialog.newInstance({ _, h, m, _ ->
-                                    endHour = h
-                                    endMinute = m
-                                    SchedulerService.setTo(context, h, m)
-                                    SchedulerService.evaluateSchedule(context)
-                                }, endHour, endMinute, true)
-                                activity?.let { dlg.show(it.supportFragmentManager, "to") }
-                            },
-                            modifier = Modifier.weight(1f).bounceClick()
-                        ) {
-                            Text(String.format(Locale.getDefault(), "%02d:%02d", endHour, endMinute))
-                        }
-                    }
-                    if (remaining.isNotEmpty()) {
+                AnimatedVisibility(
+                    visible = enabled,
+                    enter = expandVertically(),
+                    exit = shrinkVertically()
+                ) {
+                    Column {
                         Text(
-                            text = remaining,
                             modifier = Modifier.padding(top = 10.dp),
+                            text = stringResource(id = R.string.enabled_only_during_this_interval),
                             textAlign = TextAlign.Center
                         )
+                        Row(modifier = Modifier.fillMaxWidth().padding(top = 10.dp)) {
+                            val activity = context.fragmentActivity
+                            Button(
+                                onClick = {
+                                    val dlg = TimePickerDialog.newInstance({ _, h, m, _ ->
+                                        startHour = h
+                                        startMinute = m
+                                        SchedulerService.setFrom(context, h, m)
+                                        SchedulerService.evaluateSchedule(context)
+                                    }, startHour, startMinute, true)
+                                    activity?.let { dlg.show(it.supportFragmentManager, "from") }
+                                },
+                                modifier = Modifier.weight(1f).bounceClick()
+                            ) {
+                                Text(String.format(Locale.getDefault(), "%02d:%02d", startHour, startMinute))
+                            }
+                            Spacer(modifier = Modifier.width(8.dp))
+                            Button(
+                                onClick = {
+                                    val dlg = TimePickerDialog.newInstance({ _, h, m, _ ->
+                                        endHour = h
+                                        endMinute = m
+                                        SchedulerService.setTo(context, h, m)
+                                        SchedulerService.evaluateSchedule(context)
+                                    }, endHour, endMinute, true)
+                                    activity?.let { dlg.show(it.supportFragmentManager, "to") }
+                                },
+                                modifier = Modifier.weight(1f).bounceClick()
+                            ) {
+                                Text(String.format(Locale.getDefault(), "%02d:%02d", endHour, endMinute))
+                            }
+                        }
+                        if (remaining.isNotEmpty()) {
+                            Text(
+                                text = remaining,
+                                modifier = Modifier.padding(top = 10.dp),
+                                textAlign = TextAlign.Center
+                            )
+                        }
                     }
                 }
             }
