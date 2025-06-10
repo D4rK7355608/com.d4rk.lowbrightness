@@ -6,16 +6,16 @@ import android.provider.Settings
 import android.view.WindowManager
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
-import com.hjq.permissions.Permission
-import com.hjq.permissions.XXPermissions
-import com.d4rk.lowbrightness.appContext
 import com.d4rk.lowbrightness.app.brightness.domain.ext.editor
 import com.d4rk.lowbrightness.app.brightness.domain.ext.sharedPreferences
 import com.d4rk.lowbrightness.app.brightness.domain.receivers.NightScreenReceiver
+import com.d4rk.lowbrightness.app.brightness.domain.services.NightScreenService
 import com.d4rk.lowbrightness.app.brightness.ui.components.dialogs.dialog
 import com.d4rk.lowbrightness.app.brightness.ui.components.dialogs.dialogIsShowing
 import com.d4rk.lowbrightness.app.brightness.ui.components.dialogs.getNightScreenDialog
-import com.d4rk.lowbrightness.app.brightness.domain.services.NightScreenService
+import com.d4rk.lowbrightness.appContext
+import com.hjq.permissions.Permission
+import com.hjq.permissions.XXPermissions
 
 fun showDialogAndNightScreen() {
     if (dialogIsShowing) return

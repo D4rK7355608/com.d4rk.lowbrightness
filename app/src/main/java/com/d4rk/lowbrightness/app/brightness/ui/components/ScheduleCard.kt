@@ -79,7 +79,6 @@ fun ScheduleCard() {
         modifier = Modifier
             .fillMaxWidth()
             .padding(vertical = 10.dp)
-            .animateContentSize()
     ) {
         Column {
 

@@ -6,19 +6,13 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ColorLens
-import androidx.compose.material.icons.filled.Opacity
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.res.stringResource
 import com.d4rk.android.libs.apptoolkit.core.ui.components.preferences.PreferenceCategoryItem
 import com.d4rk.android.libs.apptoolkit.core.ui.components.preferences.SwitchPreferenceItem
@@ -27,15 +21,9 @@ import com.d4rk.android.libs.apptoolkit.core.ui.components.spacers.SmallVertical
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.lowbrightness.R
 import com.d4rk.lowbrightness.app.brightness.ui.components.applyScreenBrightness
-import com.d4rk.lowbrightness.app.brightness.ui.components.calculatedColor
-import com.d4rk.lowbrightness.app.brightness.ui.components.dialogs.AlphaDialog
-import com.d4rk.lowbrightness.app.brightness.ui.components.dialogs.ColorDialog
 import com.d4rk.lowbrightness.app.brightness.ui.components.getLowestScreenBrightness
 import com.d4rk.lowbrightness.app.brightness.ui.components.keepScreenOn
-import com.d4rk.lowbrightness.app.brightness.ui.components.screenAlpha
-import com.d4rk.lowbrightness.app.brightness.ui.components.screenColor
 import com.d4rk.lowbrightness.app.brightness.ui.components.setLowestScreenBrightness
-import com.d4rk.lowbrightness.ui.component.ColorSettingsItem
 
 @Composable
 fun BrightnessSettingsList(paddingValues : PaddingValues) {

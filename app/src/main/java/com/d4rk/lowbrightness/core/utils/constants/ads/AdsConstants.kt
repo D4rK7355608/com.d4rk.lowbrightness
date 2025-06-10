@@ -1,7 +1,7 @@
 package com.d4rk.lowbrightness.core.utils.constants.ads
 
-import com.d4rk.lowbrightness.BuildConfig
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.ads.DebugAdsConstants
+import com.d4rk.lowbrightness.BuildConfig
 
 object AdsConstants {
 

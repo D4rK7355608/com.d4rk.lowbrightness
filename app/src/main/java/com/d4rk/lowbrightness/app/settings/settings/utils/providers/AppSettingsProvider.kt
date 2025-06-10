@@ -8,8 +8,6 @@ import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.Notifications
 import androidx.compose.material.icons.outlined.Palette
 import androidx.compose.material.icons.outlined.Security
-import androidx.compose.material.icons.outlined.ShoppingCart
-import com.d4rk.lowbrightness.app.settings.settings.utils.constants.SettingsConstants
 import com.d4rk.android.libs.apptoolkit.R
 import com.d4rk.android.libs.apptoolkit.app.settings.general.ui.GeneralSettingsActivity
 import com.d4rk.android.libs.apptoolkit.app.settings.settings.domain.model.SettingsCategory
@@ -18,6 +16,7 @@ import com.d4rk.android.libs.apptoolkit.app.settings.settings.domain.model.Setti
 import com.d4rk.android.libs.apptoolkit.app.settings.utils.constants.SettingsContent
 import com.d4rk.android.libs.apptoolkit.app.settings.utils.interfaces.SettingsProvider
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.IntentsHelper
+import com.d4rk.lowbrightness.app.settings.settings.utils.constants.SettingsConstants
 
 class AppSettingsProvider : SettingsProvider {
     override fun provideSettingsConfig(context: Context): SettingsConfig {

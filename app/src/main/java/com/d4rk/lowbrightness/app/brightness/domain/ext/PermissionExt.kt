@@ -1,14 +1,14 @@
 package com.d4rk.lowbrightness.app.brightness.domain.ext
 
 import android.app.Activity
-import com.hjq.permissions.Permission
-import com.hjq.permissions.XXPermissions
 import com.d4rk.lowbrightness.R
-import com.d4rk.lowbrightness.appContext
-import com.d4rk.lowbrightness.app.brightness.domain.receivers.NightScreenReceiver
-import com.d4rk.lowbrightness.ui.component.showToast
 import com.d4rk.lowbrightness.app.brightness.domain.listener.dsl.requestPermissions
 import com.d4rk.lowbrightness.app.brightness.domain.listener.dsl.requestSinglePermission
+import com.d4rk.lowbrightness.app.brightness.domain.receivers.NightScreenReceiver
+import com.d4rk.lowbrightness.appContext
+import com.d4rk.lowbrightness.ui.component.showToast
+import com.hjq.permissions.Permission
+import com.hjq.permissions.XXPermissions
 
 
 fun Activity.requestSystemAlertWindowPermission(

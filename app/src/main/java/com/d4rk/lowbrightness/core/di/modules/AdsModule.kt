@@ -1,7 +1,7 @@
 package com.d4rk.lowbrightness.core.di.modules
 
-import com.d4rk.lowbrightness.core.utils.constants.ads.AdsConstants
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ads.AdsConfig
+import com.d4rk.lowbrightness.core.utils.constants.ads.AdsConstants
 import com.google.android.gms.ads.AdSize
 import org.koin.core.module.Module
 import org.koin.core.qualifier.named

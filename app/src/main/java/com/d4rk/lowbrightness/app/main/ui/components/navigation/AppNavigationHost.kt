@@ -8,7 +8,6 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import com.d4rk.android.libs.apptoolkit.R
-import com.d4rk.lowbrightness.app.main.utils.constants.NavigationRoutes
 import com.d4rk.android.libs.apptoolkit.app.help.ui.HelpActivity
 import com.d4rk.android.libs.apptoolkit.app.main.ui.components.navigation.NavigationHost
 import com.d4rk.android.libs.apptoolkit.app.settings.settings.ui.SettingsActivity
@@ -16,6 +15,7 @@ import com.d4rk.android.libs.apptoolkit.core.domain.model.navigation.NavigationD
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.links.AppLinks
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.IntentsHelper
 import com.d4rk.lowbrightness.app.brightness.ui.BrightnessScreen
+import com.d4rk.lowbrightness.app.main.utils.constants.NavigationRoutes
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 

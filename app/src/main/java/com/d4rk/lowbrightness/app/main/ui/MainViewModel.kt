@@ -5,9 +5,6 @@ import androidx.compose.material.icons.automirrored.outlined.EventNote
 import androidx.compose.material.icons.automirrored.outlined.HelpOutline
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material.icons.outlined.Share
-import com.d4rk.lowbrightness.app.main.domain.action.MainAction
-import com.d4rk.lowbrightness.app.main.domain.action.MainEvent
-import com.d4rk.lowbrightness.app.main.domain.model.UiMainScreen
 import com.d4rk.android.libs.apptoolkit.R
 import com.d4rk.android.libs.apptoolkit.app.main.domain.usecases.PerformInAppUpdateUseCase
 import com.d4rk.android.libs.apptoolkit.core.di.DispatcherProvider
@@ -21,6 +18,9 @@ import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.successData
 import com.d4rk.android.libs.apptoolkit.core.ui.base.ScreenViewModel
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.ScreenMessageType
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.UiTextHelper
+import com.d4rk.lowbrightness.app.main.domain.action.MainAction
+import com.d4rk.lowbrightness.app.main.domain.action.MainEvent
+import com.d4rk.lowbrightness.app.main.domain.model.UiMainScreen
 import kotlinx.coroutines.flow.flowOn
 
 class MainViewModel(private val performInAppUpdateUseCase : PerformInAppUpdateUseCase , private val dispatcherProvider : DispatcherProvider) : ScreenViewModel<UiMainScreen , MainEvent , MainAction>(initialState = UiStateScreen(data = UiMainScreen())) {

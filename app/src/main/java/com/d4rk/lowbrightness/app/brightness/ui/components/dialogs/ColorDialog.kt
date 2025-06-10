@@ -13,9 +13,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import com.d4rk.lowbrightness.R
 import com.godaddy.android.colorpicker.ClassicColorPicker
 import com.godaddy.android.colorpicker.HsvColor
-import com.d4rk.lowbrightness.R
 
 @Composable
 fun ColorDialog(
