@@ -30,6 +30,7 @@ import com.d4rk.lowbrightness.app.brightness.domain.services.isAccessibilityServ
 import com.d4rk.lowbrightness.app.main.domain.action.MainEvent
 import com.d4rk.lowbrightness.core.data.datastore.DataStore
 import com.d4rk.lowbrightness.ui.component.showToast
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.gms.ads.MobileAds
 import com.google.android.ump.ConsentInformation
 import com.google.android.ump.UserMessagingPlatform
@@ -142,9 +143,22 @@ class MainActivity : AppCompatActivity() {
                     action = NightScreenReceiver.Companion.SHOW_DIALOG_AND_NIGHT_SCREEN_ACTION
                 )
             } else {
-                startForResult.launch(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
+                showAccessibilityDisclosure()
             }
         })
+    }
+
+    private fun showAccessibilityDisclosure() {
+        MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.accessibility_permission_disclosure_title)
+            .setMessage(R.string.accessibility_permission_disclosure_message)
+            .setCancelable(true)
+            .setPositiveButton(R.string.continue) { dialog, _ ->
+                startForResult.launch(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
+                dialog.dismiss()
+            }
+            .setNegativeButton(android.R.string.cancel, null)
+            .show()
     }
 
     private fun checkUserConsent() {

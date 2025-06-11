@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.AccountCircle
 import androidx.compose.material.icons.outlined.Build
+import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material.icons.outlined.Star
 import com.d4rk.android.libs.apptoolkit.app.oboarding.domain.data.model.ui.OnboardingPage
 import com.d4rk.android.libs.apptoolkit.app.oboarding.ui.components.pages.CrashlyticsOnboardingPageTab
@@ -14,6 +15,7 @@ import com.d4rk.android.libs.apptoolkit.app.oboarding.utils.interfaces.providers
 import com.d4rk.lowbrightness.R
 import com.d4rk.lowbrightness.app.main.ui.MainActivity
 import com.d4rk.lowbrightness.app.onboarding.utils.constants.OnboardingKeys
+import com.d4rk.lowbrightness.app.onboarding.ui.composables.AccessibilityDisclosurePage
 
 class AppOnboardingProvider : OnboardingProvider {
 
@@ -42,6 +44,18 @@ class AppOnboardingProvider : OnboardingProvider {
                 title = context.getString(R.string.onboarding_feature1_title),
                 description = context.getString(R.string.onboarding_feature1_description),
                 imageVector = Icons.Outlined.Build
+            ),
+            OnboardingPage.CustomPage(
+                key = OnboardingKeys.ACCESSIBILITY_DISCLOSURE,
+                content = {
+                    AccessibilityDisclosurePage(onAcknowledge = {})
+                }
+            ),
+            OnboardingPage.DefaultPage(
+                key = OnboardingKeys.ENABLE_ACCESSIBILITY_GUIDE,
+                title = context.getString(R.string.onboarding_enable_accessibility_title),
+                description = context.getString(R.string.onboarding_enable_accessibility_description),
+                imageVector = Icons.Outlined.Settings
             ),
             OnboardingPage.CustomPage(
                 key = OnboardingKeys.CRASHLYTICS_OPTIONS,
