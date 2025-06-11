@@ -68,9 +68,9 @@ fun ColorCard() {
                         onClick = { showDialog = true }) {
                         Box(
                             modifier = Modifier
-                                .size(SizeConstants.ExtraExtraLargeSize)
+                                .size(size = SizeConstants.ExtraExtraLargeSize)
                                 .background(
-                                    color = Color(calculatedColor),
+                                    color = Color(color = calculatedColor),
                                     shape = RoundedCornerShape(percent = 50)
                                 )
                         )
