@@ -77,7 +77,7 @@ fun TopBarIcon(
 fun BackIcon(onClick: () -> Unit = {}) {
     TopBarIcon(
         imageVector = Icons.AutoMirrored.Rounded.ArrowBack ,
-        contentDescription = stringResource(id = R.string.back) ,
+        contentDescription = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.back_button_content_description) ,
         onClick = onClick
     )
 }

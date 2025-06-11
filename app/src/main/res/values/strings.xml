@@ -1,6 +1,8 @@
 <resources>
     <string name="app_description">Decrease or increase your screen brightness by using our app! 🔆</string>
 
+    <string name="change_light">Brightness</string>
+
     <!-- Onboarding -->
     <string name="onboarding_welcome_title">Welcome to Low Brightness</string>
     <string name="onboarding_welcome_description">Take control of your screen\'s brightness. Low Brightness allows you to reduce your screen\'s illumination beyond the system\'s default minimum, perfect for comfortable viewing in dark environments.</string>
@@ -34,6 +36,19 @@
     <string name="accessibility_permission_disclosure_title">Accessibility permission required</string>
     <string name="accessibility_permission_disclosure_message">Low Brightness uses an Accessibility Service to keep the dimming overlay visible over other apps. This service does not collect or share your data. On the next screen, enable Low Brightness in the Accessibility settings.</string>
     <string name="no_accessibility_permission">No accessibility permission</string>
+    <string name="accessibility_service_description">Use accessibility service to implement the function of reducing screen brightness</string>
+    <string name="power_off">Off</string>
+    <string name="settings_screen_choice_a_color">Select a color</string>
+    <string name="settings_screen_screen_color">Screen Color</string>
+    <string name="settings_screen_screen_alpha">Alpha</string>
+    <string name="settings_screen_choice_a_alpha">Set color alpha</string>
+    <string name="settings_screen_color_settings">Color</string>
+    <string name="alpha_dialog_title">Alpha</string>
+    <string name="request_permission_failed">Failed to request %s permission</string>
+    <string name="request_permissions_success">Request permissions successfully</string>
+    <string name="alert_window_permission">alert window</string>
+    <string name="post_notification_permission">post notification</string>
+    <string name="night_screen_is_running">Night Screen is activated…</string>
 
     <!-- Settings screen -->
     <string name="settings_brightness_title">Brightness</string>
@@ -73,41 +88,4 @@
     <string name="summary_preference_faq_8" translatable="false">The notification keeps the dimming service running so it is not killed by the system.</string>
     <string name="question_9" translatable="false">How can I contact support?</string>
     <string name="summary_preference_faq_9" translatable="false">Send feedback from the app or open an issue on GitHub.</string>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <string name="back">Back</string>
-    <string name="settings">Settings</string>
-    <string name="change_light">Brightness</string>
-    <string name="power_off">Off</string>
-    <string name="settings_screen_choice_a_color">Select a color</string>
-    <string name="settings_screen_screen_color">Screen Color</string>
-    <string name="settings_screen_screen_alpha">Alpha</string>
-    <string name="settings_screen_choice_a_alpha">Set color alpha</string>
-    <string name="settings_screen_color_settings">Color</string>
-    <string name="alpha_dialog_title">Alpha</string>
-    <string name="request_permission_failed">Failed to request %s permission</string>
-    <string name="request_permissions_success">Request permissions successfully</string>
-    <string name="alert_window_permission">alert window</string>
-    <string name="post_notification_permission">post notification</string>
-    <string name="night_screen_is_running">Night Screen is activated…</string>
-    <string name="accessibility_service_description">Use accessibility service to implement the function of reducing screen brightness</string>
-
 </resources>

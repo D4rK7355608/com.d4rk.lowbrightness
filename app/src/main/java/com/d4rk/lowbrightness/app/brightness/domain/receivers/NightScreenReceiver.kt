@@ -96,7 +96,7 @@ class NightScreenReceiver : BroadcastReceiver() {
                     )
                     .addAction(
                         R.drawable.ic_settings_24 ,
-                        context.getString(R.string.settings) ,
+                        context.getString(com.d4rk.android.libs.apptoolkit.R.string.settings) ,
                         settingPendingIntent
                     )
 
