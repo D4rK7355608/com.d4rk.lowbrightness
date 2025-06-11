@@ -12,6 +12,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.lifecycleScope
@@ -28,10 +31,10 @@ import com.d4rk.lowbrightness.app.brightness.domain.ext.sharedPreferences
 import com.d4rk.lowbrightness.app.brightness.domain.receivers.NightScreenReceiver
 import com.d4rk.lowbrightness.app.brightness.domain.services.isAccessibilityServiceRunning
 import com.d4rk.lowbrightness.app.main.domain.action.MainEvent
+import com.d4rk.lowbrightness.app.brightness.ui.components.dialogs.ShowAccessibilityDisclosure
 import com.d4rk.lowbrightness.core.data.datastore.DataStore
 import com.d4rk.lowbrightness.ui.component.showToast
 import com.google.android.gms.ads.MobileAds
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.ump.ConsentInformation
 import com.google.android.ump.UserMessagingPlatform
 import kotlinx.coroutines.CoroutineScope
@@ -53,6 +56,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var updateResultLauncher : ActivityResultLauncher<IntentSenderRequest>
     private lateinit var viewModel : MainViewModel
     private var keepSplashVisible : Boolean = true
+    private var showAccessibilityDialog by mutableStateOf(value = false)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -113,6 +117,15 @@ class MainActivity : AppCompatActivity() {
                 Surface(modifier = Modifier.fillMaxSize() , color = MaterialTheme.colorScheme.background) {
                     MainScreen()
                     doIntentAction(intent?.action)
+                    if (showAccessibilityDialog) {
+                        ShowAccessibilityDisclosure(
+                            onDismissRequest = { showAccessibilityDialog = false },
+                            onContinue = {
+                                showAccessibilityDialog = false
+                                startForResult.launch(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
+                            }
+                        )
+                    }
                 }
             }
         }
@@ -143,22 +156,9 @@ class MainActivity : AppCompatActivity() {
                     action = NightScreenReceiver.Companion.SHOW_DIALOG_AND_NIGHT_SCREEN_ACTION
                 )
             } else {
-                showAccessibilityDisclosure()
+                showAccessibilityDialog = true
             }
         })
-    }
-
-    private fun showAccessibilityDisclosure() {
-        MaterialAlertDialogBuilder(this)
-            .setTitle(R.string.accessibility_permission_disclosure_title)
-            .setMessage(R.string.accessibility_permission_disclosure_message)
-            .setCancelable(true)
-            .setPositiveButton(com.d4rk.android.libs.apptoolkit.R.string.button_continue) { dialog, _ ->
-                startForResult.launch(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
-                dialog.dismiss()
-            }
-            .setNegativeButton(android.R.string.cancel, null)
-            .show()
     }
 
     private fun checkUserConsent() {
