@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
+import androidx.compose.material3.Icon
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -32,6 +34,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.bounceClick
 import com.d4rk.lowbrightness.R
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.AccessTime
+import androidx.compose.material.icons.outlined.PowerSettingsNew
+import androidx.compose.material.icons.outlined.TimerOff
 import com.d4rk.lowbrightness.app.brightness.domain.ext.fragmentActivity
 import com.d4rk.lowbrightness.app.brightness.domain.services.SchedulerService
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog
@@ -115,6 +121,11 @@ fun ScheduleCard() {
                         .padding(top = 10.dp)
                         .align(Alignment.CenterHorizontally).animateContentSize().bounceClick()
                 ) {
+                    Icon(
+                        imageVector = Icons.Outlined.PowerSettingsNew,
+                        contentDescription = null
+                    )
+                    Spacer(modifier = Modifier.width(8.dp))
                     Text(
                         text = if (enabled) stringResource(id = R.string.disable_scheduler)
                         else stringResource(id = R.string.enable_scheduler),
@@ -134,7 +145,7 @@ fun ScheduleCard() {
                         )
                         Row(modifier = Modifier.fillMaxWidth().padding(top = 10.dp)) {
                             val activity = context.fragmentActivity
-                            Button(
+                            OutlinedButton(
                                 onClick = {
                                     val dlg = TimePickerDialog.newInstance({ _, h, m, _ ->
                                         startHour = h
@@ -146,10 +157,15 @@ fun ScheduleCard() {
                                 },
                                 modifier = Modifier.weight(1f).bounceClick()
                             ) {
+                                Icon(
+                                    imageVector = Icons.Outlined.AccessTime,
+                                    contentDescription = null
+                                )
+                                Spacer(modifier = Modifier.width(4.dp))
                                 Text(String.format(Locale.getDefault(), "%02d:%02d", startHour, startMinute))
                             }
                             Spacer(modifier = Modifier.width(8.dp))
-                            Button(
+                            OutlinedButton(
                                 onClick = {
                                     val dlg = TimePickerDialog.newInstance({ _, h, m, _ ->
                                         endHour = h
@@ -161,6 +177,11 @@ fun ScheduleCard() {
                                 },
                                 modifier = Modifier.weight(1f).bounceClick()
                             ) {
+                                Icon(
+                                    imageVector = Icons.Outlined.TimerOff,
+                                    contentDescription = null
+                                )
+                                Spacer(modifier = Modifier.width(4.dp))
                                 Text(String.format(Locale.getDefault(), "%02d:%02d", endHour, endMinute))
                             }
                         }
