@@ -47,11 +47,16 @@ fun BrightnessScreen(paddingValues: PaddingValues) {
         koinInject(qualifier = named(name = "banner_medium_rectangle"))
     val largeBannerAdConfig: AdsConfig = koinInject(qualifier = named(name = "large_banner"))
     var showAccessibilityDialog by remember { mutableStateOf(value = false) }
+    var runAfterPermission by remember { mutableStateOf(value = false) }
     val startForResult = rememberLauncherForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) {
         if (isAccessibilityServiceRunning(context)) {
-            context.activity.requestAllPermissions()
+            if (runAfterPermission) {
+                requestAllPermissionsWithAccessibilityAndShow(context)
+            } else {
+                context.activity.requestAllPermissions()
+            }
         } else {
             context.getString(R.string.no_accessibility_permission).showToast()
         }
@@ -76,11 +81,19 @@ fun BrightnessScreen(paddingValues: PaddingValues) {
         )
         ScheduleCard()
         ActionsCard(
-            onRunNightScreenClick = { requestAllPermissionsWithAccessibilityAndShow(context) },
+            onRunNightScreenClick = {
+                if (isAccessibilityServiceRunning(context)) {
+                    requestAllPermissionsWithAccessibilityAndShow(context)
+                } else {
+                    runAfterPermission = true
+                    showAccessibilityDialog = true
+                }
+            },
             onRequestPermissionsClick = {
                 if (isAccessibilityServiceRunning(context)) {
                     context.activity.requestAllPermissions()
                 } else {
+                    runAfterPermission = false
                     showAccessibilityDialog = true
                 }
             }
