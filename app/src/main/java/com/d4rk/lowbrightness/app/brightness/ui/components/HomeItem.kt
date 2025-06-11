@@ -2,9 +2,11 @@ package com.d4rk.lowbrightness.app.brightness.ui.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -44,7 +46,8 @@ fun HomeItem(
             tint = MaterialTheme.colorScheme.primary
         )
 
-        LargeIncreasedHorizontalSpacer()
+        //LargeIncreasedHorizontalSpacer // TODO: take from lib after update
+        Spacer(modifier = Modifier.width(width = SizeConstants.LargeIncreasedSize))
 
         Text(
             text = text,
