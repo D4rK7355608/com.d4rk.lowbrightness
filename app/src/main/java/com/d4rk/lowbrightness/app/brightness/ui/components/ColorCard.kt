@@ -23,8 +23,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
 import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.bounceClick
+import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.lowbrightness.R
 import com.d4rk.lowbrightness.app.brightness.ui.components.dialogs.ColorDialog
 
@@ -34,7 +34,7 @@ fun ColorCard() {
     Card(
         shape = MaterialTheme.shapes.extraLarge, modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 10.dp)
+            .padding(vertical = SizeConstants.SmallSize + SizeConstants.ExtraTinySize)
     ) {
         Column {
 
@@ -42,7 +42,7 @@ fun ColorCard() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .background(MaterialTheme.colorScheme.primary)
-                    .padding(12.dp), contentAlignment = Alignment.Center
+                    .padding(SizeConstants.MediumSize), contentAlignment = Alignment.Center
             ) {
                 Text(
                     text = stringResource(id = R.string.customize_overlay_color),
@@ -52,11 +52,11 @@ fun ColorCard() {
                 )
             }
 
-            Column(modifier = Modifier.padding(16.dp)) {
+            Column(modifier = Modifier.padding(SizeConstants.LargeSize)) {
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(top = 8.dp), verticalAlignment = Alignment.CenterVertically
+                        .padding(top = SizeConstants.SmallSize), verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
                         modifier = Modifier.weight(1f),
@@ -68,7 +68,7 @@ fun ColorCard() {
                         onClick = { showDialog = true }) {
                         Box(
                             modifier = Modifier
-                                .size(48.dp)
+                                .size(SizeConstants.ExtraExtraLargeSize)
                                 .background(
                                     color = Color(calculatedColor),
                                     shape = RoundedCornerShape(percent = 50)

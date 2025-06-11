@@ -18,8 +18,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
 import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.bounceClick
+import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.lowbrightness.R
 
 @Composable
@@ -28,7 +28,7 @@ fun IntensityCard() {
     Card(
         shape = MaterialTheme.shapes.extraLarge, modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 10.dp)
+            .padding(vertical = SizeConstants.SmallSize + SizeConstants.ExtraTinySize)
     ) {
         Column {
 
@@ -36,7 +36,7 @@ fun IntensityCard() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .background(MaterialTheme.colorScheme.primary)
-                    .padding(12.dp), contentAlignment = Alignment.Center
+                    .padding(SizeConstants.MediumSize), contentAlignment = Alignment.Center
             ) {
                 Text(
                     text = stringResource(id = R.string.intensity),
@@ -46,14 +46,14 @@ fun IntensityCard() {
                 )
             }
 
-            Column(modifier = Modifier.padding(16.dp)) {
+            Column(modifier = Modifier.padding(SizeConstants.LargeSize)) {
                 Text(
                     text = stringResource(id = R.string.summary_brightness),
                     style = MaterialTheme.typography.bodyMedium,
-                    modifier = Modifier.padding(top = 8.dp)
+                    modifier = Modifier.padding(top = SizeConstants.SmallSize)
                 )
                 Slider(
-                    modifier = Modifier.padding(top = 8.dp).bounceClick(), value = alpha, onValueChange = {
+                    modifier = Modifier.padding(top = SizeConstants.SmallSize).bounceClick(), value = alpha, onValueChange = {
                         alpha = it
                         screenAlpha = it
                     }, valueRange = alphaRange

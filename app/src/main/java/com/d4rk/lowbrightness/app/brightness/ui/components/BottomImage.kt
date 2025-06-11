@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.lowbrightness.R
 
 @Composable
@@ -19,7 +20,7 @@ fun BottomImage() {
     Card(
         shape = MaterialTheme.shapes.extraLarge, modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 10.dp)
+            .padding(vertical = SizeConstants.SmallSize + SizeConstants.ExtraTinySize)
             .height(192.dp)
     ) {
         Image(

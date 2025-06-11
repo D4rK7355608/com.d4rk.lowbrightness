@@ -19,10 +19,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.unit.dp
+import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ads.AdsConfig
 import com.d4rk.android.libs.apptoolkit.core.ui.components.ads.AdBanner
-import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.lowbrightness.R
 import com.d4rk.lowbrightness.app.brightness.domain.ext.activity
 import com.d4rk.lowbrightness.app.brightness.domain.ext.plus
@@ -67,7 +66,7 @@ fun BrightnessScreen(paddingValues: PaddingValues) {
             .verticalScroll(rememberScrollState())
             .padding(
                 PaddingValues(
-                    horizontal = 20.dp,
+                    horizontal = SizeConstants.LargeIncreasedSize,
                 ) + paddingValues
             ) ,
     ) {

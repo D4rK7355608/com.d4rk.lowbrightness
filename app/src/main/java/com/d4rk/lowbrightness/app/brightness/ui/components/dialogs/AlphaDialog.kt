@@ -28,6 +28,7 @@ import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.lowbrightness.R
 import com.d4rk.lowbrightness.app.brightness.ui.components.alphaRange
 
@@ -68,7 +69,7 @@ fun AlphaDialog(
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(70.dp)
-                        .background(color = color, shape = RoundedCornerShape(20.dp))
+                        .background(color = color, shape = RoundedCornerShape(SizeConstants.LargeIncreasedSize))
                         .wrapContentHeight(),
                     text = String.format("%.1f", alpha * 100) + "%",
                     style = MaterialTheme.typography.bodyLarge.copy(
@@ -82,7 +83,7 @@ fun AlphaDialog(
                     color = Color.White
                 )
                 Slider(
-                    modifier = Modifier.padding(top = 10.dp),
+                    modifier = Modifier.padding(top = SizeConstants.SmallSize + SizeConstants.ExtraTinySize),
                     value = alpha,
                     valueRange = alphaRange,
                     onValueChange = {
