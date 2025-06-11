@@ -8,10 +8,9 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedButton
@@ -32,7 +31,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.bounceClick
-import com.d4rk.android.libs.apptoolkit.core.ui.components.spacers.ExtraSmallHorizontalSpacer
+import com.d4rk.android.libs.apptoolkit.core.ui.components.spacers.ButtonIconSpacer
 import com.d4rk.android.libs.apptoolkit.core.ui.components.spacers.SmallHorizontalSpacer
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.lowbrightness.R
@@ -124,10 +123,11 @@ fun ScheduleCard() {
                         .align(Alignment.CenterHorizontally).animateContentSize().bounceClick()
                 ) {
                     Icon(
+                        modifier = Modifier.size(SizeConstants.ButtonIconSize),
                         imageVector = Icons.Outlined.PowerSettingsNew,
                         contentDescription = null
                     )
-                    SmallHorizontalSpacer()
+                    ButtonIconSpacer()
                     Text(
                         text = if (enabled) stringResource(id = R.string.disable_scheduler)
                         else stringResource(id = R.string.enable_scheduler),
@@ -160,10 +160,11 @@ fun ScheduleCard() {
                                 modifier = Modifier.weight(1f).bounceClick()
                             ) {
                                 Icon(
+                                    modifier = Modifier.size(SizeConstants.ButtonIconSize),
                                     imageVector = Icons.Outlined.AccessTime,
                                     contentDescription = null
                                 )
-                                ExtraSmallHorizontalSpacer()
+                                ButtonIconSpacer()
                                 Text(String.format(Locale.getDefault(), "%02d:%02d", startHour, startMinute))
                             }
                             SmallHorizontalSpacer()
@@ -180,10 +181,11 @@ fun ScheduleCard() {
                                 modifier = Modifier.weight(1f).bounceClick()
                             ) {
                                 Icon(
+                                    modifier = Modifier.size(SizeConstants.ButtonIconSize),
                                     imageVector = Icons.Outlined.TimerOff,
                                     contentDescription = null
                                 )
-                                ExtraSmallHorizontalSpacer()
+                                ButtonIconSpacer()
                                 Text(String.format(Locale.getDefault(), "%02d:%02d", endHour, endMinute))
                             }
                         }
