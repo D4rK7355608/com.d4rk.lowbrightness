@@ -31,6 +31,7 @@ import com.d4rk.lowbrightness.app.brightness.ui.components.IntensityCard
 import com.d4rk.lowbrightness.app.brightness.ui.components.ScheduleCard
 import com.d4rk.lowbrightness.app.brightness.ui.components.dialogs.requestAllPermissionsWithAccessibilityAndShow
 import com.d4rk.lowbrightness.ui.component.showToast
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.koin.compose.koinInject
 import org.koin.core.qualifier.named
 
@@ -76,7 +77,9 @@ fun BrightnessScreen(paddingValues: PaddingValues) {
                 if (isAccessibilityServiceRunning(context)) {
                     context.activity.requestAllPermissions()
                 } else {
-                    startForResult.launch(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
+                    showAccessibilityDisclosure(context) {
+                        startForResult.launch(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
+                    }
                 }
             }
         )
@@ -93,4 +96,17 @@ fun BrightnessScreen(paddingValues: PaddingValues) {
                 .padding(vertical = SizeConstants.MediumSize), adsConfig = largeBannerAdConfig
         )
     }
+}
+
+private fun showAccessibilityDisclosure(context: android.content.Context, onContinue: () -> Unit) {
+    MaterialAlertDialogBuilder(context)
+        .setTitle(R.string.accessibility_permission_disclosure_title)
+        .setMessage(R.string.accessibility_permission_disclosure_message)
+        .setCancelable(true)
+        .setPositiveButton(R.string.continue) { dialog, _ ->
+            onContinue()
+            dialog.dismiss()
+        }
+        .setNegativeButton(android.R.string.cancel, null)
+        .show()
 }
