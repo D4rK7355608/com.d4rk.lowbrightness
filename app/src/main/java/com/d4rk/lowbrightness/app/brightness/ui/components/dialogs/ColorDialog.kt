@@ -2,10 +2,6 @@ package com.d4rk.lowbrightness.app.brightness.ui.components.dialogs
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ColorLens
-import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.Icon
-import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -13,6 +9,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import com.d4rk.android.libs.apptoolkit.core.ui.components.dialogs.BasicAlertDialog
 import com.d4rk.lowbrightness.R
 import com.godaddy.android.colorpicker.ClassicColorPicker
 import com.godaddy.android.colorpicker.HsvColor
@@ -23,34 +20,22 @@ fun ColorDialog(
     onDismissRequest: () -> Unit,
     onColorSelected: (color: Color) -> Unit
 ) {
-    var color: Color by remember { mutableStateOf(initColor) }
-    AlertDialog(
-        onDismissRequest = onDismissRequest,
-        icon = {
-            Icon(imageVector = Icons.Default.ColorLens, contentDescription = null)
+    var color: Color by remember { mutableStateOf<Color>(value = initColor) }
+
+    BasicAlertDialog(
+        onDismiss = onDismissRequest,
+        onConfirm = {
+            onColorSelected(color)
+            onDismissRequest()
         },
-        title = {
-            Text(text = stringResource(id = R.string.color_dialog_title))
-        },
-        confirmButton = {
-            TextButton(onClick = {
-                onColorSelected(color)
-                onDismissRequest()
-            }) {
-                Text(text = stringResource(id = R.string.ok))
-            }
-        },
-        dismissButton = {
-            TextButton(onClick = onDismissRequest) {
-                Text(text = stringResource(id = R.string.cancel))
-            }
-        },
-        text = {
+        icon = Icons.Default.ColorLens,
+        title = stringResource(id = R.string.color_dialog_title),
+        content = {
             ClassicColorPicker(
                 showAlphaBar = false,
                 color = HsvColor.from(initColor),
-                onColorChanged = { c: HsvColor ->
-                    color = c.toColor()
+                onColorChanged = { hsv: HsvColor ->
+                    color = hsv.toColor()
                 }
             )
         }
