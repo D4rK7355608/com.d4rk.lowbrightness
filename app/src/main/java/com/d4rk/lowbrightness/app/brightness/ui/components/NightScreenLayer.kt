@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Build
 import android.provider.Settings
 import android.view.WindowManager
+import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import com.d4rk.lowbrightness.app.brightness.domain.ext.editor
@@ -69,16 +71,20 @@ fun closeNightScreen() {
 var showNightScreenLayer: Boolean = false
     private set
 
-var screenAlpha: Float = sharedPreferences().getFloat("screenAlpha", 0.5f)
+private val _screenAlpha = mutableFloatStateOf(sharedPreferences().getFloat("screenAlpha", 0.5f))
+var screenAlpha: Float
+    get() = _screenAlpha.value
     set(value) {
-        field = value
+        _screenAlpha.value = value
         layerView.updateColor(calculatedColor)
         sharedPreferences().editor { putFloat("screenAlpha", value) }
     }
 
-var screenColor: Int = sharedPreferences().getInt("screenColor", Color.Black.toArgb())
+private val _screenColor = mutableIntStateOf(sharedPreferences().getInt("screenColor", Color.Black.toArgb()))
+var screenColor: Int
+    get() = _screenColor.value
     set(value) {
-        field = value
+        _screenColor.value = value
         layerView.updateColor(calculatedColor)
         sharedPreferences().editor { putInt("screenColor", value) }
     }
