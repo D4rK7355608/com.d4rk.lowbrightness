@@ -30,8 +30,8 @@ import com.d4rk.lowbrightness.app.brightness.domain.services.isAccessibilityServ
 import com.d4rk.lowbrightness.app.main.domain.action.MainEvent
 import com.d4rk.lowbrightness.core.data.datastore.DataStore
 import com.d4rk.lowbrightness.ui.component.showToast
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.gms.ads.MobileAds
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.ump.ConsentInformation
 import com.google.android.ump.UserMessagingPlatform
 import kotlinx.coroutines.CoroutineScope

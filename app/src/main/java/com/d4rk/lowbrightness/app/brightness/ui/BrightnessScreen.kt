@@ -13,6 +13,10 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
@@ -29,9 +33,9 @@ import com.d4rk.lowbrightness.app.brightness.ui.components.BottomImage
 import com.d4rk.lowbrightness.app.brightness.ui.components.ColorCard
 import com.d4rk.lowbrightness.app.brightness.ui.components.IntensityCard
 import com.d4rk.lowbrightness.app.brightness.ui.components.ScheduleCard
+import com.d4rk.lowbrightness.app.brightness.ui.components.dialogs.ShowAccessibilityDisclosure
 import com.d4rk.lowbrightness.app.brightness.ui.components.dialogs.requestAllPermissionsWithAccessibilityAndShow
 import com.d4rk.lowbrightness.ui.component.showToast
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.koin.compose.koinInject
 import org.koin.core.qualifier.named
 
@@ -42,7 +46,7 @@ fun BrightnessScreen(paddingValues: PaddingValues) {
     val mediumRectangleAdConfig: AdsConfig =
         koinInject(qualifier = named(name = "banner_medium_rectangle"))
     val largeBannerAdConfig: AdsConfig = koinInject(qualifier = named(name = "large_banner"))
-
+    var showAccessibilityDialog by remember { mutableStateOf(value = false) }
     val startForResult = rememberLauncherForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) {
@@ -77,9 +81,7 @@ fun BrightnessScreen(paddingValues: PaddingValues) {
                 if (isAccessibilityServiceRunning(context)) {
                     context.activity.requestAllPermissions()
                 } else {
-                    showAccessibilityDisclosure(context) {
-                        startForResult.launch(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
-                    }
+                    showAccessibilityDialog = true
                 }
             }
         )
@@ -96,17 +98,14 @@ fun BrightnessScreen(paddingValues: PaddingValues) {
                 .padding(vertical = SizeConstants.MediumSize), adsConfig = largeBannerAdConfig
         )
     }
-}
 
-private fun showAccessibilityDisclosure(context: android.content.Context, onContinue: () -> Unit) {
-    MaterialAlertDialogBuilder(context)
-        .setTitle(R.string.accessibility_permission_disclosure_title)
-        .setMessage(R.string.accessibility_permission_disclosure_message)
-        .setCancelable(true)
-        .setPositiveButton(com.d4rk.android.libs.apptoolkit.R.string.button_continue) { dialog, _ ->
-            onContinue()
-            dialog.dismiss()
-        }
-        .setNegativeButton(android.R.string.cancel, null)
-        .show()
+    if (showAccessibilityDialog) {
+        ShowAccessibilityDisclosure(
+            onDismissRequest = { showAccessibilityDialog = false },
+            onContinue = {
+                showAccessibilityDialog = false
+                startForResult.launch(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
+            }
+        )
+    }
 }

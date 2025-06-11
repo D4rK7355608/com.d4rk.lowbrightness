@@ -17,7 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
+import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.lowbrightness.R
 
 @Composable
@@ -29,15 +29,14 @@ fun ActionsCard(
         shape = MaterialTheme.shapes.extraLarge,
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 10.dp)
+            .padding(vertical = SizeConstants.SmallSize + SizeConstants.ExtraTinySize)
     ) {
         Column {
-
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(MaterialTheme.colorScheme.primary)
-                    .padding(12.dp),
+                    .background(color = MaterialTheme.colorScheme.primary)
+                    .padding(SizeConstants.MediumSize),
                 contentAlignment = Alignment.Center
             ) {
                 Text(
@@ -54,7 +53,10 @@ fun ActionsCard(
                     text = stringResource(id = R.string.run_night_screen),
                     onClick = onRunNightScreenClick
                 )
-                HorizontalDivider(modifier = Modifier.padding(horizontal = 16.dp))
+                HorizontalDivider(
+                    modifier = Modifier
+                        .padding(horizontal = SizeConstants.LargeSize)
+                )
                 HomeItem(
                     imageVector = Icons.Default.DoneAll,
                     text = stringResource(id = R.string.request_permissions),

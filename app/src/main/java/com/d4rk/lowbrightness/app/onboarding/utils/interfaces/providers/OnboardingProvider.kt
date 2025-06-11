@@ -3,10 +3,9 @@ package com.d4rk.lowbrightness.app.onboarding.utils.interfaces.providers
 import android.content.Context
 import android.content.Intent
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.AccountCircle
-import androidx.compose.material.icons.outlined.Build
-import androidx.compose.material.icons.outlined.Settings
-import androidx.compose.material.icons.outlined.Star
+import androidx.compose.material.icons.outlined.Brightness2
+import androidx.compose.material.icons.outlined.RemoveRedEye
+import androidx.compose.material.icons.outlined.SettingsBrightness
 import com.d4rk.android.libs.apptoolkit.app.oboarding.domain.data.model.ui.OnboardingPage
 import com.d4rk.android.libs.apptoolkit.app.oboarding.ui.components.pages.CrashlyticsOnboardingPageTab
 import com.d4rk.android.libs.apptoolkit.app.oboarding.ui.components.pages.FinalOnboardingPageTab
@@ -14,8 +13,8 @@ import com.d4rk.android.libs.apptoolkit.app.oboarding.ui.components.pages.ThemeO
 import com.d4rk.android.libs.apptoolkit.app.oboarding.utils.interfaces.providers.OnboardingProvider
 import com.d4rk.lowbrightness.R
 import com.d4rk.lowbrightness.app.main.ui.MainActivity
+import com.d4rk.lowbrightness.app.onboarding.ui.AccessibilityDisclosurePage
 import com.d4rk.lowbrightness.app.onboarding.utils.constants.OnboardingKeys
-import com.d4rk.lowbrightness.app.onboarding.ui.composables.AccessibilityDisclosurePage
 
 class AppOnboardingProvider : OnboardingProvider {
 
@@ -25,13 +24,13 @@ class AppOnboardingProvider : OnboardingProvider {
                 key = OnboardingKeys.WELCOME,
                 title = context.getString(R.string.onboarding_welcome_title),
                 description = context.getString(R.string.onboarding_welcome_description),
-                imageVector = Icons.Outlined.Star
+                imageVector = Icons.Outlined.SettingsBrightness
             ),
             OnboardingPage.DefaultPage(
                 key = OnboardingKeys.PERSONALIZATION_OPTIONS,
                 title = context.getString(R.string.onboarding_personalization_title),
                 description = context.getString(R.string.onboarding_personalization_description),
-                imageVector = Icons.Outlined.AccountCircle
+                imageVector = Icons.Outlined.Brightness2
             ),
             OnboardingPage.CustomPage(
                 key = OnboardingKeys.THEME_OPTIONS,
@@ -43,19 +42,13 @@ class AppOnboardingProvider : OnboardingProvider {
                 key = OnboardingKeys.FEATURE_HIGHLIGHT_1,
                 title = context.getString(R.string.onboarding_feature1_title),
                 description = context.getString(R.string.onboarding_feature1_description),
-                imageVector = Icons.Outlined.Build
+                imageVector = Icons.Outlined.RemoveRedEye
             ),
             OnboardingPage.CustomPage(
                 key = OnboardingKeys.ACCESSIBILITY_DISCLOSURE,
                 content = {
-                    AccessibilityDisclosurePage(onAcknowledge = {})
+                    AccessibilityDisclosurePage()
                 }
-            ),
-            OnboardingPage.DefaultPage(
-                key = OnboardingKeys.ENABLE_ACCESSIBILITY_GUIDE,
-                title = context.getString(R.string.onboarding_enable_accessibility_title),
-                description = context.getString(R.string.onboarding_enable_accessibility_description),
-                imageVector = Icons.Outlined.Settings
             ),
             OnboardingPage.CustomPage(
                 key = OnboardingKeys.CRASHLYTICS_OPTIONS,

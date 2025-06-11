@@ -74,10 +74,6 @@
     <string name="onboarding_accessibility_benefit_comfort"><b>Enhanced Comfort:</b> We can apply a dimming overlay over other apps for a consistent low-brightness experience.</string>
     <string name="onboarding_accessibility_benefit_no_data"><b>No Data Collection:</b> This service is <b><u>only</u></b> used to control the screen overlay. Low Brightness <b><u>does not</u></b> collect, store, or share any of your personal data, typing, or interactions with other apps.</string>
     <string name="onboarding_accessibility_benefit_control"><b>You Are in Control:</b> You can disable this permission at any time through your phone\'s settings.</string>
-    <string name="onboarding_accessibility_button_understand">Understand &amp; Continue</string>
-    <string name="onboarding_accessibility_privacy_policy_link">Read our Privacy Policy</string>
-    <string name="onboarding_enable_accessibility_title">Enable Low Brightness</string>
-    <string name="onboarding_enable_accessibility_description">On the next screen, find Low Brightness in the list and turn it on.</string>
 
     <!-- FAQ -->
     <string name="question_1" translatable="false">What is Low Brightness?</string>

@@ -1,23 +1,20 @@
-package com.d4rk.lowbrightness.app.onboarding.ui.composables
+package com.d4rk.lowbrightness.app.onboarding.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.PrivacyTip
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.Visibility
-import androidx.compose.material3.Button
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -25,29 +22,28 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
+import com.d4rk.android.libs.apptoolkit.core.ui.components.spacers.LargeVerticalSpacer
+import com.d4rk.android.libs.apptoolkit.core.ui.components.spacers.MediumHorizontalSpacer
+import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.lowbrightness.R
 
 @Composable
-fun AccessibilityDisclosurePage(
-    onAcknowledge: () -> Unit,
-    onPrivacyPolicyClick: () -> Unit = {}
-) {
+fun AccessibilityDisclosurePage() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp),
+            .padding(SizeConstants.LargeSize)
+            .verticalScroll(rememberScrollState()),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        androidx.compose.material3.Icon(
+        Icon(
             imageVector = Icons.Filled.Visibility,
             contentDescription = null,
-            modifier = Modifier.height(64.dp),
             tint = MaterialTheme.colorScheme.primary
         )
 
-        Spacer(modifier = Modifier.height(24.dp))
+        LargeVerticalSpacer()
 
         Text(
             text = stringResource(id = R.string.onboarding_accessibility_title),
@@ -56,7 +52,7 @@ fun AccessibilityDisclosurePage(
             textAlign = TextAlign.Center
         )
 
-        Spacer(modifier = Modifier.height(16.dp))
+        LargeVerticalSpacer()
 
         Text(
             text = stringResource(id = R.string.onboarding_accessibility_intro),
@@ -64,7 +60,7 @@ fun AccessibilityDisclosurePage(
             textAlign = TextAlign.Center
         )
 
-        Spacer(modifier = Modifier.height(24.dp))
+        LargeVerticalSpacer()
 
         Text(
             text = stringResource(id = R.string.onboarding_accessibility_what_it_means),
@@ -72,8 +68,6 @@ fun AccessibilityDisclosurePage(
             fontWeight = FontWeight.Bold,
             modifier = Modifier.align(Alignment.Start)
         )
-
-        Spacer(modifier = Modifier.height(8.dp))
 
         DisclosurePoint(
             icon = Icons.Filled.CheckCircle,
@@ -87,21 +81,6 @@ fun AccessibilityDisclosurePage(
             icon = Icons.Filled.Settings,
             text = stringResource(id = R.string.onboarding_accessibility_benefit_control)
         )
-
-        Spacer(modifier = Modifier.weight(1f))
-
-        Button(
-            onClick = onAcknowledge,
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Text(text = stringResource(id = R.string.onboarding_accessibility_button_understand))
-        }
-        TextButton(
-            onClick = onPrivacyPolicyClick,
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Text(text = stringResource(id = R.string.onboarding_accessibility_privacy_policy_link))
-        }
     }
 }
 
@@ -109,15 +88,15 @@ fun AccessibilityDisclosurePage(
 private fun DisclosurePoint(icon: ImageVector, text: String) {
     Row(
         verticalAlignment = Alignment.Top,
-        modifier = Modifier.padding(vertical = 6.dp)
+        modifier = Modifier.padding(vertical = SizeConstants.ExtraSmallSize + SizeConstants.ExtraTinySize)
     ) {
-        androidx.compose.material3.Icon(
+        Icon(
             imageVector = icon,
             contentDescription = null,
             tint = MaterialTheme.colorScheme.primary,
-            modifier = Modifier.padding(top = 2.dp)
+            modifier = Modifier.padding(top = SizeConstants.ExtraTinySize)
         )
-        Spacer(modifier = Modifier.width(12.dp))
+        MediumHorizontalSpacer()
         Text(
             text = text,
             style = MaterialTheme.typography.bodyMedium,
