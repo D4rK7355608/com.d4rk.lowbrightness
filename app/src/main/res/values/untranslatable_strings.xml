@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name" translatable="false">Low Brightness</string>
     <string name="app_full_name" translatable="false">Low Brightness for Android</string>
+    <string name="copyright" translatable="false">Copyright ©2022-2025, D4rK</string>
 </resources>
