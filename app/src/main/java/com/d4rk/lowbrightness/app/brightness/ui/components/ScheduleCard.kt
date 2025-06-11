@@ -31,8 +31,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
 import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.bounceClick
+import com.d4rk.android.libs.apptoolkit.core.ui.components.spacers.ExtraSmallHorizontalSpacer
+import com.d4rk.android.libs.apptoolkit.core.ui.components.spacers.SmallHorizontalSpacer
+import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.lowbrightness.R
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.AccessTime
@@ -84,7 +86,7 @@ fun ScheduleCard() {
         shape = MaterialTheme.shapes.extraLarge,
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 10.dp)
+            .padding(vertical = SizeConstants.SmallSize + SizeConstants.ExtraTinySize)
     ) {
         Column {
 
@@ -92,7 +94,7 @@ fun ScheduleCard() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .background(MaterialTheme.colorScheme.primary)
-                    .padding(12.dp),
+                    .padding(SizeConstants.MediumSize),
                 contentAlignment = Alignment.Center
             ) {
                 Text(
@@ -103,7 +105,7 @@ fun ScheduleCard() {
                 )
             }
 
-            Column(modifier = Modifier.padding(16.dp)) {
+            Column(modifier = Modifier.padding(SizeConstants.LargeSize)) {
                 Text(
                     text = stringResource(id = R.string.summary_scheduler),
                     style = MaterialTheme.typography.bodyMedium
@@ -118,14 +120,14 @@ fun ScheduleCard() {
                         enabled = !enabled
                     },
                     modifier = Modifier
-                        .padding(top = 10.dp)
+                        .padding(top = SizeConstants.SmallSize + SizeConstants.ExtraTinySize)
                         .align(Alignment.CenterHorizontally).animateContentSize().bounceClick()
                 ) {
                     Icon(
                         imageVector = Icons.Outlined.PowerSettingsNew,
                         contentDescription = null
                     )
-                    Spacer(modifier = Modifier.width(8.dp))
+                    SmallHorizontalSpacer()
                     Text(
                         text = if (enabled) stringResource(id = R.string.disable_scheduler)
                         else stringResource(id = R.string.enable_scheduler),
@@ -139,11 +141,11 @@ fun ScheduleCard() {
                 ) {
                     Column {
                         Text(
-                            modifier = Modifier.padding(top = 10.dp),
+                            modifier = Modifier.padding(top = SizeConstants.SmallSize + SizeConstants.ExtraTinySize),
                             text = stringResource(id = R.string.enabled_only_during_this_interval),
                             textAlign = TextAlign.Center
                         )
-                        Row(modifier = Modifier.fillMaxWidth().padding(top = 10.dp)) {
+                        Row(modifier = Modifier.fillMaxWidth().padding(top = SizeConstants.SmallSize + SizeConstants.ExtraTinySize)) {
                             val activity = context.fragmentActivity
                             OutlinedButton(
                                 onClick = {
@@ -161,10 +163,10 @@ fun ScheduleCard() {
                                     imageVector = Icons.Outlined.AccessTime,
                                     contentDescription = null
                                 )
-                                Spacer(modifier = Modifier.width(4.dp))
+                                ExtraSmallHorizontalSpacer()
                                 Text(String.format(Locale.getDefault(), "%02d:%02d", startHour, startMinute))
                             }
-                            Spacer(modifier = Modifier.width(8.dp))
+                            SmallHorizontalSpacer()
                             OutlinedButton(
                                 onClick = {
                                     val dlg = TimePickerDialog.newInstance({ _, h, m, _ ->
@@ -181,14 +183,14 @@ fun ScheduleCard() {
                                     imageVector = Icons.Outlined.TimerOff,
                                     contentDescription = null
                                 )
-                                Spacer(modifier = Modifier.width(4.dp))
+                                ExtraSmallHorizontalSpacer()
                                 Text(String.format(Locale.getDefault(), "%02d:%02d", endHour, endMinute))
                             }
                         }
                         if (remaining.isNotEmpty()) {
                             Text(
                                 text = remaining,
-                                modifier = Modifier.padding(top = 10.dp),
+                                modifier = Modifier.padding(top = SizeConstants.SmallSize + SizeConstants.ExtraTinySize),
                                 textAlign = TextAlign.Center
                             )
                         }
