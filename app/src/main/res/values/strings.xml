@@ -1,60 +1,51 @@
 <resources>
     <string name="app_description">Decrease or increase your screen brightness by using our app! 🔆</string>
-    <string name="intensity">Brightness optimization level</string>
-    <string name="customize_overlay_color">Filter overlay color</string>
 
     <!-- Onboarding -->
     <string name="onboarding_welcome_title">Welcome to Low Brightness</string>
     <string name="onboarding_welcome_description">Take control of your screen\'s brightness. Low Brightness allows you to reduce your screen\'s illumination beyond the system\'s default minimum, perfect for comfortable viewing in dark environments.</string>
-    <string name="onboarding_feature1_title">Protect Your Eyes</string>
-    <string name="onboarding_feature1_description">Dim your screen further than ever before to reduce eye strain, especially during nighttime use or in dimly lit spaces. Enjoy a more comfortable viewing experience.</string>
     <string name="onboarding_personalization_title">Customize Your Viewing Comfort</string>
     <string name="onboarding_personalization_description">Fine-tune the screen filter intensity to your exact preference. Find the perfect balance for reading, browsing, or watching videos in low light conditions.</string>
+    <string name="onboarding_feature1_title">Protect Your Eyes</string>
+    <string name="onboarding_feature1_description">Dim your screen further than ever before to reduce eye strain, especially during nighttime use or in dimly lit spaces. Enjoy a more comfortable viewing experience.</string>
+    <string name="onboarding_accessibility_title">How Low Brightness Works</string>
+    <string name="onboarding_accessibility_intro">To dim your screen effectively across all apps, Low Brightness needs your permission to use the <b>Accessibility Service</b>.</string>
+    <string name="onboarding_accessibility_what_it_means">What this means for you:</string>
+    <string name="onboarding_accessibility_benefit_comfort"><b>Enhanced Comfort:</b> We can apply a dimming overlay over other apps for a consistent low-brightness experience.</string>
+    <string name="onboarding_accessibility_benefit_no_data"><b>No Data Collection:</b> This service is <b><u>only</u></b> used to control the screen overlay. Low Brightness <b><u>does not</u></b> collect, store, or share any of your personal data, typing, or interactions with other apps.</string>
+    <string name="onboarding_accessibility_benefit_control"><b>You Are in Control:</b> You can disable this permission at any time through your phone\'s settings.</string>
 
+    <!-- Brightness screen -->
+    <string name="intensity">Brightness optimization level</string>
+    <string name="summary_brightness">Define how strong the overlay filter should be. Higher levels are recommended for night time reading.</string>
+    <string name="customize_overlay_color">Filter overlay color</string>
+    <string name="summary_filter">Select the color that you think is least distracting to your eyes and has enough contrast with the apps, typically visible on the screen.</string>
+    <string name="color_dialog_title">Color</string>
+    <string name="schedule">Schedule</string>
+    <string name="summary_scheduler">Schedule the period when the screen should automatically darken, to reduce eye strain and make it more comfortable to read in dark environments.</string>
+    <string name="enable_scheduler">Enable scheduler</string>
+    <string name="disable_scheduler">Disable scheduler</string>
+    <string name="enabled_only_during_this_interval">Enabled only during this interval:</string>
+    <string name="time_remaining_to_lighten_label">Original brightness will be restored in</string>
+    <string name="time_remaining_to_darken_label">Screen brightness will be reduced in</string>
     <string name="actions">Actions</string>
+    <string name="run_night_screen">Run</string>
+    <string name="request_permissions">Request permissions</string>
+    <string name="accessibility_permission_disclosure_title">Accessibility permission required</string>
+    <string name="accessibility_permission_disclosure_message">Low Brightness uses an Accessibility Service to keep the dimming overlay visible over other apps. This service does not collect or share your data. On the next screen, enable Low Brightness in the Accessibility settings.</string>
+    <string name="no_accessibility_permission">No accessibility permission</string>
+
+    <!-- Settings screen -->
     <string name="settings_brightness_title">Brightness</string>
     <string name="settings_brightness_summary">Adjust screen brightness levels and related features</string>
-    <string name="summary_brightness">Define how strong the overlay filter should be. Higher levels are recommended for night time reading.</string>
-    <string name="summary_filter">Select the color that you think is least distracting to your eyes and has enough contrast with the apps, typically visible on the screen.</string>
 
-    <string name="cancel">Cancel</string>
-    <string name="ok">OK</string>
-    <string name="back">Back</string>
-    <string name="run_night_screen">Run</string>
-    <string name="settings">Settings</string>
-    <string name="change_light">Brightness</string>
-    <string name="power_off">Off</string>
-    <string name="settings_screen_choice_a_color">Select a color</string>
-    <string name="settings_screen_screen_color">Screen Color</string>
-    <string name="settings_screen_screen_alpha">Alpha</string>
-    <string name="settings_screen_choice_a_alpha">Set color alpha</string>
-    <string name="settings_screen_color_settings">Color</string>
-    <string name="alpha_dialog_title">Alpha</string>
-    <string name="color_dialog_title">Color</string>
     <string name="settings_screen_screen_settings">Screen</string>
     <string name="settings_screen_keep_screen_on">Keep the screen on</string>
     <string name="settings_screen_keep_screen_on_description">Keep the screen on when the night screen is on</string>
     <string name="no_permission_can_not_run">No system alert window permission!</string>
     <string name="settings_screen_lowest_screen_brightness">Lowest screen brightness</string>
     <string name="settings_screen_lowest_screen_brightness_description">Turn down the screen brightness after startup</string>
-    <string name="request_permissions">Request permissions</string>
-    <string name="request_permission_failed">Failed to request %s permission</string>
-    <string name="no_accessibility_permission">No accessibility permission</string>
-    <string name="request_permissions_success">Request permissions successfully</string>
-    <string name="alert_window_permission">alert window</string>
-    <string name="post_notification_permission">post notification</string>
-    <string name="night_screen_is_running">Night Screen is activated…</string>
-    <string name="schedule">Schedule</string>
-    <string name="enable_scheduler">Enable scheduler</string>
-    <string name="disable_scheduler">Disable scheduler</string>
-    <string name="enabled_only_during_this_interval">Enabled only during this interval:</string>
-    <string name="time_remaining_to_darken_label">Screen brightness will be reduced in</string>
-    <string name="time_remaining_to_lighten_label">Original brightness will be restored in</string>
-    <string name="summary_scheduler">Schedule the period when the screen should automatically darken, to reduce eye strain and make it more comfortable to read in dark environments.</string>
-    <string name="tooltip_button_hour_from">Time when your screen brightness will be adjusted to the level you set.</string>
-    <string name="tooltip_button_hour_to">Time when your screen brightness will return to its normal level.</string>
-    <string name="tooltip_enable_scheduler">Enable the scheduler to automatically adjust your screen brightness.</string>
-    <string name="accessibility_service_description">Use accessibility service to implement the function of reducing screen brightness</string>
+
     <!-- Permissions -->
     <string name="receive_boot_completed">Receive boot completed [RECEIVE_BOOT_COMPLETED]</string>
     <string name="summary_preference_permissions_receive_boot_completed">Allows the app to restart its services after the device boots so scheduled dimming continues to work.</string>
@@ -62,18 +53,6 @@
     <string name="summary_preference_permissions_system_alert_window">Allows the app to draw overlay views over other apps, enabling the dimming layer.</string>
     <string name="write_settings">Write settings [WRITE_SETTINGS]</string>
     <string name="summary_preference_permissions_write_settings">Allows the app to modify system settings such as screen brightness.</string>
-
-    <!-- Accessibility disclosure -->
-    <string name="accessibility_permission_disclosure_title">Accessibility permission required</string>
-    <string name="accessibility_permission_disclosure_message">Low Brightness uses an Accessibility Service to keep the dimming overlay visible over other apps. This service does not collect or share your data. On the next screen, enable Low Brightness in the Accessibility settings.</string>
-
-    <!-- Onboarding accessibility page -->
-    <string name="onboarding_accessibility_title">How Low Brightness Works</string>
-    <string name="onboarding_accessibility_intro">To dim your screen effectively across all apps, Low Brightness needs your permission to use the <b>Accessibility Service</b>.</string>
-    <string name="onboarding_accessibility_what_it_means">What this means for you:</string>
-    <string name="onboarding_accessibility_benefit_comfort"><b>Enhanced Comfort:</b> We can apply a dimming overlay over other apps for a consistent low-brightness experience.</string>
-    <string name="onboarding_accessibility_benefit_no_data"><b>No Data Collection:</b> This service is <b><u>only</u></b> used to control the screen overlay. Low Brightness <b><u>does not</u></b> collect, store, or share any of your personal data, typing, or interactions with other apps.</string>
-    <string name="onboarding_accessibility_benefit_control"><b>You Are in Control:</b> You can disable this permission at any time through your phone\'s settings.</string>
 
     <!-- FAQ -->
     <string name="question_1" translatable="false">What is Low Brightness?</string>
@@ -94,4 +73,41 @@
     <string name="summary_preference_faq_8" translatable="false">The notification keeps the dimming service running so it is not killed by the system.</string>
     <string name="question_9" translatable="false">How can I contact support?</string>
     <string name="summary_preference_faq_9" translatable="false">Send feedback from the app or open an issue on GitHub.</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <string name="back">Back</string>
+    <string name="settings">Settings</string>
+    <string name="change_light">Brightness</string>
+    <string name="power_off">Off</string>
+    <string name="settings_screen_choice_a_color">Select a color</string>
+    <string name="settings_screen_screen_color">Screen Color</string>
+    <string name="settings_screen_screen_alpha">Alpha</string>
+    <string name="settings_screen_choice_a_alpha">Set color alpha</string>
+    <string name="settings_screen_color_settings">Color</string>
+    <string name="alpha_dialog_title">Alpha</string>
+    <string name="request_permission_failed">Failed to request %s permission</string>
+    <string name="request_permissions_success">Request permissions successfully</string>
+    <string name="alert_window_permission">alert window</string>
+    <string name="post_notification_permission">post notification</string>
+    <string name="night_screen_is_running">Night Screen is activated…</string>
+    <string name="accessibility_service_description">Use accessibility service to implement the function of reducing screen brightness</string>
+
 </resources>

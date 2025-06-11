@@ -55,12 +55,12 @@ fun AlphaDialog(
                 onAlphaSelected(alpha)
                 onDismissRequest()
             }) {
-                Text(text = stringResource(id = R.string.ok))
+                Text(text = stringResource(id = android.R.string.ok))
             }
         },
         dismissButton = {
             TextButton(onClick = onDismissRequest) {
-                Text(text = stringResource(id = R.string.cancel))
+                Text(text = stringResource(id = android.R.string.cancel))
             }
         },
         text = {
