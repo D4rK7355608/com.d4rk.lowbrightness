@@ -15,6 +15,7 @@ Low Brightness helps you comfortably use your device in dark environments by let
 - Toggle dimming from a Quick Settings tile
 - Schedule when the screen should dim automatically
 - Open source, fast and lightweight
+- Uses an optional AccessibilityService to keep the dimming overlay visible. No personal data is collected.
 
 ## Benefits
 

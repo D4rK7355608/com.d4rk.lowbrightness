@@ -19,6 +19,7 @@ Create a brightness/service/general bug. 🐞
 
 🛠️ Features!
 ⭐️ Reduce screen brightness below the system minimum brightness.
+⭐️ Uses the AccessibilityService API to draw the dimming overlay. This service collects no data.
 ⭐️ No internet required.
 ⭐️ Adaptive themes + Material-You.
 ⭐️ Simple and easy to use.
@@ -50,6 +51,7 @@ Create a brightness/service/general bug. 🐞
 
 🛑 Disclaimer!
 • This app it has a background service. Background service runs for keeping brightness at selected level.
+• The dimming overlay relies on an AccessibilityService to appear over other apps. This service does not collect or share your data and can be disabled at any time.
 • Only use the GitHub Issues section if you discover issues with the code itself. Do not mistake the Issues page as a help desk. For support, information and requests, please contact d4rk7355608@gmail.com.
 
 💬 Feedback!
