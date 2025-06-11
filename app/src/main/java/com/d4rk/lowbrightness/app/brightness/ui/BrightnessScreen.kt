@@ -103,7 +103,7 @@ private fun showAccessibilityDisclosure(context: android.content.Context, onCont
         .setTitle(R.string.accessibility_permission_disclosure_title)
         .setMessage(R.string.accessibility_permission_disclosure_message)
         .setCancelable(true)
-        .setPositiveButton(R.string.continue) { dialog, _ ->
+        .setPositiveButton(com.d4rk.android.libs.apptoolkit.R.string.button_continue) { dialog, _ ->
             onContinue()
             dialog.dismiss()
         }

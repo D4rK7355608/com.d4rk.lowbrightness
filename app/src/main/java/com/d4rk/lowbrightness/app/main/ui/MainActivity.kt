@@ -153,7 +153,7 @@ class MainActivity : AppCompatActivity() {
             .setTitle(R.string.accessibility_permission_disclosure_title)
             .setMessage(R.string.accessibility_permission_disclosure_message)
             .setCancelable(true)
-            .setPositiveButton(R.string.continue) { dialog, _ ->
+            .setPositiveButton(com.d4rk.android.libs.apptoolkit.R.string.button_continue) { dialog, _ ->
                 startForResult.launch(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
                 dialog.dismiss()
             }
