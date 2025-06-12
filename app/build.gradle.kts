@@ -86,7 +86,6 @@ android {
         compose = true
     }
 
-
     packaging {
         resources {
             excludes.add("META-INF/INDEX.LIST")
@@ -97,7 +96,7 @@ android {
 
 dependencies {
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.25") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.26") {
         isTransitive = true
     }
 

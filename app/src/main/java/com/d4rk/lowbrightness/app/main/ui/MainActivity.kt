@@ -23,6 +23,7 @@ import com.d4rk.android.libs.apptoolkit.app.theme.style.AppTheme
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.ConsentFormHelper
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.ConsentManagerHelper
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.IntentsHelper
+import com.d4rk.android.libs.apptoolkit.core.utils.helpers.ReviewHelper
 import com.d4rk.lowbrightness.R
 import com.d4rk.lowbrightness.app.brightness.domain.ext.editor
 import com.d4rk.lowbrightness.app.brightness.domain.ext.requestAllPermissionsAndShow
@@ -30,8 +31,8 @@ import com.d4rk.lowbrightness.app.brightness.domain.ext.requestSystemAlertWindow
 import com.d4rk.lowbrightness.app.brightness.domain.ext.sharedPreferences
 import com.d4rk.lowbrightness.app.brightness.domain.receivers.NightScreenReceiver
 import com.d4rk.lowbrightness.app.brightness.domain.services.isAccessibilityServiceRunning
-import com.d4rk.lowbrightness.app.main.domain.action.MainEvent
 import com.d4rk.lowbrightness.app.brightness.ui.components.dialogs.ShowAccessibilityDisclosure
+import com.d4rk.lowbrightness.app.main.domain.action.MainEvent
 import com.d4rk.lowbrightness.core.data.datastore.DataStore
 import com.d4rk.lowbrightness.ui.component.showToast
 import com.google.android.gms.ads.MobileAds
@@ -75,6 +76,7 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         viewModel.onEvent(event = MainEvent.CheckForUpdates)
         checkUserConsent()
+        checkInAppReview()
     }
 
     override fun onNewIntent(intent: Intent) {
@@ -164,5 +166,20 @@ class MainActivity : AppCompatActivity() {
     private fun checkUserConsent() {
         val consentInfo: ConsentInformation = UserMessagingPlatform.getConsentInformation(this)
         ConsentFormHelper.showConsentFormIfRequired(activity = this , consentInfo = consentInfo)
+    }
+
+    private fun checkInAppReview() {
+        lifecycleScope.launch {
+            val sessionCount: Int = dataStore.sessionCount.first()
+            val hasPrompted: Boolean = dataStore.hasPromptedReview.first()
+            ReviewHelper.launchInAppReviewIfEligible(
+                activity = this@MainActivity,
+                sessionCount = sessionCount,
+                hasPromptedBefore = hasPrompted
+            ) {
+                lifecycleScope.launch { dataStore.setHasPromptedReview(true) }
+            }
+            dataStore.incrementSessionCount()
+        }
     }
 }

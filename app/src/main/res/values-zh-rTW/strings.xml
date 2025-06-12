@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_description">使用我們的應用程式來降低或提高螢幕亮度！ 🔆</string>
 
@@ -28,8 +29,8 @@
     <string name="enable_scheduler">啟用排程</string>
     <string name="disable_scheduler">停用排程</string>
     <string name="enabled_only_during_this_interval">僅在此時間間隔內啟用：</string>
-    <string name="time_remaining_to_lighten_label">將在...後恢復原始亮度</string>
-    <string name="time_remaining_to_darken_label">將在...後降低螢幕亮度</string>
+    <string name="time_remaining_to_lighten_label">將在…後恢復原始亮度</string>
+    <string name="time_remaining_to_darken_label">將在…後降低螢幕亮度</string>
     <string name="actions">操作</string>
     <string name="run_night_screen">啟動</string>
     <string name="request_permissions">請求權限</string>

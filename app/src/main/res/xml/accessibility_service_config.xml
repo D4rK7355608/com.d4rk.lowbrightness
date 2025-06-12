@@ -4,6 +4,5 @@
     android:accessibilityFeedbackType="feedbackAllMask"
     android:accessibilityFlags="flagDefault"
     android:canRetrieveWindowContent="false"
-    android:notificationTimeout="100"
-    android:description="@string/accessibility_service_description"/>
-
+    android:description="@string/accessibility_service_description"
+    android:notificationTimeout="100" />
