@@ -16,7 +16,7 @@ android {
         applicationId = "com.d4rk.lowbrightness"
         minSdk = 23
         targetSdk = 36
-        versionCode = 41
+        versionCode = 44
         versionName = "5.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         @Suppress("UnstableApiUsage") androidResources.localeFilters += listOf(
