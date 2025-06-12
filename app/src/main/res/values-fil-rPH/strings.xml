@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_description">Bawasan o dagdagan ang liwanag ng iyong screen gamit ang aming app! 🔆</string>
+
+    <string name="change_light">Liwanag</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Maligayang pagdating sa Low Brightness</string>
+    <string name="onboarding_welcome_description">Kontrolin ang liwanag ng iyong screen. Hinahayaan ka ng Low Brightness na bawasan ang liwanag ng iyong screen nang mas mababa pa sa default na minimum ng system, perpekto para sa komportableng pagtingin sa madilim na lugar.</string>
+    <string name="onboarding_personalization_title">I-customize ang Iyong Kaginhawahan sa Panonood</string>
+    <string name="onboarding_personalization_description">I-adjust ang tindi ng filter ng screen ayon sa iyong eksaktong kagustuhan. Hanapin ang perpektong balanse para sa pagbabasa, pag-browse, o panonood ng mga video sa mga kondisyong may mababang ilaw.</string>
+    <string name="onboarding_feature1_title">Protektahan ang Iyong mga Mata</string>
+    <string name="onboarding_feature1_description">Diliman ang iyong screen nang higit pa kaysa dati upang mabawasan ang pagod ng mata, lalo na sa paggamit sa gabi o sa mga lugar na may kaunting ilaw. Mag-enjoy ng mas komportableng karanasan sa panonood.</string>
+    <string name="onboarding_accessibility_title">Paano Gumagana ang Low Brightness</string>
+    <string name="onboarding_accessibility_intro">Upang epektibong padilimin ang iyong screen sa lahat ng app, kailangan ng Low Brightness ang iyong pahintulot na gamitin ang <b>Serbisyo sa Accessibility</b>.</string>
+    <string name="onboarding_accessibility_what_it_means">Ano ang ibig sabihin nito para sa iyo:</string>
+    <string name="onboarding_accessibility_benefit_comfort"><b>Pinahusay na Kaginhawahan:</b> Maaari kaming maglagay ng dimming overlay sa ibabaw ng ibang mga app para sa isang pare-parehong karanasan na may mababang liwanag.</string>
+    <string name="onboarding_accessibility_benefit_no_data"><b>Walang Pagkolekta ng Data:</b> Ang serbisyong ito ay <b><u>ginagamit lamang</u></b> upang kontrolin ang screen overlay. Ang Low Brightness ay <b><u>hindi</u></b> nangongolekta, nag-iimbak, o nagbabahagi ng anuman sa iyong personal na data, pag-type, o mga interaksyon sa ibang mga app.</string>
+    <string name="onboarding_accessibility_benefit_control"><b>Nasa Iyo ang Kontrol:</b> Maaari mong i-disable ang pahintulot na ito anumang oras sa pamamagitan ng mga setting ng iyong telepono.</string>
+
+    <!-- Brightness screen -->
+    <string name="intensity">Antas ng pag-optimize ng liwanag</string>
+    <string name="summary_brightness">Tukuyin kung gaano kalakas dapat ang overlay filter. Inirerekomenda ang mas mataas na antas para sa pagbabasa sa gabi.</string>
+    <string name="customize_overlay_color">Kulay ng filter overlay</string>
+    <string name="summary_filter">Pumili ng kulay na sa tingin mo ay hindi gaanong nakakagambala sa iyong mga mata at may sapat na contrast sa mga app na karaniwang nakikita sa screen.</string>
+    <string name="color_dialog_title">Kulay</string>
+    <string name="schedule">Iskedyul</string>
+    <string name="summary_scheduler">I-iskedyul ang panahon kung kailan awtomatikong didilim ang screen, upang mabawasan ang pagod ng mata at gawing mas komportable ang pagbabasa sa madilim na kapaligiran.</string>
+    <string name="enable_scheduler">Paganahin ang iskedyul</string>
+    <string name="disable_scheduler">Huwag paganahin ang iskedyul</string>
+    <string name="enabled_only_during_this_interval">Pinagana lamang sa loob ng interval na ito:</string>
+    <string name="time_remaining_to_lighten_label">Maibabalik ang orihinal na liwanag sa loob ng</string>
+    <string name="time_remaining_to_darken_label">Babawasan ang liwanag ng screen sa loob ng</string>
+    <string name="actions">Mga Aksyon</string>
+    <string name="run_night_screen">Patakbuhin</string>
+    <string name="request_permissions">Humiling ng mga pahintulot</string>
+    <string name="accessibility_permission_disclosure_title">Kinakailangan ang pahintulot sa Accessibility</string>
+    <string name="accessibility_permission_disclosure_message">Gumagamit ang Low Brightness ng Serbisyo sa Accessibility upang mapanatiling nakikita ang dimming overlay sa ibabaw ng ibang mga app. Ang serbisyong ito ay hindi nangongolekta o nagbabahagi ng iyong data. Sa susunod na screen, paganahin ang Low Brightness sa mga setting ng Accessibility.</string>
+    <string name="no_accessibility_permission">Walang pahintulot sa accessibility</string>
+    <string name="accessibility_service_description">Gamitin ang serbisyo sa accessibility upang ipatupad ang function ng pagbabawas ng liwanag ng screen</string>
+    <string name="power_off">Naka-off</string>
+    <string name="settings_screen_choice_a_color">Pumili ng kulay</string>
+    <string name="settings_screen_screen_color">Kulay ng Screen</string>
+    <string name="settings_screen_screen_alpha">Alpha</string>
+    <string name="settings_screen_choice_a_alpha">Itakda ang alpha ng kulay</string>
+    <string name="settings_screen_color_settings">Kulay</string>
+    <string name="alpha_dialog_title">Alpha</string>
+    <string name="request_permission_failed">Nabigong hilingin ang pahintulot sa %s</string>
+    <string name="request_permissions_success">Matagumpay na nahiling ang mga pahintulot</string>
+    <string name="alert_window_permission">alert window</string>
+    <string name="post_notification_permission">mag-post ng notipikasyon</string>
+    <string name="night_screen_is_running">Ang Night Screen ay aktibo…</string>
+
+    <!-- Settings screen -->
+    <string name="settings_brightness_title">Liwanag</string>
+    <string name="settings_brightness_summary">I-adjust ang mga antas ng liwanag ng screen at mga kaugnay na feature.</string>
+
+    <string name="settings_screen_screen_settings">Screen</string>
+    <string name="settings_screen_keep_screen_on">Panatilihing bukas ang screen</string>
+    <string name="settings_screen_keep_screen_on_description">Panatilihing bukas ang screen kapag naka-on ang night screen.</string>
+    <string name="no_permission_can_not_run">Walang pahintulot sa system alert window!</string>
+    <string name="settings_screen_lowest_screen_brightness">Pinakamababang liwanag ng screen</string>
+    <string name="settings_screen_lowest_screen_brightness_description">Hinaan ang liwanag ng screen pagkatapos mag-startup.</string>
+
+    <!-- Permissions -->
+    <string name="receive_boot_completed">Paganahin sa pagsimula [RECEIVE_BOOT_COMPLETED]</string>
+    <string name="summary_preference_permissions_receive_boot_completed">Pinapayagan ang app na i-restart ang mga serbisyo nito pagkatapos mag-boot ang device upang patuloy na gumana ang naka-iskedyul na pagdidilim.</string>
+    <string name="system_alert_window">Magpakita sa ibabaw ng ibang apps [SYSTEM_ALERT_WINDOW]</string>
+    <string name="summary_preference_permissions_system_alert_window">Pinapayagan ang app na magpakita ng mga overlay sa ibabaw ng ibang mga app, na nagpapagana sa dimming layer.</string>
+    <string name="write_settings">Baguhin ang mga setting [WRITE_SETTINGS]</string>
+    <string name="summary_preference_permissions_write_settings">Pinapayagan ang app na baguhin ang mga setting ng system tulad ng liwanag ng screen.</string>
+
+    <!-- FAQ -->
+    <string name="question_1" translatable="false">Ano ang Low Brightness?</string>
+    <string name="summary_preference_faq_1" translatable="false">Hinahayaan ka ng Low Brightness na padilimin ang screen nang higit sa minimum ng system para sa komportableng pagtingin sa madilim na kapaligiran.</string>
+    <string name="question_2" translatable="false">Bakit kailangan ng app ang pahintulot sa overlay?</string>
+    <string name="summary_preference_faq_2" translatable="false">Pinapayagan nito ang app na magpakita ng isang dimming overlay sa ibabaw ng ibang mga app.</string>
+    <string name="question_3" translatable="false">Bakit humihiling ang app na baguhin ang mga setting ng system?</string>
+    <string name="summary_preference_faq_3" translatable="false">Hinahayaan ng pahintulot na ito ang app na i-adjust ang mga halaga ng liwanag ng system upang mailapat nang tama ang filter.</string>
+    <string name="question_4" translatable="false">Bakit kinakailangan ang pahintulot sa boot?</string>
+    <string name="summary_preference_faq_4" translatable="false">Ginagamit ito ng app upang ibalik ang liwanag at mga notipikasyon pagkatapos mong i-restart ang device.</string>
+    <string name="question_5" translatable="false">Gumagana ba ang app nang walang internet?</string>
+    <string name="summary_preference_faq_5" translatable="false">Oo. Ginagamit lamang ang Internet para sa mga pagsusuri ng update at opsyonal na mga ulat ng error.</string>
+    <string name="question_6" translatable="false">Libre ba ang app?</string>
+    <string name="summary_preference_faq_6" translatable="false">Lahat ng pangunahing feature ay libre at open source. Ang mga donasyon ay opsyonal.</string>
+    <string name="question_7" translatable="false">Maaari ko bang baguhin ang kulay ng overlay?</string>
+    <string name="summary_preference_faq_7" translatable="false">Oo. Maaari kang pumili ng anumang kulay mula sa screen ng mga setting.</string>
+    <string name="question_8" translatable="false">Bakit mayroong palaging notipikasyon?</string>
+    <string name="summary_preference_faq_8" translatable="false">Pinapanatili ng notipikasyon na tumatakbo ang serbisyo ng pagdidilim upang hindi ito patayin ng system.</string>
+    <string name="question_9" translatable="false">Paano ako makikipag-ugnayan sa suporta?</string>
+    <string name="summary_preference_faq_9" translatable="false">Magpadala ng feedback mula sa app o magbukas ng isyu sa GitHub.</string>
+</resources>

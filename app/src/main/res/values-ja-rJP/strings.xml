@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_description">このアプリで画面の明るさを下げたり上げたりできます！ 🔆</string>
+
+    <string name="change_light">明るさ</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Low Brightnessへようこそ</string>
+    <string name="onboarding_welcome_description">画面の明るさをコントロールしましょう。Low Brightnessは、システムのデフォルトの最小値よりもさらに画面の照度を下げることができ、暗い環境での快適な視聴に最適です。</string>
+    <string name="onboarding_personalization_title">快適な表示をカスタマイズ</string>
+    <string name="onboarding_personalization_description">画面フィルターの強度を好みに合わせて微調整できます。暗い場所での読書、ブラウジング、動画視聴に最適なバランスを見つけましょう。</string>
+    <string name="onboarding_feature1_title">目を保護</string>
+    <string name="onboarding_feature1_description">これまで以上に画面を暗くして、特に夜間や薄暗い場所での目の疲れを軽減します。より快適な視聴体験をお楽しみください。</string>
+    <string name="onboarding_accessibility_title">Low Brightnessの仕組み</string>
+    <string name="onboarding_accessibility_intro">すべてのアプリで効果的に画面を暗くするために、Low Brightnessは<b>ユーザー補助サービス</b>を使用する許可が必要です。</string>
+    <string name="onboarding_accessibility_what_it_means">この許可について：</string>
+    <string name="onboarding_accessibility_benefit_comfort"><b>快適性の向上：</b>他のアプリの上に調光オーバーレイを適用し、一貫した低輝度体験を提供できます。</string>
+    <string name="onboarding_accessibility_benefit_no_data"><b>データ収集なし：</b>このサービスは画面オーバーレイの制御に<b><u>のみ</u></b>使用されます。Low Brightnessは、あなたの個人データ、入力内容、他のアプリとのやり取りを収集、保存、共有することは<b><u>一切ありません</u></b>。</string>
+    <string name="onboarding_accessibility_benefit_control"><b>管理はあなた自身で：</b>この権限はいつでもスマートフォンの設定から無効にできます。</string>
+
+    <!-- Brightness screen -->
+    <string name="intensity">フィルターの強度</string>
+    <string name="summary_brightness">オーバーレイフィルターの強さを定義します。夜間の読書には高いレベルが推奨されます。</string>
+    <string name="customize_overlay_color">フィルターの色</string>
+    <string name="summary_filter">目に最も負担が少なく、画面に表示されるアプリと十分なコントラストがあると思われる色を選択してください。</string>
+    <string name="color_dialog_title">色</string>
+    <string name="schedule">スケジュール</string>
+    <string name="summary_scheduler">画面が自動的に暗くなる期間をスケジュールし、目の疲れを軽減し、暗い環境での読書をより快適にします。</string>
+    <string name="enable_scheduler">スケジューラーを有効にする</string>
+    <string name="disable_scheduler">スケジューラーを無効にする</string>
+    <string name="enabled_only_during_this_interval">この時間帯のみ有効：</string>
+    <string name="time_remaining_to_lighten_label">元の明るさに戻るまで</string>
+    <string name="time_remaining_to_darken_label">画面が暗くなるまで</string>
+    <string name="actions">操作</string>
+    <string name="run_night_screen">実行</string>
+    <string name="request_permissions">権限をリクエスト</string>
+    <string name="accessibility_permission_disclosure_title">ユーザー補助の権限が必要です</string>
+    <string name="accessibility_permission_disclosure_message">Low Brightnessは、他のアプリの上に調光オーバーレイを表示し続けるためにユーザー補助サービスを使用します。このサービスはデータを収集したり共有したりしません。次の画面で、ユーザー補助設定からLow Brightnessを有効にしてください。</string>
+    <string name="no_accessibility_permission">ユーザー補助の権限がありません</string>
+    <string name="accessibility_service_description">画面の明るさを下げる機能を実装するためにユーザー補助サービスを使用します</string>
+    <string name="power_off">オフ</string>
+    <string name="settings_screen_choice_a_color">色を選択</string>
+    <string name="settings_screen_screen_color">画面の色</string>
+    <string name="settings_screen_screen_alpha">不透明度</string>
+    <string name="settings_screen_choice_a_alpha">色の不透明度を設定</string>
+    <string name="settings_screen_color_settings">色</string>
+    <string name="alpha_dialog_title">不透明度</string>
+    <string name="request_permission_failed">%s権限のリクエストに失敗しました</string>
+    <string name="request_permissions_success">権限のリクエストに成功しました</string>
+    <string name="alert_window_permission">他のアプリの上に表示</string>
+    <string name="post_notification_permission">通知</string>
+    <string name="night_screen_is_running">ナイトスクリーンが作動中…</string>
+
+    <!-- Settings screen -->
+    <string name="settings_brightness_title">明るさ</string>
+    <string name="settings_brightness_summary">画面の明るさレベルと関連機能を調整します</string>
+
+    <string name="settings_screen_screen_settings">画面</string>
+    <string name="settings_screen_keep_screen_on">画面を常にオンにする</string>
+    <string name="settings_screen_keep_screen_on_description">ナイトスクリーンがオンのときに画面を常にオンにします</string>
+    <string name="no_permission_can_not_run">「他のアプリの上に表示」権限がありません！</string>
+    <string name="settings_screen_lowest_screen_brightness">最低画面輝度</string>
+    <string name="settings_screen_lowest_screen_brightness_description">起動後に画面の明るさを下げる</string>
+
+    <!-- Permissions -->
+    <string name="receive_boot_completed">起動時に自動実行 [RECEIVE_BOOT_COMPLETED]</string>
+    <string name="summary_preference_permissions_receive_boot_completed">デバイスの起動後にアプリがサービスを再起動できるようにし、スケジュールされた調光が引き続き機能するようにします。</string>
+    <string name="system_alert_window">他のアプリの上に表示 [SYSTEM_ALERT_WINDOW]</string>
+    <string name="summary_preference_permissions_system_alert_window">アプリが他のアプリの上にオーバーレイビューを描画できるようにし、調光レイヤーを有効にします。</string>
+    <string name="write_settings">システム設定の書き込み [WRITE_SETTINGS]</string>
+    <string name="summary_preference_permissions_write_settings">アプリが画面の明るさなどのシステム設定を変更できるようにします。</string>
+
+    <!-- FAQ -->
+    <string name="question_1" translatable="false">Low Brightnessとは何ですか？</string>
+    <string name="summary_preference_faq_1" translatable="false">Low Brightnessは、暗い環境で快適に表示するために、システムの最小輝度よりもさらに画面を暗くすることができます。</string>
+    <string name="question_2" translatable="false">なぜ「他のアプリの上に表示」権限が必要なのですか？</string>
+    <string name="summary_preference_faq_2" translatable="false">これにより、アプリが他のアプリの上に調光オーバーレイを表示できるようになります。</string>
+    <string name="question_3" translatable="false">なぜアプリはシステム設定の変更を要求するのですか？</string>
+    <string name="summary_preference_faq_3" translatable="false">この権限により、アプリはシステムの明るさの値を調整し、フィルターが正しく適用されるようになります。</string>
+    <string name="question_4" translatable="false">なぜ起動時の実行権限が必要なのですか？</string>
+    <string name="summary_preference_faq_4" translatable="false">デバイスの再起動後に明るさと通知を復元するために使用します。</string>
+    <string name="question_5" translatable="false">アプリはインターネットなしで動作しますか？</string>
+    <string name="summary_preference_faq_5" translatable="false">はい。インターネットはアップデートの確認と、オプションのエラー報告にのみ使用されます。</string>
+    <string name="question_6" translatable="false">アプリは無料ですか？</string>
+    <string name="summary_preference_faq_6" translatable="false">すべてのコア機能は無料でオープンソースです。寄付は任意です。</string>
+    <string name="question_7" translatable="false">オーバーレイの色を変更できますか？</string>
+    <string name="summary_preference_faq_7" translatable="false">はい。設定画面から任意の色を選択できます。</string>
+    <string name="question_8" translatable="false">なぜ常時通知が表示されるのですか？</string>
+    <string name="summary_preference_faq_8" translatable="false">通知は、調光サービスがシステムによって停止されないように、実行し続けるためにあります。</string>
+    <string name="question_9" translatable="false">サポートに連絡するにはどうすればよいですか？</string>
+    <string name="summary_preference_faq_9" translatable="false">アプリからフィードバックを送信するか、GitHubでIssueを開いてください。</string>
+</resources>

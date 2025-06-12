@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_description">Diminuisci o aumenta la luminosità del tuo schermo usando la nostra app! 🔆</string>
+
+    <string name="change_light">Luminosità</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Benvenuto in Low Brightness</string>
+    <string name="onboarding_welcome_description">Prendi il controllo della luminosità del tuo schermo. Low Brightness ti permette di ridurre l\'illuminazione dello schermo oltre il minimo predefinito del sistema, perfetto per una visione confortevole in ambienti bui.</string>
+    <string name="onboarding_personalization_title">Personalizza il tuo comfort visivo</string>
+    <string name="onboarding_personalization_description">Regola con precisione l\'intensità del filtro dello schermo secondo le tue preferenze. Trova l\'equilibrio perfetto per leggere, navigare o guardare video in condizioni di scarsa illuminazione.</string>
+    <string name="onboarding_feature1_title">Proteggi i tuoi occhi</string>
+    <string name="onboarding_feature1_description">Riduci la luminosità dello schermo più che mai per diminuire l\'affaticamento degli occhi, specialmente durante l\'uso notturno o in spazi poco illuminati. Goditi un\'esperienza visiva più confortevole.</string>
+    <string name="onboarding_accessibility_title">Come funziona Low Brightness</string>
+    <string name="onboarding_accessibility_intro">Per ridurre efficacemente la luminosità dello schermo su tutte le app, Low Brightness ha bisogno della tua autorizzazione per utilizzare il <b>Servizio di Accessibilità</b>.</string>
+    <string name="onboarding_accessibility_what_it_means">Cosa significa per te:</string>
+    <string name="onboarding_accessibility_benefit_comfort"><b>Comfort migliorato:</b> Possiamo applicare una sovrapposizione oscurante su altre app per un\'esperienza a bassa luminosità costante.</string>
+    <string name="onboarding_accessibility_benefit_no_data"><b>Nessuna raccolta di dati:</b> Questo servizio è usato <b><u>solo</u></b> per controllare la sovrapposizione dello schermo. Low Brightness <b><u>non</u></b> raccoglie, archivia o condivide nessuno dei tuoi dati personali, digitazione o interazioni con altre app.</string>
+    <string name="onboarding_accessibility_benefit_control"><b>Hai tu il controllo:</b> Puoi disattivare questa autorizzazione in qualsiasi momento tramite le impostazioni del tuo telefono.</string>
+
+    <!-- Brightness screen -->
+    <string name="intensity">Intensità</string>
+    <string name="summary_brightness">Definisci l\'intensità del filtro di sovrapposizione. Livelli più alti sono raccomandati per la lettura notturna.</string>
+    <string name="customize_overlay_color">Colore del filtro di sovrapposizione</string>
+    <string name="summary_filter">Seleziona il colore che ritieni meno fastidioso per gli occhi e che abbia un contrasto sufficiente con le app, tipicamente visibili sullo schermo.</string>
+    <string name="color_dialog_title">Colore</string>
+    <string name="schedule">Programmazione</string>
+    <string name="summary_scheduler">Programma il periodo in cui lo schermo si oscurerà automaticamente, per ridurre l\'affaticamento degli occhi e rendere più confortevole la lettura in ambienti bui.</string>
+    <string name="enable_scheduler">Attiva programmazione</string>
+    <string name="disable_scheduler">Disattiva programmazione</string>
+    <string name="enabled_only_during_this_interval">Attivato solo durante questo intervallo:</string>
+    <string name="time_remaining_to_lighten_label">La luminosità originale verrà ripristinata tra</string>
+    <string name="time_remaining_to_darken_label">La luminosità dello schermo verrà ridotta tra</string>
+    <string name="actions">Azioni</string>
+    <string name="run_night_screen">Avvia</string>
+    <string name="request_permissions">Richiedi autorizzazioni</string>
+    <string name="accessibility_permission_disclosure_title">Autorizzazione di Accessibilità richiesta</string>
+    <string name="accessibility_permission_disclosure_message">Low Brightness utilizza un Servizio di Accessibilità per mantenere la sovrapposizione oscurante visibile sopra altre app. Questo servizio non raccoglie né condivide i tuoi dati. Nella schermata successiva, attiva Low Brightness nelle impostazioni di Accessibilità.</string>
+    <string name="no_accessibility_permission">Nessuna autorizzazione di accessibilità</string>
+    <string name="accessibility_service_description">Usa il servizio di accessibilità per implementare la funzione di riduzione della luminosità dello schermo</string>
+    <string name="power_off">Spento</string>
+    <string name="settings_screen_choice_a_color">Seleziona un colore</string>
+    <string name="settings_screen_screen_color">Colore Schermo</string>
+    <string name="settings_screen_screen_alpha">Trasparenza</string>
+    <string name="settings_screen_choice_a_alpha">Imposta trasparenza del colore</string>
+    <string name="settings_screen_color_settings">Colore</string>
+    <string name="alpha_dialog_title">Trasparenza</string>
+    <string name="request_permission_failed">Richiesta dell\'autorizzazione %s non riuscita</string>
+    <string name="request_permissions_success">Autorizzazioni richieste con successo</string>
+    <string name="alert_window_permission">finestra di avviso</string>
+    <string name="post_notification_permission">invio notifiche</string>
+    <string name="night_screen_is_running">Modalità notturna attivata…</string>
+
+    <!-- Settings screen -->
+    <string name="settings_brightness_title">Luminosità</string>
+    <string name="settings_brightness_summary">Regola i livelli di luminosità dello schermo e le funzioni correlate</string>
+
+    <string name="settings_screen_screen_settings">Schermo</string>
+    <string name="settings_screen_keep_screen_on">Mantieni lo schermo acceso</string>
+    <string name="settings_screen_keep_screen_on_description">Mantiene lo schermo acceso quando la modalità notturna è attiva</string>
+    <string name="no_permission_can_not_run">Nessuna autorizzazione per la visualizzazione sopra altre app!</string>
+    <string name="settings_screen_lowest_screen_brightness">Luminosità minima dello schermo</string>
+    <string name="settings_screen_lowest_screen_brightness_description">Abbassa la luminosità dello schermo all\'avvio</string>
+
+    <!-- Permissions -->
+    <string name="receive_boot_completed">Avvio all\'accensione [RECEIVE_BOOT_COMPLETED]</string>
+    <string name="summary_preference_permissions_receive_boot_completed">Consente all\'app di riavviare i suoi servizi dopo l\'avvio del dispositivo, in modo che l\'oscuramento programmato continui a funzionare.</string>
+    <string name="system_alert_window">Visualizzazione sopra altre app [SYSTEM_ALERT_WINDOW]</string>
+    <string name="summary_preference_permissions_system_alert_window">Consente all\'app di disegnare viste in sovrapposizione su altre app, abilitando il livello di oscuramento.</string>
+    <string name="write_settings">Modifica impostazioni di sistema [WRITE_SETTINGS]</string>
+    <string name="summary_preference_permissions_write_settings">Consente all\'app di modificare le impostazioni di sistema come la luminosità dello schermo.</string>
+
+    <!-- FAQ -->
+    <string name="question_1" translatable="false">Cos\'è Low Brightness?</string>
+    <string name="summary_preference_faq_1" translatable="false">Low Brightness ti permette di abbassare la luminosità dello schermo oltre il minimo di sistema per una visione confortevole in ambienti bui.</string>
+    <string name="question_2" translatable="false">Perché l\'app necessita dell\'autorizzazione di sovrapposizione?</string>
+    <string name="summary_preference_faq_2" translatable="false">Permette all\'app di visualizzare una sovrapposizione oscurante sopra altre app.</string>
+    <string name="question_3" translatable="false">Perché l\'app richiede di modificare le impostazioni di sistema?</string>
+    <string name="summary_preference_faq_3" translatable="false">Questa autorizzazione permette all\'app di regolare i valori di luminosità del sistema in modo che il filtro possa essere applicato correttamente.</string>
+    <string name="question_4" translatable="false">Perché è richiesta l\'autorizzazione di avvio?</string>
+    <string name="summary_preference_faq_4" translatable="false">L\'app la usa per ripristinare la luminosità e le notifiche dopo il riavvio del dispositivo.</string>
+    <string name="question_5" translatable="false">L\'app funziona senza internet?</string>
+    <string name="summary_preference_faq_5" translatable="false">Sì. Internet è utilizzato solo per il controllo degli aggiornamenti e per rapporti di errore facoltativi.</string>
+    <string name="question_6" translatable="false">L\'app è gratuita?</string>
+    <string name="summary_preference_faq_6" translatable="false">Tutte le funzionalità principali sono gratuite e open source. Le donazioni sono facoltative.</string>
+    <string name="question_7" translatable="false">Posso cambiare il colore della sovrapposizione?</string>
+    <string name="summary_preference_faq_7" translatable="false">Sì. Puoi selezionare qualsiasi colore dalla schermata delle impostazioni.</string>
+    <string name="question_8" translatable="false">Perché c\'è una notifica persistente?</string>
+    <string name="summary_preference_faq_8" translatable="false">La notifica mantiene in esecuzione il servizio di oscuramento in modo che non venga terminato dal sistema.</string>
+    <string name="question_9" translatable="false">Come posso contattare il supporto?</string>
+    <string name="summary_preference_faq_9" translatable="false">Invia un feedback dall\'app o apri una issue su GitHub.</string>
+</resources>

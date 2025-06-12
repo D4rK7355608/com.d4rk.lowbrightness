@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_description">Verringere oder erhöhe die Helligkeit deines Bildschirms mit unserer App! 🔆</string>
+
+    <string name="change_light">Helligkeit</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Willkommen bei Low Brightness</string>
+    <string name="onboarding_welcome_description">Übernimm die Kontrolle über die Helligkeit deines Bildschirms. Low Brightness ermöglicht es dir, die Beleuchtung deines Bildschirms unter das systemeigene Minimum zu reduzieren – perfekt für angenehmes Sehen in dunklen Umgebungen.</string>
+    <string name="onboarding_personalization_title">Passe deinen Sehkomfort an</string>
+    <string name="onboarding_personalization_description">Stelle die Intensität des Bildschirmfilters genau nach deinen Wünschen ein. Finde die perfekte Balance zum Lesen, Surfen oder Ansehen von Videos bei schlechten Lichtverhältnissen.</string>
+    <string name="onboarding_feature1_title">Schütze deine Augen</string>
+    <string name="onboarding_feature1_description">Dimme deinen Bildschirm stärker als je zuvor, um die Augenbelastung zu reduzieren, besonders bei nächtlicher Nutzung oder in schwach beleuchteten Räumen. Genieße ein angenehmeres Seherlebnis.</string>
+    <string name="onboarding_accessibility_title">So funktioniert Low Brightness</string>
+    <string name="onboarding_accessibility_intro">Um deinen Bildschirm effektiv über alle Apps hinweg zu dimmen, benötigt Low Brightness deine Erlaubnis, den <b>Bedienungshilfen-Dienst</b> zu verwenden.</string>
+    <string name="onboarding_accessibility_what_it_means">Was das für dich bedeutet:</string>
+    <string name="onboarding_accessibility_benefit_comfort"><b>Erhöhter Komfort:</b> Wir können eine Dimm-Überlagerung über andere Apps legen, um ein gleichmäßiges Erlebnis mit niedriger Helligkeit zu gewährleisten.</string>
+    <string name="onboarding_accessibility_benefit_no_data"><b>Keine Datenerfassung:</b> Dieser Dienst wird <b><u>nur</u></b> zur Steuerung der Bildschirmüberlagerung verwendet. Low Brightness sammelt, speichert oder teilt <b><u>keine</u></b> deiner persönlichen Daten, Eingaben oder Interaktionen mit anderen Apps.</string>
+    <string name="onboarding_accessibility_benefit_control"><b>Du hast die Kontrolle:</b> Du kannst diese Berechtigung jederzeit in den Einstellungen deines Telefons deaktivieren.</string>
+
+    <!-- Brightness screen -->
+    <string name="intensity">Intensität</string>
+    <string name="summary_brightness">Lege fest, wie stark der Überlagerungsfilter sein soll. Höhere Stufen werden für das Lesen bei Nacht empfohlen.</string>
+    <string name="customize_overlay_color">Farbe des Überlagerungsfilters</string>
+    <string name="summary_filter">Wähle die Farbe, die deine Augen am wenigsten ablenkt und genügend Kontrast zu den auf dem Bildschirm sichtbaren Apps aufweist.</string>
+    <string name="color_dialog_title">Farbe</string>
+    <string name="schedule">Zeitplan</string>
+    <string name="summary_scheduler">Plane den Zeitraum, in dem sich der Bildschirm automatisch verdunkeln soll, um die Augen zu schonen und das Lesen in dunklen Umgebungen angenehmer zu machen.</string>
+    <string name="enable_scheduler">Zeitplan aktivieren</string>
+    <string name="disable_scheduler">Zeitplan deaktivieren</string>
+    <string name="enabled_only_during_this_interval">Nur in diesem Zeitraum aktiviert:</string>
+    <string name="time_remaining_to_lighten_label">Ursprüngliche Helligkeit wird wiederhergestellt in</string>
+    <string name="time_remaining_to_darken_label">Bildschirmhelligkeit wird reduziert in</string>
+    <string name="actions">Aktionen</string>
+    <string name="run_night_screen">Starten</string>
+    <string name="request_permissions">Berechtigungen anfordern</string>
+    <string name="accessibility_permission_disclosure_title">Berechtigung für Bedienungshilfen erforderlich</string>
+    <string name="accessibility_permission_disclosure_message">Low Brightness verwendet einen Bedienungshilfen-Dienst, damit die Dimm-Überlagerung über anderen Apps sichtbar bleibt. Dieser Dienst sammelt oder teilt deine Daten nicht. Aktiviere Low Brightness auf dem nächsten Bildschirm in den Einstellungen für Bedienungshilfen.</string>
+    <string name="no_accessibility_permission">Keine Berechtigung für Bedienungshilfen</string>
+    <string name="accessibility_service_description">Verwendet den Bedienungshilfen-Dienst, um die Funktion zur Reduzierung der Bildschirmhelligkeit umzusetzen.</string>
+    <string name="power_off">Aus</string>
+    <string name="settings_screen_choice_a_color">Wähle eine Farbe</string>
+    <string name="settings_screen_screen_color">Bildschirmfarbe</string>
+    <string name="settings_screen_screen_alpha">Deckkraft</string>
+    <string name="settings_screen_choice_a_alpha">Deckkraft der Farbe einstellen</string>
+    <string name="settings_screen_color_settings">Farbe</string>
+    <string name="alpha_dialog_title">Deckkraft</string>
+    <string name="request_permission_failed">Anforderung der Berechtigung „%s“ fehlgeschlagen</string>
+    <string name="request_permissions_success">Berechtigungen erfolgreich angefordert</string>
+    <string name="alert_window_permission">App-Überlagerung</string>
+    <string name="post_notification_permission">Benachrichtigungen senden</string>
+    <string name="night_screen_is_running">Nachtmodus ist aktiviert …</string>
+
+    <!-- Settings screen -->
+    <string name="settings_brightness_title">Helligkeit</string>
+    <string name="settings_brightness_summary">Passe die Bildschirmhelligkeit und zugehörige Funktionen an</string>
+
+    <string name="settings_screen_screen_settings">Bildschirm</string>
+    <string name="settings_screen_keep_screen_on">Bildschirm anlassen</string>
+    <string name="settings_screen_keep_screen_on_description">Bildschirm anlassen, wenn der Nachtmodus aktiv ist</string>
+    <string name="no_permission_can_not_run">Keine Berechtigung zum Einblenden über anderen Apps!</string>
+    <string name="settings_screen_lowest_screen_brightness">Niedrigste Bildschirmhelligkeit</string>
+    <string name="settings_screen_lowest_screen_brightness_description">Bildschirmhelligkeit nach dem Start herunterregeln</string>
+
+    <!-- Permissions -->
+    <string name="receive_boot_completed">Start nach Systemstart [RECEIVE_BOOT_COMPLETED]</string>
+    <string name="summary_preference_permissions_receive_boot_completed">Ermöglicht der App, ihre Dienste nach dem Gerätestart neu zu starten, damit das geplante Dimmen weiterhin funktioniert.</string>
+    <string name="system_alert_window">Über anderen Apps einblenden [SYSTEM_ALERT_WINDOW]</string>
+    <string name="summary_preference_permissions_system_alert_window">Ermöglicht der App, Überlagerungen über andere Apps zu zeichnen, um die Dimm-Ebene zu aktivieren.</string>
+    <string name="write_settings">Systemeinstellungen ändern [WRITE_SETTINGS]</string>
+    <string name="summary_preference_permissions_write_settings">Ermöglicht der App, Systemeinstellungen wie die Bildschirmhelligkeit zu ändern.</string>
+
+    <!-- FAQ -->
+    <string name="question_1" translatable="false">Was ist Low Brightness?</string>
+    <string name="summary_preference_faq_1" translatable="false">Mit Low Brightness kannst du den Bildschirm für eine angenehme Betrachtung in dunklen Umgebungen unter das Systemminimum dimmen.</string>
+    <string name="question_2" translatable="false">Warum benötigt die App die Berechtigung zum Einblenden über anderen Apps?</string>
+    <string name="summary_preference_faq_2" translatable="false">Sie ermöglicht es der App, eine Dimm-Überlagerung über anderen Apps anzuzeigen.</string>
+    <string name="question_3" translatable="false">Warum fordert die App an, Systemeinstellungen zu ändern?</string>
+    <string name="summary_preference_faq_3" translatable="false">Diese Berechtigung ermöglicht es der App, die Helligkeitswerte des Systems anzupassen, damit der Filter korrekt angewendet werden kann.</string>
+    <string name="question_4" translatable="false">Warum ist die Startberechtigung erforderlich?</string>
+    <string name="summary_preference_faq_4" translatable="false">Die App verwendet sie, um Helligkeit und Benachrichtigungen nach einem Neustart des Geräts wiederherzustellen.</string>
+    <string name="question_5" translatable="false">Funktioniert die App ohne Internet?</string>
+    <string name="summary_preference_faq_5" translatable="false">Ja. Das Internet wird nur für die Suche nach Updates und optionale Fehlerberichte verwendet.</string>
+    <string name="question_6" translatable="false">Ist die App kostenlos?</string>
+    <string name="summary_preference_faq_6" translatable="false">Alle Kernfunktionen sind kostenlos und Open Source. Spenden sind optional.</string>
+    <string name="question_7" translatable="false">Kann ich die Farbe der Überlagerung ändern?</string>
+    <string name="summary_preference_faq_7" translatable="false">Ja. Du kannst jede beliebige Farbe im Einstellungsbildschirm auswählen.</string>
+    <string name="question_8" translatable="false">Warum gibt es eine dauerhafte Benachrichtigung?</string>
+    <string name="summary_preference_faq_8" translatable="false">Die Benachrichtigung hält den Dimm-Dienst am Laufen, damit er nicht vom System beendet wird.</string>
+    <string name="question_9" translatable="false">Wie kann ich den Support kontaktieren?</string>
+    <string name="summary_preference_faq_9" translatable="false">Sende Feedback aus der App oder öffne ein Issue auf GitHub.</string>
+</resources>

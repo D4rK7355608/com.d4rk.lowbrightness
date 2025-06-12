@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_description">Csökkentse vagy növelje a képernyő fényerejét az alkalmazásunk segítségével! 🔆</string>
+
+    <string name="change_light">Fényerő</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Üdvözöljük a Low Brightness alkalmazásban</string>
+    <string name="onboarding_welcome_description">Vegye át az irányítást a képernyő fényereje felett. A Low Brightness lehetővé teszi, hogy a képernyő fényerejét a rendszer alapértelmezett minimuma alá csökkentse, ami tökéletes a sötét környezetben való kényelmes nézelődéshez.</string>
+    <string name="onboarding_personalization_title">Személyre szabott megtekintési kényelem</string>
+    <string name="onboarding_personalization_description">Finomhangolja a képernyőszűrő intenzitását pontosan az Ön igényei szerint. Találja meg a tökéletes egyensúlyt olvasáshoz, böngészéshez vagy videónézéshez alacsony fényviszonyok mellett.</string>
+    <string name="onboarding_feature1_title">Védje a szemét</string>
+    <string name="onboarding_feature1_description">Sötétítse el a képernyőt minden eddiginél jobban a szem megerőltetésének csökkentése érdekében, különösen éjszakai használat vagy gyengén megvilágított helyiségekben. Élvezze a kényelmesebb megtekintési élményt.</string>
+    <string name="onboarding_accessibility_title">Hogyan működik a Low Brightness</string>
+    <string name="onboarding_accessibility_intro">Ahhoz, hogy hatékonyan sötétítse el a képernyőt minden alkalmazásban, a Low Brightness-nek engedélyre van szüksége a <b>Kisegítő lehetőségek szolgáltatás</b> használatához.</string>
+    <string name="onboarding_accessibility_what_it_means">Mit jelent ez az Ön számára:</string>
+    <string name="onboarding_accessibility_benefit_comfort"><b>Fokozott kényelem:</b> Egy sötétítő réteget alkalmazhatunk más alkalmazások felett az egyenletes, alacsony fényerősségű élmény érdekében.</string>
+    <string name="onboarding_accessibility_benefit_no_data"><b>Nincs adatgyűjtés:</b> Ezt a szolgáltatást <b><u>kizárólag</u></b> a képernyőfedvény vezérlésére használjuk. A Low Brightness <b><u>nem</u></b> gyűjt, tárol vagy oszt meg semmilyen személyes adatot, gépelést vagy más alkalmazásokkal való interakciót.</string>
+    <string name="onboarding_accessibility_benefit_control"><b>Ön irányít:</b> Ezt az engedélyt bármikor letilthatja a telefon beállításaiban.</string>
+
+    <!-- Brightness screen -->
+    <string name="intensity">Fényerő-optimalizálási szint</string>
+    <string name="summary_brightness">Határozza meg, milyen erős legyen a fedvényszűrő. Éjszakai olvasáshoz magasabb szint ajánlott.</string>
+    <string name="customize_overlay_color">Fedvényszűrő színe</string>
+    <string name="summary_filter">Válassza ki azt a színt, amely a legkevésbé zavarja a szemét, és elegendő kontraszttal rendelkezik a képernyőn látható alkalmazásokkal.</string>
+    <string name="color_dialog_title">Szín</string>
+    <string name="schedule">Időzítés</string>
+    <string name="summary_scheduler">Ütemezze be azt az időszakot, amikor a képernyőnek automatikusan sötétednie kell, hogy csökkentse a szem megerőltetését és kényelmesebbé tegye az olvasást sötét környezetben.</string>
+    <string name="enable_scheduler">Időzítő engedélyezése</string>
+    <string name="disable_scheduler">Időzítő letiltása</string>
+    <string name="enabled_only_during_this_interval">Csak ebben az időintervallumban engedélyezve:</string>
+    <string name="time_remaining_to_lighten_label">Az eredeti fényerő visszaáll ennyi idő múlva:</string>
+    <string name="time_remaining_to_darken_label">A képernyő elsötétül ennyi idő múlva:</string>
+    <string name="actions">Műveletek</string>
+    <string name="run_night_screen">Indítás</string>
+    <string name="request_permissions">Engedélyek kérése</string>
+    <string name="accessibility_permission_disclosure_title">Kisegítő lehetőségek engedélye szükséges</string>
+    <string name="accessibility_permission_disclosure_message">A Low Brightness egy Kisegítő lehetőségek szolgáltatást használ, hogy a sötétítő réteg látható maradjon más alkalmazások felett. Ez a szolgáltatás nem gyűjt és nem oszt meg adatokat. A következő képernyőn engedélyezze a Low Brightness-t a Kisegítő lehetőségek beállításaiban.</string>
+    <string name="no_accessibility_permission">Nincs kisegítő lehetőségek engedély</string>
+    <string name="accessibility_service_description">A kisegítő lehetőségek szolgáltatás használata a képernyő fényerejének csökkentésére.</string>
+    <string name="power_off">Kikapcsolva</string>
+    <string name="settings_screen_choice_a_color">Válasszon színt</string>
+    <string name="settings_screen_screen_color">Képernyő színe</string>
+    <string name="settings_screen_screen_alpha">Átlátszóság</string>
+    <string name="settings_screen_choice_a_alpha">Szín átlátszóságának beállítása</string>
+    <string name="settings_screen_color_settings">Szín</string>
+    <string name="alpha_dialog_title">Átlátszóság</string>
+    <string name="request_permission_failed">A(z) %s engedély kérése sikertelen</string>
+    <string name="request_permissions_success">Engedélyek sikeresen kérve</string>
+    <string name="alert_window_permission">figyelmeztető ablak</string>
+    <string name="post_notification_permission">értesítés küldése</string>
+    <string name="night_screen_is_running">Éjszakai mód aktiválva…</string>
+
+    <!-- Settings screen -->
+    <string name="settings_brightness_title">Fényerő</string>
+    <string name="settings_brightness_summary">A képernyő fényerejének és a kapcsolódó funkcióknak a beállítása</string>
+
+    <string name="settings_screen_screen_settings">Képernyő</string>
+    <string name="settings_screen_keep_screen_on">Képernyő bekapcsolva tartása</string>
+    <string name="settings_screen_keep_screen_on_description">A képernyő bekapcsolva tartása, amíg az éjszakai mód aktív</string>
+    <string name="no_permission_can_not_run">Nincs engedély más alkalmazások feletti megjelenítésre!</string>
+    <string name="settings_screen_lowest_screen_brightness">Legalacsonyabb képernyőfényerő</string>
+    <string name="settings_screen_lowest_screen_brightness_description">A képernyő fényerejének csökkentése indításkor</string>
+
+    <!-- Permissions -->
+    <string name="receive_boot_completed">Indítás a rendszerrel [RECEIVE_BOOT_COMPLETED]</string>
+    <string name="summary_preference_permissions_receive_boot_completed">Lehetővé teszi az alkalmazás számára, hogy a szolgáltatásait újraindítsa az eszköz indítása után, így az időzített sötétítés továbbra is működni fog.</string>
+    <string name="system_alert_window">Megjelenítés más alkalmazások felett [SYSTEM_ALERT_WINDOW]</string>
+    <string name="summary_preference_permissions_system_alert_window">Lehetővé teszi az alkalmazás számára, hogy fedvényeket jelenítsen meg más alkalmazások felett, engedélyezve ezzel a sötétítő réteget.</string>
+    <string name="write_settings">Rendszerbeállítások módosítása [WRITE_SETTINGS]</string>
+    <string name="summary_preference_permissions_write_settings">Lehetővé teszi az alkalmazás számára a rendszerbeállítások, például a képernyő fényerejének módosítását.</string>
+
+    <!-- FAQ -->
+    <string name="question_1" translatable="false">Mi az a Low Brightness?</string>
+    <string name="summary_preference_faq_1" translatable="false">A Low Brightness lehetővé teszi, hogy a képernyőt a rendszer minimuma alá sötétítse a kényelmes nézelődés érdekében sötét környezetben.</string>
+    <string name="question_2" translatable="false">Miért van szüksége az alkalmazásnak a fedvény engedélyre?</string>
+    <string name="summary_preference_faq_2" translatable="false">Ez lehetővé teszi, hogy az alkalmazás egy sötétítő fedvényt jelenítsen meg más alkalmazások felett.</string>
+    <string name="question_3" translatable="false">Miért kér az alkalmazás engedélyt a rendszerbeállítások módosítására?</string>
+    <string name="summary_preference_faq_3" translatable="false">Ez az engedély lehetővé teszi, hogy az alkalmazás módosítsa a rendszer fényerő-értékeit, hogy a szűrő megfelelően működjön.</string>
+    <string name="question_4" translatable="false">Miért szükséges az indítási engedély?</string>
+    <string name="summary_preference_faq_4" translatable="false">Az alkalmazás ezt használja a fényerő és az értesítések visszaállítására az eszköz újraindítása után.</string>
+    <string name="question_5" translatable="false">Működik az alkalmazás internet nélkül?</string>
+    <string name="summary_preference_faq_5" translatable="false">Igen. Az internetet csak frissítések keresésére és opcionális hibajelentésekre használjuk.</string>
+    <string name="question_6" translatable="false">Ingyenes az alkalmazás?</string>
+    <string name="summary_preference_faq_6" translatable="false">Minden alapvető funkció ingyenes és nyílt forráskódú. Az adományok önkéntesek.</string>
+    <string name="question_7" translatable="false">Megváltoztathatom a fedvény színét?</string>
+    <string name="summary_preference_faq_7" translatable="false">Igen. Bármilyen színt választhat a beállítások képernyőn.</string>
+    <string name="question_8" translatable="false">Miért van állandó értesítés?</string>
+    <string name="summary_preference_faq_8" translatable="false">Az értesítés fenntartja a sötétítő szolgáltatás működését, hogy a rendszer ne állítsa le.</string>
+    <string name="question_9" translatable="false">Hogyan léphetek kapcsolatba a támogatással?</string>
+    <string name="summary_preference_faq_9" translatable="false">Küldjön visszajelzést az alkalmazásból, vagy nyisson egy hibajegyet a GitHubon.</string>
+</resources>

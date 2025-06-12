@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_description">¡Disminuye o aumenta el brillo de tu pantalla usando nuestra app! 🔆</string>
+
+    <string name="change_light">Brillo</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Bienvenido a Low Brightness</string>
+    <string name="onboarding_welcome_description">Toma el control del brillo de tu pantalla. Low Brightness te permite reducir la iluminación de tu pantalla más allá del mínimo predeterminado del sistema, perfecto para una visualización cómoda en entornos oscuros.</string>
+    <string name="onboarding_personalization_title">Personaliza tu comodidad visual</string>
+    <string name="onboarding_personalization_description">Ajusta la intensidad del filtro de pantalla a tu preferencia exacta. Encuentra el equilibrio perfecto para leer, navegar o ver videos en condiciones de poca luz.</string>
+    <string name="onboarding_feature1_title">Protege tus ojos</string>
+    <string name="onboarding_feature1_description">Atenúa tu pantalla más que nunca para reducir la fatiga visual, especialmente durante el uso nocturno o en espacios con poca luz. Disfruta de una experiencia de visualización más cómoda.</string>
+    <string name="onboarding_accessibility_title">Cómo funciona Low Brightness</string>
+    <string name="onboarding_accessibility_intro">Para atenuar tu pantalla de forma efectiva en todas las apps, Low Brightness necesita tu permiso para usar el <b>Servicio de Accesibilidad</b>.</string>
+    <string name="onboarding_accessibility_what_it_means">Esto es lo que significa para ti:</string>
+    <string name="onboarding_accessibility_benefit_comfort"><b>Mayor comodidad:</b> Podemos aplicar una capa de atenuación sobre otras apps para una experiencia consistente de bajo brillo.</string>
+    <string name="onboarding_accessibility_benefit_no_data"><b>Sin recolección de datos:</b> Este servicio se utiliza <b><u>únicamente</u></b> para controlar la capa de la pantalla. Low Brightness <b><u>no</u></b> recopila, almacena ni comparte ninguno de tus datos personales, lo que escribes ni tus interacciones con otras apps.</string>
+    <string name="onboarding_accessibility_benefit_control"><b>Tú tienes el control:</b> Puedes desactivar este permiso en cualquier momento a través de la configuración de tu teléfono.</string>
+
+    <!-- Brightness screen -->
+    <string name="intensity">Nivel de optimización de brillo</string>
+    <string name="summary_brightness">Define qué tan fuerte debe ser el filtro de superposición. Se recomiendan niveles más altos para leer de noche.</string>
+    <string name="customize_overlay_color">Color del filtro de superposición</string>
+    <string name="summary_filter">Selecciona el color que creas que distrae menos a tus ojos y que tiene suficiente contraste con las apps que normalmente se ven en la pantalla.</string>
+    <string name="color_dialog_title">Color</string>
+    <string name="schedule">Horario</string>
+    <string name="summary_scheduler">Programa el período en el que la pantalla se oscurecerá automáticamente para reducir la fatiga visual y hacer más cómoda la lectura en entornos oscuros.</string>
+    <string name="enable_scheduler">Activar programador</string>
+    <string name="disable_scheduler">Desactivar programador</string>
+    <string name="enabled_only_during_this_interval">Activado solo durante este intervalo:</string>
+    <string name="time_remaining_to_lighten_label">El brillo original se restaurará en</string>
+    <string name="time_remaining_to_darken_label">El brillo de la pantalla se reducirá en</string>
+    <string name="actions">Acciones</string>
+    <string name="run_night_screen">Ejecutar</string>
+    <string name="request_permissions">Solicitar permisos</string>
+    <string name="accessibility_permission_disclosure_title">Se requiere permiso de accesibilidad</string>
+    <string name="accessibility_permission_disclosure_message">Low Brightness usa un Servicio de Accesibilidad para mantener la capa de atenuación visible sobre otras apps. Este servicio no recopila ni comparte tus datos. En la siguiente pantalla, activa Low Brightness en los ajustes de Accesibilidad.</string>
+    <string name="no_accessibility_permission">Sin permiso de accesibilidad</string>
+    <string name="accessibility_service_description">Usar el servicio de accesibilidad para implementar la función de reducir el brillo de la pantalla</string>
+    <string name="power_off">Apagado</string>
+    <string name="settings_screen_choice_a_color">Selecciona un color</string>
+    <string name="settings_screen_screen_color">Color de pantalla</string>
+    <string name="settings_screen_screen_alpha">Transparencia</string>
+    <string name="settings_screen_choice_a_alpha">Establecer transparencia del color</string>
+    <string name="settings_screen_color_settings">Color</string>
+    <string name="alpha_dialog_title">Transparencia</string>
+    <string name="request_permission_failed">Error al solicitar el permiso %s</string>
+    <string name="request_permissions_success">Permisos solicitados correctamente</string>
+    <string name="alert_window_permission">ventana de alerta</string>
+    <string name="post_notification_permission">enviar notificación</string>
+    <string name="night_screen_is_running">La pantalla nocturna está activada…</string>
+
+    <!-- Settings screen -->
+    <string name="settings_brightness_title">Brillo</string>
+    <string name="settings_brightness_summary">Ajustar los niveles de brillo de la pantalla y funciones relacionadas</string>
+
+    <string name="settings_screen_screen_settings">Pantalla</string>
+    <string name="settings_screen_keep_screen_on">Mantener la pantalla encendida</string>
+    <string name="settings_screen_keep_screen_on_description">Mantener la pantalla encendida cuando la pantalla nocturna esté activada</string>
+    <string name="no_permission_can_not_run">¡Sin permiso para mostrar sobre otras apps!</string>
+    <string name="settings_screen_lowest_screen_brightness">Brillo de pantalla más bajo</string>
+    <string name="settings_screen_lowest_screen_brightness_description">Bajar el brillo de la pantalla después de iniciar</string>
+
+    <!-- Permissions -->
+    <string name="receive_boot_completed">Iniciar al arrancar [RECEIVE_BOOT_COMPLETED]</string>
+    <string name="summary_preference_permissions_receive_boot_completed">Permite que la app reinicie sus servicios después de que el dispositivo arranque para que la atenuación programada siga funcionando.</string>
+    <string name="system_alert_window">Mostrar sobre otras apps [SYSTEM_ALERT_WINDOW]</string>
+    <string name="summary_preference_permissions_system_alert_window">Permite que la app se muestre sobre otras apps, lo que habilita la capa de atenuación.</string>
+    <string name="write_settings">Modificar ajustes del sistema [WRITE_SETTINGS]</string>
+    <string name="summary_preference_permissions_write_settings">Permite que la app modifique los ajustes del sistema, como el brillo de la pantalla.</string>
+
+    <!-- FAQ -->
+    <string name="question_1" translatable="false">What is Low Brightness?</string>
+    <string name="summary_preference_faq_1" translatable="false">Low Brightness lets you dim the screen beyond the system minimum for comfortable viewing in dark environments.</string>
+    <string name="question_2" translatable="false">Why does the app need the overlay permission?</string>
+    <string name="summary_preference_faq_2" translatable="false">It allows the app to display a dimming overlay on top of other apps.</string>
+    <string name="question_3" translatable="false">Why does the app request to modify system settings?</string>
+    <string name="summary_preference_faq_3" translatable="false">This permission lets the app adjust system brightness values so the filter can apply correctly.</string>
+    <string name="question_4" translatable="false">Why is the boot permission required?</string>
+    <string name="summary_preference_faq_4" translatable="false">The app uses it to restore brightness and notifications after you restart the device.</string>
+    <string name="question_5" translatable="false">Does the app work without internet?</string>
+    <string name="summary_preference_faq_5" translatable="false">Yes. Internet is only used for update checks and optional error reports.</string>
+    <string name="question_6" translatable="false">Is the app free?</string>
+    <string name="summary_preference_faq_6" translatable="false">All core features are free and open source. Donations are optional.</string>
+    <string name="question_7" translatable="false">Can I change the overlay color?</string>
+    <string name="summary_preference_faq_7" translatable="false">Yes. You can select any color from the settings screen.</string>
+    <string name="question_8" translatable="false">Why is there a persistent notification?</string>
+    <string name="summary_preference_faq_8" translatable="false">The notification keeps the dimming service running so it is not killed by the system.</string>
+    <string name="question_9" translatable="false">How can I contact support?</string>
+    <string name="summary_preference_faq_9" translatable="false">Send feedback from the app or open an issue on GitHub.</string>
+</resources>

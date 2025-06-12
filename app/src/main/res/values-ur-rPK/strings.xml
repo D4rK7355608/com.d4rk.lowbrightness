@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_description">ہماری ایپ استعمال کرکے اپنی اسکرین کی چمک کم یا زیادہ کریں! 🔆</string>
+
+    <string name="change_light">چمک</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Low Brightness میں خوش آمدید</string>
+    <string name="onboarding_welcome_description">اپنی اسکرین کی چمک کو کنٹرول کریں۔ Low Brightness آپ کو اپنی اسکرین کی روشنی کو سسٹم کے ڈیفالٹ کم سے کم سے بھی کم کرنے کی سہولت دیتا ہے، جو تاریک ماحول میں آرام دہ دیکھنے کے لئے بہترین ہے۔</string>
+    <string name="onboarding_personalization_title">اپنے دیکھنے کے آرام کو اپنی مرضی کے مطابق بنائیں</string>
+    <string name="onboarding_personalization_description">اسکرین فلٹر کی شدت کو اپنی عین ترجیح کے مطابق ٹھیک کریں۔ کم روشنی والے حالات میں پڑھنے، براؤزنگ، یا ویڈیوز دیکھنے کے لئے بہترین توازن تلاش کریں۔</string>
+    <string name="onboarding_feature1_title">اپنی آنکھوں کی حفاظت کریں</string>
+    <string name="onboarding_feature1_description">آنکھوں کے دباؤ کو کم کرنے کے لئے اپنی اسکرین کو پہلے سے کہیں زیادہ مدھم کریں، خاص طور پر رات کے وقت استعمال یا مدھم روشنی والی جگہوں پر۔ مزید آرام دہ دیکھنے کے تجربے سے لطف اٹھائیں۔</string>
+    <string name="onboarding_accessibility_title">Low Brightness کیسے کام کرتا ہے</string>
+    <string name="onboarding_accessibility_intro">تمام ایپس میں اپنی اسکرین کو مؤثر طریقے سے مدھم کرنے کے لئے، Low Brightness کو <b>رسائی سروس</b> استعمال کرنے کے لئے آپ کی اجازت درکار ہے۔</string>
+    <string name="onboarding_accessibility_what_it_means">اس کا آپ کے لئے کیا مطلب ہے:</string>
+    <string name="onboarding_accessibility_benefit_comfort"><b>بہتر آرام:</b> ہم مستقل کم چمک کے تجربے کے لئے دیگر ایپس پر ایک مدھم کرنے والی تہہ لگا سکتے ہیں۔</string>
+    <string name="onboarding_accessibility_benefit_no_data"><b>کوئی ڈیٹا اکٹھا نہیں کیا جاتا:</b> یہ سروس <b><u>صرف</u></b> اسکرین اوورلے کو کنٹرول کرنے کے لئے استعمال ہوتی ہے۔ Low Brightness آپ کا کوئی بھی ذاتی ڈیٹا، ٹائپنگ، یا دیگر ایپس کے ساتھ تعاملات کو <b><u>اکٹھا، ذخیرہ، یا شیئر نہیں کرتا</u></b>۔</string>
+    <string name="onboarding_accessibility_benefit_control"><b>کنٹرول آپ کے ہاتھ میں ہے:</b> آپ کسی بھی وقت اپنے فون کی سیٹنگز کے ذریعے اس اجازت کو غیر فعال کر سکتے ہیں۔</string>
+
+    <!-- Brightness screen -->
+    <string name="intensity">شدت</string>
+    <string name="summary_brightness">بتائیں کہ اوورلے فلٹر کتنا مضبوط ہونا چاہیے۔ رات کے وقت پڑھنے کے لئے اعلی سطحوں کی سفارش کی جاتی ہے۔</string>
+    <string name="customize_overlay_color">فلٹر اوورلے کا رنگ</string>
+    <string name="summary_filter">وہ رنگ منتخب کریں جو آپ کی آنکھوں کے لئے سب سے کم پریشان کن ہو اور اسکرین پر نظر آنے والی ایپس کے ساتھ کافی کنٹراسٹ رکھتا ہو۔</string>
+    <string name="color_dialog_title">رنگ</string>
+    <string name="schedule">شیڈول</string>
+    <string name="summary_scheduler">اس مدت کو شیڈول کریں جب اسکرین خود بخود مدھم ہو جائے، تاکہ آنکھوں کے دباؤ کو کم کیا جا سکے اور تاریک ماحول میں پڑھنے کو مزید آرام دہ بنایا جا سکے۔</string>
+    <string name="enable_scheduler">شیڈولر فعال کریں</string>
+    <string name="disable_scheduler">شیڈولر غیر فعال کریں</string>
+    <string name="enabled_only_during_this_interval">صرف اس وقفے کے دوران فعال ہے:</string>
+    <string name="time_remaining_to_lighten_label">اصل چمک بحال ہو جائے گی</string>
+    <string name="time_remaining_to_darken_label">اسکرین کی چمک کم ہو جائے گی</string>
+    <string name="actions">کاروائیاں</string>
+    <string name="run_night_screen">چلائیں</string>
+    <string name="request_permissions">اجازتیں طلب کریں</string>
+    <string name="accessibility_permission_disclosure_title">رسائی کی اجازت درکار ہے</string>
+    <string name="accessibility_permission_disclosure_message">Low Brightness دیگر ایپس پر مدھم کرنے والی تہہ کو ظاہر رکھنے کے لئے رسائی سروس کا استعمال کرتا ہے۔ یہ سروس آپ کا ڈیٹا اکٹھا یا شیئر نہیں کرتی ہے۔ اگلی اسکرین پر، رسائی سیٹنگز میں Low Brightness کو فعال کریں۔</string>
+    <string name="no_accessibility_permission">رسائی کی اجازت نہیں ہے</string>
+    <string name="accessibility_service_description">اسکرین کی چمک کم کرنے کے فنکشن کو نافذ کرنے کے لئے رسائی سروس کا استعمال کریں</string>
+    <string name="power_off">بند</string>
+    <string name="settings_screen_choice_a_color">ایک رنگ منتخب کریں</string>
+    <string name="settings_screen_screen_color">اسکرین کا رنگ</string>
+    <string name="settings_screen_screen_alpha">شفافیت</string>
+    <string name="settings_screen_choice_a_alpha">رنگ کی شفافیت سیٹ کریں</string>
+    <string name="settings_screen_color_settings">رنگ</string>
+    <string name="alpha_dialog_title">شفافیت</string>
+    <string name="request_permission_failed">%s کی اجازت کی درخواست ناکام ہوگئی</string>
+    <string name="request_permissions_success">اجازتوں کی درخواست کامیابی سے کی گئی</string>
+    <string name="alert_window_permission">الرٹ ونڈو</string>
+    <string name="post_notification_permission">اطلاع بھیجنا</string>
+    <string name="night_screen_is_running">نائٹ اسکرین فعال ہے…</string>
+
+    <!-- Settings screen -->
+    <string name="settings_brightness_title">چمک</string>
+    <string name="settings_brightness_summary">اسکرین کی چمک کی سطحیں اور متعلقہ خصوصیات کو ایڈجسٹ کریں</string>
+
+    <string name="settings_screen_screen_settings">اسکرین</string>
+    <string name="settings_screen_keep_screen_on">اسکرین آن رکھیں</string>
+    <string name="settings_screen_keep_screen_on_description">جب نائٹ اسکرین آن ہو تو اسکرین کو آن رکھیں</string>
+    <string name="no_permission_can_not_run">سسٹم الرٹ ونڈو کی اجازت نہیں ہے!</string>
+    <string name="settings_screen_lowest_screen_brightness">سب سے کم اسکرین چمک</string>
+    <string name="settings_screen_lowest_screen_brightness_description">اسٹارٹ اپ کے بعد اسکرین کی چمک کم کریں</string>
+
+    <!-- Permissions -->
+    <string name="receive_boot_completed">بوٹ مکمل ہونے پر شروع کریں [RECEIVE_BOOT_COMPLETED]</string>
+    <string name="summary_preference_permissions_receive_boot_completed">ایپ کو ڈیوائس بوٹ ہونے کے بعد اپنی سروسز کو دوبارہ شروع کرنے کی اجازت دیتا ہے تاکہ شیڈول مدھم ہونا کام کرتا رہے۔</string>
+    <string name="system_alert_window">دیگر ایپس پر ظاہر ہونا [SYSTEM_ALERT_WINDOW]</string>
+    <string name="summary_preference_permissions_system_alert_window">ایپ کو دیگر ایپس پر اوورلے ویوز ڈرا کرنے کی اجازت دیتا ہے، جس سے مدھم کرنے والی تہہ فعال ہوتی ہے۔</string>
+    <string name="write_settings">سسٹم سیٹنگز میں تبدیلی کریں [WRITE_SETTINGS]</string>
+    <string name="summary_preference_permissions_write_settings">ایپ کو اسکرین کی چمک جیسی سسٹم سیٹنگز میں ترمیم کرنے کی اجازت دیتا ہے۔</string>
+
+    <!-- FAQ -->
+    <string name="question_1" translatable="false">Low Brightness کیا ہے؟</string>
+    <string name="summary_preference_faq_1" translatable="false">Low Brightness آپ کو تاریک ماحول میں آرام دہ دیکھنے کے لئے اسکرین کو سسٹم کے کم سے کم سے بھی زیادہ مدھم کرنے دیتا ہے۔</string>
+    <string name="question_2" translatable="false">ایپ کو اوورلے کی اجازت کیوں درکار ہے؟</string>
+    <string name="summary_preference_faq_2" translatable="false">یہ ایپ کو دیگر ایپس کے اوپر ایک مدھم کرنے والی تہہ دکھانے کی اجازت دیتا ہے۔</string>
+    <string name="question_3" translatable="false">ایپ سسٹم سیٹنگز میں ترمیم کی درخواست کیوں کرتی ہے؟</string>
+    <string name="summary_preference_faq_3" translatable="false">یہ اجازت ایپ کو سسٹم کی چمک کی قدروں کو ایڈجسٹ کرنے دیتی ہے تاکہ فلٹر صحیح طریقے سے لاگو ہو سکے۔</string>
+    <string name="question_4" translatable="false">بوٹ کی اجازت کیوں ضروری ہے؟</string>
+    <string name="summary_preference_faq_4" translatable="false">ایپ اسے ڈیوائس کو دوبارہ شروع کرنے کے بعد چمک اور اطلاعات کو بحال کرنے کے لئے استعمال کرتی ہے۔</string>
+    <string name="question_5" translatable="false">کیا ایپ انٹرنیٹ کے بغیر کام کرتی ہے؟</string>
+    <string name="summary_preference_faq_5" translatable="false">جی ہاں۔ انٹرنیٹ صرف اپ ڈیٹ چیکس اور اختیاری خرابی کی رپورٹس کے لئے استعمال ہوتا ہے۔</string>
+    <string name="question_6" translatable="false">کیا ایپ مفت ہے؟</string>
+    <string name="summary_preference_faq_6" translatable="false">تمام بنیادی خصوصیات مفت اور اوپن سورس ہیں۔ عطیات اختیاری ہیں۔</string>
+    <string name="question_7" translatable="false">کیا میں اوورلے کا رنگ تبدیل کر سکتا ہوں؟</string>
+    <string name="summary_preference_faq_7" translatable="false">جی ہاں۔ آپ سیٹنگز اسکرین سے کوئی بھی رنگ منتخب کر سکتے ہیں۔</string>
+    <string name="question_8" translatable="false">مستقل اطلاع کیوں ہے؟</string>
+    <string name="summary_preference_faq_8" translatable="false">اطلاع مدھم کرنے والی سروس کو چلتا رکھتی ہے تاکہ اسے سسٹم کے ذریعے بند نہ کیا جائے۔</string>
+    <string name="question_9" translatable="false">میں سپورٹ سے کیسے رابطہ کر سکتا ہوں؟</string>
+    <string name="summary_preference_faq_9" translatable="false">ایپ سے فیڈ بیک بھیجیں یا GitHub پر ایک مسئلہ (issue) کھولیں۔</string>
+</resources>

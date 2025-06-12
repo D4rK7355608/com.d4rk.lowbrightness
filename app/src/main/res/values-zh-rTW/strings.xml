@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_description">使用我們的應用程式來降低或提高螢幕亮度！ 🔆</string>
+
+    <string name="change_light">亮度</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">歡迎使用 Low Brightness</string>
+    <string name="onboarding_welcome_description">掌控您的螢幕亮度。Low Brightness 讓您能將螢幕亮度降低到系統預設的最低值以下，非常適合在黑暗環境中舒適地觀看。</string>
+    <string name="onboarding_personalization_title">自訂您的觀看舒適度</string>
+    <string name="onboarding_personalization_description">微調螢幕濾鏡的強度以符合您的確切偏好。在低光環境下閱讀、瀏覽或觀看影片時，找到最完美的平衡點。</string>
+    <string name="onboarding_feature1_title">保護您的眼睛</string>
+    <string name="onboarding_feature1_description">將螢幕調得比以往更暗，以減少眼睛疲勞，特別是在夜間使用或光線昏暗的空間中。享受更舒適的觀看體驗。</string>
+    <string name="onboarding_accessibility_title">Low Brightness 的運作方式</string>
+    <string name="onboarding_accessibility_intro">為了能有效地在所有應用程式上調暗螢幕，Low Brightness 需要您授予使用<b>無障礙服務</b>的權限。</string>
+    <string name="onboarding_accessibility_what_it_means">這對您來說意味著什麼：</string>
+    <string name="onboarding_accessibility_benefit_comfort"><b>增強舒適度：</b>我們可以在其他應用程式上套用一個調光覆蓋層，以提供一致的低亮度體驗。</string>
+    <string name="onboarding_accessibility_benefit_no_data"><b>不收集資料：</b>此服務<b><u>僅</u></b>用於控制螢幕覆蓋層。Low Brightness <b><u>絕不</u></b>會收集、儲存或分享您的任何個人資料、輸入內容或與其他應用程式的互動。</string>
+    <string name="onboarding_accessibility_benefit_control"><b>您擁有控制權：</b>您可以隨時透過手機設定停用此權限。</string>
+
+    <!-- Brightness screen -->
+    <string name="intensity">濾鏡強度</string>
+    <string name="summary_brightness">定義覆蓋濾鏡的強度。建議在夜間閱讀時使用較高的等級。</string>
+    <string name="customize_overlay_color">濾鏡顏色</string>
+    <string name="summary_filter">選擇您認為對眼睛最不干擾，並與螢幕上顯示的應用程式有足夠對比度的顏色。</string>
+    <string name="color_dialog_title">顏色</string>
+    <string name="schedule">排程</string>
+    <string name="summary_scheduler">設定螢幕自動變暗的時間，以減少眼睛疲勞，並在黑暗環境中更舒適地閱讀。</string>
+    <string name="enable_scheduler">啟用排程</string>
+    <string name="disable_scheduler">停用排程</string>
+    <string name="enabled_only_during_this_interval">僅在此時間間隔內啟用：</string>
+    <string name="time_remaining_to_lighten_label">將在...後恢復原始亮度</string>
+    <string name="time_remaining_to_darken_label">將在...後降低螢幕亮度</string>
+    <string name="actions">操作</string>
+    <string name="run_night_screen">啟動</string>
+    <string name="request_permissions">請求權限</string>
+    <string name="accessibility_permission_disclosure_title">需要無障礙權限</string>
+    <string name="accessibility_permission_disclosure_message">Low Brightness 使用無障礙服務，以保持調光覆蓋層在其他應用程式上可見。此服務不會收集或分享您的資料。在下一個畫面中，請在無障礙設定中啟用 Low Brightness。</string>
+    <string name="no_accessibility_permission">沒有無障礙權限</string>
+    <string name="accessibility_service_description">使用無障礙服務以實現降低螢幕亮度的功能</string>
+    <string name="power_off">關閉</string>
+    <string name="settings_screen_choice_a_color">選擇顏色</string>
+    <string name="settings_screen_screen_color">螢幕顏色</string>
+    <string name="settings_screen_screen_alpha">透明度</string>
+    <string name="settings_screen_choice_a_alpha">設定顏色透明度</string>
+    <string name="settings_screen_color_settings">顏色</string>
+    <string name="alpha_dialog_title">透明度</string>
+    <string name="request_permission_failed">請求 %s 權限失敗</string>
+    <string name="request_permissions_success">成功請求權限</string>
+    <string name="alert_window_permission">在其他應用程式上層顯示</string>
+    <string name="post_notification_permission">通知</string>
+    <string name="night_screen_is_running">夜間模式已啟動…</string>
+
+    <!-- Settings screen -->
+    <string name="settings_brightness_title">亮度</string>
+    <string name="settings_brightness_summary">調整螢幕亮度等級及相關功能</string>
+
+    <string name="settings_screen_screen_settings">螢幕</string>
+    <string name="settings_screen_keep_screen_on">保持螢幕開啟</string>
+    <string name="settings_screen_keep_screen_on_description">夜間模式開啟時保持螢幕恆亮</string>
+    <string name="no_permission_can_not_run">沒有「在其他應用程式上層顯示」的權限！</string>
+    <string name="settings_screen_lowest_screen_brightness">最低螢幕亮度</string>
+    <string name="settings_screen_lowest_screen_brightness_description">啟動後降低螢幕亮度</string>
+
+    <!-- Permissions -->
+    <string name="receive_boot_completed">開機時自動啟動 [RECEIVE_BOOT_COMPLETED]</string>
+    <string name="summary_preference_permissions_receive_boot_completed">允許應用程式在裝置開機後重新啟動其服務，以便排程調光功能可以繼續運作。</string>
+    <string name="system_alert_window">在其他應用程式上層顯示 [SYSTEM_ALERT_WINDOW]</string>
+    <string name="summary_preference_permissions_system_alert_window">允許應用程式在其他應用程式上繪製覆蓋視圖，以啟用調光層。</string>
+    <string name="write_settings">修改系統設定 [WRITE_SETTINGS]</string>
+    <string name="summary_preference_permissions_write_settings">允許應用程式修改系統設定，例如螢幕亮度。</string>
+
+    <!-- FAQ -->
+    <string name="question_1" translatable="false">Low Brightness 是什麼？</string>
+    <string name="summary_preference_faq_1" translatable="false">Low Brightness 讓您可以在黑暗環境中將螢幕調暗至系統最低亮度以下，以獲得舒適的觀看體驗。</string>
+    <string name="question_2" translatable="false">為什麼應用程式需要「在其他應用程式上層顯示」的權限？</string>
+    <string name="summary_preference_faq_2" translatable="false">它允許應用程式在其他應用程式的頂部顯示一個調光覆蓋層。</string>
+    <string name="question_3" translatable="false">為什麼應用程式要求修改系統設定？</string>
+    <string name="summary_preference_faq_3" translatable="false">此權限讓應用程式可以調整系統亮度值，以便濾鏡能正確套用。</string>
+    <string name="question_4" translatable="false">為什麼需要開機啟動權限？</string>
+    <string name="summary_preference_faq_4" translatable="false">應用程式在您重新啟動裝置後，使用它來還原亮度和通知。</string>
+    <string name="question_5" translatable="false">應用程式可以在沒有網路的情況下運作嗎？</string>
+    <string name="summary_preference_faq_5" translatable="false">可以。網路僅用於檢查更新和選擇性的錯誤回報。</string>
+    <string name="question_6" translatable="false">這個應用程式是免費的嗎？</string>
+    <string name="summary_preference_faq_6" translatable="false">所有核心功能都是免費且開源的。捐款是選擇性的。</string>
+    <string name="question_7" translatable="false">我可以更改覆蓋層的顏色嗎？</string>
+    <string name="summary_preference_faq_7" translatable="false">可以。您可以從設定畫面中選擇任何顏色。</string>
+    <string name="question_8" translatable="false">為什麼會有一個持續的通知？</string>
+    <string name="summary_preference_faq_8" translatable="false">該通知能讓調光服務持續運作，以免被系統終止。</string>
+    <string name="question_9" translatable="false">我該如何聯繫支援？</string>
+    <string name="summary_preference_faq_9" translatable="false">從應用程式內傳送回饋，或在 GitHub 上開啟一個 issue。</string>
+</resources>

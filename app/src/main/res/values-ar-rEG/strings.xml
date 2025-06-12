@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_description">قلل أو زود إضاءة شاشتك باستخدام تطبيقنا! 🔆</string>
+
+    <string name="change_light">السطوع</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">أهلاً بك في Low Brightness</string>
+    <string name="onboarding_welcome_description">تحكم في سطوع شاشتك. تطبيق Low Brightness يسمح لك بتقليل إضاءة الشاشة لأقل من الحد الأدنى الافتراضي للنظام، وهو مثالي لمشاهدة مريحة في الأماكن المظلمة.</string>
+    <string name="onboarding_personalization_title">خصص راحتك في المشاهدة</string>
+    <string name="onboarding_personalization_description">اضبط شدة فلتر الشاشة حسب تفضيلك بالضبط. ابحث عن التوازن المثالي للقراءة أو التصفح أو مشاهدة الفيديوهات في ظروف الإضاءة المنخفضة.</string>
+    <string name="onboarding_feature1_title">احمِ عينيك</string>
+    <string name="onboarding_feature1_description">خفّت إضاءة شاشتك أكثر من أي وقت مضى لتقليل إجهاد العين، خاصة أثناء الاستخدام الليلي أو في الأماكن ذات الإضاءة الخافتة. استمتع بتجربة مشاهدة أكثر راحة.</string>
+    <string name="onboarding_accessibility_title">كيف يعمل تطبيق Low Brightness</string>
+    <string name="onboarding_accessibility_intro">لتعتيم شاشتك بفعالية عبر جميع التطبيقات، يحتاج Low Brightness إلى إذنك لاستخدام <b>خدمة إمكانية الوصول</b>.</string>
+    <string name="onboarding_accessibility_what_it_means">ماذا يعني هذا بالنسبة لك:</string>
+    <string name="onboarding_accessibility_benefit_comfort"><b>راحة معززة:</b> يمكننا تطبيق طبقة تعتيم فوق التطبيقات الأخرى لتجربة إضاءة منخفضة ثابتة.</string>
+    <string name="onboarding_accessibility_benefit_no_data"><b>لا نجمع بيانات:</b> تُستخدم هذه الخدمة <b><u>فقط</u></b> للتحكم في طبقة التعتيم على الشاشة. تطبيق Low Brightness <b><u>لا يقوم</u></b> بجمع أو تخزين أو مشاركة أي من بياناتك الشخصية أو ما تكتبه أو تفاعلاتك مع التطبيقات الأخرى.</string>
+    <string name="onboarding_accessibility_benefit_control"><b>أنت المتحكم:</b> يمكنك تعطيل هذا الإذن في أي وقت من خلال إعدادات هاتفك.</string>
+
+    <!-- Brightness screen -->
+    <string name="intensity">مستوى تحسين السطوع</string>
+    <string name="summary_brightness">حدد مدى قوة فلتر التعتيم. يُنصح بالمستويات الأعلى للقراءة ليلاً.</string>
+    <string name="customize_overlay_color">لون فلتر التعتيم</string>
+    <string name="summary_filter">اختر اللون الذي تعتقد أنه الأقل تشتيتاً لعينيك وله تباين كافٍ مع التطبيقات التي تظهر عادةً على الشاشة.</string>
+    <string name="color_dialog_title">اللون</string>
+    <string name="schedule">الجدولة</string>
+    <string name="summary_scheduler">حدد الفترة التي يجب أن تخفت فيها الشاشة تلقائيًا، لتقليل إجهاد العين وجعل القراءة أكثر راحة في البيئات المظلمة.</string>
+    <string name="enable_scheduler">تفعيل الجدولة</string>
+    <string name="disable_scheduler">إيقاف الجدولة</string>
+    <string name="enabled_only_during_this_interval">مُفعّل فقط خلال هذه الفترة:</string>
+    <string name="time_remaining_to_lighten_label">سيتم استعادة السطوع الأصلي خلال</string>
+    <string name="time_remaining_to_darken_label">سيتم تقليل سطوع الشاشة خلال</string>
+    <string name="actions">الإجراءات</string>
+    <string name="run_night_screen">تشغيل</string>
+    <string name="request_permissions">طلب الأذونات</string>
+    <string name="accessibility_permission_disclosure_title">مطلوب إذن إمكانية الوصول</string>
+    <string name="accessibility_permission_disclosure_message">يستخدم Low Brightness خدمة إمكانية الوصول للحفاظ على طبقة التعتيم ظاهرة فوق التطبيقات الأخرى. هذه الخدمة لا تجمع أو تشارك بياناتك. في الشاشة التالية، قم بتمكين Low Brightness في إعدادات إمكانية الوصول.</string>
+    <string name="no_accessibility_permission">لا يوجد إذن إمكانية الوصول</string>
+    <string name="accessibility_service_description">استخدام خدمة إمكانية الوصول لتنفيذ وظيفة تقليل سطوع الشاشة</string>
+    <string name="power_off">إيقاف</string>
+    <string name="settings_screen_choice_a_color">اختر لونًا</string>
+    <string name="settings_screen_screen_color">لون الشاشة</string>
+    <string name="settings_screen_screen_alpha">الشفافية</string>
+    <string name="settings_screen_choice_a_alpha">ضبط شفافية اللون</string>
+    <string name="settings_screen_color_settings">اللون</string>
+    <string name="alpha_dialog_title">الشفافية</string>
+    <string name="request_permission_failed">فشل طلب إذن %s</string>
+    <string name="request_permissions_success">تم طلب الأذونات بنجاح</string>
+    <string name="alert_window_permission">نافذة التنبيه</string>
+    <string name="post_notification_permission">إرسال الإشعارات</string>
+    <string name="night_screen_is_running">الشاشة الليلية مُفعّلة…</string>
+
+    <!-- Settings screen -->
+    <string name="settings_brightness_title">السطوع</string>
+    <string name="settings_brightness_summary">ضبط مستويات سطوع الشاشة والميزات المتعلقة بها</string>
+
+    <string name="settings_screen_screen_settings">الشاشة</string>
+    <string name="settings_screen_keep_screen_on">إبقاء الشاشة قيد التشغيل</string>
+    <string name="settings_screen_keep_screen_on_description">إبقاء الشاشة قيد التشغيل عند تفعيل الشاشة الليلية</string>
+    <string name="no_permission_can_not_run">لا يوجد إذن نافذة تنبيه النظام!</string>
+    <string name="settings_screen_lowest_screen_brightness">أقل سطوع للشاشة</string>
+    <string name="settings_screen_lowest_screen_brightness_description">خفض سطوع الشاشة بعد بدء التشغيل</string>
+
+    <!-- Permissions -->
+    <string name="receive_boot_completed">استقبال اكتمال تشغيل الجهاز [RECEIVE_BOOT_COMPLETED]</string>
+    <string name="summary_preference_permissions_receive_boot_completed">يسمح للتطبيق بإعادة تشغيل خدماته بعد إقلاع الجهاز لضمان استمرار عمل التعتيم المجدول.</string>
+    <string name="system_alert_window">نافذة تنبيه النظام [SYSTEM_ALERT_WINDOW]</string>
+    <string name="summary_preference_permissions_system_alert_window">يسمح للتطبيق برسم طبقة تعتيم فوق التطبيقات الأخرى، مما يتيح تفعيل التعتيم.</string>
+    <string name="write_settings">تعديل الإعدادات [WRITE_SETTINGS]</string>
+    <string name="summary_preference_permissions_write_settings">يسمح للتطبيق بتعديل إعدادات النظام مثل سطوع الشاشة.</string>
+
+    <!-- FAQ -->
+    <string name="question_1" translatable="false">ما هو تطبيق Low Brightness؟</string>
+    <string name="summary_preference_faq_1" translatable="false">يتيح لك Low Brightness تعتيم الشاشة لأبعد من الحد الأدنى للنظام لمشاهدة مريحة في البيئات المظلمة.</string>
+    <string name="question_2" translatable="false">لماذا يحتاج التطبيق إلى إذن الظهور فوق التطبيقات الأخرى؟</string>
+    <string name="summary_preference_faq_2" translatable="false">يسمح للتطبيق بعرض طبقة تعتيم فوق التطبيقات الأخرى.</string>
+    <string name="question_3" translatable="false">لماذا يطلب التطبيق تعديل إعدادات النظام؟</string>
+    <string name="summary_preference_faq_3" translatable="false">هذا الإذن يتيح للتطبيق ضبط قيم سطوع النظام حتى يتمكن الفلتر من العمل بشكل صحيح.</string>
+    <string name="question_4" translatable="false">لماذا إذن التشغيل عند الإقلاع مطلوب؟</string>
+    <string name="summary_preference_faq_4" translatable="false">يستخدمه التطبيق لاستعادة السطوع والإشعارات بعد إعادة تشغيل الجهاز.</string>
+    <string name="question_5" translatable="false">هل يعمل التطبيق بدون إنترنت؟</string>
+    <string name="summary_preference_faq_5" translatable="false">نعم. يتم استخدام الإنترنت فقط للتحقق من التحديثات وتقارير الأخطاء الاختيارية.</string>
+    <string name="question_6" translatable="false">هل التطبيق مجاني؟</string>
+    <string name="summary_preference_faq_6" translatable="false">جميع الميزات الأساسية مجانية ومفتوحة المصدر. التبرعات اختيارية.</string>
+    <string name="question_7" translatable="false">هل يمكنني تغيير لون طبقة التعتيم؟</string>
+    <string name="summary_preference_faq_7" translatable="false">نعم. يمكنك اختيار أي لون من شاشة الإعدادات.</string>
+    <string name="question_8" translatable="false">لماذا يوجد إشعار دائم؟</string>
+    <string name="summary_preference_faq_8" translatable="false">الإشعار يحافظ على تشغيل خدمة التعتيم حتى لا يوقفها النظام.</string>
+    <string name="question_9" translatable="false">كيف يمكنني التواصل مع الدعم الفني؟</string>
+    <string name="summary_preference_faq_9" translatable="false">أرسل ملاحظاتك من داخل التطبيق أو افتح مشكلة (issue) على GitHub.</string>
+</resources>

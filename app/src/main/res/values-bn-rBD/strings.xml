@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_description">আমাদের অ্যাপ ব্যবহার করে আপনার স্ক্রিনের উজ্জ্বলতা কমান বা বাড়ান! 🔆</string>
+
+    <string name="change_light">উজ্জ্বলতা</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Low Brightness-এ স্বাগতম</string>
+    <string name="onboarding_welcome_description">আপনার স্ক্রিনের উজ্জ্বলতা নিয়ন্ত্রণ করুন। Low Brightness আপনাকে সিস্টেমের ডিফল্ট সর্বনিম্ন সীমার চেয়েও স্ক্রিনের আলো কমাতে সাহায্য করে, যা অন্ধকার পরিবেশে আরামে দেখার জন্য উপযুক্ত।</string>
+    <string name="onboarding_personalization_title">আপনার দেখার আরামকে কাস্টমাইজ করুন</string>
+    <string name="onboarding_personalization_description">আপনার পছন্দ অনুযায়ী স্ক্রিন ফিল্টারের তীব্রতা সূক্ষ্মভাবে تنظیم করুন। কম আলোতে পড়া, ব্রাউজ করা বা ভিডিও দেখার জন্য সঠিক ভারসাম্য খুঁজুন।</string>
+    <string name="onboarding_feature1_title">আপনার চোখ রক্ষা করুন</string>
+    <string name="onboarding_feature1_description">চোখের চাপ কমাতে আপনার স্ক্রিনকে আগের চেয়ে আরও বেশি ম্লান করুন, বিশেষ করে রাতে ব্যবহার করার সময় বা কম আলোকিত স্থানে। আরও আরামদায়ক দেখার অভিজ্ঞতা উপভোগ করুন।</string>
+    <string name="onboarding_accessibility_title">Low Brightness কিভাবে কাজ করে</string>
+    <string name="onboarding_accessibility_intro">সব অ্যাপ জুড়ে আপনার স্ক্রিন কার্যকরভাবে ম্লান করতে, Low Brightness-এর <b>অ্যাক্সেসিবিলিটি সার্ভিস</b> ব্যবহার করার জন্য আপনার অনুমতি প্রয়োজন।</string>
+    <string name="onboarding_accessibility_what_it_means">এর মানে আপনার জন্য:</string>
+    <string name="onboarding_accessibility_benefit_comfort"><b>বাড়তি আরাম:</b> আমরা অন্যান্য অ্যাপের উপর একটি ডিমিং ওভারলে প্রয়োগ করে একটি ধারাবাহিক কম-উজ্জ্বলতার অভিজ্ঞতা দিতে পারি।</string>
+    <string name="onboarding_accessibility_benefit_no_data"><b>কোনো ডেটা সংগ্রহ নয়:</b> এই সার্ভিসটি <b><u>শুধুমাত্র</u></b> স্ক্রিন ওভারলে নিয়ন্ত্রণ করতে ব্যবহৃত হয়। Low Brightness আপনার কোনো ব্যক্তিগত ডেটা, টাইপিং, বা অন্যান্য অ্যাপের সাথে মিথস্ক্রিয়া সংগ্রহ, সংরক্ষণ বা শেয়ার <b><u>করে না</u></b>।</string>
+    <string name="onboarding_accessibility_benefit_control"><b>নিয়ন্ত্রণ আপনার হাতে:</b> আপনি আপনার ফোনের সেটিংস থেকে যেকোনো সময় এই অনুমতিটি নিষ্ক্রিয় করতে পারেন।</string>
+
+    <!-- Brightness screen -->
+    <string name="intensity">উজ্জ্বলতা অপ্টিমাইজেশন লেভেল</string>
+    <string name="summary_brightness">ওভারলে ফিল্টারটি কতটা শক্তিশালী হবে তা নির্ধারণ করুন। রাতে পড়ার জন্য উচ্চ স্তর সুপারিশ করা হয়।</string>
+    <string name="customize_overlay_color">ফিল্টার ওভারলে-র রঙ</string>
+    <string name="summary_filter">এমন একটি রঙ নির্বাচন করুন যা আপনার চোখে সবচেয়ে কম বিভ্রান্তিকর মনে হয় এবং স্ক্রিনে দৃশ্যমান অ্যাপগুলির সাথে পর্যাপ্ত কনট্রাস্ট রাখে।</string>
+    <string name="color_dialog_title">রঙ</string>
+    <string name="schedule">শিডিউল</string>
+    <string name="summary_scheduler">স্ক্রিন কখন স্বয়ংক্রিয়ভাবে অন্ধকার হবে তার সময়সূচী নির্ধারণ করুন, যাতে চোখের চাপ কমে এবং অন্ধকার পরিবেশে পড়া আরও আরামদায়ক হয়।</string>
+    <string name="enable_scheduler">শিডিউলার চালু করুন</string>
+    <string name="disable_scheduler">শিডিউলার বন্ধ করুন</string>
+    <string name="enabled_only_during_this_interval">শুধুমাত্র এই সময়ের জন্য সক্রিয়:</string>
+    <string name="time_remaining_to_lighten_label">আসল উজ্জ্বলতা পুনরুদ্ধার করা হবে</string>
+    <string name="time_remaining_to_darken_label">স্ক্রিনের উজ্জ্বলতা কমানো হবে</string>
+    <string name="actions">অ্যাকশন</string>
+    <string name="run_night_screen">চালান</string>
+    <string name="request_permissions">অনুমতির অনুরোধ করুন</string>
+    <string name="accessibility_permission_disclosure_title">অ্যাক্সেসিবিলিটি অনুমতি প্রয়োজন</string>
+    <string name="accessibility_permission_disclosure_message">Low Brightness অন্যান্য অ্যাপের উপর ডিমিং ওভারলে দৃশ্যমান রাখতে একটি অ্যাক্সেসিবিলিটি সার্ভিস ব্যবহার করে। এই সার্ভিসটি আপনার ডেটা সংগ্রহ বা শেয়ার করে না। পরবর্তী স্ক্রিনে, অ্যাক্সেসিবিলিটি সেটিংসে Low Brightness চালু করুন।</string>
+    <string name="no_accessibility_permission">কোনো অ্যাক্সেসিবিলিটি অনুমতি নেই</string>
+    <string name="accessibility_service_description">স্ক্রিনের উজ্জ্বলতা কমানোর ফাংশনটি বাস্তবায়ন করতে অ্যাক্সেসিবিলিটি সার্ভিস ব্যবহার করুন</string>
+    <string name="power_off">বন্ধ</string>
+    <string name="settings_screen_choice_a_color">একটি রঙ নির্বাচন করুন</string>
+    <string name="settings_screen_screen_color">স্ক্রিনের রঙ</string>
+    <string name="settings_screen_screen_alpha">আলফা</string>
+    <string name="settings_screen_choice_a_alpha">রঙের আলফা সেট করুন</string>
+    <string name="settings_screen_color_settings">রঙ</string>
+    <string name="alpha_dialog_title">আলফা</string>
+    <string name="request_permission_failed">%s অনুমতি অনুরোধ করতে ব্যর্থ</string>
+    <string name="request_permissions_success">সফলভাবে অনুমতির অনুরোধ করা হয়েছে</string>
+    <string name="alert_window_permission">সতর্কীকরণ উইন্ডো</string>
+    <string name="post_notification_permission">নোটিফিকেশন পাঠানো</string>
+    <string name="night_screen_is_running">নাইট স্ক্রিন সক্রিয় করা হয়েছে…</string>
+
+    <!-- Settings screen -->
+    <string name="settings_brightness_title">উজ্জ্বলতা</string>
+    <string name="settings_brightness_summary">স্ক্রিনের উজ্জ্বলতার মাত্রা এবং সম্পর্কিত বৈশিষ্ট্যগুলি সামঞ্জস্য করুন</string>
+
+    <string name="settings_screen_screen_settings">স্ক্রিন</string>
+    <string name="settings_screen_keep_screen_on">স্ক্রিন চালু রাখুন</string>
+    <string name="settings_screen_keep_screen_on_description">নাইট স্ক্রিন চালু থাকলে স্ক্রিন চালু রাখুন</string>
+    <string name="no_permission_can_not_run">সিস্টেম সতর্কীকরণ উইন্ডোর অনুমতি নেই!</string>
+    <string name="settings_screen_lowest_screen_brightness">সর্বনিম্ন স্ক্রিন উজ্জ্বলতা</string>
+    <string name="settings_screen_lowest_screen_brightness_description">স্টার্টআপের পরে স্ক্রিনের উজ্জ্বলতা কমিয়ে দিন</string>
+
+    <!-- Permissions -->
+    <string name="receive_boot_completed">ডিভাইস চালু হলে গ্রহণ করুন [RECEIVE_BOOT_COMPLETED]</string>
+    <string name="summary_preference_permissions_receive_boot_completed">ডিভাইস বুট হওয়ার পরে অ্যাপটিকে তার পরিষেবাগুলি পুনরায় চালু করার অনুমতি দেয় যাতে নির্ধারিত ডিমিং কাজ চালিয়ে যেতে পারে।</string>
+    <string name="system_alert_window">অন্যান্য অ্যাপের উপর প্রদর্শন [SYSTEM_ALERT_WINDOW]</string>
+    <string name="summary_preference_permissions_system_alert_window">অ্যাপটিকে অন্যান্য অ্যাপের উপর ওভারলে ভিউ আঁকার অনুমতি দেয়, যা ডিমিং স্তরকে সক্ষম করে।</string>
+    <string name="write_settings">সেটিংস পরিবর্তন করুন [WRITE_SETTINGS]</string>
+    <string name="summary_preference_permissions_write_settings">অ্যাপটিকে সিস্টেম সেটিংস যেমন স্ক্রিনের উজ্জ্বলতা পরিবর্তন করার অনুমতি দেয়।</string>
+
+    <!-- FAQ -->
+    <string name="question_1" translatable="false">What is Low Brightness?</string>
+    <string name="summary_preference_faq_1" translatable="false">Low Brightness lets you dim the screen beyond the system minimum for comfortable viewing in dark environments.</string>
+    <string name="question_2" translatable="false">Why does the app need the overlay permission?</string>
+    <string name="summary_preference_faq_2" translatable="false">It allows the app to display a dimming overlay on top of other apps.</string>
+    <string name="question_3" translatable="false">Why does the app request to modify system settings?</string>
+    <string name="summary_preference_faq_3" translatable="false">This permission lets the app adjust system brightness values so the filter can apply correctly.</string>
+    <string name="question_4" translatable="false">Why is the boot permission required?</string>
+    <string name="summary_preference_faq_4" translatable="false">The app uses it to restore brightness and notifications after you restart the device.</string>
+    <string name="question_5" translatable="false">Does the app work without internet?</string>
+    <string name="summary_preference_faq_5" translatable="false">Yes. Internet is only used for update checks and optional error reports.</string>
+    <string name="question_6" translatable="false">Is the app free?</string>
+    <string name="summary_preference_faq_6" translatable="false">All core features are free and open source. Donations are optional.</string>
+    <string name="question_7" translatable="false">Can I change the overlay color?</string>
+    <string name="summary_preference_faq_7" translatable="false">Yes. You can select any color from the settings screen.</string>
+    <string name="question_8" translatable="false">Why is there a persistent notification?</string>
+    <string name="summary_preference_faq_8" translatable="false">The notification keeps the dimming service running so it is not killed by the system.</string>
+    <string name="question_9" translatable="false">How can I contact support?</string>
+    <string name="summary_preference_faq_9" translatable="false">Send feedback from the app or open an issue on GitHub.</string>
+</resources>

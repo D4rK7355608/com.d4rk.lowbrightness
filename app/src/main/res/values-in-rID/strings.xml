@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_description">Kurangi atau tambah kecerahan layar Anda menggunakan aplikasi kami! 🔆</string>
+
+    <string name="change_light">Kecerahan</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Selamat Datang di Low Brightness</string>
+    <string name="onboarding_welcome_description">Kendalikan kecerahan layar Anda. Low Brightness memungkinkan Anda mengurangi pencahayaan layar di bawah minimum bawaan sistem, sempurna untuk tampilan yang nyaman di lingkungan gelap.</string>
+    <string name="onboarding_personalization_title">Sesuaikan Kenyamanan Menonton Anda</string>
+    <string name="onboarding_personalization_description">Sesuaikan intensitas filter layar dengan preferensi Anda. Temukan keseimbangan sempurna untuk membaca, menjelajah, atau menonton video dalam kondisi cahaya redup.</string>
+    <string name="onboarding_feature1_title">Lindungi Mata Anda</string>
+    <string name="onboarding_feature1_description">Redupkan layar Anda lebih jauh dari sebelumnya untuk mengurangi ketegangan mata, terutama saat penggunaan malam hari atau di ruang yang remang-remang. Nikmati pengalaman menonton yang lebih nyaman.</string>
+    <string name="onboarding_accessibility_title">Cara Kerja Low Brightness</string>
+    <string name="onboarding_accessibility_intro">Untuk meredupkan layar Anda secara efektif di semua aplikasi, Low Brightness memerlukan izin Anda untuk menggunakan <b>Layanan Aksesibilitas</b>.</string>
+    <string name="onboarding_accessibility_what_it_means">Apa artinya ini bagi Anda:</string>
+    <string name="onboarding_accessibility_benefit_comfort"><b>Kenyamanan yang Ditingkatkan:</b> Kami dapat menerapkan lapisan peredup di atas aplikasi lain untuk pengalaman kecerahan rendah yang konsisten.</string>
+    <string name="onboarding_accessibility_benefit_no_data"><b>Tidak Ada Pengumpulan Data:</b> Layanan ini <b><u>hanya</u></b> digunakan untuk mengontrol lapisan layar. Low Brightness <b><u>tidak</u></b> mengumpulkan, menyimpan, atau membagikan data pribadi, ketikan, atau interaksi Anda dengan aplikasi lain.</string>
+    <string name="onboarding_accessibility_benefit_control"><b>Anda yang Mengontrol:</b> Anda dapat menonaktifkan izin ini kapan saja melalui pengaturan ponsel Anda.</string>
+
+    <!-- Brightness screen -->
+    <string name="intensity">Tingkat optimalisasi kecerahan</string>
+    <string name="summary_brightness">Tentukan seberapa kuat filter overlay seharusnya. Tingkat yang lebih tinggi disarankan untuk membaca di malam hari.</string>
+    <string name="customize_overlay_color">Warna filter overlay</string>
+    <string name="summary_filter">Pilih warna yang menurut Anda paling tidak mengganggu mata dan memiliki kontras yang cukup dengan aplikasi yang biasanya terlihat di layar.</string>
+    <string name="color_dialog_title">Warna</string>
+    <string name="schedule">Jadwal</string>
+    <string name="summary_scheduler">Jadwalkan periode kapan layar harus otomatis menjadi gelap, untuk mengurangi ketegangan mata dan membuatnya lebih nyaman untuk dibaca di lingkungan gelap.</string>
+    <string name="enable_scheduler">Aktifkan penjadwal</string>
+    <string name="disable_scheduler">Nonaktifkan penjadwal</string>
+    <string name="enabled_only_during_this_interval">Diaktifkan hanya selama interval ini:</string>
+    <string name="time_remaining_to_lighten_label">Kecerahan asli akan dipulihkan dalam</string>
+    <string name="time_remaining_to_darken_label">Kecerahan layar akan dikurangi dalam</string>
+    <string name="actions">Aksi</string>
+    <string name="run_night_screen">Jalankan</string>
+    <string name="request_permissions">Minta izin</string>
+    <string name="accessibility_permission_disclosure_title">Izin Aksesibilitas diperlukan</string>
+    <string name="accessibility_permission_disclosure_message">Low Brightness menggunakan Layanan Aksesibilitas untuk menjaga lapisan peredup tetap terlihat di atas aplikasi lain. Layanan ini tidak mengumpulkan atau membagikan data Anda. Di layar berikutnya, aktifkan Low Brightness di pengaturan Aksesibilitas.</string>
+    <string name="no_accessibility_permission">Tidak ada izin aksesibilitas</string>
+    <string name="accessibility_service_description">Gunakan layanan aksesibilitas untuk menerapkan fungsi mengurangi kecerahan layar</string>
+    <string name="power_off">Mati</string>
+    <string name="settings_screen_choice_a_color">Pilih warna</string>
+    <string name="settings_screen_screen_color">Warna Layar</string>
+    <string name="settings_screen_screen_alpha">Alpha</string>
+    <string name="settings_screen_choice_a_alpha">Atur alpha warna</string>
+    <string name="settings_screen_color_settings">Warna</string>
+    <string name="alpha_dialog_title">Alpha</string>
+    <string name="request_permission_failed">Gagal meminta izin %s</string>
+    <string name="request_permissions_success">Berhasil meminta izin</string>
+    <string name="alert_window_permission">jendela peringatan</string>
+    <string name="post_notification_permission">kirim notifikasi</string>
+    <string name="night_screen_is_running">Layar Malam diaktifkan…</string>
+
+    <!-- Settings screen -->
+    <string name="settings_brightness_title">Kecerahan</string>
+    <string name="settings_brightness_summary">Sesuaikan tingkat kecerahan layar dan fitur terkait</string>
+
+    <string name="settings_screen_screen_settings">Layar</string>
+    <string name="settings_screen_keep_screen_on">Jaga layar tetap menyala</string>
+    <string name="settings_screen_keep_screen_on_description">Jaga layar tetap menyala saat layar malam aktif</string>
+    <string name="no_permission_can_not_run">Tidak ada izin jendela peringatan sistem!</string>
+    <string name="settings_screen_lowest_screen_brightness">Kecerahan layar terendah</string>
+    <string name="settings_screen_lowest_screen_brightness_description">Turunkan kecerahan layar setelah dinyalakan</string>
+
+    <!-- Permissions -->
+    <string name="receive_boot_completed">Jalankan saat Startup [RECEIVE_BOOT_COMPLETED]</string>
+    <string name="summary_preference_permissions_receive_boot_completed">Memungkinkan aplikasi untuk memulai ulang layanannya setelah perangkat dinyalakan sehingga peredupan terjadwal terus berfungsi.</string>
+    <string name="system_alert_window">Tampil di atas aplikasi lain [SYSTEM_ALERT_WINDOW]</string>
+    <string name="summary_preference_permissions_system_alert_window">Memungkinkan aplikasi untuk menampilkan lapisan di atas aplikasi lain, mengaktifkan lapisan peredup.</string>
+    <string name="write_settings">Ubah Pengaturan Sistem [WRITE_SETTINGS]</string>
+    <string name="summary_preference_permissions_write_settings">Memungkinkan aplikasi untuk mengubah pengaturan sistem seperti kecerahan layar.</string>
+
+    <!-- FAQ -->
+    <string name="question_1" translatable="false">Apa itu Low Brightness?</string>
+    <string name="summary_preference_faq_1" translatable="false">Low Brightness memungkinkan Anda meredupkan layar di bawah batas minimum sistem untuk tampilan yang nyaman di lingkungan gelap.</string>
+    <string name="question_2" translatable="false">Mengapa aplikasi memerlukan izin overlay?</string>
+    <string name="summary_preference_faq_2" translatable="false">Ini memungkinkan aplikasi untuk menampilkan lapisan peredup di atas aplikasi lain.</string>
+    <string name="question_3" translatable="false">Mengapa aplikasi meminta untuk mengubah pengaturan sistem?</string>
+    <string name="summary_preference_faq_3" translatable="false">Izin ini memungkinkan aplikasi menyesuaikan nilai kecerahan sistem agar filter dapat diterapkan dengan benar.</string>
+    <string name="question_4" translatable="false">Mengapa izin boot diperlukan?</string>
+    <string name="summary_preference_faq_4" translatable="false">Aplikasi menggunakannya untuk memulihkan kecerahan dan notifikasi setelah Anda menyalakan ulang perangkat.</string>
+    <string name="question_5" translatable="false">Apakah aplikasi ini berfungsi tanpa internet?</string>
+    <string name="summary_preference_faq_5" translatable="false">Ya. Internet hanya digunakan untuk pemeriksaan pembaruan dan laporan kesalahan opsional.</string>
+    <string name="question_6" translatable="false">Apakah aplikasi ini gratis?</string>
+    <string name="summary_preference_faq_6" translatable="false">Semua fitur inti gratis dan sumber terbuka. Donasi bersifat opsional.</string>
+    <string name="question_7" translatable="false">Bisakah saya mengubah warna overlay?</string>
+    <string name="summary_preference_faq_7" translatable="false">Ya. Anda dapat memilih warna apa pun dari layar pengaturan.</string>
+    <string name="question_8" translatable="false">Mengapa ada notifikasi yang terus-menerus?</string>
+    <string name="summary_preference_faq_8" translatable="false">Notifikasi ini menjaga layanan peredupan tetap berjalan agar tidak dimatikan oleh sistem.</string>
+    <string name="question_9" translatable="false">Bagaimana saya bisa menghubungi dukungan?</string>
+    <string name="summary_preference_faq_9" translatable="false">Kirim masukan dari aplikasi atau buka \'issue\' di GitHub.</string>
+</resources>

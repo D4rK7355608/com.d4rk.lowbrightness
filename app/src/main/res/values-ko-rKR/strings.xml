@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_description">저희 앱으로 화면 밝기를 낮추거나 높여보세요! 🔆</string>
+
+    <string name="change_light">밝기</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Low Brightness에 오신 것을 환영합니다</string>
+    <string name="onboarding_welcome_description">화면 밝기를 제어하세요. Low Brightness는 시스템의 기본 최저 밝기보다 화면을 더 어둡게 만들어 어두운 환경에서 편안하게 볼 수 있도록 해줍니다.</string>
+    <string name="onboarding_personalization_title">편안한 시청 환경을 맞춤 설정하세요</string>
+    <string name="onboarding_personalization_description">화면 필터 강도를 원하는 대로 미세 조정하세요. 어두운 환경에서 독서, 웹서핑, 동영상 시청에 완벽한 균형을 찾아보세요.</string>
+    <string name="onboarding_feature1_title">눈을 보호하세요</string>
+    <string name="onboarding_feature1_description">화면을 이전보다 더 어둡게 하여 눈의 피로를 줄이세요. 특히 야간 사용이나 어두운 공간에서 유용합니다. 더 편안한 시청 경험을 즐겨보세요.</string>
+    <string name="onboarding_accessibility_title">Low Brightness 작동 방식</string>
+    <string name="onboarding_accessibility_intro">모든 앱에서 화면을 효과적으로 어둡게 하려면 Low Brightness가 <b>접근성 서비스</b>를 사용하도록 허용해야 합니다.</string>
+    <string name="onboarding_accessibility_what_it_means">이 권한은 다음과 같은 의미를 가집니다:</string>
+    <string name="onboarding_accessibility_benefit_comfort"><b>향상된 편안함:</b> 다른 앱 위에 화면 어둡게 하기 오버레이를 적용하여 일관된 저조도 환경을 제공할 수 있습니다.</string>
+    <string name="onboarding_accessibility_benefit_no_data"><b>데이터 수집 없음:</b> 이 서비스는 화면 오버레이를 제어하는 데<b><u>만</u></b> 사용됩니다. Low Brightness는 개인 데이터, 입력 내용, 다른 앱과의 상호작용을 <b><u>절대</u></b> 수집, 저장, 공유하지 않습니다.</string>
+    <string name="onboarding_accessibility_benefit_control"><b>제어는 사용자에게:</b> 언제든지 휴대전화 설정에서 이 권한을 비활성화할 수 있습니다.</string>
+
+    <!-- Brightness screen -->
+    <string name="intensity">필터 강도</string>
+    <string name="summary_brightness">오버레이 필터의 강도를 설정합니다. 야간 독서 시에는 더 높은 수준을 권장합니다.</string>
+    <string name="customize_overlay_color">필터 색상</string>
+    <string name="summary_filter">눈에 가장 부담이 적고 화면에 표시되는 앱과 충분한 대비를 이루는 색상을 선택하세요.</string>
+    <string name="color_dialog_title">색상</string>
+    <string name="schedule">예약</string>
+    <string name="summary_scheduler">화면이 자동으로 어두워질 시간을 예약하여 눈의 피로를 줄이고 어두운 환경에서 더 편안하게 읽을 수 있도록 설정하세요.</string>
+    <string name="enable_scheduler">예약 활성화</string>
+    <string name="disable_scheduler">예약 비활성화</string>
+    <string name="enabled_only_during_this_interval">이 시간 동안에만 활성화:</string>
+    <string name="time_remaining_to_lighten_label">원래 밝기로 복원까지 남은 시간:</string>
+    <string name="time_remaining_to_darken_label">화면이 어두워지기까지 남은 시간:</string>
+    <string name="actions">동작</string>
+    <string name="run_night_screen">실행</string>
+    <string name="request_permissions">권한 요청</string>
+    <string name="accessibility_permission_disclosure_title">접근성 권한 필요</string>
+    <string name="accessibility_permission_disclosure_message">Low Brightness는 다른 앱 위에 화면 어둡게 하기 오버레이를 표시하기 위해 접근성 서비스를 사용합니다. 이 서비스는 데이터를 수집하거나 공유하지 않습니다. 다음 화면의 접근성 설정에서 Low Brightness를 활성화해주세요.</string>
+    <string name="no_accessibility_permission">접근성 권한 없음</string>
+    <string name="accessibility_service_description">화면 밝기를 낮추는 기능을 구현하기 위해 접근성 서비스를 사용합니다</string>
+    <string name="power_off">꺼짐</string>
+    <string name="settings_screen_choice_a_color">색상 선택</string>
+    <string name="settings_screen_screen_color">화면 색상</string>
+    <string name="settings_screen_screen_alpha">투명도</string>
+    <string name="settings_screen_choice_a_alpha">색상 투명도 설정</string>
+    <string name="settings_screen_color_settings">색상</string>
+    <string name="alpha_dialog_title">투명도</string>
+    <string name="request_permission_failed">%s 권한 요청에 실패했습니다</string>
+    <string name="request_permissions_success">권한을 성공적으로 요청했습니다</string>
+    <string name="alert_window_permission">다른 앱 위에 표시</string>
+    <string name="post_notification_permission">알림</string>
+    <string name="night_screen_is_running">야간 모드가 활성화되었습니다…</string>
+
+    <!-- Settings screen -->
+    <string name="settings_brightness_title">밝기</string>
+    <string name="settings_brightness_summary">화면 밝기 수준 및 관련 기능 조정</string>
+
+    <string name="settings_screen_screen_settings">화면</string>
+    <string name="settings_screen_keep_screen_on">화면 켜짐 유지</string>
+    <string name="settings_screen_keep_screen_on_description">야간 모드가 켜져 있을 때 화면을 계속 켜둡니다</string>
+    <string name="no_permission_can_not_run">다른 앱 위에 표시 권한이 없습니다!</string>
+    <string name="settings_screen_lowest_screen_brightness">최저 화면 밝기</string>
+    <string name="settings_screen_lowest_screen_brightness_description">시작 후 화면 밝기를 낮춥니다</string>
+
+    <!-- Permissions -->
+    <string name="receive_boot_completed">부팅 시 자동 시작 [RECEIVE_BOOT_COMPLETED]</string>
+    <string name="summary_preference_permissions_receive_boot_completed">기기 부팅 후 앱이 서비스를 다시 시작하여 예약된 어둡게 하기 기능이 계속 작동하도록 허용합니다.</string>
+    <string name="system_alert_window">다른 앱 위에 표시 [SYSTEM_ALERT_WINDOW]</string>
+    <string name="summary_preference_permissions_system_alert_window">앱이 다른 앱 위에 오버레이를 표시하여 화면을 어둡게 하는 레이어를 활성화하도록 허용합니다.</string>
+    <string name="write_settings">시스템 설정 변경 [WRITE_SETTINGS]</string>
+    <string name="summary_preference_permissions_write_settings">앱이 화면 밝기와 같은 시스템 설정을 수정하도록 허용합니다.</string>
+
+    <!-- FAQ -->
+    <string name="question_1" translatable="false">Low Brightness란 무엇인가요?</string>
+    <string name="summary_preference_faq_1" translatable="false">Low Brightness는 어두운 환경에서 편안하게 볼 수 있도록 시스템 최저 밝기보다 화면을 더 어둡게 만들어 줍니다.</string>
+    <string name="question_2" translatable="false">앱에 \'다른 앱 위에 표시\' 권한이 왜 필요한가요?</string>
+    <string name="summary_preference_faq_2" translatable="false">이 권한은 앱이 다른 앱 위에 화면을 어둡게 하는 오버레이를 표시하도록 허용합니다.</string>
+    <string name="question_3" translatable="false">앱이 시스템 설정 변경을 왜 요청하나요?</string>
+    <string name="summary_preference_faq_3" translatable="false">이 권한은 앱이 시스템 밝기 값을 조정하여 필터가 올바르게 적용될 수 있도록 합니다.</string>
+    <string name="question_4" translatable="false">부팅 권한이 왜 필요한가요?</string>
+    <string name="summary_preference_faq_4" translatable="false">기기를 다시 시작한 후 밝기와 알림을 복원하는 데 이 권한을 사용합니다.</string>
+    <string name="question_5" translatable="false">인터넷 없이도 앱이 작동하나요?</string>
+    <string name="summary_preference_faq_5" translatable="false">네. 인터넷은 업데이트 확인 및 선택적 오류 보고에만 사용됩니다.</string>
+    <string name="question_6" translatable="false">앱은 무료인가요?</string>
+    <string name="summary_preference_faq_6" translatable="false">모든 핵심 기능은 무료이며 오픈 소스입니다. 기부는 선택 사항입니다.</string>
+    <string name="question_7" translatable="false">오버레이 색상을 변경할 수 있나요?</string>
+    <string name="summary_preference_faq_7" translatable="false">네. 설정 화면에서 원하는 색상을 선택할 수 있습니다.</string>
+    <string name="question_8" translatable="false">왜 알림이 계속 표시되나요?</string>
+    <string name="summary_preference_faq_8" translatable="false">알림은 화면 어둡게 하기 서비스가 시스템에 의해 종료되지 않도록 계속 실행되게 합니다.</string>
+    <string name="question_9" translatable="false">고객 지원에 어떻게 연락하나요?</string>
+    <string name="summary_preference_faq_9" translatable="false">앱에서 피드백을 보내거나 GitHub에서 이슈를 열어주세요.</string>
+</resources>

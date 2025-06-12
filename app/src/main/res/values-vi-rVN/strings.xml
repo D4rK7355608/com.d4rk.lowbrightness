@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_description">Giảm hoặc tăng độ sáng màn hình bằng ứng dụng của chúng tôi! 🔆</string>
+
+    <string name="change_light">Độ sáng</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Chào mừng bạn đến với Low Brightness</string>
+    <string name="onboarding_welcome_description">Kiểm soát độ sáng màn hình của bạn. Low Brightness cho phép bạn giảm độ sáng màn hình xuống thấp hơn mức tối thiểu mặc định của hệ thống, hoàn hảo để xem thoải mái trong môi trường tối.</string>
+    <string name="onboarding_personalization_title">Tùy chỉnh sự thoải mái khi xem</string>
+    <string name="onboarding_personalization_description">Tinh chỉnh cường độ bộ lọc màn hình theo sở thích của bạn. Tìm sự cân bằng hoàn hảo để đọc, duyệt web hoặc xem video trong điều kiện ánh sáng yếu.</string>
+    <string name="onboarding_feature1_title">Bảo vệ đôi mắt của bạn</string>
+    <string name="onboarding_feature1_description">Làm mờ màn hình của bạn hơn bao giờ hết để giảm mỏi mắt, đặc biệt là khi sử dụng vào ban đêm hoặc ở những nơi thiếu sáng. Tận hưởng trải nghiệm xem thoải mái hơn.</string>
+    <string name="onboarding_accessibility_title">Cách Low Brightness hoạt động</string>
+    <string name="onboarding_accessibility_intro">Để làm mờ màn hình của bạn một cách hiệu quả trên tất cả các ứng dụng, Low Brightness cần quyền của bạn để sử dụng <b>Dịch vụ Trợ năng</b>.</string>
+    <string name="onboarding_accessibility_what_it_means">Điều này có ý nghĩa gì đối với bạn:</string>
+    <string name="onboarding_accessibility_benefit_comfort"><b>Tăng cường sự thoải mái:</b> Chúng tôi có thể áp dụng một lớp phủ làm mờ lên các ứng dụng khác để có trải nghiệm độ sáng thấp nhất quán.</string>
+    <string name="onboarding_accessibility_benefit_no_data"><b>Không thu thập dữ liệu:</b> Dịch vụ này <b><u>chỉ</u></b> được sử dụng để kiểm soát lớp phủ màn hình. Low Brightness <b><u>không</u></b> thu thập, lưu trữ hoặc chia sẻ bất kỳ dữ liệu cá nhân, nội dung gõ phím hoặc tương tác nào của bạn với các ứng dụng khác.</string>
+    <string name="onboarding_accessibility_benefit_control"><b>Bạn có toàn quyền kiểm soát:</b> Bạn có thể tắt quyền này bất cứ lúc nào thông qua cài đặt của điện thoại.</string>
+
+    <!-- Brightness screen -->
+    <string name="intensity">Cường độ</string>
+    <string name="summary_brightness">Xác định độ mạnh của bộ lọc lớp phủ. Mức độ cao hơn được khuyến nghị khi đọc vào ban đêm.</string>
+    <string name="customize_overlay_color">Màu bộ lọc lớp phủ</string>
+    <string name="summary_filter">Chọn màu mà bạn nghĩ là ít gây mất tập trung nhất cho mắt và có đủ độ tương phản với các ứng dụng thường hiển thị trên màn hình.</string>
+    <string name="color_dialog_title">Màu sắc</string>
+    <string name="schedule">Lên lịch</string>
+    <string name="summary_scheduler">Lên lịch khoảng thời gian màn hình tự động tối đi, để giảm mỏi mắt và giúp việc đọc trong môi trường tối trở nên thoải mái hơn.</string>
+    <string name="enable_scheduler">Bật lên lịch</string>
+    <string name="disable_scheduler">Tắt lên lịch</string>
+    <string name="enabled_only_during_this_interval">Chỉ bật trong khoảng thời gian này:</string>
+    <string name="time_remaining_to_lighten_label">Độ sáng ban đầu sẽ được khôi phục sau</string>
+    <string name="time_remaining_to_darken_label">Độ sáng màn hình sẽ giảm sau</string>
+    <string name="actions">Hành động</string>
+    <string name="run_night_screen">Kích hoạt</string>
+    <string name="request_permissions">Yêu cầu quyền</string>
+    <string name="accessibility_permission_disclosure_title">Yêu cầu quyền Trợ năng</string>
+    <string name="accessibility_permission_disclosure_message">Low Brightness sử dụng Dịch vụ Trợ năng để giữ lớp phủ làm mờ hiển thị trên các ứng dụng khác. Dịch vụ này không thu thập hoặc chia sẻ dữ liệu của bạn. Trên màn hình tiếp theo, hãy bật Low Brightness trong cài đặt Trợ năng.</string>
+    <string name="no_accessibility_permission">Không có quyền trợ năng</string>
+    <string name="accessibility_service_description">Sử dụng dịch vụ trợ năng để thực hiện chức năng giảm độ sáng màn hình</string>
+    <string name="power_off">Tắt</string>
+    <string name="settings_screen_choice_a_color">Chọn một màu</string>
+    <string name="settings_screen_screen_color">Màu màn hình</string>
+    <string name="settings_screen_screen_alpha">Độ trong suốt</string>
+    <string name="settings_screen_choice_a_alpha">Đặt độ trong suốt của màu</string>
+    <string name="settings_screen_color_settings">Màu sắc</string>
+    <string name="alpha_dialog_title">Độ trong suốt</string>
+    <string name="request_permission_failed">Yêu cầu quyền %s không thành công</string>
+    <string name="request_permissions_success">Yêu cầu quyền thành công</string>
+    <string name="alert_window_permission">hiển thị trên các ứng dụng khác</string>
+    <string name="post_notification_permission">gửi thông báo</string>
+    <string name="night_screen_is_running">Chế độ ban đêm đang được kích hoạt…</string>
+
+    <!-- Settings screen -->
+    <string name="settings_brightness_title">Độ sáng</string>
+    <string name="settings_brightness_summary">Điều chỉnh mức độ sáng màn hình và các tính năng liên quan</string>
+
+    <string name="settings_screen_screen_settings">Màn hình</string>
+    <string name="settings_screen_keep_screen_on">Giữ màn hình luôn bật</string>
+    <string name="settings_screen_keep_screen_on_description">Giữ màn hình luôn bật khi chế độ ban đêm đang hoạt động</string>
+    <string name="no_permission_can_not_run">Không có quyền hiển thị trên các ứng dụng khác!</string>
+    <string name="settings_screen_lowest_screen_brightness">Độ sáng màn hình thấp nhất</string>
+    <string name="settings_screen_lowest_screen_brightness_description">Giảm độ sáng màn hình sau khi khởi động</string>
+
+    <!-- Permissions -->
+    <string name="receive_boot_completed">Khởi chạy khi khởi động [RECEIVE_BOOT_COMPLETED]</string>
+    <string name="summary_preference_permissions_receive_boot_completed">Cho phép ứng dụng khởi động lại các dịch vụ của mình sau khi thiết bị khởi động để việc làm mờ theo lịch trình tiếp tục hoạt động.</string>
+    <string name="system_alert_window">Hiển thị trên các ứng dụng khác [SYSTEM_ALERT_WINDOW]</string>
+    <string name="summary_preference_permissions_system_alert_window">Cho phép ứng dụng vẽ các lớp phủ lên trên các ứng dụng khác, bật lớp làm mờ.</string>
+    <string name="write_settings">Sửa đổi cài đặt hệ thống [WRITE_SETTINGS]</string>
+    <string name="summary_preference_permissions_write_settings">Cho phép ứng dụng sửa đổi các cài đặt hệ thống như độ sáng màn hình.</string>
+
+    <!-- FAQ -->
+    <string name="question_1" translatable="false">Low Brightness là gì?</string>
+    <string name="summary_preference_faq_1" translatable="false">Low Brightness cho phép bạn làm mờ màn hình vượt quá mức tối thiểu của hệ thống để xem thoải mái trong môi trường tối.</string>
+    <string name="question_2" translatable="false">Tại sao ứng dụng cần quyền lớp phủ?</string>
+    <string name="summary_preference_faq_2" translatable="false">Nó cho phép ứng dụng hiển thị một lớp phủ làm mờ lên trên các ứng dụng khác.</string>
+    <string name="question_3" translatable="false">Tại sao ứng dụng yêu cầu sửa đổi cài đặt hệ thống?</string>
+    <string name="summary_preference_faq_3" translatable="false">Quyền này cho phép ứng dụng điều chỉnh giá trị độ sáng của hệ thống để bộ lọc có thể áp dụng đúng cách.</string>
+    <string name="question_4" translatable="false">Tại sao cần quyền khởi động cùng hệ thống?</string>
+    <string name="summary_preference_faq_4" translatable="false">Ứng dụng sử dụng nó để khôi phục độ sáng và thông báo sau khi bạn khởi động lại thiết bị.</string>
+    <string name="question_5" translatable="false">Ứng dụng có hoạt động mà không cần internet không?</string>
+    <string name="summary_preference_faq_5" translatable="false">Có. Internet chỉ được sử dụng để kiểm tra cập nhật và báo cáo lỗi tùy chọn.</string>
+    <string name="question_6" translatable="false">Ứng dụng có miễn phí không?</string>
+    <string name="summary_preference_faq_6" translatable="false">Tất cả các tính năng cốt lõi đều miễn phí và có mã nguồn mở. Việc quyên góp là tùy chọn.</string>
+    <string name="question_7" translatable="false">Tôi có thể thay đổi màu lớp phủ không?</string>
+    <string name="summary_preference_faq_7" translatable="false">Có. Bạn có thể chọn bất kỳ màu nào từ màn hình cài đặt.</string>
+    <string name="question_8" translatable="false">Tại sao có một thông báo liên tục?</string>
+    <string name="summary_preference_faq_8" translatable="false">Thông báo giữ cho dịch vụ làm mờ luôn chạy để nó không bị hệ thống tắt.</string>
+    <string name="question_9" translatable="false">Làm thế nào để liên hệ hỗ trợ?</string>
+    <string name="summary_preference_faq_9" translatable="false">Gửi phản hồi từ ứng dụng hoặc mở một vấn đề (issue) trên GitHub.</string>
+</resources>

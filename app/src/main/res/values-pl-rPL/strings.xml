@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_description">Zmniejsz lub zwiększ jasność ekranu za pomocą naszej aplikacji! 🔆</string>
+
+    <string name="change_light">Jasność</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Witaj w Low Brightness</string>
+    <string name="onboarding_welcome_description">Przejmij kontrolę nad jasnością ekranu. Low Brightness pozwala zmniejszyć podświetlenie ekranu poniżej domyślnego minimum systemu, co jest idealne do komfortowego oglądania w ciemnym otoczeniu.</string>
+    <string name="onboarding_personalization_title">Dostosuj swój komfort oglądania</string>
+    <string name="onboarding_personalization_description">Dostosuj intensywność filtra ekranu do swoich preferencji. Znajdź idealną równowagę do czytania, przeglądania stron lub oglądania filmów w warunkach słabego oświetlenia.</string>
+    <string name="onboarding_feature1_title">Chroń swoje oczy</string>
+    <string name="onboarding_feature1_description">Przyciemnij ekran bardziej niż kiedykolwiek, aby zmniejszyć zmęczenie oczu, zwłaszcza podczas korzystania w nocy lub w słabo oświetlonych miejscach. Ciesz się bardziej komfortowym oglądaniem.</string>
+    <string name="onboarding_accessibility_title">Jak działa Low Brightness</string>
+    <string name="onboarding_accessibility_intro">Aby skutecznie przyciemnić ekran we wszystkich aplikacjach, Low Brightness potrzebuje Twojej zgody na korzystanie z <b>Usługi Dostępności</b>.</string>
+    <string name="onboarding_accessibility_what_it_means">Co to dla Ciebie oznacza:</string>
+    <string name="onboarding_accessibility_benefit_comfort"><b>Większy komfort:</b> Możemy zastosować nakładkę przyciemniającą na inne aplikacje, aby zapewnić stałe wrażenia przy niskiej jasności.</string>
+    <string name="onboarding_accessibility_benefit_no_data"><b>Brak zbierania danych:</b> Ta usługa jest używana <b><u>tylko</u></b> do kontrolowania nakładki na ekran. Low Brightness <b><u>nie</u></b> zbiera, nie przechowuje ani nie udostępnia żadnych Twoich danych osobowych, wpisywanego tekstu ani interakcji z innymi aplikacjami.</string>
+    <string name="onboarding_accessibility_benefit_control"><b>Ty masz kontrolę:</b> Możesz wyłączyć to uprawnienie w dowolnym momencie w ustawieniach telefonu.</string>
+
+    <!-- Brightness screen -->
+    <string name="intensity">Intensywność</string>
+    <string name="summary_brightness">Określ, jak silny ma być filtr nakładki. Wyższe poziomy są zalecane do czytania w nocy.</string>
+    <string name="customize_overlay_color">Kolor filtra nakładki</string>
+    <string name="summary_filter">Wybierz kolor, który Twoim zdaniem najmniej rozprasza wzrok i ma wystarczający kontrast z aplikacjami zwykle widocznymi na ekranie.</string>
+    <string name="color_dialog_title">Kolor</string>
+    <string name="schedule">Harmonogram</string>
+    <string name="summary_scheduler">Zaplanuj okres, w którym ekran ma się automatycznie przyciemniać, aby zmniejszyć zmęczenie oczu i ułatwić czytanie w ciemnym otoczeniu.</string>
+    <string name="enable_scheduler">Włącz harmonogram</string>
+    <string name="disable_scheduler">Wyłącz harmonogram</string>
+    <string name="enabled_only_during_this_interval">Włączone tylko w tym przedziale czasowym:</string>
+    <string name="time_remaining_to_lighten_label">Oryginalna jasność zostanie przywrócona za</string>
+    <string name="time_remaining_to_darken_label">Jasność ekranu zostanie zmniejszona za</string>
+    <string name="actions">Akcje</string>
+    <string name="run_night_screen">Uruchom</string>
+    <string name="request_permissions">Poproś o uprawnienia</string>
+    <string name="accessibility_permission_disclosure_title">Wymagane uprawnienie Dostępności</string>
+    <string name="accessibility_permission_disclosure_message">Low Brightness używa Usługi Dostępności, aby nakładka przyciemniająca była widoczna nad innymi aplikacjami. Ta usługa nie zbiera ani nie udostępnia Twoich danych. Na następnym ekranie włącz Low Brightness w ustawieniach Dostępności.</string>
+    <string name="no_accessibility_permission">Brak uprawnień dostępności</string>
+    <string name="accessibility_service_description">Użyj usługi dostępności, aby zaimplementować funkcję zmniejszania jasności ekranu</string>
+    <string name="power_off">Wyłączony</string>
+    <string name="settings_screen_choice_a_color">Wybierz kolor</string>
+    <string name="settings_screen_screen_color">Kolor ekranu</string>
+    <string name="settings_screen_screen_alpha">Przezroczystość</string>
+    <string name="settings_screen_choice_a_alpha">Ustaw przezroczystość koloru</string>
+    <string name="settings_screen_color_settings">Kolor</string>
+    <string name="alpha_dialog_title">Przezroczystość</string>
+    <string name="request_permission_failed">Nie udało się poprosić o uprawnienie: %s</string>
+    <string name="request_permissions_success">Pomyślnie poproszono o uprawnienia</string>
+    <string name="alert_window_permission">wyświetlanie nad innymi aplikacjami</string>
+    <string name="post_notification_permission">wysyłanie powiadomień</string>
+    <string name="night_screen_is_running">Tryb nocny jest aktywny…</string>
+
+    <!-- Settings screen -->
+    <string name="settings_brightness_title">Jasność</string>
+    <string name="settings_brightness_summary">Dostosuj poziomy jasności ekranu i powiązane funkcje</string>
+
+    <string name="settings_screen_screen_settings">Ekran</string>
+    <string name="settings_screen_keep_screen_on">Utrzymuj ekran włączony</string>
+    <string name="settings_screen_keep_screen_on_description">Utrzymuje ekran włączony, gdy aktywny jest tryb nocny</string>
+    <string name="no_permission_can_not_run">Brak uprawnienia do wyświetlania nad innymi aplikacjami!</string>
+    <string name="settings_screen_lowest_screen_brightness">Najniższa jasność ekranu</string>
+    <string name="settings_screen_lowest_screen_brightness_description">Zmniejsz jasność ekranu po uruchomieniu</string>
+
+    <!-- Permissions -->
+    <string name="receive_boot_completed">Uruchamianie po starcie systemu [RECEIVE_BOOT_COMPLETED]</string>
+    <string name="summary_preference_permissions_receive_boot_completed">Pozwala aplikacji na ponowne uruchomienie jej usług po starcie urządzenia, aby zaplanowane przyciemnianie nadal działało.</string>
+    <string name="system_alert_window">Wyświetlanie nad innymi aplikacjami [SYSTEM_ALERT_WINDOW]</string>
+    <string name="summary_preference_permissions_system_alert_window">Pozwala aplikacji na rysowanie nakładek nad innymi aplikacjami, co umożliwia działanie warstwy przyciemniającej.</string>
+    <string name="write_settings">Modyfikowanie ustawień systemowych [WRITE_SETTINGS]</string>
+    <string name="summary_preference_permissions_write_settings">Pozwala aplikacji na modyfikowanie ustawień systemowych, takich jak jasność ekranu.</string>
+
+    <!-- FAQ -->
+    <string name="question_1" translatable="false">Czym jest Low Brightness?</string>
+    <string name="summary_preference_faq_1" translatable="false">Low Brightness pozwala przyciemnić ekran poniżej minimum systemowego, aby zapewnić komfortowe oglądanie w ciemnym otoczeniu.</string>
+    <string name="question_2" translatable="false">Dlaczego aplikacja potrzebuje uprawnienia do nakładki?</string>
+    <string name="summary_preference_faq_2" translatable="false">Pozwala to aplikacji na wyświetlanie nakładki przyciemniającej nad innymi aplikacjami.</string>
+    <string name="question_3" translatable="false">Dlaczego aplikacja prosi o modyfikowanie ustawień systemowych?</string>
+    <string name="summary_preference_faq_3" translatable="false">To uprawnienie pozwala aplikacji dostosować wartości jasności systemu, aby filtr działał poprawnie.</string>
+    <string name="question_4" translatable="false">Dlaczego wymagane jest uprawnienie do uruchamiania przy starcie?</string>
+    <string name="summary_preference_faq_4" translatable="false">Aplikacja używa go do przywracania jasności i powiadomień po ponownym uruchomieniu urządzenia.</string>
+    <string name="question_5" translatable="false">Czy aplikacja działa bez internetu?</string>
+    <string name="summary_preference_faq_5" translatable="false">Tak. Internet jest używany tylko do sprawdzania aktualizacji i opcjonalnych raportów o błędach.</string>
+    <string name="question_6" translatable="false">Czy aplikacja jest darmowa?</string>
+    <string name="summary_preference_faq_6" translatable="false">Wszystkie podstawowe funkcje są darmowe i oparte na otwartym kodzie źródłowym. Datki są opcjonalne.</string>
+    <string name="question_7" translatable="false">Czy mogę zmienić kolor nakładki?</string>
+    <string name="summary_preference_faq_7" translatable="false">Tak. Możesz wybrać dowolny kolor na ekranie ustawień.</string>
+    <string name="question_8" translatable="false">Dlaczego jest stałe powiadomienie?</string>
+    <string name="summary_preference_faq_8" translatable="false">Powiadomienie utrzymuje działanie usługi przyciemniania, aby system jej nie zamknął.</string>
+    <string name="question_9" translatable="false">Jak mogę skontaktować się z pomocą techniczną?</string>
+    <string name="summary_preference_faq_9" translatable="false">Wyślij opinię z aplikacji lub otwórz zgłoszenie (issue) na GitHubie.</string>
+</resources>

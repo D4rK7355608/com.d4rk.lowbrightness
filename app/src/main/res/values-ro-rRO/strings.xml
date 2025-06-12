@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_description">Reduceți sau măriți luminozitatea ecranului folosind aplicația noastră! 🔆</string>
+
+    <string name="change_light">Luminozitate</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Bun venit la Low Brightness</string>
+    <string name="onboarding_welcome_description">Preluați controlul asupra luminozității ecranului. Low Brightness vă permite să reduceți iluminarea ecranului sub minimul implicit al sistemului, perfect pentru o vizualizare confortabilă în medii întunecate.</string>
+    <string name="onboarding_personalization_title">Personalizați-vă confortul vizual</string>
+    <string name="onboarding_personalization_description">Ajustați fin intensitatea filtrului de ecran conform preferințelor dvs. Găsiți echilibrul perfect pentru citit, navigat sau vizionat videoclipuri în condiții de lumină slabă.</string>
+    <string name="onboarding_feature1_title">Protejați-vă ochii</string>
+    <string name="onboarding_feature1_description">Reduceți luminozitatea ecranului mai mult ca niciodată pentru a reduce oboseala ochilor, în special în timpul utilizării pe timp de noapte sau în spații slab iluminate. Bucurați-vă de o experiență de vizualizare mai confortabilă.</string>
+    <string name="onboarding_accessibility_title">Cum funcționează Low Brightness</string>
+    <string name="onboarding_accessibility_intro">Pentru a reduce eficient luminozitatea ecranului în toate aplicațiile, Low Brightness are nevoie de permisiunea dvs. pentru a utiliza <b>Serviciul de Accesibilitate</b>.</string>
+    <string name="onboarding_accessibility_what_it_means">Ce înseamnă acest lucru pentru dvs.:</string>
+    <string name="onboarding_accessibility_benefit_comfort"><b>Confort sporit:</b> Putem aplica o suprapunere de întunecare peste alte aplicații pentru o experiență consecventă cu luminozitate redusă.</string>
+    <string name="onboarding_accessibility_benefit_no_data"><b>Fără colectare de date:</b> Acest serviciu este folosit <b><u>doar</u></b> pentru a controla suprapunerea de ecran. Low Brightness <b><u>nu</u></b> colectează, stochează sau partajează niciuna dintre datele dvs. personale, textul tastat sau interacțiunile cu alte aplicații.</string>
+    <string name="onboarding_accessibility_benefit_control"><b>Dvs. dețineți controlul:</b> Puteți dezactiva această permisiune oricând din setările telefonului dvs.</string>
+
+    <!-- Brightness screen -->
+    <string name="intensity">Intensitate</string>
+    <string name="summary_brightness">Definiți cât de puternic ar trebui să fie filtrul de suprapunere. Nivelurile mai ridicate sunt recomandate pentru cititul pe timp de noapte.</string>
+    <string name="customize_overlay_color">Culoare filtru de suprapunere</string>
+    <string name="summary_filter">Selectați culoarea care credeți că vă distrage cel mai puțin atenția și are suficient contrast cu aplicațiile vizibile de obicei pe ecran.</string>
+    <string name="color_dialog_title">Culoare</string>
+    <string name="schedule">Programare</string>
+    <string name="summary_scheduler">Programați perioada în care ecranul ar trebui să se întunece automat, pentru a reduce oboseala ochilor și a face cititul mai confortabil în medii întunecate.</string>
+    <string name="enable_scheduler">Activare programator</string>
+    <string name="disable_scheduler">Dezactivare programator</string>
+    <string name="enabled_only_during_this_interval">Activat doar în acest interval:</string>
+    <string name="time_remaining_to_lighten_label">Luminozitatea originală va fi restaurată în</string>
+    <string name="time_remaining_to_darken_label">Luminozitatea ecranului va fi redusă în</string>
+    <string name="actions">Acțiuni</string>
+    <string name="run_night_screen">Pornire</string>
+    <string name="request_permissions">Solicitare permisiuni</string>
+    <string name="accessibility_permission_disclosure_title">Permisiune de Accesibilitate necesară</string>
+    <string name="accessibility_permission_disclosure_message">Low Brightness folosește un Serviciu de Accesibilitate pentru a menține suprapunerea de întunecare vizibilă peste alte aplicații. Acest serviciu nu colectează și nu partajează datele dvs. Pe ecranul următor, activați Low Brightness în setările de Accesibilitate.</string>
+    <string name="no_accessibility_permission">Nicio permisiune de accesibilitate</string>
+    <string name="accessibility_service_description">Utilizează serviciul de accesibilitate pentru a implementa funcția de reducere a luminozității ecranului</string>
+    <string name="power_off">Oprit</string>
+    <string name="settings_screen_choice_a_color">Selectați o culoare</string>
+    <string name="settings_screen_screen_color">Culoare ecran</string>
+    <string name="settings_screen_screen_alpha">Transparență</string>
+    <string name="settings_screen_choice_a_alpha">Setați transparența culorii</string>
+    <string name="settings_screen_color_settings">Culoare</string>
+    <string name="alpha_dialog_title">Transparență</string>
+    <string name="request_permission_failed">Eroare la solicitarea permisiunii de %s</string>
+    <string name="request_permissions_success">Permisiuni solicitate cu succes</string>
+    <string name="alert_window_permission">afișare peste alte aplicații</string>
+    <string name="post_notification_permission">trimitere notificări</string>
+    <string name="night_screen_is_running">Ecranul de noapte este activat…</string>
+
+    <!-- Settings screen -->
+    <string name="settings_brightness_title">Luminozitate</string>
+    <string name="settings_brightness_summary">Ajustați nivelurile de luminozitate ale ecranului și funcțiile conexe</string>
+
+    <string name="settings_screen_screen_settings">Ecran</string>
+    <string name="settings_screen_keep_screen_on">Mențineți ecranul pornit</string>
+    <string name="settings_screen_keep_screen_on_description">Menține ecranul pornit când ecranul de noapte este activ</string>
+    <string name="no_permission_can_not_run">Nicio permisiune de afișare peste alte aplicații!</string>
+    <string name="settings_screen_lowest_screen_brightness">Cea mai redusă luminozitate</string>
+    <string name="settings_screen_lowest_screen_brightness_description">Reduceți luminozitatea ecranului după pornire</string>
+
+    <!-- Permissions -->
+    <string name="receive_boot_completed">Pornire la bootare [RECEIVE_BOOT_COMPLETED]</string>
+    <string name="summary_preference_permissions_receive_boot_completed">Permite aplicației să-și repornească serviciile după pornirea dispozitivului, astfel încât întunecarea programată să funcționeze în continuare.</string>
+    <string name="system_alert_window">Afișare peste alte aplicații [SYSTEM_ALERT_WINDOW]</string>
+    <string name="summary_preference_permissions_system_alert_window">Permite aplicației să afișeze suprapuneri peste alte aplicații, activând stratul de întunecare.</string>
+    <string name="write_settings">Modificare setări sistem [WRITE_SETTINGS]</string>
+    <string name="summary_preference_permissions_write_settings">Permite aplicației să modifice setările de sistem, cum ar fi luminozitatea ecranului.</string>
+
+    <!-- FAQ -->
+    <string name="question_1" translatable="false">Ce este Low Brightness?</string>
+    <string name="summary_preference_faq_1" translatable="false">Low Brightness vă permite să reduceți luminozitatea ecranului sub minimul sistemului pentru o vizualizare confortabilă în medii întunecate.</string>
+    <string name="question_2" translatable="false">De ce are nevoie aplicația de permisiunea de suprapunere?</string>
+    <string name="summary_preference_faq_2" translatable="false">Permite aplicației să afișeze o suprapunere de întunecare peste alte aplicații.</string>
+    <string name="question_3" translatable="false">De ce solicită aplicația modificarea setărilor de sistem?</string>
+    <string name="summary_preference_faq_3" translatable="false">Această permisiune permite aplicației să ajusteze valorile de luminozitate ale sistemului, astfel încât filtrul să se poată aplica corect.</string>
+    <string name="question_4" translatable="false">De ce este necesară permisiunea de pornire la bootare?</string>
+    <string name="summary_preference_faq_4" translatable="false">Aplicația o folosește pentru a restabili luminozitatea și notificările după ce reporniți dispozitivul.</string>
+    <string name="question_5" translatable="false">Aplicația funcționează fără internet?</string>
+    <string name="summary_preference_faq_5" translatable="false">Da. Internetul este folosit doar pentru verificarea actualizărilor și rapoarte de erori opționale.</string>
+    <string name="question_6" translatable="false">Aplicația este gratuită?</string>
+    <string name="summary_preference_faq_6" translatable="false">Toate funcțiile de bază sunt gratuite și open source. Donațiile sunt opționale.</string>
+    <string name="question_7" translatable="false">Pot schimba culoarea suprapunerii?</string>
+    <string name="summary_preference_faq_7" translatable="false">Da. Puteți selecta orice culoare din ecranul de setări.</string>
+    <string name="question_8" translatable="false">De ce există o notificare persistentă?</string>
+    <string name="summary_preference_faq_8" translatable="false">Notificarea menține serviciul de întunecare în funcțiune, astfel încât să nu fie oprit de sistem.</string>
+    <string name="question_9" translatable="false">Cum pot contacta suportul?</string>
+    <string name="summary_preference_faq_9" translatable="false">Trimiteți feedback din aplicație sau deschideți o problemă (issue) pe GitHub.</string>
+</resources>

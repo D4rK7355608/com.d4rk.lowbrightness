@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_description">Sänk eller öka skärmens ljusstyrka med vår app! 🔆</string>
+
+    <string name="change_light">Ljusstyrka</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Välkommen till Low Brightness</string>
+    <string name="onboarding_welcome_description">Ta kontroll över din skärms ljusstyrka. Low Brightness låter dig sänka skärmens belysning bortom systemets standardminimum, perfekt för bekväm visning i mörka miljöer.</string>
+    <string name="onboarding_personalization_title">Anpassa din tittarkomfort</string>
+    <string name="onboarding_personalization_description">Finjustera skärmfiltrets intensitet efter dina exakta preferenser. Hitta den perfekta balansen för att läsa, surfa eller titta på videor i svagt ljus.</string>
+    <string name="onboarding_feature1_title">Skydda dina ögon</string>
+    <string name="onboarding_feature1_description">Sänk ljusstyrkan på din skärm mer än någonsin för att minska ögonansträngning, särskilt vid nattlig användning eller i svagt upplysta utrymmen. Njut av en bekvämare tittarupplevelse.</string>
+    <string name="onboarding_accessibility_title">Så fungerar Low Brightness</string>
+    <string name="onboarding_accessibility_intro">För att effektivt sänka skärmens ljusstyrka i alla appar behöver Low Brightness din tillåtelse att använda <b>Tillgänglighetstjänsten</b>.</string>
+    <string name="onboarding_accessibility_what_it_means">Vad detta innebär för dig:</string>
+    <string name="onboarding_accessibility_benefit_comfort"><b>Förbättrad komfort:</b> Vi kan lägga ett dämpande överlägg över andra appar för en konsekvent upplevelse med låg ljusstyrka.</string>
+    <string name="onboarding_accessibility_benefit_no_data"><b>Ingen datainsamling:</b> Denna tjänst används <b><u>endast</u></b> för att styra skärmöverlägget. Low Brightness samlar <b><u>inte</u></b> in, lagrar eller delar någon av dina personuppgifter, tangenttryckningar eller interaktioner med andra appar.</string>
+    <string name="onboarding_accessibility_benefit_control"><b>Du har kontrollen:</b> Du kan när som helst inaktivera denna behörighet via telefonens inställningar.</string>
+
+    <!-- Brightness screen -->
+    <string name="intensity">Intensitet</string>
+    <string name="summary_brightness">Bestäm hur starkt överläggsfiltret ska vara. Högre nivåer rekommenderas för nattläsning.</string>
+    <string name="customize_overlay_color">Färg på filteröverlägg</string>
+    <string name="summary_filter">Välj den färg som du anser vara minst distraherande för dina ögon och som har tillräcklig kontrast med apparna som vanligtvis syns på skärmen.</string>
+    <string name="color_dialog_title">Färg</string>
+    <string name="schedule">Schema</string>
+    <string name="summary_scheduler">Schemalägg perioden då skärmen automatiskt ska mörkna, för att minska ögonansträngning och göra det bekvämare att läsa i mörka miljöer.</string>
+    <string name="enable_scheduler">Aktivera schemaläggare</string>
+    <string name="disable_scheduler">Inaktivera schemaläggare</string>
+    <string name="enabled_only_during_this_interval">Endast aktiverad under detta intervall:</string>
+    <string name="time_remaining_to_lighten_label">Ursprunglig ljusstyrka återställs om</string>
+    <string name="time_remaining_to_darken_label">Skärmens ljusstyrka sänks om</string>
+    <string name="actions">Åtgärder</string>
+    <string name="run_night_screen">Kör</string>
+    <string name="request_permissions">Begär behörigheter</string>
+    <string name="accessibility_permission_disclosure_title">Tillgänglighetsbehörighet krävs</string>
+    <string name="accessibility_permission_disclosure_message">Low Brightness använder en Tillgänglighetstjänst för att hålla det dämpande överlägget synligt över andra appar. Denna tjänst samlar inte in eller delar dina data. På nästa skärm, aktivera Low Brightness i Tillgänglighetsinställningarna.</string>
+    <string name="no_accessibility_permission">Ingen tillgänglighetsbehörighet</string>
+    <string name="accessibility_service_description">Använder tillgänglighetstjänsten för att implementera funktionen för att sänka skärmens ljusstyrka</string>
+    <string name="power_off">Av</string>
+    <string name="settings_screen_choice_a_color">Välj en färg</string>
+    <string name="settings_screen_screen_color">Skärmfärg</string>
+    <string name="settings_screen_screen_alpha">Opacitet</string>
+    <string name="settings_screen_choice_a_alpha">Ställ in färgens opacitet</string>
+    <string name="settings_screen_color_settings">Färg</string>
+    <string name="alpha_dialog_title">Opacitet</string>
+    <string name="request_permission_failed">Misslyckades med att begära behörighet för %s</string>
+    <string name="request_permissions_success">Behörigheter har begärts</string>
+    <string name="alert_window_permission">visa över andra appar</string>
+    <string name="post_notification_permission">skicka aviseringar</string>
+    <string name="night_screen_is_running">Nattläge är aktiverat…</string>
+
+    <!-- Settings screen -->
+    <string name="settings_brightness_title">Ljusstyrka</string>
+    <string name="settings_brightness_summary">Justera skärmens ljusstyrkenivåer och relaterade funktioner</string>
+
+    <string name="settings_screen_screen_settings">Skärm</string>
+    <string name="settings_screen_keep_screen_on">Håll skärmen på</string>
+    <string name="settings_screen_keep_screen_on_description">Håller skärmen på när nattläget är aktiverat</string>
+    <string name="no_permission_can_not_run">Behörighet att visa över andra appar saknas!</string>
+    <string name="settings_screen_lowest_screen_brightness">Lägsta skärmljusstyrka</string>
+    <string name="settings_screen_lowest_screen_brightness_description">Sänk skärmens ljusstyrka efter start</string>
+
+    <!-- Permissions -->
+    <string name="receive_boot_completed">Starta vid uppstart [RECEIVE_BOOT_COMPLETED]</string>
+    <string name="summary_preference_permissions_receive_boot_completed">Tillåter appen att starta om sina tjänster efter att enheten startats så att schemalagd dämpning fortsätter att fungera.</string>
+    <string name="system_alert_window">Visa över andra appar [SYSTEM_ALERT_WINDOW]</string>
+    <string name="summary_preference_permissions_system_alert_window">Tillåter appen att rita överläggsvyer över andra appar, vilket aktiverar det dämpande lagret.</string>
+    <string name="write_settings">Ändra systeminställningar [WRITE_SETTINGS]</string>
+    <string name="summary_preference_permissions_write_settings">Tillåter appen att ändra systeminställningar såsom skärmens ljusstyrka.</string>
+
+    <!-- FAQ -->
+    <string name="question_1" translatable="false">Vad är Low Brightness?</string>
+    <string name="summary_preference_faq_1" translatable="false">Low Brightness låter dig sänka skärmens ljusstyrka bortom systemets minimum för bekväm visning i mörka miljöer.</string>
+    <string name="question_2" translatable="false">Varför behöver appen behörigheten att visas över andra appar?</string>
+    <string name="summary_preference_faq_2" translatable="false">Den tillåter appen att visa ett dämpande överlägg ovanpå andra appar.</string>
+    <string name="question_3" translatable="false">Varför begär appen att få ändra systeminställningar?</string>
+    <string name="summary_preference_faq_3" translatable="false">Denna behörighet låter appen justera systemets ljusstyrkevärden så att filtret kan tillämpas korrekt.</string>
+    <string name="question_4" translatable="false">Varför krävs behörighet för uppstart?</string>
+    <string name="summary_preference_faq_4" translatable="false">Appen använder den för att återställa ljusstyrka och aviseringar efter att du startat om enheten.</string>
+    <string name="question_5" translatable="false">Fungerar appen utan internet?</string>
+    <string name="summary_preference_faq_5" translatable="false">Ja. Internet används endast för uppdateringskontroller och valfria felrapporter.</string>
+    <string name="question_6" translatable="false">Är appen gratis?</string>
+    <string name="summary_preference_faq_6" translatable="false">Alla kärnfunktioner är gratis och har öppen källkod. Donationer är valfria.</string>
+    <string name="question_7" translatable="false">Kan jag ändra färgen på överlägget?</string>
+    <string name="summary_preference_faq_7" translatable="false">Ja. Du kan välja vilken färg som helst från inställningsskärmen.</string>
+    <string name="question_8" translatable="false">Varför finns det en permanent avisering?</string>
+    <string name="summary_preference_faq_8" translatable="false">Aviseringen håller igång dämpningstjänsten så att den inte avslutas av systemet.</string>
+    <string name="question_9" translatable="false">Hur kan jag kontakta support?</string>
+    <string name="summary_preference_faq_9" translatable="false">Skicka feedback från appen eller öppna ett ärende (issue) på GitHub.</string>
+</resources>
