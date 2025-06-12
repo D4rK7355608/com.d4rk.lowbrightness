@@ -4,14 +4,16 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.os.Build
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
+import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import com.d4rk.lowbrightness.app.brightness.ui.components.closeNightScreen
 import com.d4rk.lowbrightness.app.brightness.ui.components.dialogs.requestAllPermissionsWithAccessibilityAndShow
 import com.d4rk.lowbrightness.app.brightness.ui.components.showNightScreenLayer
 
-
+@RequiresApi(Build.VERSION_CODES.N)
 class NightScreenService : TileService() {
     override fun onStartListening() {
         super.onStartListening()
