@@ -16,6 +16,9 @@ import com.d4rk.lowbrightness.app.brightness.domain.util.screenWidth
 
 class LayerView(context: Context) : View(context) {
 
+    private val windowManager =
+        context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+
     var layoutParams = WindowManager.LayoutParams(
         context.screenWidth,
         context.screenHeight,
@@ -50,14 +53,18 @@ class LayerView(context: Context) : View(context) {
 
     fun visible() {
         if (isVisible) return
-//        windowManager.addView(this, layoutParams)
+        if (!isAttachedToWindow) {
+            windowManager.addView(this, layoutParams)
+        }
         visibility = VISIBLE
     }
 
     fun gone() {
         if (!isVisible) return
         visibility = GONE
-//        windowManager.removeView(this)
+        if (isAttachedToWindow) {
+            windowManager.removeView(this)
+        }
     }
 
     init {
