@@ -1,6 +1,7 @@
 package com.d4rk.lowbrightness.app.brightness.ui.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -30,6 +31,7 @@ import com.d4rk.lowbrightness.app.brightness.ui.components.dialogs.ColorDialog
 
 @Composable
 fun ColorCard() {
+    val outlineColor = MaterialTheme.colorScheme.outline
     var showDialog by remember { mutableStateOf(false) }
     Card(
         shape = MaterialTheme.shapes.extraLarge, modifier = Modifier
@@ -71,7 +73,11 @@ fun ColorCard() {
                                 .size(size = SizeConstants.ExtraExtraLargeSize)
                                 .background(
                                     color = Color(color = calculatedColor),
-                                    shape = RoundedCornerShape(percent = 50)
+                                    shape = RoundedCornerShape(percent = 50),
+                                )
+                                .border(
+                                    width = SizeConstants.ExtraTinySize,
+                                    color = outlineColor, shape = RoundedCornerShape(percent = 50)
                                 )
                         )
                     }

@@ -73,18 +73,18 @@ var showNightScreenLayer: Boolean = false
 
 private val _screenAlpha = mutableFloatStateOf(sharedPreferences().getFloat("screenAlpha", 0.5f))
 var screenAlpha: Float
-    get() = _screenAlpha.value
+    get() = _screenAlpha.floatValue
     set(value) {
-        _screenAlpha.value = value
+        _screenAlpha.floatValue = value
         layerView.updateColor(calculatedColor)
         sharedPreferences().editor { putFloat("screenAlpha", value) }
     }
 
 private val _screenColor = mutableIntStateOf(sharedPreferences().getInt("screenColor", Color.Black.toArgb()))
 var screenColor: Int
-    get() = _screenColor.value
+    get() = _screenColor.intValue
     set(value) {
-        _screenColor.value = value
+        _screenColor.intValue = value
         layerView.updateColor(calculatedColor)
         sharedPreferences().editor { putInt("screenColor", value) }
     }
