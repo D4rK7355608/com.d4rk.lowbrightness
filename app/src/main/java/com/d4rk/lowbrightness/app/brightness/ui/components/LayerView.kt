@@ -9,6 +9,7 @@ import android.os.Build
 import android.view.Gravity
 import android.view.View
 import android.view.WindowManager
+import com.d4rk.lowbrightness.app.brightness.domain.services.isAccessibilityServiceRunning
 import androidx.core.view.isVisible
 import com.d4rk.lowbrightness.app.brightness.domain.util.screenHeight
 import com.d4rk.lowbrightness.app.brightness.domain.util.screenWidth
@@ -19,16 +20,24 @@ class LayerView(context: Context) : View(context) {
     private val windowManager =
         context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
 
+    private fun overlayType(): Int {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            if (isAccessibilityServiceRunning(context)) {
+                WindowManager.LayoutParams.TYPE_ACCESSIBILITY_OVERLAY
+            } else {
+                WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
+            }
+        } else {
+            WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY
+        }
+    }
+
     var layoutParams = WindowManager.LayoutParams(
         context.screenWidth,
         context.screenHeight,
         0,
         0,
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            WindowManager.LayoutParams.TYPE_ACCESSIBILITY_OVERLAY
-        } else {
-            WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY
-        },
+        overlayType(),
         WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
                 or WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
                 or WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN
@@ -54,6 +63,7 @@ class LayerView(context: Context) : View(context) {
     fun visible() {
         if (isVisible) return
         if (!isAttachedToWindow) {
+            layoutParams.type = overlayType()
             windowManager.addView(this, layoutParams)
         }
         visibility = VISIBLE
