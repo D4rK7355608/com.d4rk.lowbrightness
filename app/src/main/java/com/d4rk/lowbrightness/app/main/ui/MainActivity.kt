@@ -25,10 +25,8 @@ import com.d4rk.android.libs.apptoolkit.core.utils.helpers.ConsentManagerHelper
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.IntentsHelper
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.ReviewHelper
 import com.d4rk.lowbrightness.R
-import com.d4rk.lowbrightness.app.brightness.domain.ext.editor
 import com.d4rk.lowbrightness.app.brightness.domain.ext.requestAllPermissionsAndShow
 import com.d4rk.lowbrightness.app.brightness.domain.ext.requestSystemAlertWindowPermission
-import com.d4rk.lowbrightness.app.brightness.domain.ext.sharedPreferences
 import com.d4rk.lowbrightness.app.brightness.domain.receivers.NightScreenReceiver
 import com.d4rk.lowbrightness.app.brightness.domain.services.isAccessibilityServiceRunning
 import com.d4rk.lowbrightness.app.brightness.ui.components.dialogs.ShowAccessibilityDisclosure
@@ -47,11 +45,10 @@ import org.koin.androidx.viewmodel.ext.android.getViewModel
 import org.koin.core.parameter.parametersOf
 
 class MainActivity : AppCompatActivity() {
+
     companion object {
         const val REQUEST_PERMISSION_AND_SHOW_ACTION = "requestPermissionsAndShow"
     }
-
-    private var launchTimes: Int = -1
 
     private val dataStore : DataStore by inject()
     private lateinit var updateResultLauncher : ActivityResultLauncher<IntentSenderRequest>
@@ -66,17 +63,13 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         initializeDependencies()
         handleStartup()
-        if (launchTimes == -1) {
-            launchTimes = sharedPreferences().getInt("launchTimes" , 0) + 1
-            sharedPreferences().editor { putInt("launchTimes" , launchTimes % 20) }
-        }
+        checkInAppReview()
     }
 
     override fun onResume() {
         super.onResume()
         viewModel.onEvent(event = MainEvent.CheckForUpdates)
         checkUserConsent()
-        checkInAppReview()
     }
 
     override fun onNewIntent(intent: Intent) {
