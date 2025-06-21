@@ -25,6 +25,16 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        val githubProps = Properties()
+        val githubFile = rootProject.file("github.properties")
+        val githubToken = if (githubFile.exists()) {
+            githubProps.load(githubFile.inputStream())
+            githubProps["GITHUB_TOKEN"].toString()
+        } else {
+            ""
+        }
+        buildConfigField("String", "GITHUB_TOKEN", "\"$githubToken\"")
     }
 
     signingConfigs {
@@ -96,14 +106,13 @@ android {
 
 dependencies {
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.26") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.34") {
         isTransitive = true
     }
 
     implementation(dependencyNotation = libs.androidx.navigation.fragment.ktx)
     implementation(dependencyNotation = libs.androidx.navigation.ui.ktx)
     implementation(dependencyNotation = libs.preference.ktx)
-    implementation(dependencyNotation = libs.lottie)
     implementation(dependencyNotation = libs.materialdatetimepicker)
     implementation(dependencyNotation = libs.spectrum)
     implementation(dependencyNotation = libs.library)
