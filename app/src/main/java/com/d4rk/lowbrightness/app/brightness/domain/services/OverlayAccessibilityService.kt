@@ -32,14 +32,9 @@ class OverlayAccessibilityService : AccessibilityService() {
 
     override fun onServiceConnected() {
         val windowManager = applicationContext.getSystemService(WINDOW_SERVICE) as WindowManager
-        if (!layerView.isAttachedToWindow) {
-            try {
-                windowManager.addView(
-                    layerView,
-                    layerView.layoutParams
-                )
-            } catch (e: WindowManager.BadTokenException) {
-                // Ignore attempt if token is no longer valid
+        runCatching {
+            if (!layerView.isAttachedToWindow) {
+                windowManager.addView(layerView, layerView.layoutParams)
             }
         }
     }
