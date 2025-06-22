@@ -31,8 +31,12 @@ class OverlayAccessibilityService : AccessibilityService() {
     }
 
     override fun onServiceConnected() {
-        runCatching {
-            layerView.visible()
+        val windowManager = getSystemService(WINDOW_SERVICE) as WindowManager
+        if (!layerView.isAttachedToWindow) {
+            windowManager.addView(
+                layerView,
+                layerView.layoutParams
+            )
         }
     }
 
@@ -40,7 +44,9 @@ class OverlayAccessibilityService : AccessibilityService() {
         super.onDestroy()
 
         if (layerView.isAttachedToWindow) {
-            (getSystemService(WINDOW_SERVICE) as WindowManager).removeView(layerView)
+            (applicationContext.getSystemService(WINDOW_SERVICE) as WindowManager).removeView(
+                layerView
+            )
         }
         closeNightScreen()
     }
