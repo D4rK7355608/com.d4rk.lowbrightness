@@ -62,10 +62,19 @@ class LayerView(context: Context) : View(context) {
 
     fun visible() {
         if (isVisible) return
+
+        val newType = overlayType()
+
         if (!isAttachedToWindow) {
-            layoutParams.type = overlayType()
+            layoutParams.type = newType
+            windowManager.addView(this, layoutParams)
+        } else if (layoutParams.type != newType) {
+            // Window type cannot be changed while attached. Reattach with the new type.
+            windowManager.removeView(this)
+            layoutParams.type = newType
             windowManager.addView(this, layoutParams)
         }
+
         visibility = VISIBLE
     }
 
