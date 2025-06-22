@@ -31,12 +31,16 @@ class OverlayAccessibilityService : AccessibilityService() {
     }
 
     override fun onServiceConnected() {
-        val windowManager = getSystemService(WINDOW_SERVICE) as WindowManager
+        val windowManager = applicationContext.getSystemService(WINDOW_SERVICE) as WindowManager
         if (!layerView.isAttachedToWindow) {
-            windowManager.addView(
-                layerView,
-                layerView.layoutParams
-            )
+            try {
+                windowManager.addView(
+                    layerView,
+                    layerView.layoutParams
+                )
+            } catch (e: WindowManager.BadTokenException) {
+                // Ignore attempt if token is no longer valid
+            }
         }
     }
 
@@ -44,7 +48,7 @@ class OverlayAccessibilityService : AccessibilityService() {
         super.onDestroy()
 
         if (layerView.isAttachedToWindow) {
-            (getSystemService(WINDOW_SERVICE) as WindowManager).removeView(layerView)
+            (applicationContext.getSystemService(WINDOW_SERVICE) as WindowManager).removeView(layerView)
         }
         closeNightScreen()
     }
