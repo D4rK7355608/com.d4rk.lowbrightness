@@ -25,7 +25,8 @@ fun showDialogAndNightScreen() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 window?.setType(WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY)
             } else {
-                window?.setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT) // FIXME: 'static field TYPE_SYSTEM_ALERT: Int' is deprecated. Deprecated in Java.
+                @Suppress("DEPRECATION")
+                window?.setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT)
             }
         }.show()
     }
@@ -45,10 +46,12 @@ fun showNightScreen() {
         }
         layerView.keepScreenOn = keepScreenOn
         layerView.updateColor(calculatedColor)
-        appContext.sendBroadcast(
-            Intent(NightScreenService.ACTION_ACTIVE_TILE)
-                .setPackage(appContext.packageName)
-        )
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            appContext.sendBroadcast(
+                Intent(NightScreenService.ACTION_ACTIVE_TILE)
+                    .setPackage(appContext.packageName)
+            )
+        }
         NightScreenReceiver.sendBroadcast(action = NightScreenReceiver.SHOW_NOTIFICATION_ACTION)
     }
 }
@@ -59,10 +62,12 @@ fun closeNightScreen() {
     dialog?.dismiss()
     layerView.gone()
     applyScreenBrightness(false)
-    appContext.sendBroadcast(
-        Intent(NightScreenService.ACTION_INACTIVE_TILE)
-            .setPackage(appContext.packageName)
-    )
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+        appContext.sendBroadcast(
+            Intent(NightScreenService.ACTION_INACTIVE_TILE)
+                .setPackage(appContext.packageName)
+        )
+    }
     NightScreenReceiver.sendBroadcast(action = NightScreenReceiver.CLOSE_NOTIFICATION_ACTION)
 }
 
