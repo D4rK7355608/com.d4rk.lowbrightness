@@ -4,7 +4,7 @@
 
 # Low Brightness
 
-Fine-tune your screen’s brightness for night-time comfort.
+**Fine-tune your screen’s brightness for night-time comfort.**
 
 Low Brightness is a lightweight Android app that lets you dim your screen below the system minimum—perfect for using your phone in the dark without straining your eyes. Whether you're in a pitch-black room or outside at night, this app helps you reduce brightness to the level that feels just right.
 
