@@ -1,8 +1,14 @@
 package com.d4rk.lowbrightness.app.main.ui
 
 import android.content.Context
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.imePadding
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.MenuOpen
 import androidx.compose.material.icons.filled.Menu
@@ -21,9 +27,11 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -45,65 +53,100 @@ import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun MainScreen() {
-    val viewModel : MainViewModel = koinViewModel()
-    val screenState : UiStateScreen<UiMainScreen> by viewModel.uiState.collectAsState()
-    val context : Context = LocalContext.current
-    val isTabletOrLandscape : Boolean = ScreenHelper.isLandscapeOrTablet(context = context)
+    val viewModel: MainViewModel = koinViewModel()
+    val screenState: UiStateScreen<UiMainScreen> by viewModel.uiState.collectAsState()
+    val context: Context = LocalContext.current
+    val isTabletOrLandscape: Boolean = ScreenHelper.isLandscapeOrTablet(context = context)
 
     if (isTabletOrLandscape) {
         MainScaffoldTabletContent()
-    }
-    else {
+    } else {
         NavigationDrawer(screenState = screenState)
     }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScaffoldContent(drawerState : DrawerState) {
-    val scrollBehavior : TopAppBarScrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
-    val snackBarHostState : SnackbarHostState = remember { SnackbarHostState() }
-    val isFabExtended : MutableState<Boolean> = remember { mutableStateOf(value = true) }
-    val isFabVisible : MutableState<Boolean> = remember { mutableStateOf(value = false) }
-    val coroutineScope : CoroutineScope = rememberCoroutineScope()
-    val navController : NavHostController = rememberNavController()
+fun MainScaffoldContent(drawerState: DrawerState) {
+    val scrollBehavior: TopAppBarScrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
+    val snackBarHostState: SnackbarHostState = remember { SnackbarHostState() }
+    val isFabExtended: MutableState<Boolean> = remember { mutableStateOf(value = true) }
+    val isFabVisible: MutableState<Boolean> = remember { mutableStateOf(value = false) }
+    val coroutineScope: CoroutineScope = rememberCoroutineScope()
+    val navController: NavHostController = rememberNavController()
 
     LaunchedEffect(key1 = scrollBehavior.state.contentOffset) {
         isFabExtended.value = scrollBehavior.state.contentOffset >= 0f
     }
 
-    Scaffold(modifier = Modifier
+    Scaffold(
+        modifier = Modifier
             .imePadding()
-            .nestedScroll(connection = scrollBehavior.nestedScrollConnection) , topBar = {
-        MainTopAppBar(navigationIcon = if (drawerState.isOpen) Icons.AutoMirrored.Outlined.MenuOpen else Icons.Default.Menu , onNavigationIconClick = { coroutineScope.launch { drawerState.open() } } , scrollBehavior = scrollBehavior)
-    } , snackbarHost = {
-        DefaultSnackbarHost(snackbarState = snackBarHostState)
-    }) { paddingValues ->
-        AppNavigationHost(navController = navController , snackbarHostState = snackBarHostState , onFabVisibilityChanged = { isFabVisible.value = it } , paddingValues = paddingValues)
+            .nestedScroll(connection = scrollBehavior.nestedScrollConnection), topBar = {
+            MainTopAppBar(
+                navigationIcon = if (drawerState.isOpen) Icons.AutoMirrored.Outlined.MenuOpen else Icons.Default.Menu,
+                onNavigationIconClick = { coroutineScope.launch { drawerState.open() } },
+                scrollBehavior = scrollBehavior
+            )
+        }, snackbarHost = {
+            DefaultSnackbarHost(snackbarState = snackBarHostState)
+        }) { paddingValues ->
+        AppNavigationHost(
+            navController = navController,
+            snackbarHostState = snackBarHostState,
+            onFabVisibilityChanged = { isFabVisible.value = it },
+            paddingValues = paddingValues
+        )
     }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScaffoldTabletContent() {
-    val scrollBehavior : TopAppBarScrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
+    val scrollBehavior: TopAppBarScrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
     var isRailExpanded by remember { mutableStateOf(value = false) }
-    val coroutineScope : CoroutineScope = rememberCoroutineScope()
-    val context : Context = LocalContext.current
+    val coroutineScope: CoroutineScope = rememberCoroutineScope()
+    val context: Context = LocalContext.current
 
-    val viewModel : MainViewModel = koinViewModel()
-    val screenState : UiStateScreen<UiMainScreen> by viewModel.uiState.collectAsState()
-    val uiState : UiMainScreen = screenState.data ?: UiMainScreen()
-    val navController : NavHostController = rememberNavController()
-    val navBackStackEntry : NavBackStackEntry? by navController.currentBackStackEntryAsState()
-    val currentRoute : String? = navBackStackEntry?.destination?.route
+    val viewModel: MainViewModel = koinViewModel()
+    val screenState: UiStateScreen<UiMainScreen> by viewModel.uiState.collectAsState()
+    val uiState: UiMainScreen = screenState.data ?: UiMainScreen()
+    val navController: NavHostController = rememberNavController()
+    val navBackStackEntry: NavBackStackEntry? by navController.currentBackStackEntryAsState()
+    val currentRoute: String? = navBackStackEntry?.destination?.route
 
     Scaffold(
-        modifier = Modifier.fillMaxSize() , topBar = {
-            MainTopAppBar(navigationIcon = if (isRailExpanded) Icons.AutoMirrored.Outlined.MenuOpen else Icons.Default.Menu , onNavigationIconClick = { coroutineScope.launch { isRailExpanded = ! isRailExpanded } } , scrollBehavior = scrollBehavior)
+        modifier = Modifier
+            .fillMaxSize()
+            .nestedScroll(connection = scrollBehavior.nestedScrollConnection), topBar = {
+            MainTopAppBar(
+                navigationIcon = if (isRailExpanded) Icons.AutoMirrored.Outlined.MenuOpen else Icons.Default.Menu,
+                onNavigationIconClick = {
+                    coroutineScope.launch {
+                        isRailExpanded = !isRailExpanded
+                    }
+                },
+                scrollBehavior = scrollBehavior
+            )
         }) { paddingValues ->
-        LeftNavigationRail(drawerItems = uiState.navigationDrawerItems , currentRoute = currentRoute , isRailExpanded = isRailExpanded , paddingValues = paddingValues , onDrawerItemClick = { item : NavigationDrawerItem ->
-            handleNavigationItemClick(context = context , item = item)
-        } , content = { BrightnessScreen(paddingValues = paddingValues) })
+        LeftNavigationRail(
+            drawerItems = uiState.navigationDrawerItems,
+            currentRoute = currentRoute,
+            isRailExpanded = isRailExpanded,
+            paddingValues = paddingValues,
+            onDrawerItemClick = { item: NavigationDrawerItem ->
+                handleNavigationItemClick(context = context, item = item)
+            },
+            content = {
+                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth(0.6f),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        BrightnessScreen(paddingValues = PaddingValues())
+                    }
+                }
+            })
     }
 }
