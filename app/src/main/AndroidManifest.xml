@@ -61,7 +61,7 @@
 
         <service
             android:name=".app.brightness.domain.services.NightScreenService"
-            android:exported="false"
+            android:exported="true"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
