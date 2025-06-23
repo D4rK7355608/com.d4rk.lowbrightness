@@ -1,65 +1,35 @@
-🔆 Low Brightness 🔆
+Low Brightness for Android
 
-╔╦╦╦═╦╗╔═╦═╦══╦═╗
-║║║║╩╣╚╣═╣║║║║║╩╣
-╚══╩═╩═╩═╩═╩╩╩╩═╝
+Fine-tune your screen’s brightness for night-time comfort.
 
-Low Brightness is the ultimate solution for anyone looking to fine-tune the screen brightness of their Android device. Whether you're trying to reduce strain on your eyes in low light environments, save power by lowering the light emitted from your screen, or simply want to adjust the brightness to your personal preference, Low Brightness has you covered.
+Low Brightness is a lightweight Android app that lets you dim your screen below the system minimum—perfect for using your phone in the dark without straining your eyes. Whether you're in a pitch-black room or outside at night, this app helps you reduce brightness to the level that feels just right.
 
-This open-source app is incredibly easy to use, with a simple interface that allows you to quickly and easily set the brightness level to any value between 0% and 100%. Whether you want to dim your screen to the lowest possible level or crank it up to maximum brightness, Low Brightness gives you the flexibility to do so with just a few taps.
+Customize everything with ease: choose the dimming color, adjust the opacity, or schedule automatic activation. No root required. No internet needed. Just a clean, fast, Material You–inspired interface.
 
-In addition to its core functionality, Low Brightness also offers a number of advanced features that make it even more useful. For example, you can set the app to automatically adjust the brightness level based on the time of day or your current location. This can be especially helpful if you find yourself frequently switching between bright and low light environments.
+Our app is designed to be simple and easy to use, while also being fast and lightweight. Plus, it's free and open-source software!
 
-Low Brightness is also lightweight and fast, ensuring that it won't slow down your device or drain its battery. And best of all, it's completely free to use! So if you're looking for a reliable, easy-to-use app that gives you complete control over the screen brightness of your Android device, give Low Brightness a try and see how it can enhance your phone usage experience.
+Features
+• Dim the screen below Android’s minimum brightness
+• Customize the filter color and intensity
+• Quick toggle from the Quick Settings tile
+• Set up auto-dimming schedules
+• Minimal permissions, no internet required
+• Lightweight and battery-friendly
+• Built with Material You for a modern look
 
-⚠ Opening Issues!
-Bugs can be reported here: https://github.com/D4rK7355608/com.d4rk.lowbrightness/issues
+Benefits
+• Reduce eye strain in dark environments
+• Extend battery life on OLED screens
+• Control brightness with one tap
+• Works with any app, anytime
+• Enjoy a consistent, seamless UI
 
-Create a brightness/service/general bug. 🐞
+How it works
+Just add the Night Screen tile to Quick Settings, grant the needed permissions, and tap it whenever you want to dim the display. Adjust the slider for brightness or pick your favorite overlay color. You can also set a schedule to activate dimming automatically.
 
-🛠️ Features!
-⭐️ Reduce screen brightness below the system minimum brightness.
-⭐️ Uses the AccessibilityService API to draw the dimming overlay. This service collects no data.
-⭐️ No internet required.
-⭐️ Adaptive themes + Material-You.
-⭐️ Simple and easy to use.
-⭐️ Fast and lightweight.
-⭐️ Free Open source & secure.
+Get started today
+Download Low Brightness on Google Play and fine-tune your screen in seconds. It’s free, easy, and designed for comfortable viewing.
 
-👨‍💻 More about me!
-● Music:
-⇨ YouTube Music: https://music.youtube.com/channel/UCb2zXzO03OM7U9xeIsqqEQw
-⇨ Spotify: https://open.spotify.com/artist/5Q58DBSe2tpBb3qqq9WVfo
-⇨ Deezer: https://www.deezer.com/us/artist/408659
-⇨ SoundCloud: https://soundcloud.com/d4rk7355608
-⇨ BandLab: https://www.bandlab.com/d4rk7355608
-
-● Graphics:
-⇨ DeviantArt: https://www.deviantart.com/d4rk7355608
-
-● Social:
-⇨ GameJolt: https://gamejolt.com/@D4rK7355608
-⇨ Twitter: https://twitter.com/D4rK7355608
-⇨ Skype: d4rk7355608
-⇨ Steam Profile: https://steamcommunity.com/id/d4rk7355608
-⇨ Steam Trade Link: https://steamcommunity.com/tradeoffer/new/?partner=892981294&token=pxsUtrm3
-
-● Developer stuff:
-⇨ GitHub: https://github.com/D4rK7355608
-⇨ Google Play Store: https://play.google.com/store/apps/dev?id=5390214922640123642
-⇨ Google Developers: https://g.dev/D4rK7355608
-
-🛑 Disclaimer!
-• This app it has a background service. Background service runs for keeping brightness at selected level.
-• The dimming overlay relies on an AccessibilityService to appear over other apps. This service does not collect or share your data and can be disabled at any time.
-• Only use the GitHub Issues section if you discover issues with the code itself. Do not mistake the Issues page as a help desk. For support, information and requests, please contact d4rk7355608@gmail.com.
-
-💬 Feedback!
-We are constantly updating and improving Android Studio Tutorials to give you the best possible experience. If you have any suggested features or improvements, please leave a review. In case something is not working correctly please let me know. When posting a low rating please describe what is wrong to give the possibility to fix that issue.
-
-Thank you for choosing Android Studio Tutorials. We hope you enjoy using our app as much as we enjoyed creating it for you! Rate us 5 stars ⭐⭐⭐⭐⭐ if you are happy with the app! ❤
-
-╔╦╦══╦══╦═╦╗
-║╔╣║║╠╗╔╣═╣║
-║║║╔╗║║║║═╬╣
-╚╝╚╝╚╝╚╝╚═╩╝
+Feedback
+Your feedback keeps us improving. If you have suggestions or spot any issues, let us know in a review or through GitHub. When rating low, please include details so we can fix any problem.
+Thank you for trying Low Brightness! We appreciate your support and hope it helps you enjoy your device even more.
