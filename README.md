@@ -21,6 +21,7 @@ Our app is designed to be simple and easy to use, while also being fast and ligh
 - Minimal permissions, no internet required
 - Lightweight and battery-friendly
 - Built with Material You for a modern look
+- Uses Android AccessibilityService only to keep the dimming overlay visible over other apps. This service collects no personal data and can be disabled at any time.
 
 ## Benefits
 
