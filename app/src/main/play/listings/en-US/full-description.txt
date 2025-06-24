@@ -24,9 +24,9 @@ Benefits
 
 How it works
 Just add the Night Screen tile to Quick Settings, grant the needed permissions, and tap it whenever you want to dim the display. Adjust the slider for brightness or pick your favorite overlay color. You can also set a schedule to activate dimming automatically.
+
 Accessibility disclosure
 Low Brightness uses the AccessibilityService API only to keep the dimming overlay visible over other apps while you reduce the brightness. The service does not log or share any personal data and you may disable it at any time in system settings.
-
 
 Get started today
 Download Low Brightness on Google Play and fine-tune your screen in seconds. It’s free, easy, and designed for comfortable viewing.
