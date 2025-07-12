@@ -20,7 +20,8 @@ android {
         versionCode = 48
         versionName = "5.0.2"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        @Suppress("UnstableApiUsage") androidResources.localeFilters += listOf(
+        @Suppress("UnstableApiUsage")
+        androidResources.localeFilters += listOf(
             "ar-rEG" , "bg-rBG" , "bn-rBD" , "de-rDE" , "en" , "es-rGQ" , "es-rMX" , "fil-rPH" , "fr-rFR" , "hi-rIN" , "hu-rHU" , "in-rID" , "it-rIT" , "ja-rJP" , "ko-rKR" , "pl-rPL" , "pt-rBR" , "ro-rRO" , "ru-rRU" , "sv-rSE" , "th-rTH" , "tr-rTR" , "uk-rUA" , "ur-rPK" , "vi-rVN" , "zh-rTW"
         )
         vectorDrawables {
@@ -113,12 +114,9 @@ dependencies {
         isTransitive = true
     }
 
-    implementation(dependencyNotation = libs.androidx.navigation.fragment.ktx)
-    implementation(dependencyNotation = libs.androidx.navigation.ui.ktx)
     implementation(dependencyNotation = libs.preference.ktx)
     implementation(dependencyNotation = libs.materialdatetimepicker)
     implementation(dependencyNotation = libs.spectrum)
-    implementation(dependencyNotation = libs.library)
     implementation(dependencyNotation = libs.compose.material3.window.size)
     implementation(dependencyNotation = libs.accompanist.navigation.animation)
     implementation(dependencyNotation = libs.profileinstaller)
