@@ -21,22 +21,26 @@ class OverlayAccessibilityService : AccessibilityService() {
         if (newConfig.screenHeightDp != Configuration.SCREEN_HEIGHT_DP_UNDEFINED ||
             newConfig.screenWidthDp != Configuration.SCREEN_WIDTH_DP_UNDEFINED
         ) {
-            (getSystemService(WINDOW_SERVICE) as WindowManager).apply {
-                updateViewLayout(layerView, layerView.layoutParams.apply {
-                    height = baseContext.screenHeight
-                    width = baseContext.screenWidth
-                })
+            runCatching {
+                (getSystemService(WINDOW_SERVICE) as WindowManager).apply {
+                    updateViewLayout(layerView, layerView.layoutParams.apply {
+                        height = baseContext.screenHeight
+                        width = baseContext.screenWidth
+                    })
+                }
             }
         }
     }
 
     override fun onServiceConnected() {
         val windowManager = getSystemService(WINDOW_SERVICE) as WindowManager
-        if (!layerView.isAttachedToWindow) {
-            windowManager.addView(
-                layerView,
-                layerView.layoutParams
-            )
+        runCatching {
+            if (!layerView.isAttachedToWindow) {
+                windowManager.addView(
+                    layerView,
+                    layerView.layoutParams
+                )
+            }
         }
     }
 
