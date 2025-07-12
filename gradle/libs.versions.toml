@@ -12,7 +12,6 @@ md3 = "1.3.2"
 accompanist = "0.36.0"
 profileinstaller = "1.4.1"
 colorPicker = "0.7.0"
-xxpermissions = "18.3"
 
 [libraries]
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationUiKtx" }
@@ -22,7 +21,6 @@ preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = 
 spectrum = { module = "com.thebluealliance:spectrum", version.ref = "spectrum" }
 library = { module = "me.zhanghai.android.fastscroll:library", version.ref = "library" }
 compose-material3-window-size = { module = "androidx.compose.material3:material3-window-size-class", version.ref = "md3" }
-xxpermissions = { module = "com.github.getActivity:XXPermissions", version.ref = "xxpermissions" }
 accompanist-navigation-animation = { module = "com.google.accompanist:accompanist-navigation-animation", version.ref = "accompanist" }
 profileinstaller = { module = "androidx.profileinstaller:profileinstaller", version.ref = "profileinstaller" }
 compose-color-picker = { module = "com.godaddy.android.colorpicker:compose-color-picker", version.ref = "colorPicker" }

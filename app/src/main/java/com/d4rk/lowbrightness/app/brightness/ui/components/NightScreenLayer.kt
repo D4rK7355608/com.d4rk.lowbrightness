@@ -14,12 +14,11 @@ import com.d4rk.lowbrightness.app.brightness.ui.components.dialogs.dialog
 import com.d4rk.lowbrightness.app.brightness.ui.components.dialogs.dialogIsShowing
 import com.d4rk.lowbrightness.app.brightness.ui.components.dialogs.getNightScreenDialog
 import com.d4rk.lowbrightness.appContext
-import com.hjq.permissions.Permission
-import com.hjq.permissions.XXPermissions
+import com.d4rk.lowbrightness.app.brightness.domain.ext.isSystemAlertWindowGranted
 
 fun showDialogAndNightScreen() {
     if (dialogIsShowing) return
-    if (XXPermissions.isGranted(appContext, Permission.SYSTEM_ALERT_WINDOW)) {
+    if (appContext.isSystemAlertWindowGranted()) {
         showNightScreen()
         getNightScreenDialog().apply {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -38,7 +37,7 @@ fun closeDialog() {
 
 fun showNightScreen() {
     if (showNightScreenLayer) return
-    if (XXPermissions.isGranted(appContext, Permission.SYSTEM_ALERT_WINDOW)) {
+    if (appContext.isSystemAlertWindowGranted()) {
         showNightScreenLayer = true
         layerView.visible()
         if (getLowestScreenBrightness() && !getActualLowestScreenBrightness()) {
