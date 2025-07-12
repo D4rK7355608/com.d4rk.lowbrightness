@@ -17,10 +17,12 @@ import com.d4rk.lowbrightness.app.brightness.ui.components.screenAlpha
 import com.d4rk.lowbrightness.app.main.ui.MainActivity
 import com.d4rk.lowbrightness.app.settings.settings.utils.constants.SettingsConstants
 import com.d4rk.lowbrightness.appContext
+import com.d4rk.lowbrightness.app.brightness.domain.ext.isSystemAlertWindowGranted
+import com.d4rk.lowbrightness.app.brightness.domain.ext.isPostNotificationsGranted
+import com.d4rk.lowbrightness.app.brightness.domain.ext.isNotificationServiceEnabled
+import com.d4rk.lowbrightness.app.brightness.domain.ext.isWriteSettingsGranted
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.slider.Slider
-import com.hjq.permissions.Permission
-import com.hjq.permissions.XXPermissions
 import java.lang.Float.max
 import java.lang.Float.min
 
@@ -83,10 +85,10 @@ fun getNightScreenDialog(c: Context? = null): AlertDialog {
 
 @SuppressLint("LaunchActivityFromNotification")
 fun requestAllPermissionsWithAccessibilityAndShow(context: Context) {
-    if (XXPermissions.isGranted(context, Permission.SYSTEM_ALERT_WINDOW) &&
-        XXPermissions.isGranted(context, Permission.POST_NOTIFICATIONS) &&
-        XXPermissions.isGranted(context, Permission.NOTIFICATION_SERVICE) &&
-        XXPermissions.isGranted(context, Permission.WRITE_SETTINGS) &&
+    if (context.isSystemAlertWindowGranted() &&
+        context.isPostNotificationsGranted() &&
+        context.isNotificationServiceEnabled() &&
+        context.isWriteSettingsGranted() &&
         isAccessibilityServiceRunning(context)
     ) {
         NightScreenReceiver.sendBroadcast(

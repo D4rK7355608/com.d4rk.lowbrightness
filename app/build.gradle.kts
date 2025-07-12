@@ -120,7 +120,6 @@ dependencies {
     implementation(dependencyNotation = libs.spectrum)
     implementation(dependencyNotation = libs.library)
     implementation(dependencyNotation = libs.compose.material3.window.size)
-    implementation(dependencyNotation = libs.xxpermissions)
     implementation(dependencyNotation = libs.accompanist.navigation.animation)
     implementation(dependencyNotation = libs.profileinstaller)
     implementation(dependencyNotation = libs.compose.color.picker)
