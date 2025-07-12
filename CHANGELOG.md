@@ -1,3 +1,7 @@
+# Version 5.0.2:
+
+- **Patch**: Bug fixes and under-the-hood improvements for stability.
+
 # Version 5.0.1:
 
 - **Patch**: Bug fixes and under-the-hood improvements for stability.
