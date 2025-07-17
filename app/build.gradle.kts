@@ -17,7 +17,7 @@ android {
         applicationId = "com.d4rk.lowbrightness"
         minSdk = 23
         targetSdk = 36
-        versionCode = 48
+        versionCode = 49
         versionName = "5.0.2"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         @Suppress("UnstableApiUsage")
@@ -110,7 +110,7 @@ android {
 
 dependencies {
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.37") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.38") {
         isTransitive = true
     }
 

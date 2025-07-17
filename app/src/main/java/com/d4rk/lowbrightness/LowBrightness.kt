@@ -5,8 +5,8 @@ package com.d4rk.lowbrightness
 import android.app.Activity
 import android.content.Context
 import android.os.Bundle
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.OnLifecycleEvent
+import androidx.lifecycle.DefaultLifecycleObserver
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ProcessLifecycleOwner
 import com.d4rk.android.libs.apptoolkit.data.core.BaseCoreManager
 import com.d4rk.android.libs.apptoolkit.data.core.ads.AdsCoreManager
@@ -19,14 +19,14 @@ import org.koin.android.ext.android.getKoin
 
 lateinit var appContext: Context
 
-class LowBrightness : BaseCoreManager() {
+class LowBrightness : BaseCoreManager(), DefaultLifecycleObserver {
     private var currentActivity : Activity? = null
 
     private val adsCoreManager : AdsCoreManager by lazy { getKoin().get<AdsCoreManager>() }
 
     override fun onCreate() {
         initializeKoin(context = this)
-        super.onCreate()
+        super<BaseCoreManager>.onCreate()
         appContext = this
         registerActivityLifecycleCallbacks(this)
         ProcessLifecycleOwner.get().lifecycle.addObserver(observer = this)
@@ -40,8 +40,7 @@ class LowBrightness : BaseCoreManager() {
         adsCoreManager.initializeAds(AdsConstants.APP_OPEN_UNIT_ID)
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_START)
-    fun onMoveToForeground() {
+    override fun onStart(owner: LifecycleOwner) {
         currentActivity?.let { adsCoreManager.showAdIfAvailable(it) }
     }
 

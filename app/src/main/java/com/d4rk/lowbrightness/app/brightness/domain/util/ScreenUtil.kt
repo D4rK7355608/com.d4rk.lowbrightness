@@ -1,5 +1,8 @@
+@file:Suppress("DEPRECATION")
+
 package com.d4rk.lowbrightness.app.brightness.domain.util
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.Configuration
 import android.os.Build
@@ -46,6 +49,7 @@ val Context.screenWidth: Int
     }
 
 val Context.statusBarHeight: Int
+    @SuppressLint("InternalInsetResource")
     get() {
         val resourceId: Int = resources
             .getIdentifier("status_bar_height", "dimen", "android")
@@ -56,6 +60,7 @@ val Context.statusBarHeight: Int
     }
 
 val Context.navigationBarHeight: Int
+    @SuppressLint("InternalInsetResource")
     get() {
         val resourceId: Int = resources
             .getIdentifier("navigation_bar_height", "dimen", "android")

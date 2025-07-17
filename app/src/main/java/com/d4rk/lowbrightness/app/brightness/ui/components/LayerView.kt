@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.d4rk.lowbrightness.app.brightness.ui.components
 
 import android.animation.ArgbEvaluator
@@ -26,14 +28,13 @@ class LayerView(context: Context) : View(context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             WindowManager.LayoutParams.TYPE_ACCESSIBILITY_OVERLAY
         } else {
-            @Suppress("DEPRECATION")
             WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY
         },
         WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
                 or WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
                 or WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN
                 or WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
-                or if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) 65536 else @Suppress("DEPRECATION") WindowManager.LayoutParams.FLAG_LAYOUT_INSET_DECOR
+                or if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) 65536 else WindowManager.LayoutParams.FLAG_LAYOUT_INSET_DECOR
                 or WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED,
         PixelFormat.TRANSLUCENT
     ).apply {
