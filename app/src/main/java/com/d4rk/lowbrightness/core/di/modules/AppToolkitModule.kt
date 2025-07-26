@@ -7,6 +7,7 @@ import com.d4rk.android.libs.apptoolkit.app.issuereporter.ui.IssueReporterViewMo
 import com.d4rk.android.libs.apptoolkit.app.startup.utils.interfaces.providers.StartupProvider
 import com.d4rk.android.libs.apptoolkit.app.support.billing.BillingRepository
 import com.d4rk.android.libs.apptoolkit.app.support.ui.SupportViewModel
+import com.d4rk.android.libs.apptoolkit.core.utils.constants.github.GithubConstants
 import com.d4rk.lowbrightness.BuildConfig
 import com.d4rk.lowbrightness.app.startup.utils.interfaces.providers.AppStartupProvider
 import org.koin.core.module.Module
@@ -31,11 +32,19 @@ val appToolkitModule : Module = module {
         )
     }
 
+    single(qualifier = named(name = "github_repository")) { "Low-Brightness-for-Android" }
     single<GithubTarget> {
-        GithubTarget(username = "D4rK7355608", repository = "com.d4rk.lowbrightness")
+        GithubTarget(
+            username = GithubConstants.GITHUB_USER,
+            repository = get(qualifier = named("github_repository")),
+        )
     }
 
-    single(named("github_token")) { BuildConfig.GITHUB_TOKEN }
+    single(qualifier = named("github_changelog")) {
+        GithubConstants.githubChangelog(get<String>(named("github_repository")))
+    }
+
+    single(qualifier = named("github_token")) { BuildConfig.GITHUB_TOKEN }
 
     single<HelpScreenConfig> { HelpScreenConfig(versionName = BuildConfig.VERSION_NAME , versionCode = BuildConfig.VERSION_CODE) }
 }

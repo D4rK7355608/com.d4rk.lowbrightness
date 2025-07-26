@@ -2,7 +2,7 @@
 agp = "8.11.1"
 kotlin = "2.2.0"
 google-services = "4.4.3"
-google-firebase-crashlytics = "3.0.4"
+google-firebase-crashlytics = "3.0.5"
 materialdatetimepicker = "4.2.3"
 spectrum = "0.7.1"
 preferenceKtx = "1.2.1"

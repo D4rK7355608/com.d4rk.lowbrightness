@@ -26,5 +26,5 @@ pluginManagement {
     }
 }
 
-rootProject.name = "Low Brightness"
+rootProject.name = "Low Brightness for Android"
 include(":app")

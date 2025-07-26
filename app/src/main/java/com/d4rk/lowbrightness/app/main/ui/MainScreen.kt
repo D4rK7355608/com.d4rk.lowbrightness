@@ -3,12 +3,9 @@ package com.d4rk.lowbrightness.app.main.ui
 import android.content.Context
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.imePadding
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.widthIn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.MenuOpen
 import androidx.compose.material.icons.filled.Menu
@@ -31,13 +28,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.d4rk.android.libs.apptoolkit.app.main.ui.components.dialogs.ChangelogDialog
 import com.d4rk.android.libs.apptoolkit.app.main.ui.components.navigation.LeftNavigationRail
 import com.d4rk.android.libs.apptoolkit.app.main.ui.components.navigation.MainTopAppBar
+import com.d4rk.android.libs.apptoolkit.app.settings.utils.providers.BuildInfoProvider
 import com.d4rk.android.libs.apptoolkit.core.domain.model.navigation.NavigationDrawerItem
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
 import com.d4rk.android.libs.apptoolkit.core.ui.components.snackbar.DefaultSnackbarHost
@@ -49,7 +47,9 @@ import com.d4rk.lowbrightness.app.main.ui.components.navigation.NavigationDrawer
 import com.d4rk.lowbrightness.app.main.ui.components.navigation.handleNavigationItemClick
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
+import org.koin.compose.koinInject
 import org.koin.compose.viewmodel.koinViewModel
+import org.koin.core.qualifier.named
 
 @Composable
 fun MainScreen() {
@@ -115,6 +115,10 @@ fun MainScaffoldTabletContent() {
     val navBackStackEntry: NavBackStackEntry? by navController.currentBackStackEntryAsState()
     val currentRoute: String? = navBackStackEntry?.destination?.route
 
+    val changelogUrl: String = koinInject(qualifier = named("github_changelog"))
+    val buildInfoProvider: BuildInfoProvider = koinInject()
+    var showChangelog by remember { mutableStateOf(false) }
+
     Scaffold(
         modifier = Modifier
             .fillMaxSize()
@@ -135,7 +139,11 @@ fun MainScaffoldTabletContent() {
             isRailExpanded = isRailExpanded,
             paddingValues = paddingValues,
             onDrawerItemClick = { item: NavigationDrawerItem ->
-                handleNavigationItemClick(context = context, item = item)
+                handleNavigationItemClick(
+                    context = context,
+                    item = item,
+                    onChangelogRequested = { showChangelog = true },
+                )
             },
             content = {
                 Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
@@ -148,5 +156,13 @@ fun MainScaffoldTabletContent() {
                     }
                 }
             })
+    }
+
+    if (showChangelog) {
+        ChangelogDialog(
+            changelogUrl = changelogUrl,
+            buildInfoProvider = buildInfoProvider,
+            onDismiss = { showChangelog = false }
+        )
     }
 }

@@ -1,3 +1,10 @@
+# Version 5.0.3:
+
+- **New**: Added changelog dialog.
+- **Minor**: Improved some UI & UX components.
+- **Minor**: Updated the components used by the app.
+- **Minor**: Other bug fixes and under-the-hood improvements for stability.
+
 # Version 5.0.2:
 
 - **Patch**: Bug fixes and under-the-hood improvements for stability.

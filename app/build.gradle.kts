@@ -17,8 +17,8 @@ android {
         applicationId = "com.d4rk.lowbrightness"
         minSdk = 23
         targetSdk = 36
-        versionCode = 49
-        versionName = "5.0.2"
+        versionCode = 50
+        versionName = "5.0.3"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         @Suppress("UnstableApiUsage")
         androidResources.localeFilters += listOf(
@@ -109,8 +109,9 @@ android {
 }
 
 dependencies {
+
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.38") {
+    implementation(dependencyNotation = "com.github.MihaiCristianCondrea:App-Toolkit-for-Android:1.1.0") {
         isTransitive = true
     }
 
